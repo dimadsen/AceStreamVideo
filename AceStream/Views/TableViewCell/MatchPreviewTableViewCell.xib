@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="cxk-wN-pdQ" customClass="MatchTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="163" translatesAutoresizingMaskIntoConstraints="NO" image="favorites.png">
+                        <rect key="frame" x="8" y="32" width="40" height="40"/>
+                        <constraints>
+                            <constraint id="171" firstAttribute="height" constant="40"/>
+                            <constraint id="172" firstAttribute="width" constant="40"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="164" translatesAutoresizingMaskIntoConstraints="NO" image="lolo_epl.png">
+                        <rect key="frame" x="56" y="20" width="30" height="30"/>
+                        <constraints>
+                            <constraint id="192" firstAttribute="height" constant="30"/>
+                            <constraint id="193" firstAttribute="width" constant="30"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="165" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                        <rect key="frame" x="142" y="-41" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="166" translatesAutoresizingMaskIntoConstraints="NO" image="seria-a.png">
+                        <rect key="frame" x="56" y="58" width="30" height="30"/>
+                        <constraints>
+                            <constraint id="196" firstAttribute="height" constant="30"/>
+                            <constraint id="197" firstAttribute="width" constant="30"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="167" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева" misplaced="YES">
+                        <rect key="frame" x="94" y="24" width="150" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <constraints>
+                            <constraint id="216" firstAttribute="height" constant="21"/>
+                        </constraints>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="168" translatesAutoresizingMaskIntoConstraints="NO" text="Гости" misplaced="YES">
+                        <rect key="frame" x="94" y="62" width="150" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <constraints>
+                            <constraint id="215" firstAttribute="height" constant="21"/>
+                        </constraints>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="169" translatesAutoresizingMaskIntoConstraints="NO">
+                        <rect key="frame" x="267" y="41" width="53" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <constraints>
+                            <constraint id="1343" firstAttribute="height" constant="21"/>
+                            <constraint id="1351" firstAttribute="width" constant="53"/>
+                        </constraints>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint id="170" firstItem="163" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8"/>
+                    <constraint id="173" firstItem="163" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="32"/>
+                    <constraint id="190" firstItem="164" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="20"/>
+                    <constraint id="191" firstItem="164" firstAttribute="leading" secondItem="163" secondAttribute="trailing" constant="8"/>
+                    <constraint id="194" firstItem="166" firstAttribute="top" secondItem="164" secondAttribute="bottom" constant="8"/>
+                    <constraint id="195" firstItem="166" firstAttribute="leading" secondItem="163" secondAttribute="trailing" constant="8"/>
+                    <constraint id="208" firstItem="168" firstAttribute="leading" secondItem="166" secondAttribute="trailing" constant="8"/>
+                    <constraint id="209" firstItem="168" firstAttribute="top" secondItem="164" secondAttribute="bottom" constant="12"/>
+                    <constraint id="212" firstItem="166" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="13"/>
+                    <constraint id="213" firstItem="167" firstAttribute="leading" secondItem="164" secondAttribute="trailing" constant="8"/>
+                    <constraint id="1389" firstItem="169" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailing"/>
+                    <constraint id="1397" firstItem="169" firstAttribute="centerY" secondItem="YTl-1W-gDM" secondAttribute="centerY" constant="1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="17" y="13"/>
+            <connections>
+                <outlet property="Time" destination="169" id="name-outlet-169"/>
+                <outlet property="Home" destination="167" id="name-outlet-167"/>
+                <outlet property="Visitor" destination="168" id="name-outlet-168"/>
+                <outlet property="Favorites" destination="163" id="name-outlet-163"/>
+                <outlet property="HomeIcon" destination="164" id="name-outlet-164"/>
+                <outlet property="VisitorIcon" destination="166" id="name-outlet-166"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="lolo_epl.png" width="200" height="200"/>
+        <image name="seria-a.png" width="128" height="128"/>
+        <image name="favorites.png" width="256" height="256"/>
+    </resources>
+</document>

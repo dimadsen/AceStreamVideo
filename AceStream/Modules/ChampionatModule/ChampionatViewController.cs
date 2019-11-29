@@ -1,0 +1,71 @@
+using AceStream.Dto;
+using AceStream.Modules.ChampionatModule;
+using AceStream.Views.TableViewCell;
+using CoreGraphics;
+using Foundation;
+using MessageUI;
+using System;
+using UIKit;
+
+namespace AceStream
+{
+    public partial class ChampionatViewController : UITableViewController, IChampionatView
+    {
+        public IChampionatPresenter Presenter { get; set; }
+        public IChampionatConfigurator Configurator { get; set; }
+
+        private ChampionatDto[] _championats;
+
+        public ChampionatViewController(IntPtr handle) : base(handle)
+        {
+            Configurator = new ChampionatConfigurator();
+            Configurator.Configure(this);
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            Presenter.ConfigureView();
+        }
+
+        public void SetSettings(string title)
+        {            
+            NavigationController.NavigationBar.PrefersLargeTitles = true;
+            NavigationItem.Title = title;
+
+            TableView.TableFooterView = new UIView(CGRect.Empty);
+            TableView.RowHeight = 100;
+        }
+
+        public void SetChampionats(ChampionatDto[] championats)
+        {
+            _championats = championats;
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            var championatId = TableView.IndexPathForCell(sender as UITableViewCell).Row;
+
+            Presenter.Router.Prepare(segue, championatId);
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            //tableView.RegisterNibForCellReuse(ChampionatTableViewCell.Nib, "ChampionatTableViewCell"); 
+
+            var cell = tableView.DequeueReusableCell("ChampionatTableViewCell") as ChampionatTableViewCell;
+
+            if (cell == null)
+                cell = new ChampionatTableViewCell(new NSString("ChampionatTableViewCell"));
+
+            cell.UpdateCell(_championats[indexPath.Row]);
+
+            return cell;
+
+        }
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            return _championats.Length;
+        }
+    }
+}

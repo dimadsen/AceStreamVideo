@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectGuid>{67103686-01E1-4738-A9AF-52669554E5C3}</ProjectGuid>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>AceStream</RootNamespace>
+        <AssemblyName>AceStream</AssemblyName>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>x86_64</MtouchArch>
+        <MtouchLink>None</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <LangVersion>7.0</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchLink>None</MtouchLink>
+        <MtouchArch>x86_64</MtouchArch>
+        <LangVersion>7.0</LangVersion>
+        <MtouchDebug></MtouchDebug>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>true</MtouchDebug>
+        <LangVersion>7.0</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <LangVersion>7.0</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
+      <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+        <Folder Include="Modules\" />
+        <Folder Include="Modules\ChampionatModule\" />
+        <Folder Include="Views\" />
+        <Folder Include="Views\TableViewCell\" />
+        <Folder Include="Dto\" />
+        <Folder Include="Services\" />
+        <Folder Include="Modules\MatchPreviewModule\" />
+        <Folder Include="Modules\LoginModule\" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="LaunchScreen.storyboard" />
+        <InterfaceDefinition Include="Main.storyboard" />
+        <InterfaceDefinition Include="Views\TableViewCell\ChampionatTableViewCell.xib" />
+        <InterfaceDefinition Include="Views\TableViewCell\MatchPreviewTableViewCell.xib" />
+        <InterfaceDefinition Include="Modules\LoginModule\LoginViewController.xib" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+        <None Include="Entitlements.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="Modules\ChampionatModule\IChampionat.cs" />
+        <Compile Include="Modules\ChampionatModule\ChampionatConfigurator.cs" />
+        <Compile Include="Modules\ChampionatModule\ChampionatPresenter.cs" />
+        <Compile Include="Modules\ChampionatModule\ChampionatInteractor.cs" />
+        <Compile Include="Modules\ChampionatModule\ChampionatRouter.cs" />
+        <Compile Include="Views\TableViewCell\ChampionatTableViewCell.cs" />
+        <Compile Include="Views\TableViewCell\ChampionatTableViewCell.designer.cs">
+          <DependentUpon>ChampionatTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\ChampionatModule\ChampionatViewController.cs" />
+        <Compile Include="Modules\ChampionatModule\ChampionatViewController.designer.cs">
+          <DependentUpon>ChampionatViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Dto\ChampionatDto.cs" />
+        <Compile Include="Services\ChampionatService.cs" />
+        <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.cs" />
+        <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.designer.cs">
+          <DependentUpon>MatchPreviewTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Dto\MatchPreviewDto.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.designer.cs">
+          <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\MatchPreviewModule\IMatchPreview.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewPresenter.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewConfigurator.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewInteractor.cs" />
+        <Compile Include="Modules\MatchPreviewModule\MatchPreviewRouter.cs" />
+        <Compile Include="Services\MatchPreviewService.cs" />
+        <Compile Include="Modules\LoginModule\LoginViewController.cs" />
+        <Compile Include="Modules\LoginModule\LoginViewController.designer.cs">
+          <DependentUpon>LoginViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\LoginModule\ILogin.cs" />
+        <Compile Include="Modules\LoginModule\LoginPresenter.cs" />
+        <Compile Include="Modules\LoginModule\LoginConfigurator.cs" />
+        <Compile Include="Modules\LoginModule\LoginInteractor.cs" />
+        <Compile Include="Modules\LoginModule\LoginRouter.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\lolo_epl.png" />
+      <BundleResource Include="Resources\seria-a.png" />
+      <BundleResource Include="Resources\photoeditorsdk-export-2.png" />
+      <BundleResource Include="Resources\favorites.png" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
