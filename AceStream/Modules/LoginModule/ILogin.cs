@@ -1,4 +1,6 @@
 ﻿using System;
+using AceStream.Dto;
+
 namespace AceStream.Modules.LoginModule
 {
     public interface ILoginConfigurator
@@ -16,7 +18,7 @@ namespace AceStream.Modules.LoginModule
 
     public interface ILoginInteractor
     {
-
+        UserDto GetUser(LoginDto login);
     }
 
     public interface ILoginRouter

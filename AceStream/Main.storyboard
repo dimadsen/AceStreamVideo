@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="16276">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="216">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="205">
             <objects>
-                <viewController id="206" sceneMemberID="viewController">
+                <viewController id="206" sceneMemberID="viewController" customClass="ExitViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="201"/>
                         <viewControllerLayoutGuide type="bottom" id="202"/>
@@ -237,95 +237,80 @@
         </scene>
         <scene sceneID="16275">
             <objects>
-                <viewController id="16276" sceneMemberID="viewController">
+                <viewController id="16276" sceneMemberID="viewController" customClass="LoginViewController" storyboardIdentifier="LoginViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="16273"/>
                         <viewControllerLayoutGuide type="bottom" id="16274"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16277">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" minimumFontSize="17" id="16280" translatesAutoresizingMaskIntoConstraints="NO" borderStyle="roundedRect" placeholder="Эл. адрес">
-                                <rect key="frame" x="46" y="198" width="229" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" minimumFontSize="17" id="16280" translatesAutoresizingMaskIntoConstraints="NO" borderStyle="roundedRect" placeholder="Эл. адрес" fixedFrame="YES">
+                                <rect key="frame" x="16" y="210" width="288" height="50"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email" keyboardType="emailAddress"/>
-                                <constraints>
-                                    <constraint id="18110" firstAttribute="height" constant="50"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="17188" translatesAutoresizingMaskIntoConstraints="NO" placeholder=" Пароль">
-                                <rect key="frame" x="46" y="265" width="229" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="17188" translatesAutoresizingMaskIntoConstraints="NO" placeholder=" Пароль" fixedFrame="YES">
+                                <rect key="frame" x="16" y="281" width="288" height="50"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
-                                <constraints>
-                                    <constraint id="18114" firstAttribute="height" constant="50"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17793" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="46" y="368" width="229" height="50"/>
-                                <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.577326004602355" green="0.829973014429615" blue="1" alpha="1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17793" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="16" y="404" width="288" height="50"/>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.21443243350781999" green="0.846994966808418" blue="1" alpha="1"/>
                                 <state key="normal" title="Войти">
                                     <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
                                 </state>
-                                <constraints>
-                                    <constraint id="18123" firstAttribute="height" constant="50"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Login_TouchUpInside:" destination="16276" id="19913" eventType="touchUpInside"/>
+                                    <segue id="20388" destination="216" kind="presentation" modalTransitionStyle="flipHorizontal"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17795" translatesAutoresizingMaskIntoConstraints="NO" text="У вас нет аккаунта?">
-                                <rect key="frame" x="53" y="411" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="18142" firstAttribute="height" constant="21"/>
-                                    <constraint id="18143" firstAttribute="width" constant="144"/>
-                                </constraints>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17796" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="140" y="407" width="135" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17796" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="142" y="509" width="162" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Зарегистрироваться"/>
-                                <constraints>
-                                    <constraint id="18136" firstAttribute="height" constant="30"/>
-                                    <constraint id="18139" firstAttribute="width" constant="135"/>
-                                </constraints>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleColor" colorSpace="custom" customColorSpace="sRGB" red="0.21443243350781999" green="0.846994966808418" blue="1" alpha="1"/>
+                                </state>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17797" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
-                                <rect key="frame" x="166" y="329" width="109" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17797" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="166" y="354" width="138" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Забыли пароль?"/>
+                                <color key="tintColor" colorSpace="custom" customColorSpace="sRGB" red="0.21443243350781999" green="0.846994966808418" blue="1" alpha="1"/>
+                                <state key="normal" title="Забыли пароль?">
+                                    <color key="titleColor" colorSpace="custom" customColorSpace="sRGB" red="0.21443243350781999" green="0.846994966808418" blue="1" alpha="1"/>
+                                </state>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18902" translatesAutoresizingMaskIntoConstraints="NO" image="ace_stream_logo.png" fixedFrame="YES">
+                                <rect key="frame" x="96" y="50" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint id="18107" firstItem="16280" firstAttribute="leading" secondItem="16277" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="18108" firstAttribute="trailingMargin" secondItem="16280" secondAttribute="trailing" constant="29"/>
-                            <constraint id="18109" firstItem="16280" firstAttribute="top" secondItem="16273" secondAttribute="bottom" constant="178"/>
-                            <constraint id="18111" firstItem="17188" firstAttribute="top" secondItem="16280" secondAttribute="bottom" constant="17"/>
-                            <constraint id="18112" firstItem="17188" firstAttribute="leading" secondItem="16277" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="18113" firstAttribute="trailingMargin" secondItem="17188" secondAttribute="trailing" constant="29"/>
-                            <constraint id="18121" firstItem="17793" firstAttribute="leading" secondItem="16277" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="18122" firstAttribute="trailingMargin" secondItem="17793" secondAttribute="trailing" constant="29"/>
-                            <constraint id="18137" firstAttribute="trailingMargin" secondItem="17796" secondAttribute="trailing" constant="29"/>
-                            <constraint id="18138" firstItem="16274" firstAttribute="top" secondItem="17796" secondAttribute="bottom" constant="131"/>
-                            <constraint id="18140" firstItem="17795" firstAttribute="leading" secondItem="16277" secondAttribute="leadingMargin" constant="37"/>
-                            <constraint id="18141" firstItem="16274" firstAttribute="top" secondItem="17795" secondAttribute="bottom" constant="136"/>
-                            <constraint id="18498" firstItem="17797" firstAttribute="top" secondItem="17188" secondAttribute="bottom" constant="14"/>
-                            <constraint id="18499" firstItem="17793" firstAttribute="top" secondItem="17797" secondAttribute="bottom" constant="15"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Email" destination="16280" id="name-outlet-16280"/>
+                        <outlet property="Password" destination="17188" id="name-outlet-17188"/>
+                        <outlet property="Login" destination="17793" id="name-outlet-17793"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16278" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="1468"/>
+            <point key="canvasLocation" x="611" y="1561"/>
         </scene>
     </scenes>
     <resources>
         <image name="lolo_epl.png" width="200" height="200"/>
         <image name="seria-a.png" width="128" height="128"/>
         <image name="favorites.png" width="256" height="256"/>
+        <image name="ace_stream_logo.png" width="128" height="128"/>
     </resources>
 </document>
