@@ -11,15 +11,15 @@ namespace AceStream
         
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            if (!CurrentUser.IsAuthorized)
+            if (!User.IsAuthorized)
             {
                 Window = new UIWindow(UIScreen.MainScreen.Bounds);
                 var storyboard = UIStoryboard.FromName("Main", null);
 
                 Window.RootViewController = storyboard.InstantiateViewController("LoginViewController");
                 Window.MakeKeyAndVisible();
-            }            
-
+            }
+            
             return true;
         }
         

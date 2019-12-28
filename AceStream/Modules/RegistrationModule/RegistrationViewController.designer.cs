@@ -9,10 +9,10 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace AceStream.Modules.LoginModule
+namespace AceStream.Modules.RegistrationModule
 {
-    [Register ("LoginViewController")]
-    partial class LoginViewController
+    [Register ("RegistrationViewController")]
+    partial class RegistrationViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -20,15 +20,19 @@ namespace AceStream.Modules.LoginModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Login { get; set; }
+        UIKit.UITextField Name { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField Password { get; set; }
 
-        [Action ("SignIn:")]
+        [Action ("Close:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SignIn (UIKit.UIButton sender);
+        partial void Close (UIKit.UIButton sender);
+
+        [Action ("SignUp:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SignUp (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -37,9 +41,9 @@ namespace AceStream.Modules.LoginModule
                 Email = null;
             }
 
-            if (Login != null) {
-                Login.Dispose ();
-                Login = null;
+            if (Name != null) {
+                Name.Dispose ();
+                Name = null;
             }
 
             if (Password != null) {

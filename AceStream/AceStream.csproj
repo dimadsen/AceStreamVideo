@@ -132,6 +132,7 @@
         <Folder Include="Services\" />
         <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
+        <Folder Include="Modules\RegistrationModule\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -188,7 +189,18 @@
         <Compile Include="Dto\LoginDto.cs" />
         <Compile Include="Services\LoginService.cs" />
         <Compile Include="Dto\UserDto.cs" />
-        <Compile Include="CurrentUser.cs" />
+        <Compile Include="User.cs" />
+        <Compile Include="Modules\RegistrationModule\IRegistration.cs" />
+        <Compile Include="Modules\RegistrationModule\RegistrationViewController.cs" />
+        <Compile Include="Modules\RegistrationModule\RegistrationViewController.designer.cs">
+          <DependentUpon>RegistrationViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\RegistrationModule\RegistrationConfigurator.cs" />
+        <Compile Include="Modules\RegistrationModule\RegistrationInteractor.cs" />
+        <Compile Include="Modules\RegistrationModule\RegistrationPresenter.cs" />
+        <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
+        <Compile Include="Services\RegistrationService.cs" />
+        <Compile Include="Dto\RegistrationDto.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -196,6 +208,7 @@
       <BundleResource Include="Resources\photoeditorsdk-export-2.png" />
       <BundleResource Include="Resources\favorites.png" />
       <BundleResource Include="Resources\ace_stream_logo.png" />
+      <BundleResource Include="Resources\close.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

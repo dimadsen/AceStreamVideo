@@ -3,7 +3,7 @@ using Foundation;
 
 namespace AceStream
 {
-    public static class CurrentUser
+    public static class User
     {
         public static nint Id
         {

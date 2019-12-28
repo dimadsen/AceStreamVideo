@@ -28,7 +28,7 @@ namespace AceStream.Modules.LoginModule
             //throw new NotImplementedException();
         }
 
-        partial void LogIn(UIButton sender)
+        partial void SignIn(UIButton sender)
         {
             var dto = new LoginDto()
             {
@@ -40,30 +40,27 @@ namespace AceStream.Modules.LoginModule
 
             if (user != null)
             {
-                CurrentUser.UserId = user.Id;
-                CurrentUser.IsAuthorized = true;
-            }
-            else
-            {
-                CurrentUser.IsAuthorized = false;
+                User.Id = user.Id;
+                User.IsAuthorized = true;
             }
         }
 
         public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
         {
-            if (!CurrentUser.IsAuthorized)
+            if (segueIdentifier == "ToChampionats" && !User.IsAuthorized)
             {
-                var alertController = UIAlertController.Create(string.Empty,
+                var alertController = UIAlertController.Create("Ошибка",
                 "Неправильный логин или пароль", UIAlertControllerStyle.Alert);
 
                 alertController.AddAction(UIAlertAction.Create("ОК", UIAlertActionStyle.Default, action => { }));
 
                 PresentViewController(alertController, true, null);
+
+                return false;
             }
-
-            return CurrentUser.IsAuthorized;
+            return true;
         }
-
+                
     }
 }
 
