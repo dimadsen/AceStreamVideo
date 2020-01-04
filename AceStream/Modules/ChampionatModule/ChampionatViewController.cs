@@ -33,6 +33,13 @@ namespace AceStream
             NavigationController.NavigationBar.PrefersLargeTitles = true;
             NavigationItem.Title = title;
 
+            var imgBack = UIImage.FromFile("back.png");
+            NavigationController.NavigationBar.BackIndicatorImage = imgBack;
+            NavigationController.NavigationBar.TintColor = UIColor.Black;
+            NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
+            NavigationItem.LeftItemsSupplementBackButton = true;
+            NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
+            NavigationController.NavigationBar.Translucent = true;
             TableView.TableFooterView = new UIView(CGRect.Empty);
             TableView.RowHeight = 100;
         }
