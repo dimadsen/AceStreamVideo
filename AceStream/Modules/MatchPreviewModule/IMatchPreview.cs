@@ -1,4 +1,5 @@
 ﻿using AceStream.Dto;
+using AceStream.Dto.SettingsDto;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -19,6 +20,7 @@ namespace AceStream.Modules.MatchPreviewModule
     public interface IMatchPreviewInteractor
     {
         MatchPreviewDto[] GetMatches(int championatId);
+        MatchPreviewSettingsDto GetSettings(int championatId);
     }
 
     public interface IMatchPreviewRouter
@@ -28,7 +30,7 @@ namespace AceStream.Modules.MatchPreviewModule
 
     public interface IMatchPreviewView
     {
-        void SetSettings();
+        void SetSettings(MatchPreviewSettingsDto dto);
         void SetMatches(MatchPreviewDto[] matches);
     }
 }

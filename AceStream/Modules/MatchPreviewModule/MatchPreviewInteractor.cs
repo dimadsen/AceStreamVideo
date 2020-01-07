@@ -1,4 +1,5 @@
 ﻿using AceStream.Dto;
+using AceStream.Dto.SettingsDto;
 using AceStream.Services;
 
 namespace AceStream.Modules.MatchPreviewModule
@@ -17,6 +18,11 @@ namespace AceStream.Modules.MatchPreviewModule
         public MatchPreviewDto[] GetMatches(int championatId)
         {
             return _service.GetMatches(championatId);
+        }
+
+        public MatchPreviewSettingsDto GetSettings(int championatId)
+        {
+            return _service.GetSettings(championatId);
         }
     }
 }

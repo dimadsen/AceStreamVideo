@@ -1,4 +1,6 @@
-﻿namespace AceStream.Modules.MatchPreviewModule
+﻿using AceStream.Dto.SettingsDto;
+
+namespace AceStream.Modules.MatchPreviewModule
 {
     public class MatchPreviewPresenter : IMatchPreviewPresenter
     {
@@ -17,7 +19,7 @@
         public void ConfigureView()
         {
             _view.SetMatches(Interactor.GetMatches(ChampionatId));
-            _view.SetSettings();
+            _view.SetSettings(Interactor.GetSettings(ChampionatId));
         }
 
     }

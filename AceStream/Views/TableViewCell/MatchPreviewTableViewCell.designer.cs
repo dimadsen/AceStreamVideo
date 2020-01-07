@@ -10,7 +10,7 @@ using System.CodeDom.Compiler;
 
 namespace AceStream.Views.TableViewCell
 {
-    [Register ("MatchTableViewCell")]
+    [Register ("MatchPreviewTableViewCell")]
     partial class MatchPreviewTableViewCell
     {
         [Outlet]

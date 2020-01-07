@@ -1,5 +1,6 @@
 ﻿using System;
 using AceStream.Dto;
+using AceStream.Dto.SettingsDto;
 
 namespace AceStream.Services
 {
@@ -58,10 +59,35 @@ namespace AceStream.Services
             return matches;
 
         }
+
+        public MatchPreviewSettingsDto GetSettings(int championatId)
+        {
+            MatchPreviewSettingsDto settings = null;
+
+            if (championatId == 0)
+            {
+                settings = new MatchPreviewSettingsDto
+                {
+                    Image = "lolo_epl.png",
+                    Title = "Премьер-Лига"
+                };
+            }
+            else if (championatId == 1)
+            {
+                settings = new MatchPreviewSettingsDto
+                {
+                    Image = "seria-a.png",
+                    Title = "Серия А"
+                };
+            }
+
+            return settings;
+        }
     }
 
     public interface IMatchPreviewService
     {
         MatchPreviewDto[] GetMatches(int championatId);
+        MatchPreviewSettingsDto GetSettings(int championatId);
     }
 }

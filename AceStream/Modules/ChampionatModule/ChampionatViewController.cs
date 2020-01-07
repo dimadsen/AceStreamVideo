@@ -33,6 +33,7 @@ namespace AceStream
             NavigationController.NavigationBar.PrefersLargeTitles = true;
             NavigationItem.Title = title;
 
+            //установка индикатора "Назад"
             var imgBack = UIImage.FromFile("back.png");
             NavigationController.NavigationBar.BackIndicatorImage = imgBack;
             NavigationController.NavigationBar.TintColor = UIColor.Black;
@@ -40,6 +41,8 @@ namespace AceStream
             NavigationItem.LeftItemsSupplementBackButton = true;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
             NavigationController.NavigationBar.Translucent = true;
+
+            //Что бы не было лишних строк у таблицы
             TableView.TableFooterView = new UIView(CGRect.Empty);
             TableView.RowHeight = 100;
         }
@@ -56,6 +59,7 @@ namespace AceStream
             Presenter.Router.Prepare(segue, championatId);
         }
 
+        
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             //tableView.RegisterNibForCellReuse(ChampionatTableViewCell.Nib, "ChampionatTableViewCell"); 
