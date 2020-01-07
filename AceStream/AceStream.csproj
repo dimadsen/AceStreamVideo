@@ -133,6 +133,7 @@
         <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
+        <Folder Include="Dto\SettingsDto\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -201,6 +202,8 @@
         <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
         <Compile Include="Services\RegistrationService.cs" />
         <Compile Include="Dto\RegistrationDto.cs" />
+        <Compile Include="NavigationItemImage.cs" />
+        <Compile Include="Dto\SettingsDto\MatchPreviewSettingsDto.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -209,6 +212,10 @@
       <BundleResource Include="Resources\favorites.png" />
       <BundleResource Include="Resources\ace_stream_logo.png" />
       <BundleResource Include="Resources\close.png" />
+      <BundleResource Include="Resources\35_medium.png" />
+      <BundleResource Include="Resources\51_medium.png" />
+      <BundleResource Include="Resources\20170529013004!ФК_Мальмё.png" />
+      <BundleResource Include="Resources\Хобро_ФК_%28лого%29.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
