@@ -15,7 +15,7 @@ namespace AceStream.Views.TableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView Favorites { get; set; }
+        UIKit.UIButton Favorites { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,6 +36,10 @@ namespace AceStream.Views.TableViewCell
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView VisitorIcon { get; set; }
+
+        [Action ("AddToFavorites:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AddToFavorites (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {

@@ -83,6 +83,7 @@ namespace AceStream
             return cell;
 
         }
+
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             return _matches.Length;

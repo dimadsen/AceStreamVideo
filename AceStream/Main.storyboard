@@ -145,87 +145,78 @@
                             <outlet property="delegate" destination="5485" id="5488"/>
                         </connections>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9016" reuseIdentifier="MatchPreviewTableViewCell" customClass="MatchTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9016" reuseIdentifier="MatchPreviewTableViewCell" customClass="MatchPreviewTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9016" id="9017">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9136" translatesAutoresizingMaskIntoConstraints="NO" image="favorites.png">
-                                            <rect key="frame" x="2" y="33" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint id="14373" firstAttribute="height" constant="40"/>
-                                                <constraint id="14374" firstAttribute="width" constant="40"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="seria-a.png">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="Хобро_ФК_(лого).png">
                                             <rect key="frame" x="50" y="15" width="30" height="30"/>
                                             <constraints>
-                                                <constraint id="14375" firstAttribute="height" constant="30"/>
-                                                <constraint id="14376" firstAttribute="width" constant="30"/>
+                                                <constraint id="27038" firstAttribute="height" constant="30"/>
+                                                <constraint id="27039" firstAttribute="width" constant="30"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" image="lolo_epl.png">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" image="20170529013004!ФК_Мальмё.png">
                                             <rect key="frame" x="50" y="58" width="30" height="30"/>
                                             <constraints>
-                                                <constraint id="14379" firstAttribute="height" constant="30"/>
-                                                <constraint id="14380" firstAttribute="width" constant="30"/>
+                                                <constraint id="27051" firstAttribute="height" constant="30"/>
+                                                <constraint id="27052" firstAttribute="width" constant="30"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9755" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева">
-                                            <rect key="frame" x="94" y="20" width="207" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9755" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева" fixedFrame="YES">
+                                            <rect key="frame" x="88" y="20" width="160" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <constraints>
-                                                <constraint id="14383" firstAttribute="height" constant="21"/>
-                                                <constraint id="14384" firstAttribute="width" constant="207"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9840" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="94" y="62" width="207" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9840" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="88" y="62" width="160" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <constraints>
-                                                <constraint id="14387" firstAttribute="height" constant="21"/>
-                                                <constraint id="14388" firstAttribute="width" constant="207"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="322" y="39" width="53" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="259" y="42" width="51" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <constraints>
-                                                <constraint id="14391" firstAttribute="height" constant="21"/>
-                                                <constraint id="14392" firstAttribute="width" constant="53"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMinX="YES"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="26828" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="7" y="33" width="35" height="35"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <constraints>
+                                                <constraint id="27035" firstAttribute="height" constant="35"/>
+                                                <constraint id="27036" firstAttribute="width" constant="35"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="AddToFavorites:" destination="9016" id="30822" eventType="touchUpOutside"/>
+                                                <action selector="AddToFavorites:" destination="9016" id="31464" eventType="touchUpInside"/>
+                                            </connections>
+                                            <state key="normal" image="favorites.png"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="14371" firstItem="9136" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="3"/>
-                                        <constraint id="14372" firstItem="9136" firstAttribute="leading" secondItem="9017" secondAttribute="leading" constant="2"/>
-                                        <constraint id="14377" firstItem="9249" firstAttribute="leading" secondItem="9136" secondAttribute="trailing" constant="8"/>
-                                        <constraint id="14378" firstItem="9136" firstAttribute="centerY" secondItem="9249" secondAttribute="bottom" constant="8"/>
-                                        <constraint id="14381" firstItem="9502" firstAttribute="leading" secondItem="9136" secondAttribute="trailing" constant="8"/>
-                                        <constraint id="14382" firstItem="9502" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="23"/>
-                                        <constraint id="14385" firstItem="9755" firstAttribute="leading" secondItem="9249" secondAttribute="trailing" constant="14"/>
-                                        <constraint id="14386" firstItem="9755" firstAttribute="centerY" secondItem="9249" secondAttribute="centerY"/>
-                                        <constraint id="14389" firstItem="9840" firstAttribute="leading" secondItem="9502" secondAttribute="trailing" constant="14"/>
-                                        <constraint id="14390" firstItem="9840" firstAttribute="centerY" secondItem="9502" secondAttribute="centerY"/>
-                                        <constraint id="14393" firstItem="10009" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY"/>
-                                        <constraint id="14394" firstItem="10009" firstAttribute="leading" secondItem="9840" secondAttribute="trailing" constant="21"/>
+                                        <constraint id="27034" firstItem="26828" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY"/>
+                                        <constraint id="27037" firstItem="26828" firstAttribute="leading" secondItem="9017" secondAttribute="leading" constant="7"/>
+                                        <constraint id="27040" firstItem="9249" firstAttribute="leading" secondItem="26828" secondAttribute="trailing" constant="8"/>
+                                        <constraint id="27042" firstItem="26828" firstAttribute="centerY" secondItem="9249" secondAttribute="bottom" constant="5"/>
+                                        <constraint id="27053" firstItem="9502" firstAttribute="top" secondItem="9249" secondAttribute="bottom" constant="13"/>
+                                        <constraint id="27054" firstItem="9502" firstAttribute="leading" secondItem="26828" secondAttribute="trailing" constant="8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="Favorites" destination="9136" id="name-outlet-9136"/>
                                     <outlet property="HomeIcon" destination="9249" id="name-outlet-9249"/>
                                     <outlet property="VisitorIcon" destination="9502" id="name-outlet-9502"/>
                                     <outlet property="Home" destination="9755" id="name-outlet-9755"/>
                                     <outlet property="Visitor" destination="9840" id="name-outlet-9840"/>
                                     <outlet property="Time" destination="10009" id="name-outlet-10009"/>
+                                    <outlet property="Favorites" destination="26828" id="name-outlet-26828"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -233,7 +224,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5491" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2707" y="-411"/>
+            <point key="canvasLocation" x="2672" y="-408"/>
         </scene>
         <scene sceneID="16275">
             <objects>
@@ -455,9 +446,10 @@
     </scenes>
     <resources>
         <image name="lolo_epl.png" width="200" height="200"/>
-        <image name="seria-a.png" width="128" height="128"/>
         <image name="favorites.png" width="256" height="256"/>
         <image name="ace_stream_logo.png" width="128" height="128"/>
         <image name="close.png" width="128" height="128"/>
+        <image name="20170529013004!ФК_Мальмё.png" width="256" height="256"/>
+        <image name="Хобро_ФК_(лого).png" width="256" height="256"/>
     </resources>
 </document>

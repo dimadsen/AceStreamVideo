@@ -30,12 +30,14 @@ namespace AceStream.Views.TableViewCell
             Visitor.Text = dto.Visitor;
 
             Time.Text = dto.Time;
-
-            Favorites.Image = UIImage.FromFile("favorites.png");
-
+            
             HomeIcon.Image = UIImage.FromFile(dto.HomePicture);
             VisitorIcon.Image = UIImage.FromFile(dto.VisitorPicture);
         }
 
+        partial void AddToFavorites(UIButton sender)
+        {
+            
+        }
     }
 }
