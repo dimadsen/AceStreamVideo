@@ -37,7 +37,7 @@ namespace AceStream.Views.TableViewCell
 
         partial void AddToFavorites(UIButton sender)
         {
-            
+            Console.WriteLine(sender.Tag); 
         }
     }
 }

@@ -32,6 +32,7 @@ namespace AceStream
             ImageView.ClipsToBounds = true;
             ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
         }
+
         public static void ActivateConstraints(UINavigationBar navigationBar)
         {
             NSLayoutConstraint.ActivateConstraints(new NSLayoutConstraint[]

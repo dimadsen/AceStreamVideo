@@ -21,11 +21,30 @@ namespace AceStream.Modules.LoginModule
             base.ViewDidLoad();
 
             Presenter.ConfigureView();
+
+            
         }
 
         public void SetSettings()
         {
             //throw new NotImplementedException();
+        }
+
+
+        public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+        {
+            if (segueIdentifier == "ToChampionats" && !User.IsAuthorized)
+            {
+                var alertController = UIAlertController.Create("Ошибка",
+                "Неправильный логин или пароль", UIAlertControllerStyle.Alert);
+
+                alertController.AddAction(UIAlertAction.Create("ОК", UIAlertActionStyle.Default, action => { }));
+
+                PresentViewController(alertController, true, null);
+
+                return false;
+            }
+            return true;
         }
 
         partial void SignIn(UIButton sender)
@@ -44,23 +63,6 @@ namespace AceStream.Modules.LoginModule
                 User.IsAuthorized = true;
             }
         }
-
-        public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
-        {
-            if (segueIdentifier == "ToChampionats" && !User.IsAuthorized)
-            {
-                var alertController = UIAlertController.Create("Ошибка",
-                "Неправильный логин или пароль", UIAlertControllerStyle.Alert);
-
-                alertController.AddAction(UIAlertAction.Create("ОК", UIAlertActionStyle.Default, action => { }));
-
-                PresentViewController(alertController, true, null);
-
-                return false;
-            }
-            return true;
-        }
-                
     }
 }
 

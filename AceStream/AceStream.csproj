@@ -133,13 +133,13 @@
         <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
+        <Folder Include="Modules\MatchModele\" />
         <Folder Include="Dto\SettingsDto\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
-        <InterfaceDefinition Include="Views\TableViewCell\ChampionatTableViewCell.xib" />
-        <InterfaceDefinition Include="Views\TableViewCell\MatchPreviewTableViewCell.xib" />
+        <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -202,8 +202,20 @@
         <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
         <Compile Include="Services\RegistrationService.cs" />
         <Compile Include="Dto\RegistrationDto.cs" />
+        <Compile Include="Modules\MatchModele\MatchViewController.cs" />
+        <Compile Include="Modules\MatchModele\MatchViewController.designer.cs">
+          <DependentUpon>MatchViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\TableViewCell\SquardTableViewCell.cs" />
+        <Compile Include="Views\TableViewCell\SquardTableViewCell.designer.cs">
+          <DependentUpon>SquardTableViewCell.cs</DependentUpon>
+        </Compile>
         <Compile Include="NavigationItemImage.cs" />
         <Compile Include="Dto\SettingsDto\MatchPreviewSettingsDto.cs" />
+        <Compile Include="Views\TableViewCell\AceLinkTableViewCell.cs" />
+        <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
+          <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -216,6 +228,11 @@
       <BundleResource Include="Resources\51_medium.png" />
       <BundleResource Include="Resources\20170529013004!ФК_Мальмё.png" />
       <BundleResource Include="Resources\Хобро_ФК_%28лого%29.png" />
+      <BundleResource Include="Resources\aston.jpeg" />
+      <BundleResource Include="Resources\lester.jpeg" />
+      <BundleResource Include="Resources\chanp.jpg" />
+      <BundleResource Include="Resources\1417200695_1.jpg" />
+      <BundleResource Include="Resources\icon_14.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

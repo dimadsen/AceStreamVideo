@@ -15,7 +15,7 @@ namespace AceStream.Views.TableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Favorites { get; set; }
+        public UIKit.UIButton Favorites { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
