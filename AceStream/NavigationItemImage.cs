@@ -4,34 +4,35 @@ using UIKit;
 
 namespace AceStream
 {
-    public class NavigationItemImage
+    public static class NavigationItemImage
     {
-        public static float ImageSizeForLargeState => 40;
+        private static float ImageSizeForLargeState => 40;
 
-        public static float ImageRightMargin => 16;
+        private static float ImageRightMargin => 16;
 
-        public static float ImageBottomMarginForLargeState => 12;
+        private static float ImageBottomMarginForLargeState => 12;
 
-        public static float ImageBottomMarginForSmallState => 6;
+        private static float ImageBottomMarginForSmallState => 6;
 
-        public static float ImageSizeForSmallState => 32;
+        private static float ImageSizeForSmallState => 32;
 
-        public static float NavBarHeightSmallState => 44;
+        private static float NavBarHeightSmallState => 44;
 
-        public static float NavBarHeightLargeState => 96.5f;
+        private static float NavBarHeightLargeState => 96.5f;
 
-        public UIImageView ImageView { get; set; }
+        public static UIImageView ImageView { get; set; }
 
-        public NavigationItemImage(string image)
+        public static readonly nint Tag = 1;
+                
+        static NavigationItemImage()
         {
-            ImageView = new UIImageView(UIImage.FromFile(image));
-
+            ImageView = new UIImageView { Tag = Tag };
+            
             ImageView.Layer.CornerRadius = ImageSizeForLargeState / 2;
             ImageView.ClipsToBounds = true;
             ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
         }
-
-        public void ActivateConstraints(UINavigationBar navigationBar)
+        public static void ActivateConstraints(UINavigationBar navigationBar)
         {
             NSLayoutConstraint.ActivateConstraints(new NSLayoutConstraint[]
             {
@@ -42,12 +43,17 @@ namespace AceStream
             });
         }
 
-        public void ShowImage(bool show)
+        public static void ShowImage()
         {
-            UIView.Animate(0.2, () => { ImageView.Alpha = show ? 1.0f : 0.0f; });
+            ImageView.Hidden = false;
         }
 
-        public void MoveAndResizeImage(nfloat height)
+        public static void HiddenImage()
+        {
+            ImageView.Hidden = true;
+        }
+
+        public static void MoveAndResizeImage(nfloat height)
         {
             var coefficient = CalcCoefficient(height);
 
@@ -63,7 +69,7 @@ namespace AceStream
             ImageView.Transform = SetTransform(scale, xTranslation, yTranslation);
         }
 
-        private nfloat CalcCoefficient(nfloat height)
+        private static nfloat CalcCoefficient(nfloat height)
         {
             var delta = height - NavBarHeightSmallState;
             var heightDifferenceBetweenStates = NavBarHeightLargeState - NavBarHeightSmallState;
@@ -73,7 +79,7 @@ namespace AceStream
             return coefficient;
         }
 
-        private nfloat CalcScale(nfloat coefficient, nfloat factor)
+        private static nfloat CalcScale(nfloat coefficient, nfloat factor)
         {
             var sizeAddendumFactor = coefficient * (1.0 - factor);
 
@@ -82,7 +88,7 @@ namespace AceStream
             return scale;
         }
 
-        private nfloat CalcYTranslation(nfloat coefficient, double sizeDiff)
+        private static nfloat CalcYTranslation(nfloat coefficient, double sizeDiff)
         {
             var maxYTranslation = ImageBottomMarginForLargeState - ImageBottomMarginForSmallState + sizeDiff;
             var max = Math.Max(0, Math.Min(maxYTranslation, maxYTranslation - coefficient * (ImageBottomMarginForSmallState + sizeDiff)));
@@ -92,7 +98,7 @@ namespace AceStream
             return yTranslation;
         }
 
-        private CGAffineTransform SetTransform(nfloat scale, nfloat xTranslation, nfloat yTranslation)
+        private static CGAffineTransform SetTransform(nfloat scale, nfloat xTranslation, nfloat yTranslation)
         {
             var transform = CGAffineTransform.MakeIdentity();
             transform.Scale(scale, scale);

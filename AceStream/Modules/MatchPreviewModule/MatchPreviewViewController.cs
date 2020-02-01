@@ -14,7 +14,6 @@ namespace AceStream
         public IMatchPreviewPresenter Presenter { get; set; }
         public IMatchPreviewConfigurator Configurator { get; set; }
 
-        private NavigationItemImage _champImage;
         private MatchPreviewDto[] _matches;
 
         public MatchPreviewViewController(IntPtr handle) : base(handle)
@@ -28,30 +27,25 @@ namespace AceStream
             base.ViewDidLoad();
 
             Presenter.ConfigureView();
-        }        
+        }
 
         public override void ViewWillDisappear(bool animated)
         {
-            base.ViewWillDisappear(animated);
-
-            _champImage.ShowImage(show: false);
+            NavigationItemImage.HiddenImage();
         }
 
         public override void ViewDidAppear(bool animated)
         {
-            base.ViewDidAppear(animated);
-
-            _champImage.ShowImage(show: true);
+            NavigationItemImage.ShowImage();
         }
 
         public void SetSettings(MatchPreviewSettingsDto dto)
         {
             NavigationItem.Title = dto.Title;
 
-            _champImage = new NavigationItemImage(dto.Image);
+            var champImage = (UIImageView)NavigationController.NavigationBar.ViewWithTag(NavigationItemImage.Tag);
 
-            NavigationController.NavigationBar.AddSubview(_champImage.ImageView);
-            _champImage.ActivateConstraints(NavigationController.NavigationBar);
+            champImage.Image = UIImage.FromFile(dto.Image);
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
         }
@@ -61,7 +55,7 @@ namespace AceStream
         {
             var height = NavigationController.NavigationBar.Frame.Height;
 
-            _champImage.MoveAndResizeImage(height);
+            NavigationItemImage.MoveAndResizeImage(height);
         }
 
         public void SetMatches(MatchPreviewDto[] matches)
@@ -77,6 +71,8 @@ namespace AceStream
 
             if (cell == null)
                 cell = new MatchPreviewTableViewCell(new NSString("MatchPreviewTableViewCell"));
+
+            cell.Favorites.Tag = indexPath.Row;
 
             cell.UpdateCell(_matches[indexPath.Row]);
 

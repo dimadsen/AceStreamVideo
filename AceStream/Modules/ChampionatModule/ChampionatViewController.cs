@@ -30,21 +30,16 @@ namespace AceStream
 
         public void SetSettings(string title)
         {            
-            NavigationController.NavigationBar.PrefersLargeTitles = true;
             NavigationItem.Title = title;
 
-            //установка индикатора "Назад"
-            var imgBack = UIImage.FromFile("back.png");
-            NavigationController.NavigationBar.BackIndicatorImage = imgBack;
-            NavigationController.NavigationBar.TintColor = UIColor.Black;
-            NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
-            NavigationItem.LeftItemsSupplementBackButton = true;
-            NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
-            NavigationController.NavigationBar.Translucent = true;
+            SetBackIndicator();
 
             //Что бы не было лишних строк у таблицы
             TableView.TableFooterView = new UIView(CGRect.Empty);
             TableView.RowHeight = 100;
+
+            NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
+            NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
         }
 
         public void SetChampionats(ChampionatDto[] championats)
@@ -58,7 +53,6 @@ namespace AceStream
 
             Presenter.Router.Prepare(segue, championatId);
         }
-
         
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
@@ -77,6 +71,20 @@ namespace AceStream
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             return _championats.Length;
+        }
+
+        /// <summary>
+        /// Установка индикатора "Назад"
+        /// </summary>
+        private void SetBackIndicator()
+        {
+            var imgBack = UIImage.FromFile("back.png");
+            NavigationController.NavigationBar.BackIndicatorImage = imgBack;
+            NavigationController.NavigationBar.TintColor = UIColor.Black;
+            NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
+            NavigationItem.LeftItemsSupplementBackButton = true;
+            NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
+            NavigationController.NavigationBar.Translucent = true;
         }
     }
 }
