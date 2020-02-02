@@ -29,6 +29,13 @@ namespace AceStream
             Presenter.ConfigureView();
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            var matchId = TableView.IndexPathForCell(sender as UITableViewCell).Row;
+
+            Presenter.Router.Prepare(segue, matchId);
+        }
+
         public override void ViewWillDisappear(bool animated)
         {
             NavigationItemImage.HiddenImage();

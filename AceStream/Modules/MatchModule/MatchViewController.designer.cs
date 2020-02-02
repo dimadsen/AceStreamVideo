@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace AceStream.Modules.MatchModele
+namespace AceStream.Modules.MatchModule
 {
     [Register ("MatchViewController")]
     partial class MatchViewController

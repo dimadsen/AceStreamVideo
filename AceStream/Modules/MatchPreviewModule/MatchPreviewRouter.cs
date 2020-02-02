@@ -1,4 +1,7 @@
-﻿namespace AceStream.Modules.MatchPreviewModule
+﻿using AceStream.Modules.MatchModule;
+using UIKit;
+
+namespace AceStream.Modules.MatchPreviewModule
 {
     public class MatchPreviewRouter : IMatchPreviewRouter
     {
@@ -7,6 +10,13 @@
         public MatchPreviewRouter(MatchPreviewViewController viewController)
         {
             _viewController = viewController;
+        }
+
+        public void Prepare(UIStoryboardSegue segue, int matchId)
+        {
+            var matchViewController = segue.DestinationViewController as MatchViewController;
+
+            matchViewController.Presenter.MatchId = matchId;
         }
     }
 }

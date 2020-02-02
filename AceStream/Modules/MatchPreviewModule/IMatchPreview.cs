@@ -1,5 +1,6 @@
 ﻿using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
+using UIKit;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -25,7 +26,7 @@ namespace AceStream.Modules.MatchPreviewModule
 
     public interface IMatchPreviewRouter
     {
-
+        void Prepare(UIStoryboardSegue segue, int matchId);
     }
 
     public interface IMatchPreviewView

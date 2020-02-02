@@ -133,7 +133,7 @@
         <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
-        <Folder Include="Modules\MatchModele\" />
+        <Folder Include="Modules\MatchModule\" />
         <Folder Include="Dto\SettingsDto\" />
     </ItemGroup>
     <ItemGroup>
@@ -202,8 +202,8 @@
         <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
         <Compile Include="Services\RegistrationService.cs" />
         <Compile Include="Dto\RegistrationDto.cs" />
-        <Compile Include="Modules\MatchModele\MatchViewController.cs" />
-        <Compile Include="Modules\MatchModele\MatchViewController.designer.cs">
+        <Compile Include="Modules\MatchModule\MatchViewController.cs" />
+        <Compile Include="Modules\MatchModule\MatchViewController.designer.cs">
           <DependentUpon>MatchViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="Views\TableViewCell\SquardTableViewCell.cs" />
@@ -216,6 +216,13 @@
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
           <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
         </Compile>
+        <Compile Include="Modules\MatchModule\IMatch.cs" />
+        <Compile Include="Modules\MatchModule\MatchRouter.cs" />
+        <Compile Include="Modules\MatchModule\MatchInteractor.cs" />
+        <Compile Include="Modules\MatchModule\MatchPresenter.cs" />
+        <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
+        <Compile Include="Dto\MatchDto.cs" />
+        <Compile Include="Services\MatchService.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
