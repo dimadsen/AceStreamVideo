@@ -156,14 +156,14 @@ namespace AceStream.Modules.MatchModule
         public nint NumberOfSections(UITableView tableView)
         {
             //По умолчанию одна секция
-            nint number = 1;
+            nint sectionCount = 1;
 
             if (SegmentedControl.SelectedSegment.IsSquards())
             {
-                number = _titles.Length;
+                sectionCount = _titles.Length;
             }
 
-            return number;
+            return sectionCount;
         }
 
         /// <summary>
@@ -171,18 +171,18 @@ namespace AceStream.Modules.MatchModule
         /// </summary>
         public nint RowsInSection(UITableView tableView, nint section)
         {
-            nint rows = 0;
+            nint rowsInSection = 0;
 
             if (SegmentedControl.SelectedSegment.IsSquards())
             {
-                rows = CountPlayerOfSection((int)section);
+                rowsInSection = CountPlayerOfSection((int)section);
             }
             else if (SegmentedControl.SelectedSegment.IsBroadCasts())
             {
-                rows = _match.Links.Count;
+                rowsInSection = _match.Links.Count;
             }
 
-            return rows;
+            return rowsInSection;
         }
 
         /// <summary>
