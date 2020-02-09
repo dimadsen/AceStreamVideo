@@ -136,6 +136,7 @@
         <Folder Include="Modules\MatchModule\" />
         <Folder Include="Dto\SettingsDto\" />
         <Folder Include="Modules\VideoModule\" />
+        <Folder Include="Extansions\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -224,7 +225,7 @@
         <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
         <Compile Include="Dto\MatchDto.cs" />
         <Compile Include="Services\MatchService.cs" />
-        <Compile Include="Dto\SquardDto.cs" />
+        <Compile Include="Dto\PlayerDto.cs" />
         <Compile Include="Dto\LinkDto.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.designer.cs">
@@ -233,6 +234,8 @@
         <Compile Include="Modules\VideoModule\IVideo.cs" />
         <Compile Include="Modules\VideoModule\VideoConfigurator.cs" />
         <Compile Include="Modules\VideoModule\VideoPresenter.cs" />
+        <Compile Include="Dto\TeamDto.cs" />
+        <Compile Include="Extansions\TeamExtansion.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />

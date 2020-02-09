@@ -1,5 +1,4 @@
-﻿using System;
-namespace AceStream.Modules.MatchModule
+﻿namespace AceStream.Modules.MatchModule
 {
     public class MatchPresenter : IMatchPresenter
     {
@@ -17,8 +16,9 @@ namespace AceStream.Modules.MatchModule
 
         public void ConfigureView()
         {
-            _view.SetSettings();
+            _view.SetTableSquard();
             _view.SetMatch(Interactor.GetMatch(MatchId));
+            _view.SetSettings();
         }
     }
 }

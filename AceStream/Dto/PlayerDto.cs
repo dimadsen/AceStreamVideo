@@ -1,6 +1,6 @@
 ﻿namespace AceStream.Dto
 {
-    public class SquardDto
+    public class PlayerDto
     {
         public string FirstName { get; set; }
 
@@ -8,6 +8,8 @@
 
         public string Number { get; set; }
 
-        public string Flag { get; set; }
+        public string Flag { get; set; }       
     }
+
+    
 }

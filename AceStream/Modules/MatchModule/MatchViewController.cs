@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AceStream.Dto;
+using AceStream.Extansions;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
@@ -13,6 +16,8 @@ namespace AceStream.Modules.MatchModule
         public IMatchConfigurator Configurator { get; set; }
 
         private MatchDto _match;
+        private string[] _titles;
+
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
@@ -22,84 +27,19 @@ namespace AceStream.Modules.MatchModule
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
-
             Presenter.ConfigureView();
 
-            SegmentedControl.ValueChanged += (sender, e) =>
-            {
-                switch (SegmentedControl.SelectedSegment)
-                {
-                    case 0:
-                        {
-                            ControlTableView.AllowsSelection = false;
-                            ControlTableView.ReloadData();
-                            break;
-                        }
-                    case 1:
-                        {
-                            ControlTableView.AllowsSelection = true;
-                            ControlTableView.ReloadData();
-                            break;
-                        }
-                }
-            };
-        }
+            SegmentedControl.ValueChanged += ValueChanged;
+        }        
 
-        public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
-        {
-            switch (SegmentedControl.SelectedSegment)
-            {
-                case 0:
-                    {
-                        tableView.RegisterNibForCellReuse(SquardTableViewCell.Nib, "SquardTableViewCell");
-                        var squardCell = tableView.DequeueReusableCell(SquardTableViewCell.Key) as SquardTableViewCell;
-
-                        ControlTableView.AllowsSelection = false; //Отключает кликабельность cell
-
-                        squardCell.UpdateCell(_match.HomeSquard[indexPath.Row], _match.VisitorSquard[indexPath.Row]);
-                        return squardCell;
-                    }
-
-                case 1:
-                    {
-                        var linksCell = tableView.DequeueReusableCell(AceLinkTableViewCell.Key) as AceLinkTableViewCell;
-
-                        ControlTableView.AllowsSelection = true;
-
-                        linksCell.UpdateCell(_match.Links[indexPath.Row]);
-                        return linksCell;
-                    }
-
-                default:
-                    throw new Exception("Не могу выбрать cell");
-            }
-
-        }
-
-        public nint RowsInSection(UITableView tableView, nint section)
-        {
-            switch (SegmentedControl.SelectedSegment)
-            {
-                case 0:
-                    {
-                        return 11;
-                    }
-                case 1:
-                    {
-                        return _match.Links.Count;
-                    }
-
-                default:
-                    throw new Exception("Не смог определеть количетсво строк");
-            }
-        }
+        #region Инициализация компонентов view
 
         public void SetSettings()
         {
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
 
             ControlTableView.DataSource = this;
+            ControlTableView.Bounces = false;
 
             Score.AdjustsFontForContentSizeCategory = true;
             Score.AdjustsFontSizeToFitWidth = true;
@@ -126,6 +66,11 @@ namespace AceStream.Modules.MatchModule
             Date.Text = match.Date.ToString("d/M/yyyy HH:mm");
         }
 
+        public void SetTableSquard()
+        {
+            _titles = new string[] { "Стартовые составы", "Замены" };
+        }
+
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             var linkRow = ControlTableView.IndexPathForCell(sender as AceLinkTableViewCell).Row;
@@ -134,6 +79,166 @@ namespace AceStream.Modules.MatchModule
 
             Presenter.Router.Prepare(segue, link);
         }
+
+        #endregion
+
+        #region Инициализация ячеек
+
+        public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            UITableViewCell cell = null;
+
+            if (SegmentedControl.SelectedSegment.IsSquards())
+            {
+                cell = GetSquardCell(tableView, indexPath);
+            }
+            else if (SegmentedControl.SelectedSegment.IsBroadCasts())
+            {
+                cell = GetBroadcastCell(tableView, indexPath);
+            }
+
+            return cell;
+        }
+
+        private UITableViewCell GetSquardCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            tableView.RegisterNibForCellReuse(SquardTableViewCell.Nib, "SquardTableViewCell");
+            var cell = tableView.DequeueReusableCell(SquardTableViewCell.Key) as SquardTableViewCell;
+
+            ControlTableView.AllowsSelection = false; //Отключает кликабельность cell
+
+            if (indexPath.Section.IsStartings())
+            {
+                cell.UpdateCell(_match.HomeSquard.Startings[indexPath.Row], _match.VisitorSquard.Startings[indexPath.Row]);
+            }
+            else if (indexPath.Section.IsSubstitutes())
+            {
+                var homePlayer = GetPlayer(_match.HomeSquard.Substitutes, indexPath.Row);
+
+                var visitorPlayer = GetPlayer(_match.VisitorSquard.Substitutes, indexPath.Row);
+                cell.UpdateCell(homePlayer, visitorPlayer);
+            }
+
+            return cell;
+        }
+
+        private UITableViewCell GetBroadcastCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            var cell = tableView.DequeueReusableCell(AceLinkTableViewCell.Key) as AceLinkTableViewCell;
+
+            ControlTableView.AllowsSelection = true;
+
+            cell.UpdateCell(_match.Links[indexPath.Row]);
+
+            return cell;
+        }
+
+        /// <summary>
+        /// У команд может быть разное количество запасных игроков. Норма, если в массиве не нашёл
+        /// </summary>
+        private PlayerDto GetPlayer(List<PlayerDto> players, int row)
+        {
+            PlayerDto player = null;
+
+            try
+            {
+                player = players[row];
+            }
+            catch (ArgumentOutOfRangeException) { }
+
+            return player;
+        }
+
+        /// <summary>
+        /// Количество секций
+        /// </summary>
+        [Export("numberOfSectionsInTableView:")]
+        public nint NumberOfSections(UITableView tableView)
+        {
+            //По умолчанию одна секция
+            nint number = 1;
+
+            if (SegmentedControl.SelectedSegment.IsSquards())
+            {
+                number = _titles.Length;
+            }
+
+            return number;
+        }
+
+        /// <summary>
+        /// Отображает количество строк в секции
+        /// </summary>
+        public nint RowsInSection(UITableView tableView, nint section)
+        {
+            nint rows = 0;
+
+            if (SegmentedControl.SelectedSegment.IsSquards())
+            {
+                rows = CountPlayerOfSection((int)section);
+            }
+            else if (SegmentedControl.SelectedSegment.IsBroadCasts())
+            {
+                rows = _match.Links.Count;
+            }
+
+            return rows;
+        }
+
+        /// <summary>
+        /// Определяет количество игроков в отображаемой секции.
+        /// В основе всегда 11, но запас может иметь разное количество игроков. Количество запасных у каждой команды тоже может отличаться.
+        /// Поэтому нужно выделить количество ячеек по максимальной длине состава
+        /// </summary>
+        public nint CountPlayerOfSection(int section)
+        {
+            if (section.IsSubstitutes())
+            {
+                var subHomeCount = _match.HomeSquard.Substitutes.Count;
+                var subVisitorCount = _match.VisitorSquard.Substitutes.Count;
+
+                return Math.Max(subHomeCount, subVisitorCount);
+            }
+
+            return 11;
+        }
+
+        /// <summary>
+        /// Выбирает название секции
+        /// </summary>
+        [Export("tableView:titleForHeaderInSection:")]
+        public string TitleForHeader(UITableView tableView, nint section)
+        {
+            string title = null;
+
+            ///Пока только таблицу с составами разбиваем на секции
+            if (SegmentedControl.SelectedSegment.IsSquards())
+            {
+                title = _titles[section];
+            }
+
+            return title;
+        }
+
+        #endregion
+
+        #region Событие переключения сегментов
+        private void ValueChanged(object sender, EventArgs e)
+        {
+            if (SegmentedControl.SelectedSegment.IsSquards())
+            {
+                ControlTableView.AllowsSelection = false;
+                ControlTableView.Bounces = false;
+                ControlTableView.ReloadData();
+            }
+            else if (SegmentedControl.SelectedSegment.IsBroadCasts())
+            {
+                ControlTableView.AllowsSelection = true;
+                ControlTableView.Bounces = true;
+                ControlTableView.ReloadData();
+            }
+        }
+        #endregion
     }
 }
 

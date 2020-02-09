@@ -29,7 +29,9 @@ namespace AceStream.Modules.MatchModule
 
     public interface IMatchView
     {
+        void SetTableSquard();
         void SetSettings();
         void SetMatch(MatchDto dto);
+        
     }
 }

@@ -43,12 +43,12 @@ namespace AceStream.Dto
         /// <summary>
         /// Состав хозяев
         /// </summary>
-        public List<SquardDto> HomeSquard { get; set; }
+        public TeamDto HomeSquard { get; set; }
 
         /// <summary>
         /// Состав гостей
         /// </summary>
-        public List<SquardDto> VisitorSquard { get; set; }
+        public TeamDto VisitorSquard { get; set; }
 
         /// <summary>
         /// Ссылки на трансляции

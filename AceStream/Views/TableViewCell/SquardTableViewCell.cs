@@ -17,22 +17,22 @@ namespace AceStream.Views.TableViewCell
 
         protected SquardTableViewCell(IntPtr handle) : base(handle)
         {
-            
+
         }
         public SquardTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
 
         }
 
-        public void UpdateCell(SquardDto homePlayer, SquardDto visitorPlayer)
+        public void UpdateCell(PlayerDto homePlayer, PlayerDto visitorPlayer)
         {
-            HomeNumber.Text = homePlayer.Number;
-            HomeName.Text = $"{homePlayer.LastName} {homePlayer.FirstName[0]}.";
-            HomeFlag.Image = UIImage.FromFile(homePlayer.Flag);
+            HomeNumber.Text = homePlayer?.Number;
+            HomeName.Text = homePlayer != null ? $"{homePlayer.LastName} {homePlayer.FirstName[0]}." : null;
+            HomeFlag.Image = homePlayer != null ? UIImage.FromFile(homePlayer?.Flag) : null;
 
-            VisitorNumber.Text = visitorPlayer.Number;
-            VisitorName.Text = $"{visitorPlayer.LastName} {visitorPlayer.FirstName[0]}.";
-            VisitorFlag.Image = UIImage.FromFile(visitorPlayer.Flag);
+            VisitorNumber.Text = visitorPlayer?.Number;
+            VisitorName.Text = visitorPlayer != null ? $"{visitorPlayer.LastName} {visitorPlayer.FirstName[0]}." : null;
+            VisitorFlag.Image = visitorPlayer != null ? UIImage.FromFile(visitorPlayer.Flag) : null;
         }
     }
 }
