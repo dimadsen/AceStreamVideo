@@ -72,8 +72,6 @@ namespace AceStream
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            //tableView.RegisterNibForCellReuse(MatchPreviewTableViewCell.Nib, "MatchPreviewTableViewCell");
-
             var cell = tableView.DequeueReusableCell("MatchPreviewTableViewCell") as MatchPreviewTableViewCell;
 
             if (cell == null)

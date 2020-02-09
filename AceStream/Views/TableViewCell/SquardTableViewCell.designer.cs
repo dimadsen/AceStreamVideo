@@ -15,13 +15,40 @@ namespace AceStream.Views.TableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Number { get; set; }
+        UIKit.UILabel HomeName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel HomeNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel VisitorName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel VisitorNumber { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (Number != null) {
-                Number.Dispose ();
-                Number = null;
+            if (HomeName != null) {
+                HomeName.Dispose ();
+                HomeName = null;
+            }
+
+            if (HomeNumber != null) {
+                HomeNumber.Dispose ();
+                HomeNumber = null;
+            }
+
+            if (VisitorName != null) {
+                VisitorName.Dispose ();
+                VisitorName = null;
+            }
+
+            if (VisitorNumber != null) {
+                VisitorNumber.Dispose ();
+                VisitorNumber = null;
             }
         }
     }

@@ -58,7 +58,10 @@
             </tableViewCellContentView>
             <point key="canvasLocation" x="-110" y="-66"/>
             <connections>
-                <outlet property="Number" destination="304" id="name-outlet-304"/>
+                <outlet property="HomeNumber" destination="304" id="name-outlet-304"/>
+                <outlet property="HomeName" destination="1313" id="name-outlet-1313"/>
+                <outlet property="VisitorNumber" destination="7541" id="name-outlet-7541"/>
+                <outlet property="VisitorName" destination="9466" id="name-outlet-9466"/>
             </connections>
         </tableViewCell>
     </objects>

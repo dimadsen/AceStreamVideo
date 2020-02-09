@@ -546,6 +546,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue id="46021" destination="45973" kind="presentation"/>
+                                            <outlet property="Channel" destination="46786" id="name-outlet-46786"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -556,6 +557,12 @@
                         <outlet property="Score" destination="32066" id="name-outlet-32066"/>
                         <outlet property="SegmentedControl" destination="37218" id="name-outlet-37218"/>
                         <outlet property="ControlTableView" destination="40357" id="name-outlet-40357"/>
+                        <outlet property="HomePicture" destination="32068" id="name-outlet-32068"/>
+                        <outlet property="Home" destination="32063" id="name-outlet-32063"/>
+                        <outlet property="VisitorPicture" destination="32069" id="name-outlet-32069"/>
+                        <outlet property="Visitor" destination="32064" id="name-outlet-32064"/>
+                        <outlet property="Half" destination="32067" id="name-outlet-32067"/>
+                        <outlet property="Date" destination="32065" id="name-outlet-32065"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31886" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,5 +1,5 @@
 ﻿using System;
-
+using AceStream.Dto;
 using Foundation;
 using UIKit;
 
@@ -22,6 +22,12 @@ namespace AceStream.Views.TableViewCell
 
         public AceLinkTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
+
+        }
+
+        public void UpdateCell(LinkDto dto)
+        {
+            Channel.Text = dto.Name;
 
         }
     }

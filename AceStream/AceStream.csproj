@@ -223,6 +223,8 @@
         <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
         <Compile Include="Dto\MatchDto.cs" />
         <Compile Include="Services\MatchService.cs" />
+        <Compile Include="Dto\SquardDto.cs" />
+        <Compile Include="Dto\LinkDto.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -240,6 +242,8 @@
       <BundleResource Include="Resources\chanp.jpg" />
       <BundleResource Include="Resources\1417200695_1.jpg" />
       <BundleResource Include="Resources\icon_14.png" />
+      <BundleResource Include="Resources\bourenm.png" />
+      <BundleResource Include="Resources\west.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace AceStream.Dto
 {
     public class MatchDto
@@ -37,5 +39,20 @@ namespace AceStream.Dto
         /// Тайм
         /// </summary>
         public string Half { get; set; }
+
+        /// <summary>
+        /// Состав хозяев
+        /// </summary>
+        public List<SquardDto> HomeSquard { get; set; }
+
+        /// <summary>
+        /// Состав гостей
+        /// </summary>
+        public List<SquardDto> VisitorSquard { get; set; }
+
+        /// <summary>
+        /// Ссылки на трансляции
+        /// </summary>
+        public List<LinkDto> Links { get; set; }
     }
 }

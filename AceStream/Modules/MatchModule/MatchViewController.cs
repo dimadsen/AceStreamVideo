@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using AceStream.Dto;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
@@ -13,6 +12,7 @@ namespace AceStream.Modules.MatchModule
         public IMatchPresenter Presenter { get; set; }
         public IMatchConfigurator Configurator { get; set; }
 
+        private MatchDto _match;
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
@@ -25,7 +25,6 @@ namespace AceStream.Modules.MatchModule
             base.ViewDidLoad();
 
             Presenter.ConfigureView();
-
 
             SegmentedControl.ValueChanged += (sender, e) =>
             {
@@ -42,12 +41,10 @@ namespace AceStream.Modules.MatchModule
                             ControlTableView.AllowsSelection = true;
                             ControlTableView.ReloadData();
                             break;
-
                         }
                 }
             };
         }
-
 
         public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
@@ -58,15 +55,19 @@ namespace AceStream.Modules.MatchModule
                         tableView.RegisterNibForCellReuse(SquardTableViewCell.Nib, "SquardTableViewCell");
                         var squardCell = tableView.DequeueReusableCell(SquardTableViewCell.Key) as SquardTableViewCell;
 
-                        ControlTableView.AllowsSelection = false;
+                        ControlTableView.AllowsSelection = false; //Отключает кликабельность cell
+
+                        squardCell.UpdateCell(_match.HomeSquard[indexPath.Row], _match.VisitorSquard[indexPath.Row]);
                         return squardCell;
                     }
-                    
+
                 case 1:
                     {
                         var linksCell = tableView.DequeueReusableCell(AceLinkTableViewCell.Key) as AceLinkTableViewCell;
 
                         ControlTableView.AllowsSelection = true;
+
+                        linksCell.UpdateCell(_match.Links[indexPath.Row]);
                         return linksCell;
                     }
 
@@ -78,7 +79,20 @@ namespace AceStream.Modules.MatchModule
 
         public nint RowsInSection(UITableView tableView, nint section)
         {
-            return 3;
+            switch (SegmentedControl.SelectedSegment)
+            {
+                case 0:
+                    {
+                        return 11;
+                    }
+                case 1:
+                    {
+                        return _match.Links.Count;
+                    }
+
+                default:
+                    throw new Exception("Не смог определеть количетсво строк");
+            }
         }
 
         public void SetSettings()
@@ -95,10 +109,21 @@ namespace AceStream.Modules.MatchModule
             ControlTableView.TableFooterView = new UIView(CGRect.Empty);
 
         }
-        
-        public void SetMatch(MatchDto dto)
+
+        public void SetMatch(MatchDto match)
         {
-            throw new NotImplementedException();
+            _match = match;
+
+            Home.Text = match.Home;
+            HomePicture.Image = UIImage.FromFile(match.ImageHome);
+
+            Visitor.Text = match.Visitor;
+            VisitorPicture.Image = UIImage.FromFile(match.ImageVisitor);
+
+            Score.Text = match.Score;
+            Half.Text = match.Half;
+
+            Date.Text = match.Date.ToString("d/M/yyyy HH:mm");
         }
     }
 }

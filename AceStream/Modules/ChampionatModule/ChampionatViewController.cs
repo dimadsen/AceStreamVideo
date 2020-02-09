@@ -56,8 +56,6 @@ namespace AceStream
         
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            //tableView.RegisterNibForCellReuse(ChampionatTableViewCell.Nib, "ChampionatTableViewCell"); 
-
             var cell = tableView.DequeueReusableCell("ChampionatTableViewCell") as ChampionatTableViewCell;
 
             if (cell == null)
