@@ -62,6 +62,8 @@
                 <outlet property="HomeName" destination="1313" id="name-outlet-1313"/>
                 <outlet property="VisitorNumber" destination="7541" id="name-outlet-7541"/>
                 <outlet property="VisitorName" destination="9466" id="name-outlet-9466"/>
+                <outlet property="HomeFlag" destination="1907" id="name-outlet-1907"/>
+                <outlet property="VisitorFlag" destination="6800" id="name-outlet-6800"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -1,6 +1,5 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using AceStream.Dto;
+﻿using AceStream.Dto;
+using UIKit;
 
 namespace AceStream.Modules.MatchModule
 {
@@ -25,7 +24,7 @@ namespace AceStream.Modules.MatchModule
 
     public interface IMatchRouter
     {
-
+        void Prepare(UIStoryboardSegue segue, string link);
     }
 
     public interface IMatchView

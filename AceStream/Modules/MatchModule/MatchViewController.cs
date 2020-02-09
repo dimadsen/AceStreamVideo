@@ -125,6 +125,15 @@ namespace AceStream.Modules.MatchModule
 
             Date.Text = match.Date.ToString("d/M/yyyy HH:mm");
         }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            var linkRow = ControlTableView.IndexPathForCell(sender as AceLinkTableViewCell).Row;
+
+            var link = _match.Links[linkRow].Link;
+
+            Presenter.Router.Prepare(segue, link);
+        }
     }
 }
 

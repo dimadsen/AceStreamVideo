@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="209" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="560"/>
+            <point key="canvasLocation" x="1516" y="385"/>
         </scene>
         <scene sceneID="215">
             <objects>
@@ -64,7 +64,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="1523" y="-399"/>
+            <point key="canvasLocation" x="1516" y="-445"/>
         </scene>
         <scene sceneID="5177">
             <objects>
@@ -139,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5184" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="-406"/>
+            <point key="canvasLocation" x="2109" y="-444"/>
         </scene>
         <scene sceneID="5484">
             <objects>
@@ -233,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5491" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672" y="-408"/>
+            <point key="canvasLocation" x="2692" y="-446"/>
         </scene>
         <scene sceneID="16275">
             <objects>
@@ -567,14 +567,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31886" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="-416"/>
+            <point key="canvasLocation" x="3281" y="-446"/>
         </scene>
         <scene sceneID="45972">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="45973" sceneMemberID="viewController"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="45973" sceneMemberID="viewController" customClass="VideoViewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45974" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3634" y="-416"/>
+            <point key="canvasLocation" x="3859" y="-443"/>
         </scene>
     </scenes>
     <resources>

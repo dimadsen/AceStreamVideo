@@ -28,9 +28,11 @@ namespace AceStream.Views.TableViewCell
         {
             HomeNumber.Text = homePlayer.Number;
             HomeName.Text = $"{homePlayer.LastName} {homePlayer.FirstName[0]}.";
+            HomeFlag.Image = UIImage.FromFile(homePlayer.Flag);
 
             VisitorNumber.Text = visitorPlayer.Number;
             VisitorName.Text = $"{visitorPlayer.LastName} {visitorPlayer.FirstName[0]}.";
+            VisitorFlag.Image = UIImage.FromFile(visitorPlayer.Flag);
         }
     }
 }
