@@ -10,8 +10,8 @@ namespace AceStream.Services
         {
             var menu = new MenuSettingsDto[]
             {
-                new MenuSettingsDto { Name = "Аккаунт", Image = "user-male.png" },
-                new MenuSettingsDto { Name = "О приложении", Image = "info-circle-outline.png" }
+                new MenuSettingsDto { Name = "Аккаунт", Image = "user2.png" },
+                new MenuSettingsDto { Name = "О приложении", Image = "About.png" }
             };
 
             return menu;

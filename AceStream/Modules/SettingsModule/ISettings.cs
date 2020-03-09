@@ -27,6 +27,8 @@ namespace AceStream.Modules.SettingsModule
     {
         void Prepare(UIStoryboardSegue segue);
         void Prepare(UINavigationController navigationController, string controllerName);
+
+        UIViewController InitializeUser();
     }
 
     public interface ISettingsView

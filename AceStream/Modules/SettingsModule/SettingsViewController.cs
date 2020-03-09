@@ -34,7 +34,9 @@ namespace AceStream
             NavigationItem.Title = title;
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
 
-            TableView.TableFooterView = new UIView(CGRect.Empty);            
+            TableView.TableFooterView = new UIView(CGRect.Empty);
+
+            Presenter.Router.InitializeUser();            
         }
 
         public void SetMenus(MenuSettingsDto[] menus)
@@ -122,6 +124,8 @@ namespace AceStream
 
             return identifier;
         }
+
+        
         #endregion
     }
 }

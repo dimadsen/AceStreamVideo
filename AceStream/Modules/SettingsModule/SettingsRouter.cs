@@ -12,6 +12,14 @@ namespace AceStream.Modules.SettingsModule
             _viewController = viewController;
         }
 
+        public UIViewController InitializeUser()
+        {
+            var storyboard = UIStoryboard.FromName("Main", null);
+            var controller = storyboard.InstantiateViewController("UserViewController");
+
+            return controller;
+        }
+
         public void Prepare(UIStoryboardSegue segue)
         {
             if (segue.Identifier == "ToExit")
@@ -29,5 +37,7 @@ namespace AceStream.Modules.SettingsModule
 
             navigationController.PushViewController(controller, true);
         }
+
+
     }
 }
