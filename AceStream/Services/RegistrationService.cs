@@ -13,8 +13,8 @@ namespace AceStream.Services
         {
             Users = new List<UserDto>
             {
-                new UserDto {Id = 1, Name = "Первый", Email = "f@gmail.ru"},
-                new UserDto {Id = 2, Name = "Второй", Email = "s@mail.ru"}
+                new UserDto {Id = 1, Nickname = "Первый", Email = "f@gmail.ru"},
+                new UserDto {Id = 2, Nickname = "Второй", Email = "s@mail.ru"}
             };
         }
 
@@ -24,7 +24,7 @@ namespace AceStream.Services
 
             if (user == null)
             {
-                user = new UserDto { Id = new Random().Next(), Email = dto.Email, Name = dto.Name };
+                user = new UserDto { Id = new Random().Next(), Email = dto.Email, Nickname = dto.Name };
                 Users.Add(user);
 
                 return true;

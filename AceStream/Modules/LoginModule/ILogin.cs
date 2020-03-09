@@ -14,6 +14,8 @@ namespace AceStream.Modules.LoginModule
         ILoginInteractor Interactor { get; set; }
 
         void ConfigureView();
+
+        void SignOut();
     }
 
     public interface ILoginInteractor

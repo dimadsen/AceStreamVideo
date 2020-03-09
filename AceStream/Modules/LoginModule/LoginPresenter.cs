@@ -15,5 +15,11 @@ namespace AceStream.Modules.LoginModule
         {
             _view.SetSettings();
         }
+
+        public void SignOut()
+        {
+            User.Id = 0;
+            User.IsAuthorized = false;
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace AceStream.Modules.MatchModule
         {
             Presenter.ConfigureView();
 
-            SegmentedControl.ValueChanged += ValueChanged;
+            SegmentedControl.ValueChanged += SettingTableChanged;
         }        
 
         #region Инициализация компонентов view
@@ -48,6 +48,7 @@ namespace AceStream.Modules.MatchModule
 
             ControlTableView.TableFooterView = new UIView(CGRect.Empty);
 
+            ControlTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
         }
 
         public void SetMatch(MatchDto match)
@@ -223,18 +224,22 @@ namespace AceStream.Modules.MatchModule
         #endregion
 
         #region Событие переключения сегментов
-        private void ValueChanged(object sender, EventArgs e)
+        private void SettingTableChanged(object sender, EventArgs e)
         {
             if (SegmentedControl.SelectedSegment.IsSquards())
             {
                 ControlTableView.AllowsSelection = false;
                 ControlTableView.Bounces = false;
+
+                ControlTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
                 ControlTableView.ReloadData();
             }
             else if (SegmentedControl.SelectedSegment.IsBroadCasts())
             {
                 ControlTableView.AllowsSelection = true;
                 ControlTableView.Bounces = true;
+
+                ControlTableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
                 ControlTableView.ReloadData();
             }
         }

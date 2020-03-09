@@ -17,7 +17,7 @@ namespace AceStream.Views.TableViewCell
 
         protected SquardTableViewCell(IntPtr handle) : base(handle)
         {
-
+            
         }
         public SquardTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {

@@ -137,11 +137,13 @@
         <Folder Include="Dto\SettingsDto\" />
         <Folder Include="Modules\VideoModule\" />
         <Folder Include="Extansions\" />
+        <Folder Include="Modules\SettingsModule\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
+        <InterfaceDefinition Include="Views\TableViewCell\SettingTableViewCell.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -213,7 +215,6 @@
           <DependentUpon>SquardTableViewCell.cs</DependentUpon>
         </Compile>
         <Compile Include="NavigationItemImage.cs" />
-        <Compile Include="Dto\SettingsDto\MatchPreviewSettingsDto.cs" />
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
           <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
@@ -236,6 +237,24 @@
         <Compile Include="Modules\VideoModule\VideoPresenter.cs" />
         <Compile Include="Dto\TeamDto.cs" />
         <Compile Include="Extansions\TeamExtansion.cs" />
+        <Compile Include="Modules\SettingsModule\ISettings.cs" />
+        <Compile Include="Modules\SettingsModule\SettingsViewController.cs" />
+        <Compile Include="Modules\SettingsModule\SettingsViewController.designer.cs">
+          <DependentUpon>SettingsViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\SettingsModule\SettingsConfigurator.cs" />
+        <Compile Include="Modules\SettingsModule\SettingsPresenter.cs" />
+        <Compile Include="Modules\SettingsModule\SettingsInteractor.cs" />
+        <Compile Include="Modules\SettingsModule\SettingsRouter.cs" />
+        <Compile Include="Dto\MatchPreviewSettingsDto.cs" />
+        <Compile Include="Dto\SettingsDto\AboutDto.cs" />
+        <Compile Include="Services\SettingsService.cs" />
+        <Compile Include="Views\TableViewCell\SettingTableViewCell.cs" />
+        <Compile Include="Views\TableViewCell\SettingTableViewCell.designer.cs">
+          <DependentUpon>SettingTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Dto\SettingsDto\MenuSettingsDto.cs" />
+        <Compile Include="Extansions\SettingExtansion.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -255,6 +274,8 @@
       <BundleResource Include="Resources\icon_14.png" />
       <BundleResource Include="Resources\bourenm.png" />
       <BundleResource Include="Resources\west.png" />
+      <BundleResource Include="Resources\user-male.png" />
+      <BundleResource Include="Resources\info-circle-outline.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
