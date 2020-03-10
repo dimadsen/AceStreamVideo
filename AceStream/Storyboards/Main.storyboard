@@ -489,56 +489,10 @@
                                 <rect key="frame" x="245" y="150.5" width="98" height="92"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="37218" fixedFrame="YES">
-                                <rect key="frame" x="24" y="319" width="330" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Составы"/>
-                                    <segment title="Трансляции"/>
-                                </segments>
-                                <connections>
-                                    <action selector="Changed:" destination="31884" id="41204" eventType="touchUpInside"/>
-                                    <action selector="Changed:" destination="31884" id="41632" eventType="touchUpOutside"/>
-                                </connections>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="40357" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="356" width="375" height="261"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="45969" customClass="AceLinkTableViewCell" reuseIdentifier="AceLinkTableViewCell" rowHeight="25">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="25"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="45969" id="45970">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="24.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="46778" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="icon_14.png">
-                                                    <rect key="frame" x="10" y="5" width="20" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46786" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="КХЛ ТВ">
-                                                    <rect key="frame" x="38" y="4" width="322" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue id="46021" destination="45973" kind="presentation"/>
-                                            <outlet property="Channel" destination="46786" id="name-outlet-46786"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="Score" destination="32066" id="name-outlet-32066"/>
-                        <outlet property="SegmentedControl" destination="37218" id="name-outlet-37218"/>
-                        <outlet property="ControlTableView" destination="40357" id="name-outlet-40357"/>
                         <outlet property="HomePicture" destination="32068" id="name-outlet-32068"/>
                         <outlet property="Home" destination="32063" id="name-outlet-32063"/>
                         <outlet property="VisitorPicture" destination="32069" id="name-outlet-32069"/>
@@ -550,13 +504,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31886" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3281" y="-446"/>
-        </scene>
-        <scene sceneID="45972">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="45973" sceneMemberID="viewController" customClass="VideoViewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="45974" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3859" y="-443"/>
         </scene>
         <scene sceneID="48093">
             <objects>
@@ -702,7 +649,6 @@
         <image name="close.png" width="128" height="128"/>
         <image name="aston.jpeg" width="150" height="150"/>
         <image name="lester.jpeg" width="150" height="150"/>
-        <image name="icon_14.png" width="256" height="256"/>
         <image name="Settings.png" width="25" height="25"/>
         <image name="Live.png" width="25" height="25"/>
     </resources>

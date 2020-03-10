@@ -56,7 +56,8 @@ namespace AceStream
         {
             var identifier = GetIdentifier(indexPath);
 
-            Presenter.Router.Prepare(NavigationController, identifier);
+            if (identifier != null)
+                Presenter.Router.Prepare(NavigationController, identifier);
         }
 
         #endregion

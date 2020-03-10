@@ -28,7 +28,7 @@ namespace AceStream.Views.TableViewCell
         {
             HomeNumber.Text = homePlayer?.Number;
             HomeName.Text = homePlayer != null ? $"{homePlayer.LastName} {homePlayer.FirstName[0]}." : null;
-            HomeFlag.Image = homePlayer != null ? UIImage.FromFile(homePlayer?.Flag) : null;
+            HomeFlag.Image = homePlayer != null ? UIImage.FromFile(homePlayer.Flag) : null;
 
             VisitorNumber.Text = visitorPlayer?.Number;
             VisitorName.Text = visitorPlayer != null ? $"{visitorPlayer.LastName} {visitorPlayer.FirstName[0]}." : null;

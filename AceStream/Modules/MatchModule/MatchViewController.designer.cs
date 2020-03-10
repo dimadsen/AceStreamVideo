@@ -16,10 +16,6 @@ namespace AceStream.Modules.MatchModule
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView ControlTableView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Date { get; set; }
 
         [Outlet]
@@ -40,27 +36,14 @@ namespace AceStream.Modules.MatchModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISegmentedControl SegmentedControl { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Visitor { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView VisitorPicture { get; set; }
 
-        [Action ("Changed:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Changed (UIKit.UISegmentedControl sender);
-
         void ReleaseDesignerOutlets ()
         {
-            if (ControlTableView != null) {
-                ControlTableView.Dispose ();
-                ControlTableView = null;
-            }
-
             if (Date != null) {
                 Date.Dispose ();
                 Date = null;
@@ -84,11 +67,6 @@ namespace AceStream.Modules.MatchModule
             if (Score != null) {
                 Score.Dispose ();
                 Score = null;
-            }
-
-            if (SegmentedControl != null) {
-                SegmentedControl.Dispose ();
-                SegmentedControl = null;
             }
 
             if (Visitor != null) {

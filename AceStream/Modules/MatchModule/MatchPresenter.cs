@@ -16,9 +16,9 @@
 
         public void ConfigureView()
         {
-            _view.SetTableSquard();
-            _view.SetMatch(Interactor.GetMatch(MatchId));
             _view.SetSettings();
+            _view.SetMatch(Interactor.GetMatch(MatchId));
+            
         }
     }
 }

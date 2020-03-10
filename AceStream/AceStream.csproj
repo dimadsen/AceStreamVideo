@@ -140,12 +140,17 @@
         <Folder Include="Modules\SettingsModule\" />
         <Folder Include="SubModules\" />
         <Folder Include="SubModules\UserSubModule\" />
+        <Folder Include="SubModules\SquardSubModule\" />
+        <Folder Include="Storyboards\" />
+        <Folder Include="SubModules\LinkSubModule\" />
+        <Folder Include="Adittionals\" />
     </ItemGroup>
     <ItemGroup>
-        <InterfaceDefinition Include="LaunchScreen.storyboard" />
-        <InterfaceDefinition Include="Main.storyboard" />
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
         <InterfaceDefinition Include="Views\TableViewCell\SettingTableViewCell.xib" />
+        <InterfaceDefinition Include="Storyboards\WatchMatch.storyboard" />
+        <InterfaceDefinition Include="Storyboards\Main.storyboard" />
+        <InterfaceDefinition Include="Storyboards\LaunchScreen.storyboard" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -196,7 +201,6 @@
         <Compile Include="Dto\LoginDto.cs" />
         <Compile Include="Services\LoginService.cs" />
         <Compile Include="Dto\UserDto.cs" />
-        <Compile Include="User.cs" />
         <Compile Include="Modules\RegistrationModule\IRegistration.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationViewController.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationViewController.designer.cs">
@@ -216,7 +220,6 @@
         <Compile Include="Views\TableViewCell\SquardTableViewCell.designer.cs">
           <DependentUpon>SquardTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="NavigationItemImage.cs" />
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
           <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
@@ -267,6 +270,30 @@
         <Compile Include="SubModules\UserSubModule\UserInteractor.cs" />
         <Compile Include="SubModules\UserSubModule\UserRouter.cs" />
         <Compile Include="Services\UserService.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardViewController.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardViewController.designer.cs">
+          <DependentUpon>SquardViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="SubModules\SquardSubModule\ISquard.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardConfigurator.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardPresenter.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardInteractor.cs" />
+        <Compile Include="SubModules\SquardSubModule\SquardRouter.cs" />
+        <Compile Include="Modules\MatchModule\SegmentedViewController.cs" />
+        <Compile Include="Modules\MatchModule\SegmentedViewController.designer.cs">
+          <DependentUpon>SegmentedViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="SubModules\LinkSubModule\LinkViewController.cs" />
+        <Compile Include="SubModules\LinkSubModule\LinkViewController.designer.cs">
+          <DependentUpon>LinkViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="SubModules\LinkSubModule\ILink.cs" />
+        <Compile Include="SubModules\LinkSubModule\LinkConfigurator.cs" />
+        <Compile Include="SubModules\LinkSubModule\LinkPresenter.cs" />
+        <Compile Include="SubModules\LinkSubModule\LinkInteractor.cs" />
+        <Compile Include="SubModules\LinkSubModule\LinkRouter.cs" />
+        <Compile Include="Adittionals\NavigationItemImage.cs" />
+        <Compile Include="Adittionals\User.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -297,6 +324,12 @@
       <BundleResource Include="Resources\About.png" />
       <BundleResource Include="Resources\user2.png" />
       <BundleResource Include="Resources\avatar.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
+        <Project>{47BD137E-0BC0-402F-A3A8-8E257495EDBA}</Project>
+        <Name>XLPagerTabStrip</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

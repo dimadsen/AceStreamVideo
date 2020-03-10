@@ -10,7 +10,7 @@
         {
             _view = view;
         }
-        
+
         public void ConfigureView()
         {
             _view.SetChampionats(Interactor.GetChampionats());
