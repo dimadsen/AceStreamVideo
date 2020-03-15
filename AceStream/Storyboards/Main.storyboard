@@ -171,7 +171,7 @@
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="284" y="42" width="81" height="21"/>
+                                            <rect key="frame" x="280" y="42" width="85" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -447,46 +447,46 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32063" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Хозяева" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="16" y="256" width="109.5" height="20.5"/>
+                                <rect key="frame" x="13" y="256" width="112" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="237.5" y="255.5" width="115.5" height="21"/>
+                                <rect key="frame" x="234.5" y="256" width="117.5" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32065" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="08.01.2020 18:00" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="125.5" y="121" width="122" height="24"/>
+                                <rect key="frame" x="126" y="89" width="122" height="24"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="light"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="32066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontSizeToFit="NO" text="2 - 3" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="159.5" y="155" width="54.5" height="24"/>
+                                <rect key="frame" x="159" y="139" width="56" height="24"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
                                 <nil key="highlightedColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21" weight="medium"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25" weight="medium"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-ый тайм" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32067" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="149.5" y="191.5" width="78" height="13.5"/>
+                                <rect key="frame" x="148" y="191.5" width="78.5" height="13.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="light"/>
                                 <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="lester.jpeg">
-                                <rect key="frame" x="23.5" y="150.5" width="97.5" height="92"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="lester.jpeg">
+                                <rect key="frame" x="16" y="139" width="98" height="92"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="aston.jpeg">
-                                <rect key="frame" x="245" y="150.5" width="98" height="92"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="aston.jpeg">
+                                <rect key="frame" x="243" y="139" width="100" height="92"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
@@ -514,14 +514,14 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="48650" rowHeight="67" reuseIdentifier="ExitTableViewCell" customClass="SettingTableViewCell">
-                                <rect key="frame" x="0.0" y="105" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48650" id="48651">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49290" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Выйти">
-                                            <rect key="frame" x="96" y="23" width="184" height="21"/>
+                                            <rect key="frame" x="95.5" y="23" width="184" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.230477461872129" blue="0.203463290151325" alpha="1"/>
@@ -538,13 +538,6 @@
                             <outlet property="dataSource" destination="48094" id="48096"/>
                             <outlet property="delegate" destination="48094" id="48097"/>
                         </connections>
-                        <containerView contentMode="scaleToFill" id="66995" key="tableHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <connections>
-                                <segue destination="66997" kind="embed" id="66996"/>
-                            </connections>
-                        </containerView>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="48193"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -614,7 +607,7 @@
                         <viewControllerLayoutGuide type="bottom" id="66994"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" id="66999" semanticContentAttribute="playback">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <subviews>
@@ -629,6 +622,13 @@
                                 <rect key="frame" x="16" y="18" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <containerView contentMode="scaleToFill" id="66995" key="tableHeaderView" fixedFrame="YES">
+                                <rect key="frame" x="-518" y="-7" width="375" height="332"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="66997" kind="embed" id="66996"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                     </view>
                     <size key="freeformSize" width="375" height="44"/>

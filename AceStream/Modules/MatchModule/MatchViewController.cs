@@ -24,11 +24,10 @@ namespace AceStream.Modules.MatchModule
             Presenter.ConfigureView();
             
             var controller = Presenter.Router.InitializeSegmented(_match);
+            controller.View.Frame = SetFrame();
 
-            controller.View.Frame = new CGRect(0, 318, 375, 299);
             View.AddSubview(controller.View);
         }
-
 
         public void SetSettings()
         {
@@ -38,7 +37,6 @@ namespace AceStream.Modules.MatchModule
             Score.AdjustsFontSizeToFitWidth = true;
 
             Score.MinimumScaleFactor = 10 / UIFont.LabelFontSize;
-
         }
 
         public void SetMatch(MatchDto match)
@@ -54,9 +52,16 @@ namespace AceStream.Modules.MatchModule
             Score.Text = match.Score;
             Half.Text = match.Half;
 
-            Date.Text = match.Date.ToString("d/M/yyyy HH:mm");
+            Date.Text = match.Date.ToString("d.MM.yyyy HH:mm");
         }
-            
+
+        private CGRect SetFrame()
+        {
+            var y = Home.Frame.Y + 35;
+            var height = View.Frame.Height - y - NavigationController.TabBarController.TabBar.Frame.Height;
+
+            return new CGRect(0, y, View.Frame.Width, height);
+        }
     }
 }
 

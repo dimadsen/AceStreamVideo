@@ -25,7 +25,7 @@ namespace AceStream.Modules.MatchModule
     public interface IMatchRouter
     {
         void Prepare(UIStoryboardSegue segue, string link);
-        UIViewController InitializeSegmented(MatchDto match);
+        SegmentedViewController InitializeSegmented(MatchDto match);
     }
 
     public interface IMatchView

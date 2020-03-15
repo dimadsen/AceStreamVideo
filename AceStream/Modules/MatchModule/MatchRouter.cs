@@ -12,7 +12,7 @@ namespace AceStream.Modules.MatchModule
             _controller = controller;
         }
 
-        public UIViewController InitializeSegmented(MatchDto match)
+        public SegmentedViewController InitializeSegmented(MatchDto match)
         {
             var controller = new SegmentedViewController(match);
 

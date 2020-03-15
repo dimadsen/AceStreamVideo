@@ -36,7 +36,6 @@ namespace AceStream.SubModules.SquardSubModule
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
 
             TableView.DataSource = this;
-            TableView.Bounces = false;
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
