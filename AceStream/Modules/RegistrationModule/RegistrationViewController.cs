@@ -1,7 +1,5 @@
 ﻿using System;
 using AceStream.Dto;
-using iAd;
-using ObjCRuntime;
 using UIKit;
 
 namespace AceStream.Modules.RegistrationModule
@@ -20,6 +18,7 @@ namespace AceStream.Modules.RegistrationModule
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            Presenter.ConfigureView();
         }
 
         partial void SignUp(UIButton sender)
@@ -58,7 +57,10 @@ namespace AceStream.Modules.RegistrationModule
             DismissViewController(true, () => { });
         }
 
-        
+        public void SetSettings()
+        {
+            CloseButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+        }
     }
 }
 

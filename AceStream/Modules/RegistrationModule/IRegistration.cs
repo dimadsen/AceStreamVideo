@@ -27,6 +27,6 @@ namespace AceStream.Modules.RegistrationModule
 
     public interface IRegistrationView
     {
-
+        void SetSettings();
     }
 }

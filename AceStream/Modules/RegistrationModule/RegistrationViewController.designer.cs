@@ -16,6 +16,10 @@ namespace AceStream.Modules.RegistrationModule
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton CloseButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField Email { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace AceStream.Modules.RegistrationModule
 
         void ReleaseDesignerOutlets ()
         {
+            if (CloseButton != null) {
+                CloseButton.Dispose ();
+                CloseButton = null;
+            }
+
             if (Email != null) {
                 Email.Dispose ();
                 Email = null;

@@ -13,7 +13,7 @@ namespace AceStream.Modules.RegistrationModule
         }
         public void ConfigureView()
         {
-            throw new NotImplementedException();
+            _view.SetSettings();
         }
     }
 }
