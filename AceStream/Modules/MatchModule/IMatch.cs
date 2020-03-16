@@ -13,6 +13,7 @@ namespace AceStream.Modules.MatchModule
         IMatchRouter Router { get; set; }
         IMatchInteractor Interactor { get; set; }
         int MatchId { get; set; }
+        string Title { get; set; }
 
         void ConfigureView();
     }
@@ -30,7 +31,7 @@ namespace AceStream.Modules.MatchModule
 
     public interface IMatchView
     {
-        void SetSettings();
+        void SetSettings(string title);
         void SetMatch(MatchDto dto);        
     }
 }

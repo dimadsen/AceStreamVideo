@@ -68,18 +68,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6890" translatesAutoresizingMaskIntoConstraints="NO" image="lolo_epl.png" fixedFrame="YES">
-                                            <rect key="frame" x="1" y="5" width="90" height="90"/>
+                                            <rect key="frame" x="0.5" y="5" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6996" translatesAutoresizingMaskIntoConstraints="NO" text="Название Чемпионата" fixedFrame="YES">
-                                            <rect key="frame" x="99" y="5" width="253" height="23"/>
+                                            <rect key="frame" x="98" y="5" width="253.5" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тур 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7072" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="99" y="36" width="253" height="21"/>
+                                            <rect key="frame" x="98" y="36" width="253.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17" weight="light"/>
                                             <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.666666666666667" alpha="1"/>
                                             <nil key="highlightedColor"/>
@@ -126,36 +126,36 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="lester.jpeg" fixedFrame="YES">
-                                            <rect key="frame" x="51.5" y="12" width="29.5" height="30"/>
+                                            <rect key="frame" x="50.5" y="12" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" image="aston.jpeg" fixedFrame="YES">
-                                            <rect key="frame" x="51.5" y="55" width="29.5" height="30"/>
+                                            <rect key="frame" x="50.5" y="55" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9755" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева" fixedFrame="YES">
-                                            <rect key="frame" x="89.5" y="16" width="187" height="21"/>
+                                            <rect key="frame" x="89" y="16" width="186.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9840" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="89.5" y="58" width="188" height="21"/>
+                                            <rect key="frame" x="89" y="58" width="188" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="300" y="42" width="59" height="21"/>
+                                            <rect key="frame" x="300" y="42" width="58.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="26828" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite">
-                                            <rect key="frame" x="11" y="38" width="30" height="30"/>
+                                            <rect key="frame" x="10.5" y="38" width="29.5" height="30"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <connections>
                                                 <action selector="AddToFavorites:" destination="9016" id="30822" eventType="touchUpOutside"/>
@@ -222,7 +222,7 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17796" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="139.5" y="558.5" width="218" height="29"/>
+                                <rect key="frame" x="139.5" y="558.5" width="218" height="28.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Зарегистрироваться">
                                     <color key="titleColor" colorSpace="custom" customColorSpace="sRGB" red="0.21443243350781999" green="0.846994966808418" blue="1" alpha="1"/>
@@ -348,14 +348,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32063" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Хозяева" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="12.5" y="256" width="112.5" height="20"/>
+                                <rect key="frame" x="11.5" y="256" width="112.5" height="20"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="231.5" y="256" width="119.5" height="20"/>
+                                <rect key="frame" x="246.5" y="256" width="112" height="20"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -369,7 +369,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="32066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontSizeToFit="NO" text="2 - 3" adjustsFontForContentSizeCategory="YES">
-                                <rect key="frame" x="156.5" y="140.5" width="58" height="22"/>
+                                <rect key="frame" x="156.5" y="140.5" width="58" height="21.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
                                 <nil key="highlightedColor"/>
@@ -382,13 +382,25 @@
                                 <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="lester.jpeg">
-                                <rect key="frame" x="13.5" y="140.5" width="99" height="89"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="lester.jpeg" opaque="NO">
+                                <rect key="frame" x="17.5" y="140.5" width="100.5" height="88.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.894490777210868" alpha="1"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="aston.jpeg">
-                                <rect key="frame" x="242" y="140.5" width="100.5" height="89"/>
+                                <rect key="frame" x="259" y="140.5" width="99.5" height="88.5"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.894490777210868" alpha="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                     </view>

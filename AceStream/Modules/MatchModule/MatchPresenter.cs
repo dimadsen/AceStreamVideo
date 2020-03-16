@@ -6,6 +6,7 @@
         public IMatchInteractor Interactor { get; set; }
 
         public int MatchId { get; set; }
+        public string Title { get; set; }
 
         private IMatchView _view;
 
@@ -16,9 +17,9 @@
 
         public void ConfigureView()
         {
-            _view.SetSettings();
+            _view.SetSettings(Title);
             _view.SetMatch(Interactor.GetMatch(MatchId));
-            
+
         }
     }
 }

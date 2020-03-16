@@ -26,7 +26,7 @@ namespace AceStream.Modules.MatchPreviewModule
 
     public interface IMatchPreviewRouter
     {
-        void Prepare(UIStoryboardSegue segue, int matchId);
+        void Prepare(UIStoryboardSegue segue, int matchId, string title);
     }
 
     public interface IMatchPreviewView

@@ -12,11 +12,12 @@ namespace AceStream.Modules.MatchPreviewModule
             _viewController = viewController;
         }
 
-        public void Prepare(UIStoryboardSegue segue, int matchId)
+        public void Prepare(UIStoryboardSegue segue, int matchId, string title)
         {
             var matchViewController = segue.DestinationViewController as MatchViewController;
 
             matchViewController.Presenter.MatchId = matchId;
+            matchViewController.Presenter.Title = title;
         }
     }
 }

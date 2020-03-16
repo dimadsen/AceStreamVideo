@@ -33,7 +33,7 @@ namespace AceStream
         {
             var matchId = TableView.IndexPathForCell(sender as MatchPreviewTableViewCell).Row;
 
-            Presenter.Router.Prepare(segue, matchId);
+            Presenter.Router.Prepare(segue, matchId, NavigationItem.Title);
         }
 
         public override void ViewWillDisappear(bool animated)

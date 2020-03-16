@@ -4,7 +4,7 @@ using AceStream.Services;
 
 namespace AceStream.Modules.MatchModule
 {
-    public class MatchInteractor:IMatchInteractor
+    public class MatchInteractor : IMatchInteractor
     {
         private IMatchPresenter _presenter;
         private IMatchService _service;

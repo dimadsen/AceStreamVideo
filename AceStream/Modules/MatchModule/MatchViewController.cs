@@ -29,7 +29,7 @@ namespace AceStream.Modules.MatchModule
             View.AddSubview(controller.View);
         }
 
-        public void SetSettings()
+        public void SetSettings(string title)
         {
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
             
@@ -37,6 +37,9 @@ namespace AceStream.Modules.MatchModule
             Score.AdjustsFontSizeToFitWidth = true;
 
             Score.MinimumScaleFactor = 10 / UIFont.LabelFontSize;
+            NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
+
+            NavigationItem.Title = title;
         }
 
         public void SetMatch(MatchDto match)

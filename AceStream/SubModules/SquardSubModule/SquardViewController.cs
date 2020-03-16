@@ -39,6 +39,8 @@ namespace AceStream.SubModules.SquardSubModule
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
+            TableView.RowHeight = 30;
+
             TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
         }
 
@@ -93,7 +95,6 @@ namespace AceStream.SubModules.SquardSubModule
         {
             return _titles.Length;
         }
-
         public override string TitleForHeader(UITableView tableView, nint section)
         {
             return _titles[section];
