@@ -16,7 +16,7 @@ namespace AceStream.Views.TableViewCell
         }
 
         protected MatchPreviewTableViewCell(IntPtr handle) : base(handle)
-        {   
+        {
         }
 
         public MatchPreviewTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
@@ -33,6 +33,8 @@ namespace AceStream.Views.TableViewCell
             
             HomeIcon.Image = UIImage.FromFile(dto.HomePicture);
             VisitorIcon.Image = UIImage.FromFile(dto.VisitorPicture);
+
+            Favorites.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
         }
 
         partial void AddToFavorites(UIButton sender)
