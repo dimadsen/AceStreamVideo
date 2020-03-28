@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Views.TableViewCell;
@@ -42,6 +43,7 @@ namespace AceStream.SubModules.SquardSubModule
             TableView.RowHeight = 30;
 
             TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 
         public void SetPlayers(MatchDto match)

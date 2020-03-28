@@ -1,10 +1,11 @@
+using System;
+using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Modules.ChampionatModule;
+using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
-using MessageUI;
-using System;
 using UIKit;
 
 namespace AceStream
@@ -26,6 +27,7 @@ namespace AceStream
         {
             base.ViewDidLoad();
             Presenter.ConfigureView();
+            
         }
 
         public void SetSettings(string title)
@@ -36,10 +38,21 @@ namespace AceStream
 
             //Что бы не было лишних строк у таблицы
             TableView.TableFooterView = new UIView(CGRect.Empty);
+
+            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
             TableView.RowHeight = 100;
 
             NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
             NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
+
+            
+            var gradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
+            var image = ImageUtils.GetGradientImage(gradient, NavigationController.NavigationBar.Frame.Size);
+            
+            NavigationController.NavigationBar.BarTintColor = new UIColor(image);
+
+            NavigationController.TabBarController.TabBar.Layer.InsertSublayer(gradient,0);
+            NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.DarkGray;
         }
 
         public void SetChampionats(ChampionatDto[] championats)
@@ -63,6 +76,8 @@ namespace AceStream
 
             cell.UpdateCell(_championats[indexPath.Row]);
 
+            cell.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width,tableView.Frame.Height), 0);
+            
             return cell;
 
         }
@@ -82,7 +97,6 @@ namespace AceStream
             NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
             NavigationItem.LeftItemsSupplementBackButton = true;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
-            NavigationController.NavigationBar.Translucent = true;
         }
     }
 }

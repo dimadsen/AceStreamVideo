@@ -1,4 +1,5 @@
 using System;
+using AceStream.Additionals;
 using AceStream.Dto.SettingsDto;
 using AceStream.Extansions;
 using AceStream.Modules.SettingsModule;
@@ -35,6 +36,15 @@ namespace AceStream
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
+
+            var gradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
+
+            UIGraphics.BeginImageContext(NavigationController.NavigationBar.Frame.Size);
+            var ctx = UIGraphics.GetCurrentContext();
+            gradient.RenderInContext(ctx);
+            var image = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+            NavigationController.NavigationBar.BarTintColor = new UIColor(image);
 
             Presenter.Router.InitializeUser();            
         }

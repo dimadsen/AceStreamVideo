@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
@@ -42,6 +43,7 @@ namespace AceStream.SubModules.LinkSubModule
             TableView.DataSource = this;
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
+            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
         }
 
         public void SetLinks(List<LinkDto> links)
@@ -57,7 +59,6 @@ namespace AceStream.SubModules.LinkSubModule
                 cell = new AceLinkTableViewCell(new NSString("AceLinkTableViewCell"));
 
             cell.UpdateCell(_links[indexPath.Row]);
-
             return cell;
         }
 

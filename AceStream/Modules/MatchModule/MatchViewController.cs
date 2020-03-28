@@ -1,4 +1,5 @@
 ﻿using System;
+using AceStream.Additionals;
 using AceStream.Dto;
 using CoreGraphics;
 using UIKit;
@@ -32,7 +33,7 @@ namespace AceStream.Modules.MatchModule
         public void SetSettings(string title)
         {
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
-            
+
             Score.AdjustsFontForContentSizeCategory = true;
             Score.AdjustsFontSizeToFitWidth = true;
 
@@ -40,6 +41,7 @@ namespace AceStream.Modules.MatchModule
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 
             NavigationItem.Title = title;
+            View.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 
         public void SetMatch(MatchDto match)

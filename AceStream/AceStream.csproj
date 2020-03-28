@@ -143,7 +143,7 @@
         <Folder Include="SubModules\SquardSubModule\" />
         <Folder Include="Storyboards\" />
         <Folder Include="SubModules\LinkSubModule\" />
-        <Folder Include="Additionals\" />
+        <Folder Include="Utils\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -292,8 +292,10 @@
         <Compile Include="SubModules\LinkSubModule\LinkPresenter.cs" />
         <Compile Include="SubModules\LinkSubModule\LinkInteractor.cs" />
         <Compile Include="SubModules\LinkSubModule\LinkRouter.cs" />
-        <Compile Include="Additionals\NavigationItemImage.cs" />
-        <Compile Include="Additionals\User.cs" />
+        <Compile Include="Utils\NavigationItemImage.cs" />
+        <Compile Include="Utils\User.cs" />
+        <Compile Include="Utils\GradientColor.cs" />
+        <Compile Include="Utils\ImageUtils.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
