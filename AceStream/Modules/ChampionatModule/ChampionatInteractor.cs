@@ -1,4 +1,7 @@
-﻿using AceStream.Dto;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using AceStream.Services;
 
 namespace AceStream.Modules.ChampionatModule
@@ -18,9 +21,19 @@ namespace AceStream.Modules.ChampionatModule
 
         public string Title => service.Title;
 
-        public ChampionatDto[] GetChampionats()
+        public async Task<List<ChampionatDto>> GetChampionatsAsync()
         {
-            return service.GetChampionats();
+            try
+            {
+                var championats = await service.GetChampionatsAsync();
+
+                return championats;
+            }
+            catch (Exception)
+            {
+                _presenter.SetError();
+                return new List<ChampionatDto>();
+            }
         }
     }
 }

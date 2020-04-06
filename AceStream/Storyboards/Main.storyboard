@@ -61,7 +61,7 @@
                         </connections>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6873" reuseIdentifier="ChampionatTableViewCell" customClass="ChampionatTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6873" id="6874">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -95,12 +95,19 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="72436" key="tableHeaderView" animating="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                        </activityIndicatorView>
                     </tableView>
                     <navigationItem title="Title" id="5245" key="navigationItem">
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" image="YES"/>
                         </accessibility>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Indicator" destination="72436" id="name-outlet-72436"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5184" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

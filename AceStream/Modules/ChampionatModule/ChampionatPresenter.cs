@@ -1,4 +1,6 @@
-﻿namespace AceStream.Modules.ChampionatModule
+﻿using System.Threading.Tasks;
+
+namespace AceStream.Modules.ChampionatModule
 {
     public class ChampionatPresenter : IChampionatPresenter
     {
@@ -11,10 +13,18 @@
             _view = view;
         }
 
+        public async Task SetChampionatsAsync()
+        {
+            await _view.SetChampionatsAsync(Interactor.GetChampionatsAsync());
+        }
+
         public void ConfigureView()
         {
-            _view.SetChampionats(Interactor.GetChampionats());
             _view.SetSettings(Interactor.Title);
+        }
+        public void SetError()
+        {
+            _view.SetErrorView();
         }
     }
 }

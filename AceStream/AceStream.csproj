@@ -326,6 +326,8 @@
       <BundleResource Include="Resources\About.png" />
       <BundleResource Include="Resources\user2.png" />
       <BundleResource Include="Resources\avatar.png" />
+      <BundleResource Include="Resources\england.png" />
+      <BundleResource Include="Resources\premier-league-2.jpg" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">

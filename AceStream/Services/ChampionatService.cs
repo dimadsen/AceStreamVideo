@@ -1,4 +1,8 @@
-﻿using AceStream.Dto;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using AceStream.Dto;
 
 namespace AceStream.Services
 {
@@ -6,13 +10,21 @@ namespace AceStream.Services
     {
         public string Title => "Чемпионаты";
 
-        public ChampionatDto[] GetChampionats()
+        public async Task<List<ChampionatDto>> GetChampionatsAsync()
         {
-            return new ChampionatDto[]
+            var championats = new List<ChampionatDto>
             {
                new ChampionatDto { Name = "Английская Премьер-Лига", Tour = "Тур 1", Image = "lolo_epl.png" },
                new ChampionatDto { Name = "Серия А", Tour = "Тур 2", Image = "seria-a.png" }
             };
+
+            var task = Task.Run(async () =>
+            {
+               await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+               return championats;
+            });
+
+            return await task;
         }
     }
 
@@ -20,6 +32,6 @@ namespace AceStream.Services
     {
         string Title { get; }
 
-        ChampionatDto[] GetChampionats();
+        Task<List<ChampionatDto>> GetChampionatsAsync();
     }
 }

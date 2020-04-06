@@ -1,4 +1,6 @@
-﻿using AceStream.Dto;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using Foundation;
 using UIKit;
 
@@ -14,13 +16,15 @@ namespace AceStream.Modules.ChampionatModule
         IChampionatRouter Router { get; set; }
         IChampionatInteractor Interactor { get; set; }
 
+        Task SetChampionatsAsync();
+        void SetError();
         void ConfigureView();
     }
 
     public interface IChampionatInteractor
     {
         string Title { get; }
-        ChampionatDto[] GetChampionats();
+        Task<List<ChampionatDto>> GetChampionatsAsync();
     }
 
     public interface IChampionatRouter
@@ -31,6 +35,8 @@ namespace AceStream.Modules.ChampionatModule
     public interface IChampionatView
     {
         void SetSettings(string title);
-        void SetChampionats(ChampionatDto[] championats);
+        Task SetChampionatsAsync(Task<List<ChampionatDto>> championats);
+        void SetErrorView();  
     }
+
 }
