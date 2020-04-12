@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AceStream.Dto;
 using UIKit;
 
@@ -15,13 +16,21 @@ namespace AceStream.SubModules.LinkSubModule
         ILinkRouter Router { get; set; }
         ILinkInteractor Interactor { get; set; }
 
-        List<LinkDto> Links { get; set; }
+        /// <summary>
+        /// Название команд, каналов для поиска в ссылок
+        /// </summary>
+        string[] Parametrs { get; set; }
 
         void ConfigureView();
+
+        Task SetLinksAsync();
+
+        void SetError();
     }
 
     public interface ILinkInteractor
     {
+        Task<List<LinkDto>> GetLinksAsync(string[] parametr);
     }
 
     public interface ILinkRouter
@@ -32,6 +41,8 @@ namespace AceStream.SubModules.LinkSubModule
     public interface ILinkView
     {
         void SetSettings();
-        void SetLinks(List<LinkDto> links);
+        Task SetLinksAsync(Task<List<LinkDto>> links);
+
+        void SetError();
     }
 }

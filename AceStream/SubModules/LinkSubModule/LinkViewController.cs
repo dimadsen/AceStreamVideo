@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
+using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
 using UIKit;
+using Xamarin.Essentials;
 using XLPagerTabStrip;
 
 namespace AceStream.SubModules.LinkSubModule
@@ -25,17 +28,28 @@ namespace AceStream.SubModules.LinkSubModule
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+            Task.Run(async () =>
+            {
+                await Presenter.SetLinksAsync();
+
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    TableView.ReloadData();
+                    Indicator.StopAnimating();
+                    Indicator.HidesWhenStopped = true;
+
+                    TableView.TableHeaderView = null;
+                });
+            });
 
             Presenter.ConfigureView();
         }
 
-
-        public IndicatorInfo IndicatorInfoForPagerTabStrip(PagerTabStripViewController pagerTabStripController)
+        public async Task SetLinksAsync(Task<List<LinkDto>> links)
         {
-            return new IndicatorInfo("Трансляции");
+            _links = await links;
         }
-
+        
         public void SetSettings()
         {
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
@@ -44,11 +58,12 @@ namespace AceStream.SubModules.LinkSubModule
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
             TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
-        }
 
-        public void SetLinks(List<LinkDto> links)
-        {
-            _links = links;
+            var gradient = GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height);
+
+            var image = ImageUtils.GetGradientImage(gradient, TableView.Frame.Size);
+
+            View.BackgroundColor = new UIColor(image);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -59,12 +74,13 @@ namespace AceStream.SubModules.LinkSubModule
                 cell = new AceLinkTableViewCell(new NSString("AceLinkTableViewCell"));
 
             cell.UpdateCell(_links[indexPath.Row]);
+
             return cell;
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            return _links.Count;
+            return _links?.Count ?? 0;
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -74,6 +90,16 @@ namespace AceStream.SubModules.LinkSubModule
             var link = _links[linkRow].Link;
 
             Presenter.Router.Prepare(segue, link);
+        }
+
+        public IndicatorInfo IndicatorInfoForPagerTabStrip(PagerTabStripViewController pagerTabStripController)
+        {
+            return new IndicatorInfo("Трансляции");
+        }
+
+        public void SetError()
+        {
+            throw new NotImplementedException();
         }
     }
 }

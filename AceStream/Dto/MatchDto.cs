@@ -53,6 +53,6 @@ namespace AceStream.Dto
         /// <summary>
         /// Ссылки на трансляции
         /// </summary>
-        public List<LinkDto> Links { get; set; }
+        //public List<LinkDto> Links { get; set; }
     }
 }

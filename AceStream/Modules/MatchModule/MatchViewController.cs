@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
 using CoreGraphics;
 using UIKit;
+using Xamarin.Essentials;
 
 namespace AceStream.Modules.MatchModule
 {
@@ -21,13 +24,23 @@ namespace AceStream.Modules.MatchModule
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
-            Presenter.ConfigureView();
-            
-            var controller = Presenter.Router.InitializeSegmented(_match);
-            controller.View.Frame = SetFrame();
+            Task.Run(async () =>
+            {
+                await Presenter.SetMatchAsync();
 
-            View.AddSubview(controller.View);
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    var controller = Presenter.Router.InitializeSegmented(_match);
+                    controller.View.Frame = SetFrame();
+
+                    View.AddSubview(controller.View);
+
+                    Indicator.StopAnimating();
+                    Indicator.HidesWhenStopped = true;
+                });
+            });
+
+            Presenter.ConfigureView();
         }
 
         public void SetSettings(string title)
@@ -44,20 +57,33 @@ namespace AceStream.Modules.MatchModule
             View.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 
-        public void SetMatch(MatchDto match)
+        public async Task SetMatchAsync(Task<MatchDto> match)
         {
-            _match = match;
+            _match = await match;
 
-            Home.Text = match.Home;
-            HomePicture.Image = UIImage.FromFile(match.ImageHome);
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                Home.Hidden = false;
+                Home.Text = _match.Home;
 
-            Visitor.Text = match.Visitor;
-            VisitorPicture.Image = UIImage.FromFile(match.ImageVisitor);
+                HomePicture.Hidden = false;
+                HomePicture.Image = UIImage.FromFile(_match.ImageHome);
 
-            Score.Text = match.Score;
-            Half.Text = match.Half;
+                Visitor.Hidden = false;
+                Visitor.Text = _match.Visitor;
 
-            Date.Text = match.Date.ToString("d.MM.yyyy HH:mm");
+                VisitorPicture.Hidden = false;
+                VisitorPicture.Image = UIImage.FromFile(_match.ImageVisitor);
+
+                Score.Hidden = false;
+                Score.Text = _match.Score;
+
+                Half.Hidden = false;
+                Half.Text = _match.Half;
+
+                Date.Hidden = false;
+                Date.Text = _match.Date.ToString("d.MM.yyyy HH:mm");
+            });            
         }
 
         private CGRect SetFrame()
@@ -66,6 +92,11 @@ namespace AceStream.Modules.MatchModule
             var height = View.Frame.Height - y - NavigationController.TabBarController.TabBar.Frame.Height;
 
             return new CGRect(0, y, View.Frame.Width, height);
+        }
+
+        public void SetError()
+        {
+            throw new NotImplementedException();
         }
     }
 }

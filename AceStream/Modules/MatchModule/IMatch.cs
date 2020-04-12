@@ -1,4 +1,6 @@
-﻿using AceStream.Dto;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using UIKit;
 
 namespace AceStream.Modules.MatchModule
@@ -12,15 +14,18 @@ namespace AceStream.Modules.MatchModule
     {
         IMatchRouter Router { get; set; }
         IMatchInteractor Interactor { get; set; }
+
         int MatchId { get; set; }
         string Title { get; set; }
 
+        Task SetMatchAsync();
+        void SetError();
         void ConfigureView();
     }
 
     public interface IMatchInteractor
     {
-        MatchDto GetMatch(int matchId);
+        Task<MatchDto> GetMatchAsync(int matchId);
     }
 
     public interface IMatchRouter
@@ -32,6 +37,7 @@ namespace AceStream.Modules.MatchModule
     public interface IMatchView
     {
         void SetSettings(string title);
-        void SetMatch(MatchDto dto);        
+        Task SetMatchAsync(Task<MatchDto> dto);
+        void SetError();
     }
 }

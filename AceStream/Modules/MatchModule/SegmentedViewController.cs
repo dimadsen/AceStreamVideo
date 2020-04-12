@@ -30,7 +30,7 @@ namespace AceStream.Modules.MatchModule
             Settings.Style.ButtonBarItemsShouldFillAvailiableWidth = true;
             Settings.Style.ButtonBarLeftContentInset = 0;
             Settings.Style.ButtonBarRightContentInset = 0;
-            Settings.Style.ButtonBarHeight = 48;
+            Settings.Style.ButtonBarHeight = 30;
 
             NavigationItem.Title = "Back";
             NavigationItem.BackBarButtonItem = new UIBarButtonItem("Back", UIBarButtonItemStyle.Plain, null);
@@ -46,7 +46,7 @@ namespace AceStream.Modules.MatchModule
             squardViewController.Presenter.Match = _match;
 
             var linkViewController = storyboard.InstantiateViewController("LinkViewController") as LinkViewController;
-            linkViewController.Presenter.Links = _match.Links;
+            linkViewController.Presenter.Parametrs = new string[] { _match.Home, _match.Visitor };
 
             return new UIViewController[] { squardViewController, linkViewController };
         }

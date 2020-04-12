@@ -32,6 +32,10 @@ namespace AceStream.Modules.MatchModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView Indicator { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Score { get; set; }
 
         [Outlet]
@@ -62,6 +66,11 @@ namespace AceStream.Modules.MatchModule
             if (HomePicture != null) {
                 HomePicture.Dispose ();
                 HomePicture = null;
+            }
+
+            if (Indicator != null) {
+                Indicator.Dispose ();
+                Indicator = null;
             }
 
             if (Score != null) {

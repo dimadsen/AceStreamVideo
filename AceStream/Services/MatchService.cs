@@ -1,14 +1,37 @@
 ﻿using System;
 using AceStream.Dto;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace AceStream.Services
 {
     public class MatchService : IMatchService
     {
-        public MatchDto GetMatch(int matchId)
+        public async Task<List<LinkDto>> GetLinksAsync(string[] parameter)
         {
-            return new MatchDto
+            var links = new List<LinkDto>
+            {
+                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 1" },
+                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч ТВ" },
+                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 2" },
+                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 3" },
+                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч Арена" },
+            };
+
+            var task = Task.Run(async () =>
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+
+                return links;
+            });
+
+            return await task;
+        }
+
+        public async Task<MatchDto> GetMatchAsync(int matchId)
+        {
+            var match = new MatchDto
             {
                 Date = DateTime.Now,
                 Half = "1-ый тайм",
@@ -16,8 +39,7 @@ namespace AceStream.Services
                 ImageHome = "west.png",
                 Visitor = "Бормут",
                 ImageVisitor = "bourenm.png",
-                Score = "2 - 2",
-
+                Score = "1 - 0",
                 HomeSquard = new TeamDto
                 {
                     Startings = new List<PlayerDto>
@@ -43,7 +65,6 @@ namespace AceStream.Services
                     }
 
                 },
-
                 VisitorSquard = new TeamDto
                 {
                     Startings = new List<PlayerDto>
@@ -70,21 +91,24 @@ namespace AceStream.Services
                        new PlayerDto { FirstName = "Пихаил", LastName = "Мореченков", Number = "12", Flag = "35_medium.png" },
                     }
                 },
-
-                Links = new List<LinkDto>
-                {
-                    new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 1" },
-                    new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч ТВ" },
-                    new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 2" },
-                    new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 3" },
-                    new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч Арена" },
-                }
             };
-        }
+
+            var task = Task.Run(async () =>
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+
+                return match;
+            });
+
+            return await task;
+        }        
     }
 
     public interface IMatchService
     {
-        MatchDto GetMatch(int matchId);
+        Task<MatchDto> GetMatchAsync(int matchId);
+
+        /// <param name="parameter">Название канала, команды и т.д.</param>
+        Task<List<LinkDto>> GetLinksAsync(string[] parameter);
     }
 }

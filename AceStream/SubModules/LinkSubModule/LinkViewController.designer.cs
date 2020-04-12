@@ -1,6 +1,6 @@
 ﻿// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -11,11 +11,19 @@ using UIKit;
 
 namespace AceStream.SubModules.LinkSubModule
 {
-    [Register("LinkViewController")]
+    [Register ("LinkViewController")]
     partial class LinkViewController
     {
-        void ReleaseDesignerOutlets()
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView Indicator { get; set; }
+
+        void ReleaseDesignerOutlets ()
         {
+            if (Indicator != null) {
+                Indicator.Dispose ();
+                Indicator = null;
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace AceStream.Modules.MatchModule
+﻿using System.Threading.Tasks;
+
+namespace AceStream.Modules.MatchModule
 {
     public class MatchPresenter : IMatchPresenter
     {
@@ -18,8 +20,16 @@
         public void ConfigureView()
         {
             _view.SetSettings(Title);
-            _view.SetMatch(Interactor.GetMatch(MatchId));
+        }
 
+        public async Task SetMatchAsync()
+        {
+           await _view.SetMatchAsync(Interactor.GetMatchAsync(MatchId));
+        }
+
+        public void SetError()
+        {
+            _view.SetError();
         }
     }
 }

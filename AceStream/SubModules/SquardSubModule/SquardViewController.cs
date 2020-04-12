@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Extansions;
@@ -97,6 +98,7 @@ namespace AceStream.SubModules.SquardSubModule
         {
             return _titles.Length;
         }
+
         public override string TitleForHeader(UITableView tableView, nint section)
         {
             return _titles[section];
@@ -117,6 +119,14 @@ namespace AceStream.SubModules.SquardSubModule
             {
                 return null;
             }
+        }
+
+        public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
+        {
+            var view = headerView as UITableViewHeaderFooterView;
+
+            view.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+            
         }
 
         public void SetTableSquard()

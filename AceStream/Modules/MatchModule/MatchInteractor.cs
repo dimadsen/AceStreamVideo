@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Services;
 
@@ -12,12 +14,24 @@ namespace AceStream.Modules.MatchModule
         public MatchInteractor(IMatchPresenter presenter)
         {
             _presenter = presenter;
+
             _service = new MatchService();
         }
 
-        public MatchDto GetMatch(int matchId)
+        public async Task<MatchDto> GetMatchAsync(int matchId)
         {
-            return _service.GetMatch(matchId);
+            try
+            {
+                var match = await _service.GetMatchAsync(matchId);
+
+                return match;
+            }
+            catch (Exception)
+            {
+                _presenter.SetError();
+
+                return new MatchDto();
+            }
         }
     }
 }
