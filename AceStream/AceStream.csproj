@@ -296,6 +296,7 @@
         <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\GradientColor.cs" />
         <Compile Include="Utils\ImageUtils.cs" />
+        <Compile Include="Utils\ParserClient.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -333,6 +334,10 @@
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
         <Project>{47BD137E-0BC0-402F-A3A8-8E257495EDBA}</Project>
         <Name>XLPagerTabStrip</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Parser\Parser.csproj">
+        <Project>{52B96861-0BB2-4F47-ADEF-9A5B717E542D}</Project>
+        <Name>Parser</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

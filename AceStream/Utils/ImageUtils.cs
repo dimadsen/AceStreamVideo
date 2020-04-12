@@ -1,7 +1,9 @@
-﻿using System;
-using System.Drawing;
+﻿using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using CoreAnimation;
 using CoreGraphics;
+using Foundation;
 using UIKit;
 
 namespace AceStream.Utils
@@ -18,6 +20,39 @@ namespace AceStream.Utils
             UIGraphics.EndImageContext();
 
             return image;
+        }
+
+        public static string DownloadFile(string fileName, string url)
+        {
+            var cachePath = GetCachePath(fileName);
+
+            if (!File.Exists(cachePath))
+            {
+                SaveFileToCache(url, cachePath);
+            }
+
+            return cachePath;
+        }
+
+        private static string GetCachePath(string fileName)
+        {
+            var cachesFolder = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User, true).FirstOrDefault();
+
+            var cachePath = cachesFolder + "/" + fileName + ".png";
+
+            return cachePath;
+        }
+
+        private static void SaveFileToCache(string url, string cachePath)
+        {
+            var download = Task.Run(async () => await NSUrlSession.SharedSession.CreateDownloadTaskAsync(new NSUrl(url)));
+
+            var tempFile = download.Result.Location.AbsoluteUrl;
+
+            var cacheUrl = NSUrl.CreateFileUrl(cachePath, false, null);
+
+            NSFileManager.DefaultManager.Move(tempFile, cacheUrl, out NSError error);
+
         }
     }
 }

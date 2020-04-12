@@ -396,7 +396,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-ый тайм" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32067" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontForContentSizeCategory="YES" hidden="YES">
                                 <rect key="frame" x="147" y="155" width="78" height="14"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12" weight="light"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10" weight="light"/>
                                 <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
