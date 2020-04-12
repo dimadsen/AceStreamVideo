@@ -20,8 +20,9 @@ namespace AceStream.Services
 
             var task = Task.Run(async () =>
             {
-               await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
-               return championats;
+                await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+
+                return championats;
             });
 
             return await task;

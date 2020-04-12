@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
@@ -8,6 +10,7 @@ using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
 using UIKit;
+using Xamarin.Essentials;
 
 namespace AceStream
 {
@@ -16,7 +19,7 @@ namespace AceStream
         public IMatchPreviewPresenter Presenter { get; set; }
         public IMatchPreviewConfigurator Configurator { get; set; }
 
-        private MatchPreviewDto[] _matches;
+        private List<MatchPreviewDto> _matches;
 
         public MatchPreviewViewController(IntPtr handle) : base(handle)
         {
@@ -26,7 +29,19 @@ namespace AceStream
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+            Task.Run(async () =>
+            {
+                await Presenter.SetMatchesAsync();
+
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    TableView.ReloadData();
+                    Indicator.StopAnimating();
+                    Indicator.HidesWhenStopped = true;
+
+                    TableView.TableHeaderView = null;
+                });
+            });
 
             Presenter.ConfigureView();
         }
@@ -46,6 +61,11 @@ namespace AceStream
         public override void ViewDidAppear(bool animated)
         {
             NavigationItemImage.ShowImage();
+        }
+
+        public async Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches)
+        {
+            _matches = await matches;
         }
 
         public void SetSettings(MatchPreviewSettingsDto dto)
@@ -75,11 +95,6 @@ namespace AceStream
             NavigationItemImage.MoveAndResizeImage(height);
         }
 
-        public void SetMatches(MatchPreviewDto[] matches)
-        {
-            _matches = matches;
-        }
-
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             var cell = tableView.DequeueReusableCell("MatchPreviewTableViewCell") as MatchPreviewTableViewCell;
@@ -93,12 +108,16 @@ namespace AceStream
             cell.UpdateCell(_matches[indexPath.Row]);
 
             return cell;
-
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            return _matches.Length;
+            return _matches?.Count ?? 0;
+        }        
+
+        public void SetErrorView()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,5 +14,16 @@ namespace AceStream
     [Register ("MatchPreviewViewController")]
     partial class MatchPreviewViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView Indicator { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (Indicator != null) {
+                Indicator.Dispose ();
+                Indicator = null;
+            }
+        }
     }
 }

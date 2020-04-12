@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 
@@ -6,13 +9,13 @@ namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
-        public MatchPreviewDto[] GetMatches(int championatId)
+        public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            MatchPreviewDto[] matches = null;
+            List<MatchPreviewDto> matches = null;
 
             if (championatId == 0)
             {
-                matches = new MatchPreviewDto[]
+                matches = new List<MatchPreviewDto>
                 {
                     new MatchPreviewDto
                     {
@@ -35,7 +38,7 @@ namespace AceStream.Services
 
             else if (championatId == 1)
             {
-                matches = new MatchPreviewDto[]
+                matches = new List<MatchPreviewDto>
                 {
                     new MatchPreviewDto
                     {
@@ -56,7 +59,14 @@ namespace AceStream.Services
                 };
             }
 
-            return matches;
+            var task = Task.Run(async () =>
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+
+                return matches;
+            });
+
+            return await task;
 
         }
 
@@ -87,7 +97,8 @@ namespace AceStream.Services
 
     public interface IMatchPreviewService
     {
-        MatchPreviewDto[] GetMatches(int championatId);
+        Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId);
+
         MatchPreviewSettingsDto GetSettings(int championatId);
     }
 }

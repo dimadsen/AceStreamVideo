@@ -1,4 +1,6 @@
-﻿using AceStream.Dto;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using UIKit;
 
@@ -15,12 +17,15 @@ namespace AceStream.Modules.MatchPreviewModule
         IMatchPreviewInteractor Interactor { get; set; }
         int ChampionatId { get; set; }
 
-        void ConfigureView();
+        Task SetMatchesAsync();
+        void SetError();
+        void ConfigureView();        
     }
 
     public interface IMatchPreviewInteractor
     {
-        MatchPreviewDto[] GetMatches(int championatId);
+        Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId);
+
         MatchPreviewSettingsDto GetSettings(int championatId);
     }
 
@@ -32,6 +37,7 @@ namespace AceStream.Modules.MatchPreviewModule
     public interface IMatchPreviewView
     {
         void SetSettings(MatchPreviewSettingsDto dto);
-        void SetMatches(MatchPreviewDto[] matches);
+        Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches);
+        void SetErrorView();
     }
 }

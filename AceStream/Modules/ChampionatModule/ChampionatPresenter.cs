@@ -22,6 +22,7 @@ namespace AceStream.Modules.ChampionatModule
         {
             _view.SetSettings(Interactor.Title);
         }
+
         public void SetError()
         {
             _view.SetErrorView();

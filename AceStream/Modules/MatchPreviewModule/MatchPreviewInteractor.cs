@@ -1,4 +1,7 @@
-﻿using AceStream.Dto;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services;
 
@@ -15,9 +18,20 @@ namespace AceStream.Modules.MatchPreviewModule
             _service = new MatchPreviewService();
         }
 
-        public MatchPreviewDto[] GetMatches(int championatId)
+        public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            return _service.GetMatches(championatId);
+            try
+            {
+                var matches = await _service.GetMatchesAsync(championatId);
+
+                return matches;
+            }
+            catch (Exception)
+            {
+                _presenter.SetError();
+
+                return new List<MatchPreviewDto>();
+            }
         }
 
         public MatchPreviewSettingsDto GetSettings(int championatId)
