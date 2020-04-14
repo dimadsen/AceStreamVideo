@@ -45,6 +45,18 @@ namespace AceStream.Modules.MatchModule
 
         public void SetSettings(string title)
         {
+            HomePicture.Layer.BorderWidth = 1;
+            HomePicture.Layer.MasksToBounds = false;
+            HomePicture.Layer.BorderColor = UIColor.LightGray.CGColor;
+            HomePicture.Layer.CornerRadius = HomePicture.Frame.Height / 2;
+            HomePicture.ClipsToBounds = true;
+
+            VisitorPicture.Layer.BorderWidth = 1;
+            VisitorPicture.Layer.MasksToBounds = false;
+            VisitorPicture.Layer.BorderColor = UIColor.LightGray.CGColor;
+            VisitorPicture.Layer.CornerRadius = VisitorPicture.Frame.Height / 2;
+            VisitorPicture.ClipsToBounds = true;
+
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
 
             Score.AdjustsFontForContentSizeCategory = true;

@@ -46,11 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\Match\Match.cs" />
+    <Compile Include="Models\Match\MatchInfo.cs" />
     <Compile Include="Client\BaseClient.cs" />
     <Compile Include="Client\Client.cs" />
     <Compile Include="Models\Match\Team.cs" />
     <Compile Include="Models\Match\Player.cs" />
+    <Compile Include="Models\Match\Match.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">

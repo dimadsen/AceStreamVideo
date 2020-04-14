@@ -28,12 +28,12 @@ namespace AceStream.Views.TableViewCell
         public void UpdateCell(PlayerDto homePlayer, PlayerDto visitorPlayer)
         {
             HomeNumber.Text = homePlayer?.Number;
-            HomeName.Text = homePlayer != null ? $"{homePlayer.LastName} {homePlayer.FirstName[0]}." : null;
-            HomeFlag.Image = homePlayer != null ? UIImage.FromFile(homePlayer.Flag) : null;
+            HomeName.Text = homePlayer != null ? homePlayer.Name : null;
+            HomeFlag.Image = homePlayer != null ? UIImage.FromFile($"Flags/{homePlayer.Flag}") : null;
 
             VisitorNumber.Text = visitorPlayer?.Number;
-            VisitorName.Text = visitorPlayer != null ? $"{visitorPlayer.LastName} {visitorPlayer.FirstName[0]}." : null;
-            VisitorFlag.Image = visitorPlayer != null ? UIImage.FromFile(visitorPlayer.Flag) : null;
+            VisitorName.Text = visitorPlayer != null ? visitorPlayer.Name : null;
+            VisitorFlag.Image = visitorPlayer != null ? UIImage.FromFile($"Flags/{visitorPlayer.Flag}") : null;
         }
     }
 }

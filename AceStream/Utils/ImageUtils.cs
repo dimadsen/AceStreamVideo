@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreAnimation;
@@ -47,11 +48,18 @@ namespace AceStream.Utils
         {
             var download = Task.Run(async () => await NSUrlSession.SharedSession.CreateDownloadTaskAsync(new NSUrl(url)));
 
-            var tempFile = download.Result.Location.AbsoluteUrl;
+            try
+            {
+                var tempFile = download.Result.Location.AbsoluteUrl;
 
-            var cacheUrl = NSUrl.CreateFileUrl(cachePath, false, null);
+                var cacheUrl = NSUrl.CreateFileUrl(cachePath, false, null);
 
-            NSFileManager.DefaultManager.Move(tempFile, cacheUrl, out NSError error);
+                NSFileManager.DefaultManager.Move(tempFile, cacheUrl, out NSError error);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
     }

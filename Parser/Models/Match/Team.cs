@@ -7,11 +7,15 @@ namespace Parser.Models.Match
     {
         public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "icon80x80")]
+        public string Goals { get; set; }
+
+        [JsonProperty(PropertyName = "big_logo")]
         public string Icon { get; set; }
 
-        public Player[] Players { get; set; }
+        [JsonProperty(PropertyName = "players")]
+        public Player[] Startings { get; set; }
 
-        public Player[] ReservePlayers { get; set; }
+        [JsonProperty(PropertyName = "reserve")]
+        public Player[][] Substitutes { get; set; }
     }
 }

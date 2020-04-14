@@ -131,7 +131,7 @@ namespace AceStream.SubModules.SquardSubModule
 
         public void SetTableSquard()
         {
-            _titles = new string[] { "Стартовые составы", "Замены" };
+            _titles = new string[] { "Стартовые составы", "Запасные" };
         }
 
         public IndicatorInfo IndicatorInfoForPagerTabStrip(PagerTabStripViewController pagerTabStripController)

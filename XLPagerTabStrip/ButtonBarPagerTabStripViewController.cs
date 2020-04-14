@@ -50,8 +50,7 @@ namespace XLPagerTabStrip
                 Font = Settings.Style.ButtonBarItemFont,
                 Text = info.Title
             };
-            CGSize labelSize = label.IntrinsicContentSize;
-            return labelSize.Width + (this?.Settings.Style.ButtonBarItemLeftRightMargin ?? 8) * 2;
+            return Settings.Style.LabelWidth ?? label.IntrinsicContentSize.Width + (this?.Settings.Style.ButtonBarItemLeftRightMargin ?? 8) * 2;
         }
 
         private nfloat?[] cachedCellWidths { get; set; }
@@ -436,5 +435,6 @@ namespace XLPagerTabStrip
 
         // only used if button bar is created programaticaly and not using storyboards or nib files
         public nfloat? ButtonBarHeight { get; set; }
+        public nfloat? LabelWidth { get; set; }
     }
 }

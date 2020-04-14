@@ -5,30 +5,23 @@ namespace Parser.Models.Match
 {
     public class Player
     {
-        public string Name { get; set; }
-
-        [JsonProperty(PropertyName = "originName")]
-        public string Country { get; set; }
-
-        [JsonProperty(PropertyName = "originFlag50x50")]
-        public string Flag { get; set; }
-
-        public Info Info { get; set; }
-    }
-
-    public class Info
-    {
         public string Number { get; set; }
 
-        public string OrderChange { get; set; }
-        
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "flags")]
+        public Flag[] Flag { get; set; }
+
         /// <summary>
-        /// Вышел на поле (для резервных игроков).
-        /// У игроков основного состава всегда false
+        /// Вышел с замены?
         /// </summary>
-        public bool IsOrderChanged()
-        {
-            return OrderChange == "1";
-        }
+        [JsonProperty(PropertyName = "replacement")]
+        public bool IsReplacement { get; set; }
+    }
+
+    public class Flag
+    {
+        [JsonProperty(PropertyName = "flag_country")]
+        public string Country { get; set; }
     }
 }

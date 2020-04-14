@@ -20,17 +20,22 @@ namespace AceStream.Modules.MatchModule
             UIColor themeColor = UIColor.FromRGB(227, 242, 234);
 
             Settings.Style.ButtonBarBackgroundColor = themeColor;
-            Settings.Style.ButtonBarItemBackgroundColor = themeColor;
-            Settings.Style.SelectedBarBackgroundColor = UIColor.Black;
+
             Settings.Style.ButtonBarItemFont = UIFont.BoldSystemFontOfSize(12);
+
+            Settings.Style.ButtonBarItemBackgroundColor = themeColor;
+
+            Settings.Style.SelectedBarBackgroundColor = UIColor.Black;
             Settings.Style.SelectedBarHeight = 2;
-            Settings.Style.SelectedBarWidth = 70;
+            Settings.Style.SelectedBarWidth = View.Frame.Width / 2;
+
             Settings.Style.ButtonBarMinimumLineSpacing = 0;
             Settings.Style.ButtonBarItemTitleColor = UIColor.Black;
             Settings.Style.ButtonBarItemsShouldFillAvailiableWidth = true;
             Settings.Style.ButtonBarLeftContentInset = 0;
             Settings.Style.ButtonBarRightContentInset = 0;
             Settings.Style.ButtonBarHeight = 30;
+            Settings.Style.LabelWidth = View.Frame.Width / 2;
 
             NavigationItem.Title = "Back";
             NavigationItem.BackBarButtonItem = new UIBarButtonItem("Back", UIBarButtonItemStyle.Plain, null);
