@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\" />
+    <Folder Include="Services\" />
+    <Folder Include="Dto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Parser\Parser.csproj" />
   </ItemGroup>
 </Project>

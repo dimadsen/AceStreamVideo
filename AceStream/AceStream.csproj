@@ -128,13 +128,10 @@
         <Folder Include="Modules\ChampionatModule\" />
         <Folder Include="Views\" />
         <Folder Include="Views\TableViewCell\" />
-        <Folder Include="Dto\" />
-        <Folder Include="Services\" />
         <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
         <Folder Include="Modules\MatchModule\" />
-        <Folder Include="Dto\SettingsDto\" />
         <Folder Include="Modules\VideoModule\" />
         <Folder Include="Extansions\" />
         <Folder Include="Modules\SettingsModule\" />
@@ -172,13 +169,10 @@
         <Compile Include="Modules\ChampionatModule\ChampionatViewController.designer.cs">
           <DependentUpon>ChampionatViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="Dto\ChampionatDto.cs" />
-        <Compile Include="Services\ChampionatService.cs" />
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.designer.cs">
           <DependentUpon>MatchPreviewTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Dto\MatchPreviewDto.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.designer.cs">
           <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
@@ -188,7 +182,6 @@
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewConfigurator.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewInteractor.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewRouter.cs" />
-        <Compile Include="Services\MatchPreviewService.cs" />
         <Compile Include="Modules\LoginModule\LoginViewController.cs" />
         <Compile Include="Modules\LoginModule\LoginViewController.designer.cs">
           <DependentUpon>LoginViewController.cs</DependentUpon>
@@ -198,9 +191,6 @@
         <Compile Include="Modules\LoginModule\LoginConfigurator.cs" />
         <Compile Include="Modules\LoginModule\LoginInteractor.cs" />
         <Compile Include="Modules\LoginModule\LoginRouter.cs" />
-        <Compile Include="Dto\LoginDto.cs" />
-        <Compile Include="Services\LoginService.cs" />
-        <Compile Include="Dto\UserDto.cs" />
         <Compile Include="Modules\RegistrationModule\IRegistration.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationViewController.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationViewController.designer.cs">
@@ -210,8 +200,6 @@
         <Compile Include="Modules\RegistrationModule\RegistrationInteractor.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationPresenter.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
-        <Compile Include="Services\RegistrationService.cs" />
-        <Compile Include="Dto\RegistrationDto.cs" />
         <Compile Include="Modules\MatchModule\MatchViewController.cs" />
         <Compile Include="Modules\MatchModule\MatchViewController.designer.cs">
           <DependentUpon>MatchViewController.cs</DependentUpon>
@@ -229,10 +217,6 @@
         <Compile Include="Modules\MatchModule\MatchInteractor.cs" />
         <Compile Include="Modules\MatchModule\MatchPresenter.cs" />
         <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
-        <Compile Include="Dto\MatchDto.cs" />
-        <Compile Include="Services\MatchService.cs" />
-        <Compile Include="Dto\PlayerDto.cs" />
-        <Compile Include="Dto\LinkDto.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.designer.cs">
           <DependentUpon>VideoViewController.cs</DependentUpon>
@@ -240,7 +224,6 @@
         <Compile Include="Modules\VideoModule\IVideo.cs" />
         <Compile Include="Modules\VideoModule\VideoConfigurator.cs" />
         <Compile Include="Modules\VideoModule\VideoPresenter.cs" />
-        <Compile Include="Dto\TeamDto.cs" />
         <Compile Include="Extansions\TeamExtansion.cs" />
         <Compile Include="Modules\SettingsModule\ISettings.cs" />
         <Compile Include="Modules\SettingsModule\SettingsViewController.cs" />
@@ -251,14 +234,10 @@
         <Compile Include="Modules\SettingsModule\SettingsPresenter.cs" />
         <Compile Include="Modules\SettingsModule\SettingsInteractor.cs" />
         <Compile Include="Modules\SettingsModule\SettingsRouter.cs" />
-        <Compile Include="Dto\MatchPreviewSettingsDto.cs" />
-        <Compile Include="Dto\SettingsDto\AboutDto.cs" />
-        <Compile Include="Services\SettingsService.cs" />
         <Compile Include="Views\TableViewCell\SettingTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\SettingTableViewCell.designer.cs">
           <DependentUpon>SettingTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Dto\SettingsDto\MenuSettingsDto.cs" />
         <Compile Include="Extansions\SettingExtansion.cs" />
         <Compile Include="SubModules\UserSubModule\UserViewController.cs" />
         <Compile Include="SubModules\UserSubModule\UserViewController.designer.cs">
@@ -269,7 +248,6 @@
         <Compile Include="SubModules\UserSubModule\UserPresenter.cs" />
         <Compile Include="SubModules\UserSubModule\UserInteractor.cs" />
         <Compile Include="SubModules\UserSubModule\UserRouter.cs" />
-        <Compile Include="Services\UserService.cs" />
         <Compile Include="SubModules\SquardSubModule\SquardViewController.cs" />
         <Compile Include="SubModules\SquardSubModule\SquardViewController.designer.cs">
           <DependentUpon>SquardViewController.cs</DependentUpon>
@@ -296,7 +274,6 @@
         <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\GradientColor.cs" />
         <Compile Include="Utils\ImageUtils.cs" />
-        <Compile Include="Utils\ParserClient.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\lolo_epl.png" />
@@ -593,6 +570,10 @@
       <ProjectReference Include="..\Parser\Parser.csproj">
         <Project>{52B96861-0BB2-4F47-ADEF-9A5B717E542D}</Project>
         <Name>Parser</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
+        <Project>{A473F2DD-7561-417A-B4FA-29BDEBAEB763}</Project>
+        <Name>AceStream.Core</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

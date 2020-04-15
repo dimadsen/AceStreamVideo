@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Parser
+namespace Parser.Client
 {
     public abstract class BaseClient
     {
         private readonly HttpClient _httpClient;
 
-        protected abstract string _baseUrl { get; } 
+        protected abstract string _baseUrl { get; }
 
         public BaseClient()
         {
