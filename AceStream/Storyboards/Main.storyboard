@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <tabBarItem key="tabBarItem" id="662" title="LIVE" image="Live.png"/>
+                    <tabBarItem key="tabBarItem" id="662" title="LIVE" image="TabBarPictures/Live/Live.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -493,7 +493,7 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <tabBarItem key="tabBarItem" id="53328" image="Settings.png" title="Настройки"/>
+                    <tabBarItem key="tabBarItem" id="53328" image="TabBarPictures/Settings/Settings.png" title="Настройки"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue id="53415" destination="48094" kind="relationship" relationship="rootViewController"/>
@@ -540,13 +540,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lolo_epl.png" width="200" height="200"/>
         <image name="favorites.png" width="256" height="256"/>
         <image name="ace_stream_logo.png" width="128" height="128"/>
         <image name="close.png" width="128" height="128"/>
         <image name="aston.jpeg" width="150" height="150"/>
         <image name="lester.jpeg" width="150" height="150"/>
-        <image name="Settings.png" width="25" height="25"/>
-        <image name="Live.png" width="25" height="25"/>
+        <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
+        <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
     </resources>
 </document>

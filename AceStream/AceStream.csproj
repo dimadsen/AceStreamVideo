@@ -547,6 +547,7 @@
       <BundleResource Include="Resources\TabBarPictures\Live\Live%402x.png" />
       <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
       <BundleResource Include="Resources\Championats\seria-a.png" />
+      <BundleResource Include="Resources\Championats\epl.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
