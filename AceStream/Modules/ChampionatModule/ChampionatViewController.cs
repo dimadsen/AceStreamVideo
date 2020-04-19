@@ -89,9 +89,11 @@ namespace AceStream
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            var championatId = TableView.IndexPathForCell(sender as UITableViewCell).Row;
+            var row = TableView.IndexPathForCell(sender as UITableViewCell).Row;
 
-            Presenter.Router.Prepare(segue, championatId);
+            var championat = _championats[row];
+
+            Presenter.Router.Prepare(segue, championat.Id);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

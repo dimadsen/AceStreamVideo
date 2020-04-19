@@ -9,6 +9,15 @@ namespace Parser.Client
         protected override string _baseUrl => "https://www.sports.ru/";
 
 
+        public async Task<Tournament.Championat[]> GetChampionatsAsync()
+        {
+            var url = "core/stat/match/teaser/";
+
+            var tournaments = await SendGetRequest<Tournament.Tournament>(url);
+
+            return tournaments.Teaser.Championats;
+        }
+
         public async Task<MatchInfo> GetMatchInfoAsync(int id)
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";

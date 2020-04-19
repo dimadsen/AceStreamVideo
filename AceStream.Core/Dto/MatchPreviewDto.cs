@@ -2,6 +2,8 @@
 {
     public class MatchPreviewDto
     {
+        public string Id { get; set; }
+
         public string Home { get; set; }
 
         public string Visitor { get; set; }

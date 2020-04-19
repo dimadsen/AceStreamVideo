@@ -568,7 +568,7 @@
         <Name>XLPagerTabStrip</Name>
       </ProjectReference>
       <ProjectReference Include="..\Parser\Parser.csproj">
-        <Project>{52B96861-0BB2-4F47-ADEF-9A5B717E542D}</Project>
+        <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>
         <Name>Parser</Name>
       </ProjectReference>
       <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">

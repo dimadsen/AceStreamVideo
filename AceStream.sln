@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parser", "Parser", "{A9EBFF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{D816BEBD-9B4A-4421-8522-C1312515FEBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser.Tests", "Parser.Tests\Parser.Tests.csproj", "{267320F6-2819-457B-816D-8B20FEE3151B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -71,6 +73,18 @@ Global
 		{D816BEBD-9B4A-4421-8522-C1312515FEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D816BEBD-9B4A-4421-8522-C1312515FEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D816BEBD-9B4A-4421-8522-C1312515FEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|iPhone.Build.0 = Release|iPhone
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{267320F6-2819-457B-816D-8B20FEE3151B}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -107,5 +121,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{47BD137E-0BC0-402F-A3A8-8E257495EDBA} = {3A36E738-0EC7-465B-9C30-083BEB84F005}
 		{D816BEBD-9B4A-4421-8522-C1312515FEBC} = {A9EBFF84-78E5-47D8-99E6-FDACEE44A99C}
+		{267320F6-2819-457B-816D-8B20FEE3151B} = {A9EBFF84-78E5-47D8-99E6-FDACEE44A99C}
 	EndGlobalSection
 EndGlobal

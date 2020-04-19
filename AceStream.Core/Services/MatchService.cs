@@ -32,7 +32,7 @@ namespace AceStream.Services
 
             var task = Task.Run(async () =>
             {
-                await Task.Delay(TimeSpan.FromMilliseconds(2000), new CancellationToken());
+                await Task.Delay(TimeSpan.FromMilliseconds(1000), new CancellationToken());
 
                 return links;
             });

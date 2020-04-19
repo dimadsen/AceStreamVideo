@@ -8,4 +8,6 @@ namespace Parser.Models.Match
         [JsonProperty(PropertyName = "teams")]
         public Team[] Teams { get; set; }
     }
+
+
 }
