@@ -141,6 +141,10 @@
         <Folder Include="Storyboards\" />
         <Folder Include="SubModules\LinkSubModule\" />
         <Folder Include="Utils\" />
+        <Folder Include="Resources\TabBarPictures\" />
+        <Folder Include="Resources\TabBarPictures\Settings\" />
+        <Folder Include="Resources\TabBarPictures\Live\" />
+        <Folder Include="Resources\Championats\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -276,36 +280,12 @@
         <Compile Include="Utils\ImageUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-      <BundleResource Include="Resources\lolo_epl.png" />
-      <BundleResource Include="Resources\seria-a.png" />
-      <BundleResource Include="Resources\photoeditorsdk-export-2.png" />
       <BundleResource Include="Resources\favorites.png" />
       <BundleResource Include="Resources\ace_stream_logo.png" />
       <BundleResource Include="Resources\close.png" />
-      <BundleResource Include="Resources\35_medium.png" />
-      <BundleResource Include="Resources\51_medium.png" />
-      <BundleResource Include="Resources\20170529013004!ФК_Мальмё.png" />
-      <BundleResource Include="Resources\Хобро_ФК_%28лого%29.png" />
-      <BundleResource Include="Resources\aston.jpeg" />
-      <BundleResource Include="Resources\lester.jpeg" />
-      <BundleResource Include="Resources\chanp.jpg" />
-      <BundleResource Include="Resources\1417200695_1.jpg" />
-      <BundleResource Include="Resources\icon_14.png" />
-      <BundleResource Include="Resources\bourenm.png" />
-      <BundleResource Include="Resources\west.png" />
-      <BundleResource Include="Resources\user-male.png" />
-      <BundleResource Include="Resources\info-circle-outline.png" />
-      <BundleResource Include="Resources\Settings.png" />
-      <BundleResource Include="Resources\Settings%402x.png" />
-      <BundleResource Include="Resources\Settings%403x.png" />
-      <BundleResource Include="Resources\Live%403x.png" />
-      <BundleResource Include="Resources\Live%402x.png" />
-      <BundleResource Include="Resources\Live.png" />
       <BundleResource Include="Resources\About.png" />
       <BundleResource Include="Resources\user2.png" />
       <BundleResource Include="Resources\avatar.png" />
-      <BundleResource Include="Resources\england.png" />
-      <BundleResource Include="Resources\premier-league-2.jpg" />
       <BundleResource Include="Resources\Flags\Бахрейн.png" />
       <BundleResource Include="Resources\Flags\Тувалу.png" />
       <BundleResource Include="Resources\Flags\Уэльс.png" />
@@ -560,7 +540,13 @@
       <BundleResource Include="Resources\Flags\США.png" />
       <BundleResource Include="Resources\Flags\Чад.png" />
       <BundleResource Include="Resources\Flags\Белиз.png" />
-      <BundleResource Include="Resources\Англия.png" />
+      <BundleResource Include="Resources\TabBarPictures\Settings\Settings.png" />
+      <BundleResource Include="Resources\TabBarPictures\Settings\Settings%402x.png" />
+      <BundleResource Include="Resources\TabBarPictures\Settings\Settings%403x.png" />
+      <BundleResource Include="Resources\TabBarPictures\Live\Live.png" />
+      <BundleResource Include="Resources\TabBarPictures\Live\Live%402x.png" />
+      <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
+      <BundleResource Include="Resources\Championats\seria-a.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
