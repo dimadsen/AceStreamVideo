@@ -42,9 +42,9 @@ namespace AceStream.Services
 
         public async Task<MatchDto> GetMatchAsync(int matchId)
         {
-            var matchInfo = await _client.GetMatchInfoAsync(1368632);
+            var matchInfo = await _client.GetMatchInfoAsync(matchId);
 
-            var teams = await _client.GetTeamsAsync(1368632);
+            var teams = await _client.GetTeamsAsync(matchId);
 
             var homeSquard = teams.Teams[0];
             var visitorSquard = teams.Teams[1];

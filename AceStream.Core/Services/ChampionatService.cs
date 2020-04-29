@@ -24,7 +24,8 @@ namespace AceStream.Services
 
             var dto = championats.Select(championat => new ChampionatDto
             {
-                Name = championat.Name,
+                Name = championat.Name.Split(new string[] { ". " }, StringSplitOptions.None)[1],
+                Tour = championat.Name.Split(new string[] { ". " }, StringSplitOptions.None)[2],
                 Image = championat.Icon,
                 Matches = championat.Matches.Select(match => new MatchPreviewDto
                 {
@@ -36,7 +37,7 @@ namespace AceStream.Services
                     VisitorPicture = match.Visitor.Icon
                 }).ToList()
 
-            }).ToList();
+            }).ToList();            
 
             return dto;
         }

@@ -11,9 +11,7 @@ namespace Parser.Tests
         public void GetChampionats()
         {
             var client = new Client.Client();
-            var championats = Task.Run(async () => await client.GetChampionatsAsync()).Result;
-
-            
+            var championats = Task.Run(async () => await client.GetChampionatsAsync()).Result;            
         }
     }
 }

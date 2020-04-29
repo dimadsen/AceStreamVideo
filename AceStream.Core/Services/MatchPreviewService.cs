@@ -72,24 +72,12 @@ namespace AceStream.Services
 
         public MatchPreviewSettingsDto GetSettings(int championatId)
         {
-            MatchPreviewSettingsDto settings = null;
+            MatchPreviewSettingsDto settings = new MatchPreviewSettingsDto();
 
-            if (championatId == 0)
-            {
-                settings = new MatchPreviewSettingsDto
-                {
-                    Image = "lolo_epl.png",
-                    Title = "Премьер-Лига"
-                };
-            }
-            else if (championatId == 1)
-            {
-                settings = new MatchPreviewSettingsDto
-                {
-                    Image = "seria-a.png",
-                    Title = "Серия А"
-                };
-            }
+            
+                settings.Image = "lolo_epl.png";
+                settings.Title = "Премьер-Лига";
+            
 
             return settings;
         }

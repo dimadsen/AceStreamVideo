@@ -27,7 +27,7 @@ namespace AceStream.Modules.MatchModule
         {
             try
             {
-                var match = await _service.GetMatchAsync(1368632);
+                var match = await _service.GetMatchAsync(matchId);
 
                 match.ImageHome = ImageUtils.DownloadFile(match.Home, match.ImageHome);
                 match.ImageVisitor = ImageUtils.DownloadFile(match.Visitor, match.ImageVisitor);

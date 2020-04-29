@@ -8,11 +8,15 @@
     <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Dto\" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Parser\Parser.csproj" />
-    <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AceStreamDb.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AceStreamDb.db" />
   </ItemGroup>
 </Project>
