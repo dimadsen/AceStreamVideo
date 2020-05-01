@@ -3,6 +3,7 @@ using AceStream.Additionals;
 using AceStream.Dto.SettingsDto;
 using AceStream.Extansions;
 using AceStream.Modules.SettingsModule;
+using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
@@ -37,14 +38,20 @@ namespace AceStream
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            var gradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
+            var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
+            var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
 
-            UIGraphics.BeginImageContext(NavigationController.NavigationBar.Frame.Size);
-            var ctx = UIGraphics.GetCurrentContext();
-            gradient.RenderInContext(ctx);
-            var image = UIGraphics.GetImageFromCurrentImageContext();
-            UIGraphics.EndImageContext();
-            NavigationController.NavigationBar.BarTintColor = new UIColor(image);
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
+
+                NavigationController.NavigationBar.StandardAppearance = appearance;
+                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            }
+            else
+            {
+                NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
+            }
 
             Presenter.Router.InitializeUser();            
         }
