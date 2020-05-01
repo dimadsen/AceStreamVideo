@@ -64,7 +64,7 @@
                                 <rect key="frame" x="0.0" y="138.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6873" id="6874">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6890" translatesAutoresizingMaskIntoConstraints="NO" image="lolo_epl.png" fixedFrame="YES">
@@ -98,6 +98,7 @@
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="72436" key="tableHeaderView" animating="YES">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                            <color key="color" systemColor="linkColor" colorSpace="calibratedRGB" red="0" green="0.47843137254902" blue="1" alpha="1"/>
                         </activityIndicatorView>
                     </tableView>
                     <navigationItem title="Title" id="5245" key="navigationItem">
@@ -128,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="128" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9016" id="9017">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="lester.jpeg" fixedFrame="YES">
@@ -229,7 +230,7 @@
                                     <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="20388" destination="216" kind="presentation" modalTransitionStyle="flipHorizontal" identifier="ToChampionats"/>
+                                    <segue id="20388" destination="216" kind="presentation" modalTransitionStyle="flipHorizontal" identifier="ToChampionats" modalPresentationStyle="fullScreen"/>
                                     <action selector="SignIn:" destination="16276" id="47639" eventType="touchUpInside"/>
                                 </connections>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
@@ -447,7 +448,7 @@
                                 <rect key="frame" x="0.0" y="101.5" width="414" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48650" id="48651">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49290" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Выйти">
@@ -460,7 +461,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="49229" destination="16276" kind="presentation" modalTransitionStyle="flipHorizontal" identifier="ToExit"/>
+                                    <segue id="49229" destination="16276" kind="presentation" modalTransitionStyle="flipHorizontal" identifier="ToExit" modalPresentationStyle="fullScreen"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -543,8 +544,6 @@
         <image name="favorites.png" width="256" height="256"/>
         <image name="ace_stream_logo.png" width="128" height="128"/>
         <image name="close.png" width="128" height="128"/>
-        <image name="aston.jpeg" width="150" height="150"/>
-        <image name="lester.jpeg" width="150" height="150"/>
         <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
         <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
     </resources>

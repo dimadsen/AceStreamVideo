@@ -63,16 +63,26 @@ namespace AceStream
             #region Настройки NavigationBar
 
             NavigationItem.Title = title;
-
+           
             SetBackIndicator();
-
             NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
             NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
 
             var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
             var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
+            
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
 
-            NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
+                NavigationController.NavigationBar.StandardAppearance = appearance;
+                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            }
+            else
+            {
+                NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
+            }
+
             #endregion
 
             #region Цвет TabBar
