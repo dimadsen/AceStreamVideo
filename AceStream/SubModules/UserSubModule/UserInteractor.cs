@@ -18,7 +18,7 @@ namespace AceStream.SubModules.UserSubModule
 
         public UserDto GetUser()
         {
-            return service.GetUser();
+            return service.GetUser((int)User.Id);
         }
     }
 }

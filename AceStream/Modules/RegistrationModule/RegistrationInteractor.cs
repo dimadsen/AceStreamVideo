@@ -8,13 +8,13 @@ namespace AceStream.Modules.RegistrationModule
     {
         private IRegistrationPresenter _presenter;
 
-        private IRegistrationService _service;
+        private IUserSerivice _service;
 
         public RegistrationInteractor(IRegistrationPresenter presenter)
         {
             _presenter = presenter;
 
-            _service = new RegistrationService();
+            _service = new UserService();
         }
 
         public bool SignUp(RegistrationDto dto)

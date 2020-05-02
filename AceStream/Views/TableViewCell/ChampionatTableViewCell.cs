@@ -27,7 +27,7 @@ namespace AceStream.Views.TableViewCell
 
         public void UpdateCell(ChampionatDto dto)
         {
-            Icon.Image = UIImage.FromFile(dto.Image);
+            Icon.Image = UIImage.FromFile($"Championats/{dto.Image}");
             Name.Text = dto.Name;
             Tour.Text = dto.Tour;
         }

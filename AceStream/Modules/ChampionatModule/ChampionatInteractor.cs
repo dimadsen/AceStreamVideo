@@ -28,15 +28,15 @@ namespace AceStream.Modules.ChampionatModule
             {
                 var championats = await service.GetChampionatsAsync();
 
-                championats.ForEach(champ =>
-                {
-                    champ.Image = ImageUtils.DownloadFile(champ.Name, champ.Image);
-                    champ.Matches.ForEach(match =>
-                    {
-                        match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
-                        match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
-                    });
-                });
+                //championats.ForEach(champ =>
+                //{
+                //    champ.Image = ImageUtils.DownloadFile(champ.Name, champ.Image);
+                //    champ.Matches.ForEach(match =>
+                //    {
+                //        match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
+                //        match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
+                //    });
+                //});
 
                 return championats;
             }

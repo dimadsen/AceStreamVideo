@@ -25,7 +25,8 @@ namespace AceStream
         public void SetSettings(UserDto dto)
         {
             Nik.Text = dto.Nickname;
-            Avatar.Image = UIImage.FromFile(dto.Avatar);
+
+            Avatar.Image = UIImage.FromFile(dto.Avatar ?? "avatar.png");
         }
     }
 }

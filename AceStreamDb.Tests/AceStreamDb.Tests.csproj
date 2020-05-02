@@ -113,11 +113,12 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
-    <Compile Include="ChampionatTest.cs" />
+    <Compile Include="ChampionatTests.cs" />
+    <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj">
-      <Project>{2A30E51C-A02A-45EE-82BE-174A0D08D443}</Project>
+      <Project>{272F19CC-AEC2-4DF1-B60B-7598EC89E4C4}</Project>
       <Name>AceStreamDb</Name>
     </ProjectReference>
   </ItemGroup>
