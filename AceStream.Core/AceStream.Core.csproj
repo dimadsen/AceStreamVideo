@@ -10,6 +10,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Dto\" />
+    <Folder Include="Extansions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Parser\Parser.csproj" />
