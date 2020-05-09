@@ -40,6 +40,13 @@ namespace AceStreamDb
             return championats;
         }
 
+        public Championat GetChampionat(int championatId)
+        {
+            var championat = _db.Table<Championat>().FirstOrDefault(c => c.Id == championatId);
+
+            return championat;
+        }
+
         public List<Match> GetMatches(int championatId)
         {
             var matches = _db.Table<Match>().Where(m => m.ChampionatId == championatId).ToList();

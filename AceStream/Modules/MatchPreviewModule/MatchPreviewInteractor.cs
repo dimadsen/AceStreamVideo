@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services;
+using AceStream.Utils;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -23,6 +24,12 @@ namespace AceStream.Modules.MatchPreviewModule
             try
             {
                 var matches = await _service.GetMatchesAsync(championatId);
+
+                matches.ForEach(match =>
+                {
+                    match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
+                    match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
+                });
 
                 return matches;
             }

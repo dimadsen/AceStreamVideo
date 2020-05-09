@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream", "AceStream\AceStream.csproj", "{67103686-01E1-4738-A9AF-52669554E5C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.iOS", "AceStream\AceStream.iOS.csproj", "{67103686-01E1-4738-A9AF-52669554E5C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLPagerTabStrip", "XLPagerTabStrip\XLPagerTabStrip.csproj", "{47BD137E-0BC0-402F-A3A8-8E257495EDBA}"
 EndProject

@@ -1,5 +1,4 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
 
 namespace AceStreamDb.Models
 {
@@ -7,11 +6,22 @@ namespace AceStreamDb.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
         public int ChampionatId { get; set; }
+
         /// <summary>
         /// Идентифкатор матча на сайте
         /// </summary>
         public int ValueId { get; set; }
+
         public string Date { get; set; }
+
+        public string Home { get; set; }
+
+        public string HomeIcon { get; set; }
+
+        public string Visitor { get; set; }
+
+        public string VisitorIcon { get; set; }
     }
 }

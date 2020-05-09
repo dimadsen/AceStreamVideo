@@ -15,6 +15,10 @@ namespace AceStream.Views.TableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Country { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView Icon { get; set; }
 
         [Outlet]
@@ -27,6 +31,11 @@ namespace AceStream.Views.TableViewCell
 
         void ReleaseDesignerOutlets ()
         {
+            if (Country != null) {
+                Country.Dispose ();
+                Country = null;
+            }
+
             if (Icon != null) {
                 Icon.Dispose ();
                 Icon = null;

@@ -12,6 +12,6 @@ namespace AceStream.Dto
 
         public string Image { get; set; }
 
-        public List<MatchPreviewDto> Matches { get; set; }
+        public string Country { get; set; }
     }
 }

@@ -30,6 +30,7 @@ namespace AceStream.Views.TableViewCell
             Icon.Image = UIImage.FromFile($"Championats/{dto.Image}");
             Name.Text = dto.Name;
             Tour.Text = dto.Tour;
+            Country.Text = dto.Country;
         }
 
     }

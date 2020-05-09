@@ -29,7 +29,7 @@ namespace AceStream.Modules.ChampionatModule
 
                 return championats;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 _presenter.SetError();
 

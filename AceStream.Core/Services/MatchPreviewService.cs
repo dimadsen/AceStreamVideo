@@ -1,83 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
+using AceStreamDb;
 
 namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
+        private DataBase _db;
+
+        public MatchPreviewService()
+        {
+            _db = new DataBase();
+        }
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            List<MatchPreviewDto> matches = null;
-
-            if (championatId == 0)
+            var task = Task.Run(() =>
             {
-                matches = new List<MatchPreviewDto>
+                var matches = _db.GetMatches(championatId).Where(m => DateTime.Parse(m.Date).Date == DateTime.Now.Date).ToList();
+
+                var dto = matches.Select(m => new MatchPreviewDto
                 {
-                    new MatchPreviewDto
-                    {
-                         Home = "Лестер",
-                         HomePicture = "lolo_epl.png",
-                         Visitor = "Манчестер",
-                         VisitorPicture = "seria-a.png",
-                         Time = "18:20"
-                    },
-                    new MatchPreviewDto
-                    {
-                         Home = "Ливерпуль",
-                         HomePicture = "lolo_epl.png",
-                         Visitor = "Сити",
-                         VisitorPicture = "seria-a.png",
-                         Time = "21:45"
-                    }
-                };
-            }
+                    ValueId = m.ValueId,
+                    Home = m.Home,
+                    HomePicture = m.HomeIcon,
+                    Time = m.Date,
+                    Visitor = m.Visitor,
+                    VisitorPicture = m.VisitorIcon
+                }).ToList();
 
-            else if (championatId == 1)
-            {
-                matches = new List<MatchPreviewDto>
-                {
-                    new MatchPreviewDto
-                    {
-                         Home = "Ювентус",
-                         HomePicture = "lolo_epl.png",
-                         Visitor = "Торино",
-                         VisitorPicture = "seria-a.png",
-                         Time = "14:20"
-                    },
-                    new MatchPreviewDto
-                    {
-                         Home = "Интер",
-                         HomePicture = "lolo_epl.png",
-                         Visitor = "Милан",
-                         VisitorPicture = "seria-a.png",
-                         Time = "13:45"
-                    }
-                };
-            }
-
-            var task = Task.Run(async () =>
-            {
-                await Task.Delay(TimeSpan.FromMilliseconds(500), new CancellationToken());
-
-                return matches;
+                return dto;
             });
 
             return await task;
-
         }
 
         public MatchPreviewSettingsDto GetSettings(int championatId)
         {
-            MatchPreviewSettingsDto settings = new MatchPreviewSettingsDto();
+            var championat = _db.GetChampionat(championatId);
 
-            
-                settings.Image = "lolo_epl.png";
-                settings.Title = "Премьер-Лига";
-            
+            var settings = new MatchPreviewSettingsDto()
+            {
+                Image = championat.Icon,
+                Title = championat.Name
+            };
 
             return settings;
         }

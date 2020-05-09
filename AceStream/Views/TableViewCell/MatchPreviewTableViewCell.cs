@@ -21,7 +21,7 @@ namespace AceStream.Views.TableViewCell
 
         public MatchPreviewTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
-
+            
         }
 
         public void UpdateCell(MatchPreviewDto dto)
@@ -35,6 +35,18 @@ namespace AceStream.Views.TableViewCell
             VisitorIcon.Image = UIImage.FromFile(dto.VisitorPicture);
 
             Favorites.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+
+            HomeIcon.Layer.BorderWidth = 1;
+            HomeIcon.Layer.MasksToBounds = false;
+            HomeIcon.Layer.BorderColor = UIColor.LightGray.CGColor;
+            HomeIcon.Layer.CornerRadius = HomeIcon.Frame.Height / 2;
+            HomeIcon.ClipsToBounds = true;
+
+            VisitorIcon.Layer.BorderWidth = 1;
+            VisitorIcon.Layer.MasksToBounds = false;
+            VisitorIcon.Layer.BorderColor = UIColor.LightGray.CGColor;
+            VisitorIcon.Layer.CornerRadius = VisitorIcon.Frame.Height / 2;
+            VisitorIcon.ClipsToBounds = true;
         }
 
         partial void AddToFavorites(UIButton sender)

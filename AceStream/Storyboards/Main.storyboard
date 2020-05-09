@@ -64,26 +64,33 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6873" id="6874">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6890" translatesAutoresizingMaskIntoConstraints="NO" image="lolo_epl.png" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="5" width="86.5" height="90"/>
+                                            <rect key="frame" x="0.0" y="4.5" width="86.5" height="90"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6996" translatesAutoresizingMaskIntoConstraints="NO" text="Название Чемпионата" fixedFrame="YES">
-                                            <rect key="frame" x="94" y="5" width="254" height="23"/>
+                                            <rect key="frame" x="94" y="4.5" width="254" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тур 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7072" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="94" y="36" width="254" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17" weight="light"/>
+                                            <rect key="frame" x="94" y="65" width="254" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
                                             <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.666666666666667" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="77634" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Страна">
+                                            <rect key="frame" x="94" y="36" width="254" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.666666666666667" alpha="1"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -92,6 +99,7 @@
                                     <outlet property="Name" destination="6996" id="name-outlet-6996"/>
                                     <outlet property="Tour" destination="7072" id="name-outlet-7072"/>
                                     <segue id="15922" destination="5485" kind="show" identifier="ToMatchPreview"/>
+                                    <outlet property="Country" destination="77634" id="name-outlet-77634"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -129,40 +137,40 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9016" id="9017">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="lester.jpeg" fixedFrame="YES">
-                                            <rect key="frame" x="46.5" y="12" width="30" height="30"/>
+                                            <rect key="frame" x="46.5" y="11.5" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" image="aston.jpeg" fixedFrame="YES">
-                                            <rect key="frame" x="46.5" y="55" width="30" height="30"/>
+                                            <rect key="frame" x="46.5" y="54.5" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9755" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева" fixedFrame="YES">
-                                            <rect key="frame" x="85" y="16" width="187.5" height="21"/>
+                                            <rect key="frame" x="85" y="15.5" width="187.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9840" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="85" y="58" width="188.5" height="21"/>
+                                            <rect key="frame" x="85" y="57.5" width="188.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                            <rect key="frame" x="297.5" y="42" width="57.5" height="21"/>
+                                            <rect key="frame" x="297.5" y="41.5" width="57.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="26828" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite">
-                                            <rect key="frame" x="7" y="38" width="29" height="30"/>
+                                            <rect key="frame" x="7" y="37.5" width="29" height="30"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <connections>
                                                 <action selector="AddToFavorites:" destination="9016" id="30822" eventType="touchUpOutside"/>
@@ -448,11 +456,11 @@
                                 <rect key="frame" x="0.0" y="94.5" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48650" id="48651">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49290" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Выйти">
-                                            <rect key="frame" x="95.5" y="23" width="184" height="21"/>
+                                            <rect key="frame" x="95.5" y="22.5" width="184" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.230477461872129" blue="0.203463290151325" alpha="1"/>

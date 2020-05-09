@@ -48,9 +48,11 @@ namespace AceStream
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            var matchId = TableView.IndexPathForCell(sender as MatchPreviewTableViewCell).Row;
+            var row = TableView.IndexPathForCell(sender as MatchPreviewTableViewCell).Row;
 
-            Presenter.Router.Prepare(segue, matchId, NavigationItem.Title);
+            var match = _matches[row];
+
+            Presenter.Router.Prepare(segue, match.ValueId, NavigationItem.Title);
         }
 
         public override void ViewWillDisappear(bool animated)
