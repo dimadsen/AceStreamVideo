@@ -36,7 +36,7 @@ namespace AceStream.Modules.ChampionatModule
 
                 return new List<ChampionatDto>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _presenter.SetError();
 

@@ -36,14 +36,15 @@ namespace AceStream.Services
 
             cleanedChampionats.ForEach(championat => SaveMatches(championat, championatsDb));
 
-            var dto = cleanedChampionats.Select(c => new ChampionatDto
-            {
-                Name = c.Name.Split(1),
-                Tour = c.Name.Split(2),
-                Country = c.Country,
-                Image = c.Icon,
-                Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1) && cdb.Country == c.Country).Id
-            }).Distinct().ToList();
+            var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
+                .Select(c => new ChampionatDto
+                {
+                    Name = c.Name.Split(1),
+                    Tour = c.Name.Split(2),
+                    Country = c.Country,
+                    Image = c.Icon,
+                    Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1) && cdb.Country == c.Country).Id
+                }).Distinct().ToList();
 
             return dto ?? throw new NotFoundMatchesException("На сегодня матчей нет");
         }
