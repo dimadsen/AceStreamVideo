@@ -109,7 +109,7 @@ namespace AceStream.Modules.MatchModule
         public void SetError()
         {
             throw new NotImplementedException();
-        }
+        }        
     }
 }
 

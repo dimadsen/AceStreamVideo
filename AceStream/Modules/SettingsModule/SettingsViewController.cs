@@ -41,18 +41,18 @@ namespace AceStream
             var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
             var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
 
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
+            //if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            //{
+            //    var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
 
-                NavigationController.NavigationBar.StandardAppearance = appearance;
-                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
-            }
-            else
-            {
-                NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
-            }
-
+            //    NavigationController.NavigationBar.StandardAppearance = appearance;
+            //    NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            //}
+            //else
+            //{
+                
+            //}
+            NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
             Presenter.Router.InitializeUser();            
         }
 

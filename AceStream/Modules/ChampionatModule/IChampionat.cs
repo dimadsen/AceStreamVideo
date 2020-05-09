@@ -18,6 +18,7 @@ namespace AceStream.Modules.ChampionatModule
 
         Task SetChampionatsAsync();
         void SetError();
+        void SetNotFoundMatches();
         void ConfigureView();
     }
 
@@ -36,7 +37,8 @@ namespace AceStream.Modules.ChampionatModule
     {
         void SetSettings(string title);
         Task SetChampionatsAsync(Task<List<ChampionatDto>> championats);
-        void SetErrorView();  
+        void SetErrorView();
+        void SetNotFoundView();
     }
 
 }

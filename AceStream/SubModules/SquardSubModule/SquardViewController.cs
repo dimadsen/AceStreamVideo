@@ -8,6 +8,7 @@ using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
 using UIKit;
+using Xamarin.Essentials;
 using XLPagerTabStrip;
 
 namespace AceStream.SubModules.SquardSubModule
@@ -31,6 +32,7 @@ namespace AceStream.SubModules.SquardSubModule
             base.ViewDidLoad();
 
             Presenter.ConfigureView();
+            Presenter.SetPlayers();
         }
 
         public void SetSettings()
@@ -78,6 +80,9 @@ namespace AceStream.SubModules.SquardSubModule
         /// </summary>
         public override nint RowsInSection(UITableView tableView, nint section)
         {
+            if (_match == null || _match.HomeSquard == null)
+                return 0;
+
             if (section.IsSubstitutes())
             {
                 var subHomeCount = _match.HomeSquard.Substitutes.Count;
@@ -137,6 +142,21 @@ namespace AceStream.SubModules.SquardSubModule
         public IndicatorInfo IndicatorInfoForPagerTabStrip(PagerTabStripViewController pagerTabStripController)
         {
             return new IndicatorInfo("Составы");
+        }
+
+        public void SetNotFoundPlayers()
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 50))
+                {
+                    Text = "Составы команд не опубликованы"
+                };
+
+                label.Center = TableView.ConvertPointFromView(TableView.Center, label);
+
+                TableView.AddSubview(label);
+            });
         }
     }
 }

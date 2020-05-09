@@ -7,6 +7,7 @@ using Parser.Client;
 using System.Globalization;
 using System.Linq;
 using Parser.Models.Match;
+using AceStream.Extansions;
 
 namespace AceStream.Services
 {
@@ -52,7 +53,7 @@ namespace AceStream.Services
             var matchDto = new MatchDto
             {
                 Date = DateTime.Parse(matchInfo.Date.StartDate, CultureInfo.GetCultureInfo("ru")),
-                Half = matchInfo.Status,
+                Half = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(matchInfo.Status.ToLower()),
                 Score = $"{homeSquard.Goals} : {visitorSquard.Goals}",
 
                 Home = homeSquard.Name,

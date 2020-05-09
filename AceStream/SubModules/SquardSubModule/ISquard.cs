@@ -15,10 +15,13 @@ namespace AceStream.SubModules.SquardSubModule
         MatchDto Match { get; set; }
 
         void ConfigureView();
+        void SetPlayers();
+        void SetNotFoundPlayers();
     }
 
     public interface ISquardInteractor
     {
+        MatchDto GetMatch(MatchDto match);
     }
 
     public interface ISquardRouter
@@ -30,5 +33,6 @@ namespace AceStream.SubModules.SquardSubModule
         void SetTableSquard();
         void SetSettings();
         void SetPlayers(MatchDto match);
+        void SetNotFoundPlayers();
     }
 }

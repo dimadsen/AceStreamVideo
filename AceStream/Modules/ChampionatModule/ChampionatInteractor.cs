@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
+using AceStream.Extansions;
 using AceStream.Services;
 
 namespace AceStream.Modules.ChampionatModule
@@ -26,8 +27,14 @@ namespace AceStream.Modules.ChampionatModule
             try
             {
                 var championats = await service.GetChampionatsAsync();
-
+                
                 return championats;
+            }
+            catch (NotFoundMatchesException)
+            {
+                _presenter.SetNotFoundMatches();
+
+                return new List<ChampionatDto>();
             }
             catch (Exception ex)
             {

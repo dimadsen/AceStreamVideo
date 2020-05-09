@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Core.Extansions;
 using AceStream.Dto;
+using AceStream.Extansions;
 using AceStreamDb;
 using AceStreamDb.Models;
 using Parser.Client;
@@ -44,7 +45,7 @@ namespace AceStream.Services
                 Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1) && cdb.Country == c.Country).Id
             }).Distinct().ToList();
 
-            return dto;
+            return dto ?? throw new NotFoundMatchesException("На сегодня матчей нет");
         }
 
         private void SaveMatches(Parser.Tournament.Championat championat, List<Championat> championatsDb)

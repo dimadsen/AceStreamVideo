@@ -27,5 +27,10 @@ namespace AceStream.Modules.ChampionatModule
         {
             _view.SetErrorView();
         }
+
+        public void SetNotFoundMatches()
+        {
+            _view.SetNotFoundView();
+        }
     }
 }

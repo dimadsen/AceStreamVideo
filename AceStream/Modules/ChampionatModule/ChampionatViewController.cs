@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
@@ -71,18 +72,18 @@ namespace AceStream
             var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
             var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
             
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
+            //if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            //{
+            //    var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
 
-                NavigationController.NavigationBar.StandardAppearance = appearance;
-                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
-            }
-            else
-            {
-                NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
-            }
-
+            //    NavigationController.NavigationBar.StandardAppearance = appearance;
+            //    NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            //}
+            //else
+            //{
+                
+            //}
+            NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
             #endregion
 
             #region Цвет TabBar
@@ -140,7 +141,33 @@ namespace AceStream
 
         public void SetErrorView()
         {
-            throw new NotImplementedException();
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                var imageview = new UIImageView(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 200))
+                {
+                    Image = UIImage.FromFile("error_image.png")                    
+                };
+
+                imageview.Center = TableView.ConvertPointFromView(TableView.Center, imageview);
+
+                TableView.AddSubview(imageview);
+            });           
+        }
+
+        public void SetNotFoundView()
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 50))
+                {
+                    Text = "На сегодня матчей нет"
+                };
+
+                label.Center = TableView.ConvertPointFromView(TableView.Center, label);
+
+                TableView.AddSubview(label);
+            });
+            
         }
     }
 }

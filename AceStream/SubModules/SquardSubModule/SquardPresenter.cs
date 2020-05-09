@@ -1,5 +1,6 @@
 ﻿using System;
 using AceStream.Dto;
+using Parser.Models.Match;
 
 namespace AceStream.SubModules.SquardSubModule
 {
@@ -22,8 +23,18 @@ namespace AceStream.SubModules.SquardSubModule
         {
             _view.SetTableSquard();
 
-            _view.SetPlayers(Match);
+            //_view.SetPlayers(Match);
             _view.SetSettings();     
+        }
+
+        public void SetPlayers()
+        {
+            _view.SetPlayers(Interactor.GetMatch(Match));
+        }
+
+        public void SetNotFoundPlayers()
+        {
+            _view.SetNotFoundPlayers();
         }
     }
 }
