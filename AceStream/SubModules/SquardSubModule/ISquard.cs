@@ -16,6 +16,7 @@ namespace AceStream.SubModules.SquardSubModule
 
         void ConfigureView();
         void SetPlayers();
+        void SetTitleHeader();
         void SetNotFoundPlayers();
     }
 
@@ -30,9 +31,9 @@ namespace AceStream.SubModules.SquardSubModule
 
     public interface ISquardView
     {
-        void SetTableSquard();
         void SetSettings();
         void SetPlayers(MatchDto match);
+        void SetTableSquard();
         void SetNotFoundPlayers();
     }
 }

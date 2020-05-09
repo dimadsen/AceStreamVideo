@@ -55,7 +55,7 @@ namespace AceStream.Services
             var matches = championat.Matches.Select(match => new Match
             {
                 ValueId = Convert.ToInt32(match.Id),
-                Date = match.Date.StartDate.ToString("HH:mm"),
+                Date = match.Date.StartDate.ToString(),
                 ChampionatId = championatDb.Id,
                 Home = match.Home.Name,
                 HomeIcon = match.Home.Icon,

@@ -21,9 +21,6 @@ namespace AceStream.SubModules.SquardSubModule
 
         public void ConfigureView()
         {
-            _view.SetTableSquard();
-
-            //_view.SetPlayers(Match);
             _view.SetSettings();     
         }
 
@@ -35,6 +32,11 @@ namespace AceStream.SubModules.SquardSubModule
         public void SetNotFoundPlayers()
         {
             _view.SetNotFoundPlayers();
+        }
+
+        public void SetTitleHeader()
+        {
+            _view.SetTableSquard();
         }
     }
 }

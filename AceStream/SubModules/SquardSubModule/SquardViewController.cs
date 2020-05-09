@@ -80,7 +80,7 @@ namespace AceStream.SubModules.SquardSubModule
         /// </summary>
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            if (_match == null || _match.HomeSquard == null)
+            if (_match == null)
                 return 0;
 
             if (section.IsSubstitutes())
@@ -101,12 +101,12 @@ namespace AceStream.SubModules.SquardSubModule
         /// <returns></returns>
         public override nint NumberOfSections(UITableView tableView)
         {
-            return _titles.Length;
+            return _titles?.Length ?? 0;
         }
 
         public override string TitleForHeader(UITableView tableView, nint section)
         {
-            return _titles[section];
+            return _titles?[section];
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace AceStream.SubModules.SquardSubModule
             var view = headerView as UITableViewHeaderFooterView;
 
             view.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
-            
+
         }
 
         public void SetTableSquard()
@@ -148,9 +148,10 @@ namespace AceStream.SubModules.SquardSubModule
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 50))
+                var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 300, 50))
                 {
-                    Text = "Составы команд не опубликованы"
+                    Text = "Составы не опубликованы",
+                    TextAlignment = UITextAlignment.Center
                 };
 
                 label.Center = TableView.ConvertPointFromView(TableView.Center, label);

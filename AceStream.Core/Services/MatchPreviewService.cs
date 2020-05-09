@@ -27,7 +27,7 @@ namespace AceStream.Services
                     ValueId = m.ValueId,
                     Home = m.Home,
                     HomePicture = m.HomeIcon,
-                    Time = m.Date,
+                    Time = DateTime.Parse(m.Date).ToString("HH:mm"),
                     Visitor = m.Visitor,
                     VisitorPicture = m.VisitorIcon
                 }).ToList();

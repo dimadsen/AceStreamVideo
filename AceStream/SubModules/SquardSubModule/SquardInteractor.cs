@@ -11,7 +11,6 @@ namespace AceStream.SubModules.SquardSubModule
         public SquardInteractor(ISquardPresenter presenter)
         {
             _presenter = presenter;
-
         }
 
         public MatchDto GetMatch(MatchDto match)
@@ -21,13 +20,15 @@ namespace AceStream.SubModules.SquardSubModule
                 if (match.HomeSquard.Startings.Count < 11 || match.VisitorSquard.Startings.Count < 11)
                     throw new NotFoundPlayersException("Составы команд не опубликованы");
 
+                _presenter.SetTitleHeader();
+
                 return match;
             }
             catch (NotFoundPlayersException)
             {
                 _presenter.SetNotFoundPlayers();
 
-                return new MatchDto();
+                return null;
             }
         }
     }
