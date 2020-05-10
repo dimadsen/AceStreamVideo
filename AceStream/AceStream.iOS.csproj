@@ -551,6 +551,7 @@
       <BundleResource Include="Resources\Championats\belarus.png" />
       <BundleResource Include="Resources\error_image.png" />
       <BundleResource Include="Resources\Championats\k-league1.png" />
+      <BundleResource Include="Resources\Ace-Stream-logo.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">

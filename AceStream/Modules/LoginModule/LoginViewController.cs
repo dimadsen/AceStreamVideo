@@ -27,7 +27,12 @@ namespace AceStream.Modules.LoginModule
 
         public void SetSettings()
         {
-            //throw new NotImplementedException();
+            var tap = new UITapGestureRecognizer(() =>
+            {
+                View.EndEditing(true);
+            });
+
+            View.AddGestureRecognizer(tap);
         }
 
 

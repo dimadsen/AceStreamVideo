@@ -15,5 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Parser\Parser.csproj" />
     <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj" />
+    <ProjectReference Include="..\Engine\Engine.csproj" />
   </ItemGroup>
 </Project>

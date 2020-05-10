@@ -19,7 +19,7 @@ namespace AceStream
                 Window.RootViewController = storyboard.InstantiateViewController("LoginViewController");
                 Window.MakeKeyAndVisible();
             }
-            
+
             return true;
         }
         

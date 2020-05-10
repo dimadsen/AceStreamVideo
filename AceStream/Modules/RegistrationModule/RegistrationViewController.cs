@@ -60,6 +60,13 @@ namespace AceStream.Modules.RegistrationModule
         public void SetSettings()
         {
             CloseButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+
+            var tap = new UITapGestureRecognizer(() =>
+            {
+                View.EndEditing(true);
+            });
+
+            View.AddGestureRecognizer(tap);
         }
     }
 }

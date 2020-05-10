@@ -99,7 +99,17 @@ namespace AceStream.SubModules.LinkSubModule
 
         public void SetError()
         {
-            throw new NotImplementedException();
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                var imageview = new UIImageView(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 200))
+                {
+                    Image = UIImage.FromFile("error_image.png")
+                };
+
+                imageview.Center = TableView.ConvertPointFromView(TableView.Center, imageview);
+
+                TableView.AddSubview(imageview);
+            });
         }
     }
 }

@@ -8,37 +8,47 @@ using System.Globalization;
 using System.Linq;
 using Parser.Models.Match;
 using AceStream.Extansions;
+using Engine;
 
 namespace AceStream.Services
 {
     public class MatchService : IMatchService
     {
         private Client _client;
+        private EngineClient _engineClient;
 
         public MatchService()
         {
             _client = new Client();
+            _engineClient = new EngineClient();
         }
 
-        public async Task<List<LinkDto>> GetLinksAsync(string[] parameter)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameters">Название команд, канала и т.д/</param>
+        /// <returns></returns>
+        public async Task<List<LinkDto>> GetLinksAsync(string[] parameters)
         {
             var links = new List<LinkDto>
             {
                 new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 1" },
-                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч ТВ" },
-                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 2" },
-                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 3" },
-                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Матч Арена" },
+                
             };
 
-            var task = Task.Run(async () =>
+            foreach (var parametr in parameters)
             {
-                await Task.Delay(TimeSpan.FromMilliseconds(1000), new CancellationToken());
+                var results = await _engineClient.GetInfoHashAsync(parametr);
 
-                return links;
-            });
+                foreach (var result in results)
+                {
+                    var url = await _engineClient.GetPlaybackUrl(result.InfoHash);
 
-            return await task;
+                    var link = new LinkDto { Link = url.PlayBackUrl, Name = result.Name };
+                }
+            }
+
+            return links;
         }
 
         public async Task<MatchDto> GetMatchAsync(int matchId)
