@@ -38,14 +38,16 @@ namespace AceStream.Views.TableViewCell
 
             HomeIcon.Layer.BorderWidth = 1;
             HomeIcon.Layer.MasksToBounds = false;
-            HomeIcon.Layer.BorderColor = UIColor.LightGray.CGColor;
-            HomeIcon.Layer.CornerRadius = HomeIcon.Frame.Height / 2;
+            HomeIcon.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            HomeIcon.BackgroundColor = UIColor.White;
+            //HomeIcon.Layer.CornerRadius = HomeIcon.Frame.Height / 2;
             HomeIcon.ClipsToBounds = true;
 
             VisitorIcon.Layer.BorderWidth = 1;
             VisitorIcon.Layer.MasksToBounds = false;
-            VisitorIcon.Layer.BorderColor = UIColor.LightGray.CGColor;
-            VisitorIcon.Layer.CornerRadius = VisitorIcon.Frame.Height / 2;
+            VisitorIcon.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            VisitorIcon.BackgroundColor = UIColor.White;
+            //VisitorIcon.Layer.CornerRadius = VisitorIcon.Frame.Height / 2;
             VisitorIcon.ClipsToBounds = true;
         }
 

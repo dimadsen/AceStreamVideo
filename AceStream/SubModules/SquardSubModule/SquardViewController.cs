@@ -46,7 +46,7 @@ namespace AceStream.SubModules.SquardSubModule
             TableView.RowHeight = 30;
 
             TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
+            //TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 
         public void SetPlayers(MatchDto match)
@@ -130,8 +130,9 @@ namespace AceStream.SubModules.SquardSubModule
         {
             var view = headerView as UITableViewHeaderFooterView;
 
-            view.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
-
+            view.TextLabel.Font = UIFont.SystemFontOfSize(12);
+            view.TextLabel.TintColor = UIColor.DarkGray;
+            view.TextLabel.TextAlignment = UITextAlignment.Center;
         }
 
         public void SetTableSquard()

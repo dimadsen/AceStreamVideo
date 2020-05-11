@@ -80,13 +80,6 @@ namespace AceStream
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
-
-            var gradient = GradientColor.ShowAgain(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
-
-            var image = ImageUtils.GetGradientImage(gradient, NavigationController.NavigationBar.Frame.Size);
-
-            View.BackgroundColor = new UIColor(image);
         }
 
         [Export("scrollViewDidScroll:")]
@@ -106,7 +99,6 @@ namespace AceStream
 
             cell.Favorites.Tag = indexPath.Row;
 
-            cell.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
             cell.UpdateCell(_matches[indexPath.Row]);
 
             return cell;

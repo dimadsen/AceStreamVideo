@@ -57,13 +57,6 @@ namespace AceStream.SubModules.LinkSubModule
             TableView.DataSource = this;
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
-            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
-
-            var gradient = GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height);
-
-            var image = ImageUtils.GetGradientImage(gradient, TableView.Frame.Size);
-
-            View.BackgroundColor = new UIColor(image);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

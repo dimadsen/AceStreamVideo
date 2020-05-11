@@ -52,13 +52,8 @@ namespace AceStream
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, TableView.Frame.Height), 0);
-
-            var tableGradient = GradientColor.ShowAgain(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
-
-            var tableImage = ImageUtils.GetGradientImage(tableGradient, NavigationController.NavigationBar.Frame.Size);
-
-            View.BackgroundColor = new UIColor(tableImage);
+            RefreshControl = new UIRefreshControl();
+            RefreshControl.ValueChanged += Refresh;
             #endregion
 
             #region Настройки NavigationBar
@@ -69,28 +64,33 @@ namespace AceStream
             NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
             NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
 
-            var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
-            var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
-            
-            //if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            //{
-            //    var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
-
-            //    NavigationController.NavigationBar.StandardAppearance = appearance;
-            //    NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
-            //}
-            //else
-            //{
-                
-            //}
-            NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
             #endregion
 
             #region Цвет TabBar
-
-            NavigationController.TabBarController.TabBar.Layer.InsertSublayer(barGradient, 0);
-            NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.DarkGray;
+            NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.FromRGB(192, 192, 192);
             #endregion
+        }
+
+        private void Refresh(object sender, EventArgs e)
+        {
+            var task = Task.Run(async () =>
+            {
+                await Presenter.SetChampionatsAsync();
+                
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    TableView.ReloadData();
+
+                    RefreshControl.EndRefreshing();
+
+                    var label = TableView.ViewWithTag(1);
+                    label?.RemoveFromSuperview();
+
+
+                    var image = TableView.ViewWithTag(2);
+                    image?.RemoveFromSuperview();
+                });
+            });
         }
 
         public async Task SetChampionatsAsync(Task<List<ChampionatDto>> championats)
@@ -116,8 +116,6 @@ namespace AceStream
 
             cell.UpdateCell(_championats[indexPath.Row]);
 
-            cell.Layer.InsertSublayer(GradientColor.ShowAgain(TableView.Frame.Width, tableView.Frame.Height), 0);
-
             return cell;
 
         }
@@ -133,7 +131,7 @@ namespace AceStream
         {
             var imgBack = UIImage.FromFile("back.png");
             NavigationController.NavigationBar.BackIndicatorImage = imgBack;
-            NavigationController.NavigationBar.TintColor = UIColor.Black;
+            NavigationController.NavigationBar.TintColor = UIColor.White;
             NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
             NavigationItem.LeftItemsSupplementBackButton = true;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
@@ -145,7 +143,8 @@ namespace AceStream
             {
                 var imageview = new UIImageView(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 200))
                 {
-                    Image = UIImage.FromFile("error_image.png")                    
+                    Image = UIImage.FromFile("error_image.png"),
+                    Tag = 2
                 };
 
                 imageview.Center = TableView.ConvertPointFromView(TableView.Center, imageview);
@@ -160,7 +159,8 @@ namespace AceStream
             {
                 var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 50))
                 {
-                    Text = "На сегодня матчей нет"
+                    Text = "На сегодня матчей нет",
+                    Tag = 1
                 };
 
                 label.Center = TableView.ConvertPointFromView(TableView.Center, label);

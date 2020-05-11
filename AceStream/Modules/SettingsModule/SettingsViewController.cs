@@ -36,10 +36,7 @@ namespace AceStream
             NavigationItem.Title = title;
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
 
-            TableView.TableFooterView = new UIView(CGRect.Empty);
-
-            var barGradient = GradientColor.PaloAlto(NavigationController.NavigationBar.Frame.Width, NavigationController.NavigationBar.Frame.Height);
-            var barImage = ImageUtils.GetGradientImage(barGradient, NavigationController.NavigationBar.Frame.Size);
+            TableView.TableFooterView = new UIView(CGRect.Empty);           
 
             //if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             //{
@@ -52,7 +49,7 @@ namespace AceStream
             //{
                 
             //}
-            NavigationController.NavigationBar.BarTintColor = new UIColor(barImage);
+            
             Presenter.Router.InitializeUser();            
         }
 

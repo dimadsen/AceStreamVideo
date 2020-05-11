@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AceStream.Core.Extansions;
 using AceStream.Dto;
@@ -34,7 +35,10 @@ namespace AceStream.Services
             //Отбираем только нужные чемпионаты
             var cleanedChampionats = championats.Where(c => championatsDb.Select(cdb => cdb.Name).Contains(c.Name.Split(1))).ToList();
 
-            cleanedChampionats.ForEach(championat => SaveMatches(championat, championatsDb));
+            foreach (var championat in cleanedChampionats)
+            {
+                SaveMatches(championat, championatsDb);
+            }
 
             var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
@@ -46,7 +50,8 @@ namespace AceStream.Services
                     Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1) && cdb.Country == c.Country).Id
                 }).Distinct().ToList();
 
-            return dto ?? throw new NotFoundMatchesException("На сегодня матчей нет");
+            return dto.Count > 0 ? dto : throw new NotFoundMatchesException("На сегодня матчей нет");
+
         }
 
         private void SaveMatches(Parser.Tournament.Championat championat, List<Championat> championatsDb)
@@ -64,13 +69,13 @@ namespace AceStream.Services
                 VisitorIcon = match.Visitor.Icon
             }).ToList();
 
-            matches.ForEach(match =>
+            foreach (var match in matches)
             {
                 var existingMatch = _db.GetMatch(match.ValueId);
 
                 if (existingMatch == null)
                     _db.SaveMatch(match);
-            });
+            }
 
             championat.Icon = championatDb.Icon;
         }

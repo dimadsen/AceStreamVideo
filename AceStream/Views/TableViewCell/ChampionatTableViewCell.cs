@@ -35,9 +35,11 @@ namespace AceStream.Views.TableViewCell
 
             Icon.Layer.BorderWidth = 1;
             Icon.Layer.MasksToBounds = false;
-            Icon.Layer.BorderColor = UIColor.LightGray.CGColor;
-            Icon.Layer.CornerRadius = Icon.Frame.Height / 2;
+            Icon.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            Icon.BackgroundColor = UIColor.White;
+            //Icon.Layer.CornerRadius = Icon.Frame.Height / 2;
             Icon.ClipsToBounds = true;
+            
         }
 
     }

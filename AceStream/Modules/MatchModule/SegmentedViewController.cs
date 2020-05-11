@@ -17,20 +17,20 @@ namespace AceStream.Modules.MatchModule
 
         public override void ViewDidLoad()
         {
-            UIColor themeColor = UIColor.FromRGB(227, 242, 234);
+            UIColor themeColor = UIColor.FromRGB(57, 136, 125);
 
             Settings.Style.ButtonBarBackgroundColor = themeColor;
 
-            Settings.Style.ButtonBarItemFont = UIFont.BoldSystemFontOfSize(12);
+            Settings.Style.ButtonBarItemFont = UIFont.SystemFontOfSize(12);
 
             Settings.Style.ButtonBarItemBackgroundColor = themeColor;
 
-            Settings.Style.SelectedBarBackgroundColor = UIColor.Black;
+            Settings.Style.SelectedBarBackgroundColor = UIColor.LightTextColor;
             Settings.Style.SelectedBarHeight = 2;
             Settings.Style.SelectedBarWidth = View.Frame.Width / 2;
 
             Settings.Style.ButtonBarMinimumLineSpacing = 0;
-            Settings.Style.ButtonBarItemTitleColor = UIColor.Black;
+            Settings.Style.ButtonBarItemTitleColor = UIColor.White;
             Settings.Style.ButtonBarItemsShouldFillAvailiableWidth = true;
             Settings.Style.ButtonBarLeftContentInset = 0;
             Settings.Style.ButtonBarRightContentInset = 0;

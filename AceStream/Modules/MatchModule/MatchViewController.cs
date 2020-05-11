@@ -47,14 +47,14 @@ namespace AceStream.Modules.MatchModule
         {
             HomePicture.Layer.BorderWidth = 1;
             HomePicture.Layer.MasksToBounds = false;
-            HomePicture.Layer.BorderColor = UIColor.LightGray.CGColor;
-            HomePicture.Layer.CornerRadius = HomePicture.Frame.Height / 2;
+            HomePicture.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            //HomePicture.Layer.CornerRadius = HomePicture.Frame.Height / 2;
             HomePicture.ClipsToBounds = true;
 
             VisitorPicture.Layer.BorderWidth = 1;
             VisitorPicture.Layer.MasksToBounds = false;
-            VisitorPicture.Layer.BorderColor = UIColor.LightGray.CGColor;
-            VisitorPicture.Layer.CornerRadius = VisitorPicture.Frame.Height / 2;
+            VisitorPicture.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            //VisitorPicture.Layer.CornerRadius = VisitorPicture.Frame.Height / 2;
             VisitorPicture.ClipsToBounds = true;
 
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
@@ -65,8 +65,7 @@ namespace AceStream.Modules.MatchModule
             Score.MinimumScaleFactor = 10 / UIFont.LabelFontSize;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 
-            NavigationItem.Title = title;
-            View.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
+            NavigationItem.Title = title;            
         }
 
         public async Task SetMatchAsync(Task<MatchDto> match)
