@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Threading.Tasks;
-using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Modules.ChampionatModule;
-using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
@@ -38,7 +35,7 @@ namespace AceStream
                     TableView.ReloadData();
                     Indicator.StopAnimating();
                     Indicator.HidesWhenStopped = true;
-
+                    
                     TableView.TableHeaderView = null;
                 });
             });
@@ -52,7 +49,7 @@ namespace AceStream
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            RefreshControl = new UIRefreshControl();
+            RefreshControl = new UIRefreshControl { TintColor = UIColor.White };
             RefreshControl.ValueChanged += Refresh;
             #endregion
 
@@ -69,6 +66,8 @@ namespace AceStream
             #region Цвет TabBar
             NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.FromRGB(192, 192, 192);
             #endregion
+
+            NavigationItemImage.HiddenImage();
         }
 
         private void Refresh(object sender, EventArgs e)
@@ -85,7 +84,6 @@ namespace AceStream
 
                     var label = TableView.ViewWithTag(1);
                     label?.RemoveFromSuperview();
-
 
                     var image = TableView.ViewWithTag(2);
                     image?.RemoveFromSuperview();

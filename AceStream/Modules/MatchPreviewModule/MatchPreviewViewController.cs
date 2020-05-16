@@ -76,7 +76,7 @@ namespace AceStream
 
             var champImage = (UIImageView)NavigationController.NavigationBar.ViewWithTag(NavigationItemImage.Tag);
 
-            champImage.Image = UIImage.FromFile(dto.Image);
+            champImage.Image = UIImage.FromFile($"Championats/{dto.Image}");
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 

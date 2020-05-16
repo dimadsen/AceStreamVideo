@@ -28,9 +28,12 @@ namespace AceStream
         {
             ImageView = new UIImageView { Tag = Tag };
             
-            ImageView.Layer.CornerRadius = ImageSizeForLargeState / 2;
+            ImageView.Layer.CornerRadius = 10;
             ImageView.ClipsToBounds = true;
             ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
+            ImageView.Layer.BorderWidth = 1;
+            ImageView.Layer.BorderColor = UIColor.DarkGray.CGColor;
+            ImageView.BackgroundColor = UIColor.White;
         }
 
         public static void ActivateConstraints(UINavigationBar navigationBar)
