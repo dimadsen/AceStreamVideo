@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AceStream.Core.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStreamDb;
@@ -45,7 +46,7 @@ namespace AceStream.Services
             var settings = new MatchPreviewSettingsDto()
             {
                 Image = championat.Icon,
-                Title = championat.Name
+                Title = championat.Name.Clear()
             };
 
             return settings;

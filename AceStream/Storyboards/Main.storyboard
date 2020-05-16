@@ -12,7 +12,7 @@
         <scene sceneID="215">
             <objects>
                 <tabBarController id="216" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="219" barStyle="black">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="219" barStyle="black" translucent="YES">
                         <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" colorSpace="custom" customColorSpace="sRGB" red="0.223529413342476" green="0.533333361148834" blue="0.490196079015732" alpha="1"/>
@@ -345,12 +345,15 @@
                                 </connections>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="20833" translatesAutoresizingMaskIntoConstraints="NO" text="Регистрация" textAlignment="center" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="20833" translatesAutoresizingMaskIntoConstraints="NO" text="Регистрация" textAlignment="center" fixedFrame="YES" userInteractionEnabled="NO">
                                 <rect key="frame" x="10" y="107.5" width="346.5" height="51"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="21855" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
                                 <rect key="frame" x="13.5" y="33" width="30" height="27"/>

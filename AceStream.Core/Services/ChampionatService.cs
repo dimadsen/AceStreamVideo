@@ -33,7 +33,8 @@ namespace AceStream.Services
             var championats = await _client.GetChampionatsAsync();
 
             //Отбираем только нужные чемпионаты
-            var cleanedChampionats = championats.Where(c => championatsDb.Select(cdb => cdb.Name).Contains(c.Name.Split(1))).ToList();
+            var cleanedChampionats = championats.Where(c => championatsDb.Select(cdb => cdb.Name).Contains(c.Name.Split(1)) &&
+                                                            championatsDb.Select(cdb => cdb.Country).Contains(c.Country)).ToList();
 
             foreach (var championat in cleanedChampionats)
             {
@@ -43,7 +44,7 @@ namespace AceStream.Services
             var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
-                    Name = c.Name.Split(1),
+                    Name = c.Name.Split(1).Clear(),
                     Tour = c.Name.Split(2),
                     Country = c.Country,
                     Image = c.Icon,

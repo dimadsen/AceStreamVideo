@@ -13,10 +13,22 @@ namespace Parser.Models.Match
         public Flag[] Flag { get; set; }
 
         /// <summary>
-        /// Вышел с замены?
+        /// Был заменён?
         /// </summary>
         [JsonProperty(PropertyName = "replacement")]
         public bool IsReplacement { get; set; }
+
+        /// <summary>
+        /// Имя и минута кем заменён
+        /// </summary>
+        [JsonProperty(PropertyName = "replacement_comment")]
+        public string Replacement { get; set; }
+
+        /// <summary>
+        /// Имя и минута кого заменил
+        /// </summary>
+        [JsonProperty(PropertyName = "replaced_comment")]
+        public string Replaced { get; set; }
     }
 
     public class Flag

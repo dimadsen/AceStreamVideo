@@ -70,7 +70,7 @@ namespace AceStream.Services
                 ImageHome = homeSquard.Icon,
                 HomeSquard = new TeamDto
                 {
-                    Startings = homeSquard.Startings.Where(p => !p.IsReplacement).Select(p => GetPlayers(p)).ToList(),
+                    Startings = homeSquard.Startings.Where(p => IsStartings(p)).Select(p => GetPlayers(p)).ToList(),
                     Substitutes = GetSubstitutes(homeSquard)
                 },
 
@@ -78,7 +78,7 @@ namespace AceStream.Services
                 ImageVisitor = visitorSquard.Icon,
                 VisitorSquard = new TeamDto
                 {
-                    Startings = visitorSquard.Startings.Where(p => !p.IsReplacement).Select(p => GetPlayers(p)).ToList(),
+                    Startings = visitorSquard.Startings.Where(p => IsStartings(p)).Select(p => GetPlayers(p)).ToList(),
                     Substitutes = GetSubstitutes(visitorSquard)
                 },
             };
@@ -102,11 +102,19 @@ namespace AceStream.Services
         {
             var substitutes = team.Substitutes.SelectMany(players => players.Select(player => GetPlayers(player))).ToList();
 
-            var isReplacementPlayers = team.Startings.Where(p => p.IsReplacement).Select(p => GetPlayers(p));
+            var isReplacementPlayers = team.Startings.Where(p => !IsStartings(p)).Select(p => GetPlayers(p));
 
             substitutes.AddRange(isReplacementPlayers);
 
             return substitutes;
+        }
+
+        private bool IsStartings(Player player)
+        {
+            var isStarting = (!player.IsReplacement && string.IsNullOrEmpty(player.Replaced)) ||
+                      (player.IsReplacement && !string.IsNullOrEmpty(player.Replacement));
+
+            return isStarting;
         }
     }
 
