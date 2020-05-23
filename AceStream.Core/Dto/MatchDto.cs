@@ -51,8 +51,8 @@ namespace AceStream.Dto
         public TeamDto VisitorSquard { get; set; }
 
         /// <summary>
-        /// Ссылки на трансляции
+        /// Cтадион
         /// </summary>
-        //public List<LinkDto> Links { get; set; }
+        public string Stadium { get; set; }
     }
 }

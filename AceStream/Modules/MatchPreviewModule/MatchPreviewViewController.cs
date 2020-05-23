@@ -85,7 +85,7 @@ namespace AceStream
         [Export("scrollViewDidScroll:")]
         public void Scrolled(UIScrollView scrollView)
         {
-            var height = NavigationController.NavigationBar.Frame.Height;
+            var height = NavigationController?.NavigationBar.Frame.Height ?? 0;
 
             NavigationItemImage.MoveAndResizeImage(height);
         }

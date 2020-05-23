@@ -31,12 +31,16 @@ namespace AceStream.Modules.MatchModule
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     var controller = Presenter.Router.InitializeSegmented(_match);
-                    controller.View.Frame = SetFrame();
+                    //controller.View.Frame = DetailedMatchInfoView.Frame;
 
-                    View.AddSubview(controller.View);
+                    DetailedMatchInfoView.AddSubview(controller.View);
+                    //controller.View.Frame = SetFrame();
+
+                    //View.AddSubview(controller.View);
 
                     Indicator.StopAnimating();
                     Indicator.HidesWhenStopped = true;
+                    DetailedMatchInfoView.Hidden = false;
                 });
             });
 
@@ -74,32 +78,29 @@ namespace AceStream.Modules.MatchModule
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                Home.Hidden = false;
+                MatchInfoView.Hidden = false;
+
                 Home.Text = _match.Home;
 
-                HomePicture.Hidden = false;
                 HomePicture.Image = UIImage.FromFile(_match.ImageHome);
 
-                Visitor.Hidden = false;
                 Visitor.Text = _match.Visitor;
 
-                VisitorPicture.Hidden = false;
                 VisitorPicture.Image = UIImage.FromFile(_match.ImageVisitor);
 
-                Score.Hidden = false;
                 Score.Text = _match.Score;
 
-                Half.Hidden = false;
                 Half.Text = _match.Half;
 
-                Date.Hidden = false;
-                Date.Text = _match.Date.ToString("d.MM.yyyy HH:mm");
+                Date.Text = _match.Date.ToString("MMMM dd HH:mm");
+
+                Stadium.Text = _match.Stadium;
             });            
         }
 
         private CGRect SetFrame()
         {
-            var y = Home.Frame.Y + 35;
+            var y = MatchInfoView.Frame.Height + 135;
             var height = View.Frame.Height - y - NavigationController.TabBarController.TabBar.Frame.Height;
 
             return new CGRect(0, y, View.Frame.Width, height);

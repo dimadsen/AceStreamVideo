@@ -57,6 +57,8 @@ namespace AceStream.SubModules.LinkSubModule
             TableView.DataSource = this;
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
+
+            TableView.ScrollEnabled = false;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

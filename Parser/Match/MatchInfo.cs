@@ -17,6 +17,8 @@ namespace Parser.Models.MatchInfo
 
         [JsonProperty(PropertyName = "second_team")]
         public Team Visitor { get; set; }
+
+        public Stadium Stadium { get; set; }
     }
 
     public class Date
@@ -36,5 +38,10 @@ namespace Parser.Models.MatchInfo
     {
         [JsonProperty(PropertyName = "big_logo_mobile")]
         public string Icon { get; set; }
+    }
+
+    public class Stadium
+    {
+        public string Name { get; set; }
     }
 }

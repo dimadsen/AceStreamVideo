@@ -20,6 +20,10 @@ namespace AceStream.Modules.MatchModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView DetailedMatchInfoView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Half { get; set; }
 
         [Outlet]
@@ -36,7 +40,15 @@ namespace AceStream.Modules.MatchModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView MatchInfoView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Score { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Stadium { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -51,6 +63,11 @@ namespace AceStream.Modules.MatchModule
             if (Date != null) {
                 Date.Dispose ();
                 Date = null;
+            }
+
+            if (DetailedMatchInfoView != null) {
+                DetailedMatchInfoView.Dispose ();
+                DetailedMatchInfoView = null;
             }
 
             if (Half != null) {
@@ -73,9 +90,19 @@ namespace AceStream.Modules.MatchModule
                 Indicator = null;
             }
 
+            if (MatchInfoView != null) {
+                MatchInfoView.Dispose ();
+                MatchInfoView = null;
+            }
+
             if (Score != null) {
                 Score.Dispose ();
                 Score = null;
+            }
+
+            if (Stadium != null) {
+                Stadium.Dispose ();
+                Stadium = null;
             }
 
             if (Visitor != null) {

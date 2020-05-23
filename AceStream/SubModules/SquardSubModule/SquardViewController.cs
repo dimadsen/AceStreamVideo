@@ -46,6 +46,7 @@ namespace AceStream.SubModules.SquardSubModule
             TableView.RowHeight = 30;
 
             TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+            TableView.ScrollEnabled = false;
             //TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 

@@ -65,6 +65,8 @@ namespace AceStream
 
             #region Цвет TabBar
             NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.FromRGB(192, 192, 192);
+            NavigationController.TabBarController.TabBar.Translucent = false;
+
             #endregion
 
             NavigationItemImage.HiddenImage();

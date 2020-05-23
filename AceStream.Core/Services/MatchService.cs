@@ -36,17 +36,17 @@ namespace AceStream.Services
                 
             };
 
-            foreach (var parametr in parameters)
-            {
-                var results = await _engineClient.GetInfoHashAsync(parametr);
+            //foreach (var parametr in parameters)
+            //{
+            //    var results = await _engineClient.GetInfoHashAsync(parametr);
 
-                foreach (var result in results)
-                {
-                    var url = await _engineClient.GetPlaybackUrl(result.InfoHash);
+            //    foreach (var result in results)
+            //    {
+            //        var url = await _engineClient.GetPlaybackUrl(result.InfoHash);
 
-                    var link = new LinkDto { Link = url.PlayBackUrl, Name = result.Name };
-                }
-            }
+            //        var link = new LinkDto { Link = url.PlayBackUrl, Name = result.Name };
+            //    }
+            //}
 
             return links;
         }
@@ -65,6 +65,7 @@ namespace AceStream.Services
                 Date = DateTime.Parse(matchInfo.Date.StartDate, CultureInfo.GetCultureInfo("ru")),
                 Half = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(matchInfo.Status.ToLower()),
                 Score = $"{homeSquard.Goals} : {visitorSquard.Goals}",
+                Stadium = matchInfo.Stadium.Name,
 
                 Home = homeSquard.Name,
                 ImageHome = homeSquard.Icon,
