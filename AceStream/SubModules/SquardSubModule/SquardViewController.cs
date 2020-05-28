@@ -40,7 +40,7 @@ namespace AceStream.SubModules.SquardSubModule
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
 
             TableView.DataSource = this;
-
+            
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
             TableView.RowHeight = 30;

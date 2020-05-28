@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
 using CoreGraphics;
+using Foundation;
 using UIKit;
 using Xamarin.Essentials;
 
@@ -31,8 +33,11 @@ namespace AceStream.Modules.MatchModule
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     var controller = Presenter.Router.InitializeSegmented(_match);
-                    //controller.View.Frame = DetailedMatchInfoView.Frame;
+                    controller.View.Frame = new CGRect(controller.View.Frame.X, controller.View.Frame.Y, controller.View.Frame.Width, DetailedMatchInfoView.Frame.Height);
 
+                    //DetailedMatchInfoView.Constraints[4].Constant = 700;
+
+                    //View.LayoutIfNeeded();
                     DetailedMatchInfoView.AddSubview(controller.View);
                     //controller.View.Frame = SetFrame();
 
@@ -92,7 +97,7 @@ namespace AceStream.Modules.MatchModule
 
                 Half.Text = _match.Half;
 
-                Date.Text = _match.Date.ToString("MMMM dd HH:mm");
+                Date.Text = _match.Date.ToString("dd MMMM HH:mm");
 
                 Stadium.Text = _match.Stadium;
             });            

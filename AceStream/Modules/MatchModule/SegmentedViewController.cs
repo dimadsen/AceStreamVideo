@@ -17,7 +17,7 @@ namespace AceStream.Modules.MatchModule
 
         public override void ViewDidLoad()
         {
-            UIColor themeColor = UIColor.FromRGB(57, 136, 125);
+            UIColor themeColor = UIColor.FromRGB(57, 136, 125).ColorWithAlpha(0.5f);
 
             Settings.Style.ButtonBarBackgroundColor = themeColor;
 

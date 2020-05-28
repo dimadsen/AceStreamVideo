@@ -12,7 +12,7 @@
         <scene sceneID="215">
             <objects>
                 <tabBarController id="216" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="219" barStyle="black">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="219" barStyle="black" translucent="YES">
                         <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" colorSpace="custom" customColorSpace="sRGB" red="0.223529413342476" green="0.533333361148834" blue="0.490196079015732" alpha="1"/>
@@ -30,7 +30,7 @@
         <scene sceneID="440">
             <objects>
                 <navigationController id="441" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="443" barStyle="black" largeTitles="YES" translucent="NO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="443" barStyle="black" largeTitles="YES">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -209,7 +209,7 @@
                                     <outlet property="Visitor" destination="9840" id="name-outlet-9840"/>
                                     <outlet property="Time" destination="10009" id="name-outlet-10009"/>
                                     <outlet property="Favorites" destination="26828" id="name-outlet-26828"/>
-                                    <segue id="86317" destination="77994" kind="show"/>
+                                    <segue id="91426" destination="77994" kind="show"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -585,12 +585,12 @@
                         <viewControllerLayoutGuide type="bottom" id="77992"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="77995">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="879"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="77998" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="879"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="78003" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="204"/>
@@ -619,8 +619,8 @@
                                                     <constraint id="85810" firstAttribute="width" constant="70"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 мая 18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78015" translatesAutoresizingMaskIntoConstraints="NO">
-                                                <rect key="frame" x="95" y="8" width="119" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 мая 18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78015" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                                <rect key="frame" x="98" y="22" width="119" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="medium"/>
                                                 <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                                 <nil key="highlightedColor"/>
@@ -651,7 +651,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хозяева" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78018" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="8" y="160" width="97" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
@@ -661,7 +661,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78019" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="205" y="160" width="98" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
@@ -708,15 +708,13 @@
                                             <constraint id="78111" firstAttribute="width" constant="37"/>
                                         </constraints>
                                     </activityIndicatorView>
-                                    <containerView contentMode="scaleToFill" id="81756" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
-                                        <rect key="frame" x="0.0" y="212" width="320" height="788"/>
-                                        <connections>
-                                            <segue destination="81758" kind="embed" id="81757"/>
-                                        </connections>
+                                    <view contentMode="scaleToFill" id="88493" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
+                                        <rect key="frame" x="0.0" y="212" width="320" height="659"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint id="82932" firstAttribute="height" constant="788"/>
+                                            <constraint id="88499" firstAttribute="height" constant="659"/>
                                         </constraints>
-                                    </containerView>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint id="78071" firstItem="78003" firstAttribute="leading" secondItem="77998" secondAttribute="leading"/>
@@ -725,12 +723,11 @@
                                     <constraint id="79549" firstItem="78003" firstAttribute="top" secondItem="77998" secondAttribute="top"/>
                                     <constraint id="81738" firstItem="78076" firstAttribute="top" secondItem="78003" secondAttribute="bottom" constant="100"/>
                                     <constraint id="81739" firstItem="78076" firstAttribute="centerX" secondItem="77998" secondAttribute="centerX"/>
-                                    <constraint id="81763" firstItem="81756" firstAttribute="top" secondItem="78003" secondAttribute="bottom" constant="8"/>
-                                    <constraint id="81764" firstItem="81756" firstAttribute="leading" secondItem="77998" secondAttribute="leading"/>
-                                    <constraint id="81765" firstItem="81756" firstAttribute="trailing" secondItem="77998" secondAttribute="trailing"/>
-                                    <constraint id="81766" firstItem="81756" firstAttribute="bottom" secondItem="77998" secondAttribute="bottom"/>
-                                    <constraint id="81767" firstItem="81756" firstAttribute="centerX" secondItem="77998" secondAttribute="centerX"/>
-                                    <constraint id="82931" firstItem="81756" firstAttribute="top" secondItem="78003" secondAttribute="top" constant="212"/>
+                                    <constraint id="88495" firstItem="88493" firstAttribute="trailing" secondItem="77998" secondAttribute="trailing"/>
+                                    <constraint id="88496" firstItem="88493" firstAttribute="leading" secondItem="77998" secondAttribute="leading"/>
+                                    <constraint id="88497" firstAttribute="bottom" secondItem="88493" secondAttribute="bottom" constant="8"/>
+                                    <constraint id="88498" firstItem="88493" firstAttribute="centerX" secondItem="77998" secondAttribute="centerX"/>
+                                    <constraint id="90240" firstItem="88493" firstAttribute="top" secondItem="78003" secondAttribute="bottom" constant="8"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -741,7 +738,6 @@
                             <constraint id="78002" firstItem="77998" firstAttribute="bottom" secondItem="77995" secondAttribute="bottom"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="Half" destination="78017" id="name-outlet-78017"/>
                         <outlet property="Score" destination="78016" id="name-outlet-78016"/>
@@ -752,13 +748,14 @@
                         <outlet property="Visitor" destination="78019" id="name-outlet-78019"/>
                         <outlet property="Indicator" destination="78076" id="name-outlet-78076"/>
                         <outlet property="MatchInfoView" destination="78003" id="name-outlet-78003"/>
-                        <outlet property="DetailedMatchInfoView" destination="81756" id="name-outlet-81756"/>
                         <outlet property="Stadium" destination="85808" id="name-outlet-85808"/>
+                        <outlet property="DetailedMatchInfoView" destination="88493" id="name-outlet-88493"/>
                     </connections>
+                    <size key="freeformSize" width="320" height="879"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77996" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3421" y="-494"/>
+            <point key="canvasLocation" x="3161" y="-442"/>
         </scene>
         <scene sceneID="81759">
             <objects>
@@ -768,7 +765,7 @@
                         <viewControllerLayoutGuide type="bottom" id="81755"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="81760">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="788"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
