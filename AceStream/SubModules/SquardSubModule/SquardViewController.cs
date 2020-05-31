@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
-using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Views.TableViewCell;
@@ -46,6 +44,9 @@ namespace AceStream.SubModules.SquardSubModule
             TableView.RowHeight = 30;
 
             TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+
+            TableView.Bounces = true;
+
             TableView.ScrollEnabled = false;
             //TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
@@ -161,6 +162,8 @@ namespace AceStream.SubModules.SquardSubModule
                 TableView.AddSubview(label);
             });
         }
+
+        
     }
 }
 

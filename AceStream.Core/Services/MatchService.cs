@@ -91,10 +91,16 @@ namespace AceStream.Services
         {
             var dto = new PlayerDto
             {
-                Country = $"{player.Flag[0].Country}",
+                
                 Number = player.Number,
                 Name = player.Name
             };
+
+            try
+            {
+                dto.Country = $"{player.Flag[0].Country}";
+            }
+            catch (Exception) {}
 
             return dto;
         }

@@ -44,6 +44,10 @@ namespace AceStream.Modules.MatchModule
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIScrollView MatchScrollView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Score { get; set; }
 
         [Outlet]
@@ -93,6 +97,11 @@ namespace AceStream.Modules.MatchModule
             if (MatchInfoView != null) {
                 MatchInfoView.Dispose ();
                 MatchInfoView = null;
+            }
+
+            if (MatchScrollView != null) {
+                MatchScrollView.Dispose ();
+                MatchScrollView = null;
             }
 
             if (Score != null) {

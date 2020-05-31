@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AceStream.Additionals;
 using AceStream.Dto;
+using AceStream.SubModules.SquardSubModule;
 using CoreGraphics;
 using Foundation;
 using UIKit;
@@ -11,17 +12,18 @@ using Xamarin.Essentials;
 
 namespace AceStream.Modules.MatchModule
 {
-    public partial class MatchViewController : UIViewController, IMatchView
+    public partial class MatchViewController : UIViewController, IMatchView, IUIScrollViewDelegate, IUITableViewDelegate
     {
         public IMatchPresenter Presenter { get; set; }
         public IMatchConfigurator Configurator { get; set; }
 
+        private SegmentedViewController segmentedViewController;
         private MatchDto _match;
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
             Configurator = new MatchConfigurator();
-            Configurator.Configure(this);            
+            Configurator.Configure(this);
         }
 
         public override void ViewDidLoad()
@@ -32,20 +34,22 @@ namespace AceStream.Modules.MatchModule
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    var controller = Presenter.Router.InitializeSegmented(_match);
-                    controller.View.Frame = new CGRect(controller.View.Frame.X, controller.View.Frame.Y, controller.View.Frame.Width, DetailedMatchInfoView.Frame.Height);
+                    segmentedViewController = Presenter.Router.InitializeSegmented(_match);
 
-                    //DetailedMatchInfoView.Constraints[4].Constant = 700;
+                    segmentedViewController.View.Frame = new CGRect(segmentedViewController.View.Frame.X, segmentedViewController.View.Frame.Y,
+                                                                    segmentedViewController.View.Frame.Width, DetailedMatchInfoView.Frame.Height);
 
-                    //View.LayoutIfNeeded();
-                    DetailedMatchInfoView.AddSubview(controller.View);
-                    //controller.View.Frame = SetFrame();
-
-                    //View.AddSubview(controller.View);
+                    DetailedMatchInfoView.AddSubview(segmentedViewController.View);
 
                     Indicator.StopAnimating();
                     Indicator.HidesWhenStopped = true;
                     DetailedMatchInfoView.Hidden = false;
+
+                    var height = NavigationController.NavigationBar.Frame.Height + UIApplication.SharedApplication.StatusBarFrame.Height +
+                                 NavigationController.TabBarController.TabBar.Frame.Height;
+
+                    DetailedMatchInfoView.Constraints[0].Constant = View.Frame.Height - height;
+
                 });
             });
 
@@ -74,7 +78,9 @@ namespace AceStream.Modules.MatchModule
             Score.MinimumScaleFactor = 10 / UIFont.LabelFontSize;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 
-            NavigationItem.Title = title;            
+            NavigationItem.Title = title;
+
+            MatchScrollView.Delegate = this;
         }
 
         public async Task SetMatchAsync(Task<MatchDto> match)
@@ -100,21 +106,38 @@ namespace AceStream.Modules.MatchModule
                 Date.Text = _match.Date.ToString("dd MMMM HH:mm");
 
                 Stadium.Text = _match.Stadium;
-            });            
+            });
         }
 
-        private CGRect SetFrame()
+        [Export("scrollViewDidScroll:")]
+        public void Scrolled(UIScrollView scrollView)
         {
-            var y = MatchInfoView.Frame.Height + 135;
-            var height = View.Frame.Height - y - NavigationController.TabBarController.TabBar.Frame.Height;
+            var squardViewController = segmentedViewController?.ViewControllers[0] as SquardViewController;
 
-            return new CGRect(0, y, View.Frame.Width, height);
+            if (squardViewController != null)
+            {
+                squardViewController.TableView.Delegate = this;
+
+                if (scrollView == MatchScrollView)
+                {
+                    var height = NavigationController.NavigationBar.Frame.Height + UIApplication.SharedApplication.StatusBarFrame.Height +
+                                    NavigationController.TabBarController.TabBar.Frame.Height;
+
+                    squardViewController.TableView.ScrollEnabled = MatchScrollView.ContentOffset.Y >= 200 - height;
+                }
+
+                if (scrollView == squardViewController.TableView)
+                {
+                    squardViewController.TableView.ScrollEnabled = squardViewController.TableView.ContentOffset.Y > 0;
+                }
+            }
+
         }
 
         public void SetError()
         {
             throw new NotImplementedException();
-        }        
+        }
     }
 }
 
