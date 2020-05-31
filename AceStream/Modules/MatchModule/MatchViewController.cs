@@ -19,6 +19,7 @@ namespace AceStream.Modules.MatchModule
 
         private SegmentedViewController segmentedViewController;
         private MatchDto _match;
+        private TimerCallback tm;
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
@@ -81,6 +82,10 @@ namespace AceStream.Modules.MatchModule
             NavigationItem.Title = title;
 
             MatchScrollView.Delegate = this;
+
+            tm = new TimerCallback(UpdateMatchInfo);
+
+            var timer = new Timer(tm, null, 0, 60000);
         }
 
         public async Task SetMatchAsync(Task<MatchDto> match)
@@ -137,6 +142,14 @@ namespace AceStream.Modules.MatchModule
         public void SetError()
         {
             throw new NotImplementedException();
+        }
+
+        public void UpdateMatchInfo(object obj)
+        {
+            Task.Run(async () =>
+            {
+                await Presenter.SetMatchAsync();
+            });
         }
     }
 }

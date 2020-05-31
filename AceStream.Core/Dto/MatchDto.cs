@@ -54,5 +54,10 @@ namespace AceStream.Dto
         /// Cтадион
         /// </summary>
         public string Stadium { get; set; }
+
+        /// <summary>
+        /// Каналы
+        /// </summary>
+        public string[] Channels { get; set; }
     }
 }

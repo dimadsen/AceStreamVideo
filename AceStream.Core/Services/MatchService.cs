@@ -30,11 +30,7 @@ namespace AceStream.Services
         /// <returns></returns>
         public async Task<List<LinkDto>> GetLinksAsync(string[] parameters)
         {
-            var links = new List<LinkDto>
-            {
-                new LinkDto{ Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8", Name =  "Футбол 1" },
-                
-            };
+            var links = parameters.Select(p => new LinkDto { Name = p, Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8" }).ToList();
 
             //foreach (var parametr in parameters)
             //{
@@ -63,9 +59,10 @@ namespace AceStream.Services
             var matchDto = new MatchDto
             {
                 Date = DateTime.Parse(matchInfo.Date.StartDate, CultureInfo.GetCultureInfo("ru")),
-                Half = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(matchInfo.Status.ToLower()),
+                Half = matchInfo.Status,
                 Score = $"{homeSquard.Goals} : {visitorSquard.Goals}",
                 Stadium = matchInfo.Stadium.Name,
+                Channels = matchInfo.Channels.Select(c => c.Name).ToArray(),
 
                 Home = homeSquard.Name,
                 ImageHome = homeSquard.Icon,
@@ -91,16 +88,12 @@ namespace AceStream.Services
         {
             var dto = new PlayerDto
             {
-                
                 Number = player.Number,
                 Name = player.Name
             };
 
-            try
-            {
-                dto.Country = $"{player.Flag[0].Country}";
-            }
-            catch (Exception) {}
+            try { dto.Country = $"{player.Flag[0].Country}"; }
+            catch (Exception ) { }
 
             return dto;
         }

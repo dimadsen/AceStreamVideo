@@ -51,7 +51,7 @@ namespace AceStream.Modules.MatchModule
             squardViewController.Presenter.Match = _match;
 
             var linkViewController = storyboard.InstantiateViewController("LinkViewController") as LinkViewController;
-            linkViewController.Presenter.Parametrs = new string[] { _match.Home, _match.Visitor };
+            linkViewController.Presenter.Parametrs = _match.Channels;
 
             return new UIViewController[] { squardViewController, linkViewController };
         }

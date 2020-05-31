@@ -7,7 +7,7 @@ namespace Parser.Models.MatchInfo
         [JsonProperty(PropertyName = "start_time")]
         public Date Date { get; set; }
 
-        [JsonProperty(PropertyName = "status_name")] 
+        [JsonProperty(PropertyName = "state_name")] 
         public string Status { get; set; }
 
         public string Score { get; set; }
@@ -19,6 +19,9 @@ namespace Parser.Models.MatchInfo
         public Team Visitor { get; set; }
 
         public Stadium Stadium { get; set; }
+
+        [JsonProperty(PropertyName = "tv")]
+        public Channel[] Channels { get; set; }
     }
 
     public class Date
@@ -41,6 +44,11 @@ namespace Parser.Models.MatchInfo
     }
 
     public class Stadium
+    {
+        public string Name { get; set; }
+    }
+
+    public class Channel
     {
         public string Name { get; set; }
     }

@@ -18,11 +18,11 @@ namespace AceStream.SubModules.LinkSubModule
             _service = new MatchService();
         }
 
-        public async Task<List<LinkDto>> GetLinksAsync(string[] parametr)
+        public async Task<List<LinkDto>> GetLinksAsync(string[] parametrs)
         {
             try
             {
-                var links = await _service.GetLinksAsync(parametr);
+                var links = await _service.GetLinksAsync(parametrs);
 
                 return links;
             }
