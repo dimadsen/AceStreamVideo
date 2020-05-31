@@ -16,6 +16,10 @@ namespace AceStreamDb.Models
 
         public string Date { get; set; }
 
+        public string Score { get; set; }
+
+        public string Status { get; set; }
+
         public string Home { get; set; }
 
         public string HomeIcon { get; set; }

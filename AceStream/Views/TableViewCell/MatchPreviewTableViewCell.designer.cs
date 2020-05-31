@@ -27,6 +27,10 @@ namespace AceStream.Views.TableViewCell
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel HomeScore { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Time { get; set; }
 
         [Outlet]
@@ -36,6 +40,10 @@ namespace AceStream.Views.TableViewCell
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView VisitorIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel VisitorScore { get; set; }
 
         [Action ("AddToFavorites:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -58,6 +66,11 @@ namespace AceStream.Views.TableViewCell
                 HomeIcon = null;
             }
 
+            if (HomeScore != null) {
+                HomeScore.Dispose ();
+                HomeScore = null;
+            }
+
             if (Time != null) {
                 Time.Dispose ();
                 Time = null;
@@ -71,6 +84,11 @@ namespace AceStream.Views.TableViewCell
             if (VisitorIcon != null) {
                 VisitorIcon.Dispose ();
                 VisitorIcon = null;
+            }
+
+            if (VisitorScore != null) {
+                VisitorScore.Dispose ();
+                VisitorScore = null;
             }
         }
     }

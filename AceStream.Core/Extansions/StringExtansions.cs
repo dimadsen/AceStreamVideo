@@ -5,9 +5,9 @@ namespace AceStream.Core.Extansions
 {
     public static class StringExtansions
     {
-        public static string Split(this string value, int element)
+        public static string Split(this string value, int element,string option)
         {
-            return value.Split(new string[] { ". " }, StringSplitOptions.None)[element];
+            return value.Split(new string[] { option }, StringSplitOptions.None)[element];
         }
 
         public static string Clear(this string value)

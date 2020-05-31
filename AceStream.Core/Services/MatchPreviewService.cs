@@ -28,9 +28,12 @@ namespace AceStream.Services
                     ValueId = m.ValueId,
                     Home = m.Home,
                     HomePicture = m.HomeIcon,
+                    HomeScore = m.Score.Split(0, ":"),
                     Time = DateTime.Parse(m.Date).ToString("HH:mm"),
+                    Status = m.Status,
                     Visitor = m.Visitor,
-                    VisitorPicture = m.VisitorIcon
+                    VisitorPicture = m.VisitorIcon,
+                    VisitorScore = m.Score.Split(1, ":"),
                 }).ToList();
 
                 return dto;

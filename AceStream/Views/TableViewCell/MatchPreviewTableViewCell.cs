@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using AceStream.Dto;
 using Foundation;
 using UIKit;
@@ -21,7 +22,7 @@ namespace AceStream.Views.TableViewCell
 
         public MatchPreviewTableViewCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
-            
+
         }
 
         public void UpdateCell(MatchPreviewDto dto)
@@ -29,8 +30,21 @@ namespace AceStream.Views.TableViewCell
             Home.Text = dto.Home;
             Visitor.Text = dto.Visitor;
 
-            Time.Text = dto.Time;
-            
+            if (dto.Status != "завершен")
+            {
+                Time.Text = dto.Time;
+            }
+            else
+            {
+                Time.Hidden = true;
+
+                HomeScore.Hidden = false;
+                HomeScore.Text = dto.HomeScore;
+
+                VisitorScore.Hidden = false;
+                VisitorScore.Text = dto.VisitorScore;
+            }
+
             HomeIcon.Image = UIImage.FromFile(dto.HomePicture);
             VisitorIcon.Image = UIImage.FromFile(dto.VisitorPicture);
 
@@ -53,7 +67,7 @@ namespace AceStream.Views.TableViewCell
 
         partial void AddToFavorites(UIButton sender)
         {
-            Console.WriteLine(sender.Tag); 
+            Console.WriteLine(sender.Tag);
         }
     }
 }

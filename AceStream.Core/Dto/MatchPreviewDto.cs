@@ -12,6 +12,12 @@
 
         public string Time { get; set; }
 
+        public string Status { get; set; }
+
+        public string HomeScore { get; set; }
+
+        public string VisitorScore { get; set; }
+
         public int ValueId { get; set; }
     }
 }

@@ -36,6 +36,7 @@ namespace AceStream
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     TableView.ReloadData();
+
                     Indicator.StopAnimating();
                     Indicator.HidesWhenStopped = true;
 
