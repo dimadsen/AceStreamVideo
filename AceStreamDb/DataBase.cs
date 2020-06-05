@@ -89,6 +89,14 @@ namespace AceStreamDb
             }
         }
 
+        public void Update(Match match)
+        {
+            using (_db = new SQLiteConnection(_path))
+            {
+                _db.Update(match);
+            }
+        }
+
         public User GetUser(int id)
         {
             using (_db = new SQLiteConnection(_path))

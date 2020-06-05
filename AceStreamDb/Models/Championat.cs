@@ -11,5 +11,6 @@ namespace AceStreamDb.Models
         public string Name { get; set; }
         public string Icon { get; set; }
         public string Country { get; set; }
+        public string ShortName { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace AceStream.Services
             var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
-                    Name = c.Name.Split(1, ". ").Clear(),
+                    Name = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1, ". ") && cdb.Country == c.Country).ShortName,
                     Tour = c.Name.Split(2, ". "),
                     Country = c.Country,
                     Image = c.Icon,
@@ -78,6 +78,11 @@ namespace AceStream.Services
 
                 if (existingMatch == null)
                     _db.SaveMatch(match);
+                else
+                {
+                    match.Id = existingMatch.Id;
+                    _db.Update(match);
+                }
             }
 
             championat.Icon = championatDb.Icon;

@@ -7,7 +7,14 @@ namespace AceStream.Core.Extansions
     {
         public static string Split(this string value, int element,string option)
         {
-            return value.Split(new string[] { option }, StringSplitOptions.None)[element];
+            try
+            {
+                return value.Split(new string[] { option }, StringSplitOptions.None)[element];
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
         }
 
         public static string Clear(this string value)

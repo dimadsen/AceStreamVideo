@@ -49,7 +49,7 @@ namespace AceStream.Services
             var settings = new MatchPreviewSettingsDto()
             {
                 Image = championat.Icon,
-                Title = championat.Name.Clear()
+                Title = championat.ShortName
             };
 
             return settings;
