@@ -217,14 +217,14 @@
                                                 <constraint id="132214" firstAttribute="width" constant="167" priority="250"/>
                                             </constraints>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="354" y="46" width="43" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="354" y="46" width="51" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132226" firstAttribute="height" constant="21"/>
-                                                <constraint id="132227" firstAttribute="width" constant="43"/>
+                                                <constraint id="132227" firstAttribute="width" constant="51"/>
                                             </constraints>
                                         </label>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="26828" translatesAutoresizingMaskIntoConstraints="NO" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite">
@@ -277,7 +277,7 @@
                                         <constraint id="132220" firstItem="131322" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="23"/>
                                         <constraint id="132223" firstAttribute="trailing" secondItem="131322" secondAttribute="trailing" constant="23"/>
                                         <constraint id="132224" firstItem="10009" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="-0.75"/>
-                                        <constraint id="132225" firstAttribute="trailing" secondItem="10009" secondAttribute="trailing" constant="17"/>
+                                        <constraint id="132762" firstAttribute="trailing" secondItem="10009" secondAttribute="trailing" constant="9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -556,6 +556,7 @@
       <BundleResource Include="Resources\Championats\bundesliga.png" />
       <BundleResource Include="Resources\Championats\bundesliga2.png" />
       <BundleResource Include="Resources\Championats\portugal.png" />
+      <BundleResource Include="Resources\Championats\spain.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
