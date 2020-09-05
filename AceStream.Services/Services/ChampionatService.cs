@@ -40,7 +40,7 @@ namespace AceStream.Services
                 SaveMatches(championat, championatsDb);
             }
 
-            var dto = cleanedChampionats//.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
+            var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
                     Name = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name && cdb.Country == c.Country).ShortName,
