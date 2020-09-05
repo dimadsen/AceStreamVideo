@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using AceStream.Core.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using AceStreamDb;
+using AceStream.Services.Repositories;
 
 namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
-        private DataBase _db;
+        private IDataBase _db;
 
-        public MatchPreviewService()
+        public MatchPreviewService(IDataBase db)
         {
-            _db = new DataBase();
+            _db = db;
         }
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {

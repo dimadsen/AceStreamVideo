@@ -1,6 +1,4 @@
-﻿using System;
-using AceStream.Dto;
-using Parser.Models.Match;
+﻿using AceStream.Dto;
 
 namespace AceStream.SubModules.SquardSubModule
 {

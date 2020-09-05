@@ -1,6 +1,7 @@
 ﻿using System;
 using AceStream.Dto;
 using AceStream.Services;
+using AceStreamDb;
 
 namespace AceStream.Modules.RegistrationModule
 {
@@ -14,7 +15,7 @@ namespace AceStream.Modules.RegistrationModule
         {
             _presenter = presenter;
 
-            _service = new UserService();
+            _service = new UserService(new DataBase());
         }
 
         public bool SignUp(RegistrationDto dto)

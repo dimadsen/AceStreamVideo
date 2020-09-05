@@ -36,20 +36,20 @@ namespace AceStream
             NavigationItem.Title = title;
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Always;
 
-            TableView.TableFooterView = new UIView(CGRect.Empty);           
+            TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            //if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            //{
-            //    var appearance = new UINavigationBarAppearance { BackgroundColor = new UIColor(barImage) };
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                var appearance = new UINavigationBarAppearance { BackgroundColor = UIColor.FromRGB(57, 136, 125) };
 
-            //    NavigationController.NavigationBar.StandardAppearance = appearance;
-            //    NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
-            //}
+                NavigationController.NavigationBar.StandardAppearance = appearance;
+                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            }
             //else
             //{
-                
+
             //}
-            
+
             Presenter.Router.InitializeUser();            
         }
 

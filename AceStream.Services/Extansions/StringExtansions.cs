@@ -11,7 +11,7 @@ namespace AceStream.Core.Extansions
             {
                 return value.Split(new string[] { option }, StringSplitOptions.None)[element];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return string.Empty;
             }

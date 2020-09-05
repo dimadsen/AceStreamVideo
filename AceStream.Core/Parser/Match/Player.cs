@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Parser.Models.Match
+namespace AceStream.Core.Parser.Match
 {
     public class Player
     {

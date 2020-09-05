@@ -1,5 +1,6 @@
 ﻿using AceStream.Dto;
 using AceStream.Services;
+using AceStreamDb;
 
 namespace AceStream.SubModules.UserSubModule
 {
@@ -13,7 +14,7 @@ namespace AceStream.SubModules.UserSubModule
         {
             _presenter = presenter;
 
-            service = new UserService();
+            service = new UserService(new DataBase());
         }
 
         public UserDto GetUser()

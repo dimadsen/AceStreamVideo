@@ -1,16 +1,15 @@
-﻿using System;
-using AceStream.Dto;
-using AceStreamDb;
+﻿using AceStream.Dto;
+using AceStream.Services.Repositories;
 
 namespace AceStream.Services
 {
     public class UserService : IUserSerivice
     {
-        private DataBase _db;
+        private IDataBase _db;
 
-        public UserService()
+        public UserService(IDataBase db)
         {
-            _db = new DataBase();
+            _db = db;
         }
 
         public UserDto GetUser(int id)

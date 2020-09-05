@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using AceStreamDb.Models;
+using AceStream.Core.Entity.Models;
+using AceStream.Services.Repositories;
+
 using SQLite;
 namespace AceStreamDb
 {
-    public class DataBase
+    public class DataBase : IDataBase
     {
         private SQLiteConnection _db;
 

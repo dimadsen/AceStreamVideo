@@ -4,6 +4,7 @@ using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
 using AceStream.Utils;
+using Parser.Client;
 
 namespace AceStream.Modules.MatchModule
 {
@@ -16,7 +17,7 @@ namespace AceStream.Modules.MatchModule
         {
             _presenter = presenter;
 
-            _service = new MatchService();
+            _service = new MatchService(new Client());
         }
 
         public async Task<MatchDto> GetMatchAsync(int matchId)

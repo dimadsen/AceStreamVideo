@@ -61,6 +61,13 @@ namespace AceStream
             NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
             NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
 
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                var appearance = new UINavigationBarAppearance { BackgroundColor = UIColor.FromRGB(57,136,125) };
+
+                NavigationController.NavigationBar.StandardAppearance = appearance;
+                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            }
             #endregion
 
             #region Цвет TabBar

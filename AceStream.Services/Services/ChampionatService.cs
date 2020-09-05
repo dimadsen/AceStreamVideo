@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AceStream.Core.Entity.Models;
 using AceStream.Core.Extansions;
 using AceStream.Dto;
 using AceStream.Extansions;
-using AceStreamDb;
-using AceStreamDb.Models;
-using Parser.Client;
+using AceStream.Services.Repositories;
 
 namespace AceStream.Services
 {
@@ -16,14 +15,14 @@ namespace AceStream.Services
     {
         public string Title => "Чемпионаты";
 
-        private Client _client;
-        private DataBase _db;
+        private IClient _client;
+        private IDataBase _db;
 
-        public ChampionatService()
+        public ChampionatService(IClient client, IDataBase db)
         {
-            _client = new Client();
+            _client = client;
 
-            _db = new DataBase();
+            _db = db;
         }
 
         public async Task<List<ChampionatDto>> GetChampionatsAsync()
@@ -33,7 +32,7 @@ namespace AceStream.Services
             var championats = await _client.GetChampionatsAsync();
 
             //Отбираем только нужные чемпионаты
-            var cleanedChampionats = championats.Where(c => championatsDb.Select(cdb => cdb.Name).Contains(c.Name.Split(1, ". ")) &&
+            var cleanedChampionats = championats.Where(c => championatsDb.Select(cdb => cdb.Name).Contains(c.Name) &&
                                                             championatsDb.Select(cdb => cdb.Country).Contains(c.Country)).ToList();
 
             foreach (var championat in cleanedChampionats)
@@ -41,23 +40,23 @@ namespace AceStream.Services
                 SaveMatches(championat, championatsDb);
             }
 
-            var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
+            var dto = cleanedChampionats//.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
-                    Name = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1, ". ") && cdb.Country == c.Country).ShortName,
+                    Name = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name && cdb.Country == c.Country).ShortName,
                     Tour = c.Name.Split(2, ". "),
                     Country = c.Country,
                     Image = c.Icon,
-                    Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name.Split(1, ". ") && cdb.Country == c.Country).Id
+                    Id = championatsDb.FirstOrDefault(cdb => cdb.Name == c.Name && cdb.Country == c.Country).Id
                 }).Distinct().ToList();
 
             return dto.Count > 0 ? dto : throw new NotFoundMatchesException("На сегодня матчей нет");
 
         }
 
-        private void SaveMatches(Parser.Tournament.Championat championat, List<Championat> championatsDb)
+        private void SaveMatches(Core.Parser.Tournament.Championat championat, List<Championat> championatsDb)
         {
-            var championatDb = championatsDb.FirstOrDefault(c => c.Name == championat.Name.Split(1, ". ") && c.Country == championat.Country);
+            var championatDb = championatsDb.FirstOrDefault(c => c.Name == championat.Name && c.Country == championat.Country);
 
             var matches = championat.Matches.Select(match => new Match
             {

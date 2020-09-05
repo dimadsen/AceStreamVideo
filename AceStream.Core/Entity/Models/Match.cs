@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace AceStreamDb.Models
+namespace AceStream.Core.Entity.Models
 {
     public class Match
     {

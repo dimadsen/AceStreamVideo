@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Parser.Models.Match
+namespace AceStream.Core.Parser.Match
 {
     public class Team
     {
@@ -17,5 +17,6 @@ namespace Parser.Models.Match
 
         [JsonProperty(PropertyName = "reserve")]
         public Player[][] Substitutes { get; set; }
+
     }
 }

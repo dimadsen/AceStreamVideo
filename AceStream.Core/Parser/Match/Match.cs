@@ -1,13 +1,11 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Parser.Models.Match
+namespace AceStream.Core.Parser.Match
 {
     public class Match
     {
         [JsonProperty(PropertyName = "teams")]
         public Team[] Teams { get; set; }
     }
-
-
 }

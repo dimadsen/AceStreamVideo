@@ -1,6 +1,7 @@
 ﻿using System;
 using AceStream.Dto;
 using AceStream.Services;
+using AceStreamDb;
 
 namespace AceStream.Modules.LoginModule
 {
@@ -12,7 +13,7 @@ namespace AceStream.Modules.LoginModule
         public LoginInteractor(ILoginPresenter presenter)
         {
             _presenter = presenter;
-            _service = new UserService();
+            _service = new UserService(new DataBase());
         }
 
         public UserDto GetUser(LoginDto login)

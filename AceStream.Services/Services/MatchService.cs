@@ -1,26 +1,21 @@
 ﻿using System;
-using AceStream.Dto;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Threading;
-using Parser.Client;
 using System.Globalization;
 using System.Linq;
-using Parser.Models.Match;
-using AceStream.Extansions;
-using Engine;
+using System.Threading.Tasks;
+using AceStream.Core.Parser.Match;
+using AceStream.Dto;
+using AceStream.Services.Repositories;
 
 namespace AceStream.Services
 {
     public class MatchService : IMatchService
     {
-        private Client _client;
-        private EngineClient _engineClient;
+        private IClient _client;
 
-        public MatchService()
+        public MatchService(IClient client)
         {
-            _client = new Client();
-            _engineClient = new EngineClient();
+            _client = client;
         }
 
         /// <summary>

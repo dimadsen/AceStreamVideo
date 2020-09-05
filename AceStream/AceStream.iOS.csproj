@@ -562,13 +562,17 @@
         <Project>{47BD137E-0BC0-402F-A3A8-8E257495EDBA}</Project>
         <Name>XLPagerTabStrip</Name>
       </ProjectReference>
+      <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
+        <Project>{B65CE6B5-6CD2-46C4-BFDA-3AA4E5DBB014}</Project>
+        <Name>AceStream.Services</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj">
+        <Project>{272F19CC-AEC2-4DF1-B60B-7598EC89E4C4}</Project>
+        <Name>AceStreamDb</Name>
+      </ProjectReference>
       <ProjectReference Include="..\Parser\Parser.csproj">
         <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>
         <Name>Parser</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
-        <Project>{A473F2DD-7561-417A-B4FA-29BDEBAEB763}</Project>
-        <Name>AceStream.Core</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

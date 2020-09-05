@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
+using AceStreamDb;
+using Parser.Client;
 
 namespace AceStream.Modules.ChampionatModule
 {
@@ -17,7 +19,7 @@ namespace AceStream.Modules.ChampionatModule
         {
             _presenter = presenter;
 
-            service = new ChampionatService();
+            service = new ChampionatService(new Client(), new DataBase());
         }
 
         public string Title => service.Title;
