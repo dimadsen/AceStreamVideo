@@ -1,5 +1,4 @@
-﻿using System;
-using AceStreamDb.Models;
+﻿using AceStream.Core.Entity.Models;
 using NUnit.Framework;
 
 namespace AceStreamDb.Tests

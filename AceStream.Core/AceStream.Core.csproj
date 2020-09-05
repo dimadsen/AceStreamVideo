@@ -1,20 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
+    <Folder Include="Entity\" />
+    <Folder Include="Entity\Models\" />
+    <Folder Include="Parser\" />
+    <Folder Include="Parser\Match\" />
+    <Folder Include="Parser\Tournament\" />
+    <Folder Include="Parser\MatchInfo\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Dto\" />
-    <Folder Include="Extansions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Parser\Parser.csproj" />
-    <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj" />
-    <ProjectReference Include="..\Engine\Engine.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
   </ItemGroup>
 </Project>

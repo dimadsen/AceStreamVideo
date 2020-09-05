@@ -108,6 +108,10 @@
       <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>
       <Name>Parser</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
+      <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
+      <Name>AceStream.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

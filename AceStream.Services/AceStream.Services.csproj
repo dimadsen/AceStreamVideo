@@ -5,13 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\" />
+    <Folder Include="Services\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Extansions\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />
-    <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj" />
   </ItemGroup>
 </Project>

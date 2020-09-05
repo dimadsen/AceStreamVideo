@@ -121,6 +121,10 @@
       <Project>{272F19CC-AEC2-4DF1-B60B-7598EC89E4C4}</Project>
       <Name>AceStreamDb</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
+      <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
+      <Name>AceStream.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

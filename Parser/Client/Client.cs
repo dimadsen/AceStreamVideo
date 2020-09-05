@@ -1,27 +1,29 @@
 ﻿using System.Threading.Tasks;
-using Parser.Models.Match;
-using Parser.Models.MatchInfo;
+using AceStream.Core.Parser.Match;
+using AceStream.Core.Parser.MatchInfo;
+using AceStream.Core.Parser.Tournament;
+using AceStream.Services.Repositories;
 
 namespace Parser.Client
 {
-    public class Client : BaseClient
+    public class Client : BaseClient, IClient
     {
         protected override string _baseUrl => "https://www.sports.ru/";
 
-        public async Task<Tournament.Championat[]> GetChampionatsAsync()
+        public async Task<Championat[]> GetChampionatsAsync()
         {
             var url = "core/stat/match/teaser/";
 
-            var tournaments = await SendGetRequest<Tournament.Tournament>(url);
+            var tournaments = await SendGetRequest<Tournament>(url);
 
             return tournaments.Teaser.Championats;
         }
 
-        public async Task<MatchInfo> GetMatchInfoAsync(int id)
+        public async Task<AceStream.Core.Parser.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";
 
-            var matchInfo = await SendGetRequest<MatchInfo>(url);
+            var matchInfo = await SendGetRequest<AceStream.Core.Parser.MatchInfo.MatchInfo>(url);
 
             return matchInfo;
         }
@@ -35,5 +37,4 @@ namespace Parser.Client
             return teams;
         }
     }
-
 }
