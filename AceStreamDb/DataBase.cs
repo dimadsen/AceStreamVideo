@@ -4,8 +4,8 @@ using System.IO;
 using System.Reflection;
 using AceStream.Core.Entity.Models;
 using AceStream.Services.Repositories;
-
 using SQLite;
+
 namespace AceStreamDb
 {
     public class DataBase : IDataBase

@@ -73,6 +73,9 @@
         <Reference Include="Xamarin.iOS" />
         <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors" />
+        <Reference Include="XLPagerTabStrip">
+          <HintPath>..\..\..\Desktop\XLPagerTabStrip.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
@@ -559,10 +562,6 @@
       <BundleResource Include="Resources\Championats\spain.png" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\XLPagerTabStrip\XLPagerTabStrip.csproj">
-        <Project>{47BD137E-0BC0-402F-A3A8-8E257495EDBA}</Project>
-        <Name>XLPagerTabStrip</Name>
-      </ProjectReference>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
         <Project>{B65CE6B5-6CD2-46C4-BFDA-3AA4E5DBB014}</Project>
         <Name>AceStream.Services</Name>
