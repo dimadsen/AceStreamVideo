@@ -19,7 +19,7 @@ namespace AceStream.Modules.ChampionatModule
         {
             _presenter = presenter;
 
-            service = new ChampionatService(new Client(), new DataBase());
+            service = new ChampionatService(new Client());
         }
 
         public string Title => service.Title;

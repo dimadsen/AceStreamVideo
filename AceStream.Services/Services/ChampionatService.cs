@@ -7,7 +7,6 @@ using AceStream.Core.Extansions;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services.Repositories;
-using AceStream.Utils;
 
 namespace AceStream.Services
 {
@@ -34,10 +33,8 @@ namespace AceStream.Services
                     Name = Regex.Replace(c.Name, @"\d", ""),
                     Tour = c.Name.Split(2, ". "),
                     Country = c.Country,
-                    Image = c.Icon,
+                    Image = c.Icon, 
                 }).Distinct().ToList();
-
-            championatdata
 
             return dto.Count > 0 ? dto : throw new NotFoundMatchesException("На сегодня матчей нет");
 

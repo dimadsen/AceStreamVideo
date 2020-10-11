@@ -19,11 +19,11 @@ namespace AceStream.Infrastructure.Client
             return tournaments.Teaser.Championats;
         }
 
-        public async Task<AceStream.Core.Parser.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
+        public async Task<Core.Parser.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";
 
-            var matchInfo = await SendGetRequest<AceStream.Core.Parser.MatchInfo.MatchInfo>(url);
+            var matchInfo = await SendGetRequest<Core.Parser.MatchInfo.MatchInfo>(url);
 
             return matchInfo;
         }
