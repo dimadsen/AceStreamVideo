@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\" />
-    <Folder Include="Entity\Models\" />
     <Folder Include="Parser\" />
     <Folder Include="Parser\Match\" />
     <Folder Include="Parser\Tournament\" />

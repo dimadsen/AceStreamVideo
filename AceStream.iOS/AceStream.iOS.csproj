@@ -74,7 +74,7 @@
         <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors" />
         <Reference Include="XLPagerTabStrip">
-          <HintPath>..\..\..\Desktop\XLPagerTabStrip.dll</HintPath>
+          <HintPath>..\XLPagerTabStrip\bin\Release\XLPagerTabStrip.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -278,9 +278,10 @@
         <Compile Include="SubModules\LinkSubModule\LinkInteractor.cs" />
         <Compile Include="SubModules\LinkSubModule\LinkRouter.cs" />
         <Compile Include="Utils\NavigationItemImage.cs" />
-        <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\GradientColor.cs" />
         <Compile Include="Utils\ImageUtils.cs" />
+        <Compile Include="Utils\User.cs" />
+        <Compile Include="Utils\ChampionatData.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\favorites.png" />
@@ -565,10 +566,6 @@
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
         <Project>{B65CE6B5-6CD2-46C4-BFDA-3AA4E5DBB014}</Project>
         <Name>AceStream.Services</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj">
-        <Project>{272F19CC-AEC2-4DF1-B60B-7598EC89E4C4}</Project>
-        <Name>AceStreamDb</Name>
       </ProjectReference>
       <ProjectReference Include="..\Parser\Parser.csproj">
         <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>

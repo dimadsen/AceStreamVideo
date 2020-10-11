@@ -4,7 +4,7 @@ using AceStream.Core.Parser.MatchInfo;
 using AceStream.Core.Parser.Tournament;
 using AceStream.Services.Repositories;
 
-namespace Parser.Client
+namespace AceStream.Infrastructure.Client
 {
     public class Client : BaseClient, IClient
     {
