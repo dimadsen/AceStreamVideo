@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.Parser.Match
 {
-    public class ParserPlayer
+    public class Player
     {
         public string Number { get; set; }
 

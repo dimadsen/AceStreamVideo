@@ -567,10 +567,6 @@
         <Project>{B65CE6B5-6CD2-46C4-BFDA-3AA4E5DBB014}</Project>
         <Name>AceStream.Services</Name>
       </ProjectReference>
-      <ProjectReference Include="..\Parser\Parser.csproj">
-        <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>
-        <Name>Parser</Name>
-      </ProjectReference>
       <ProjectReference Include="..\AceStream.Infrastructure\AceStream.Infrastructure.csproj">
         <Project>{DCC62938-8B25-44F3-9A9B-44CC5C4A5C7E}</Project>
         <Name>AceStream.Infrastructure</Name>

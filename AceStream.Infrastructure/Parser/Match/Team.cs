@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.Parser.Match
 {
-    public class ParserTeam
+    public class Team
     {
         public string Name { get; set; }
 
@@ -13,10 +13,10 @@ namespace AceStream.Infrastructure.Parser.Match
         public string Icon { get; set; }
 
         [JsonProperty(PropertyName = "players")]
-        public ParserPlayer[] Startings { get; set; }
+        public Player[] Startings { get; set; }
 
         [JsonProperty(PropertyName = "reserve")]
-        public ParserPlayer[][] Substitutes { get; set; }
+        public Player[][] Substitutes { get; set; }
 
     }
 }

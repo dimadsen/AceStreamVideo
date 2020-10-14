@@ -1,7 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
-
-namespace AceStream.Core.Domain.Tournament
+﻿namespace AceStream.Core.Domain.Tournament
 {
     public class Team
     {

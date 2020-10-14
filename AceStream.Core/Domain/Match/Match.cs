@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AceStream.Core.Domain.Match
+﻿namespace AceStream.Core.Domain.Match
 {
     public class Match
     {

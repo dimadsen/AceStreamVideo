@@ -1,10 +1,7 @@
 ﻿using System.Threading.Tasks;
-using AceStream.Core.Domain.Match;
-using AceStream.Core.Domain.MatchInfo;
 using AceStream.Core.Domain.Tournament;
-using AceStream.Infrastructure.Parser;
 using AceStream.Services.Repositories;
-using AceStream.Infrastructure.Parser.Match;
+using AceStream.Infrastructure.Mapping;
 
 namespace AceStream.Infrastructure.Client
 {
@@ -16,28 +13,33 @@ namespace AceStream.Infrastructure.Client
         {
             var url = "core/stat/match/teaser/";
 
-            var tournaments = await SendGetRequest<Tournament>(url);
+            var tournament = await SendGetRequest<Parser.Tournament.Tournament>(url);
 
-            return tournaments.Teaser.Championats;
+            var result = Mapper.Map<Parser.Tournament.Tournament, Tournament>(tournament);
+
+            return result.Teaser.Championats;
         }
 
         public async Task<Core.Domain.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";
 
-            var matchInfo = await SendGetRequest<Core.Domain.MatchInfo.MatchInfo>(url);
+            var matchInfo = await SendGetRequest<Parser.MatchInfo.MatchInfo>(url);
 
-            return matchInfo;
+            var result = Mapper.Map<Parser.MatchInfo.MatchInfo, Core.Domain.MatchInfo.MatchInfo>(matchInfo);
+
+            return result;
         }
 
         public async Task<Core.Domain.Match.Match> GetTeamsAsync(int id)
         {
             var url = $"stat/api/v1/match/{id}/arrange.json";
 
-            var teams = await SendGetRequest<Parser.Match.Match>(url);
+            var match = await SendGetRequest<Parser.Match.Match>(url);
 
-            ///Здесь маппинг в доменную модель
-            return teams;
+            var result = Mapper.Map<Parser.Match.Match, Core.Domain.Match.Match>(match);
+
+            return result;
         }
     }
 }

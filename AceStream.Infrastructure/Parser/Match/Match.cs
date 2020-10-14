@@ -6,6 +6,6 @@ namespace AceStream.Infrastructure.Parser.Match
     public class Match
     {
         
-        public ParserTeam[] Teams { get; set; }
+        public Team[] Teams { get; set; }
     }
 }

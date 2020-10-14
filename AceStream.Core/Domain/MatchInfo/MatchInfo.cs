@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace AceStream.Core.Domain.MatchInfo
+﻿namespace AceStream.Core.Domain.MatchInfo
 {
     public class MatchInfo
     {
