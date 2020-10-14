@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
+using AceStream.Services.Repositories;
 using AceStreamDb;
 using Parser.Client;
 
@@ -14,12 +15,14 @@ namespace AceStream.Modules.ChampionatModule
         private IChampionatPresenter _presenter;
 
         private IChampionatService service;
+        private IClient _client;
 
         public ChampionatInteractor(IChampionatPresenter presenter)
         {
             _presenter = presenter;
 
-            service = new ChampionatService(new Client());
+            _client = Fabrika.get<IClient>();
+            service = new ChampionatService(client);
         }
 
         public string Title => service.Title;
