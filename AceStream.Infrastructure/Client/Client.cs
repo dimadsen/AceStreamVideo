@@ -1,8 +1,10 @@
 ﻿using System.Threading.Tasks;
-using AceStream.Core.Parser.Match;
-using AceStream.Core.Parser.MatchInfo;
-using AceStream.Core.Parser.Tournament;
+using AceStream.Core.Domain.Match;
+using AceStream.Core.Domain.MatchInfo;
+using AceStream.Core.Domain.Tournament;
+using AceStream.Infrastructure.Parser;
 using AceStream.Services.Repositories;
+using AceStream.Infrastructure.Parser.Match;
 
 namespace AceStream.Infrastructure.Client
 {
@@ -19,21 +21,22 @@ namespace AceStream.Infrastructure.Client
             return tournaments.Teaser.Championats;
         }
 
-        public async Task<Core.Parser.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
+        public async Task<Core.Domain.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";
 
-            var matchInfo = await SendGetRequest<Core.Parser.MatchInfo.MatchInfo>(url);
+            var matchInfo = await SendGetRequest<Core.Domain.MatchInfo.MatchInfo>(url);
 
             return matchInfo;
         }
 
-        public async Task<Match> GetTeamsAsync(int id)
+        public async Task<Core.Domain.Match.Match> GetTeamsAsync(int id)
         {
             var url = $"stat/api/v1/match/{id}/arrange.json";
 
-            var teams = await SendGetRequest<Match>(url);
+            var teams = await SendGetRequest<Parser.Match.Match>(url);
 
+            ///Здесь маппинг в доменную модель
             return teams;
         }
     }

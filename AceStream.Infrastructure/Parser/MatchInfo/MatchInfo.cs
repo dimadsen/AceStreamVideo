@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace AceStream.Core.Parser.MatchInfo
+namespace AceStream.Infrastructure.Parser.MatchInfo
 {
     public class MatchInfo
     {

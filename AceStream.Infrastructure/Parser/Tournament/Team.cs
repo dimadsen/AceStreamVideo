@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace AceStream.Core.Parser.Tournament
+namespace AceStream.Infrastructure.Parser.Tournament
 {
     public class Team
     {

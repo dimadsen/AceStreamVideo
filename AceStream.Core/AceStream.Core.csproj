@@ -5,13 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Parser\" />
-    <Folder Include="Parser\Match\" />
-    <Folder Include="Parser\Tournament\" />
-    <Folder Include="Parser\MatchInfo\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\Match\" />
+    <Folder Include="Domain\Tournament\" />
+    <Folder Include="Domain\MatchInfo\" />
   </ItemGroup>
 </Project>

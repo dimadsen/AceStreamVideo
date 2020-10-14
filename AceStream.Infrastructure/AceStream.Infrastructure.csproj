@@ -9,6 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Client\" />
+    <Folder Include="Parser\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />

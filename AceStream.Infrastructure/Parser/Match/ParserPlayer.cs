@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace AceStream.Core.Parser.Match
+namespace AceStream.Infrastructure.Parser.Match
 {
-    public class Player
+    public class ParserPlayer
     {
         public string Number { get; set; }
 
