@@ -11,32 +11,30 @@ namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
-        private IDataBase _db;
-
-        public MatchPreviewService(IDataBase db)
+        public MatchPreviewService()
         {
-            _db = db;
+            
         }
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
             var task = Task.Run(() =>
             {
-                var matches = _db.GetMatches(championatId).Where(m => DateTime.Parse(m.Date).Date == DateTime.Now.Date).ToList();
+                //var matches = _db.GetMatches(championatId).Where(m => DateTime.Parse(m.Date).Date == DateTime.Now.Date).ToList();
 
-                var dto = matches.Select(m => new MatchPreviewDto
-                {
-                    ValueId = m.ValueId,
-                    Home = m.Home,
-                    HomePicture = m.HomeIcon,
-                    HomeScore = m.Score.Split(0, ":"),
-                    Time = DateTime.Parse(m.Date).ToString("HH:mm"),
-                    Status = m.Status,
-                    Visitor = m.Visitor,
-                    VisitorPicture = m.VisitorIcon,
-                    VisitorScore = m.Score.Split(1, ":"),
-                }).ToList();
+                //var dto = matches.Select(m => new MatchPreviewDto
+                //{
+                //    ValueId = m.ValueId,
+                //    Home = m.Home,
+                //    HomePicture = m.HomeIcon,
+                //    HomeScore = m.Score.Split(0, ":"),
+                //    Time = DateTime.Parse(m.Date).ToString("HH:mm"),
+                //    Status = m.Status,
+                //    Visitor = m.Visitor,
+                //    VisitorPicture = m.VisitorIcon,
+                //    VisitorScore = m.Score.Split(1, ":"),
+                //}).ToList();
 
-                return dto;
+                return new List<MatchPreviewDto>();
             });
 
             return await task;
@@ -44,15 +42,15 @@ namespace AceStream.Services
 
         public MatchPreviewSettingsDto GetSettings(int championatId)
         {
-            var championat = _db.GetChampionat(championatId);
+            //var championat = _db.GetChampionat(championatId);
 
-            var settings = new MatchPreviewSettingsDto()
-            {
-                Image = championat.Icon,
-                Title = championat.ShortName
-            };
+            //var settings = new MatchPreviewSettingsDto()
+            //{
+            //    Image = championat.Icon,
+            //    Title = championat.ShortName
+            //};
 
-            return settings;
+            return new MatchPreviewSettingsDto { };
         }
     }
 

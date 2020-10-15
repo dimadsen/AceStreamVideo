@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Services;
-using Parser.Client;
 
 namespace AceStream.SubModules.LinkSubModule
 {
@@ -16,7 +15,7 @@ namespace AceStream.SubModules.LinkSubModule
         {
             _presenter = presenter;
 
-            _service = new MatchService(new Client());
+            //_service = new MatchService(new Client());
         }
 
         public async Task<List<LinkDto>> GetLinksAsync(string[] parametrs)

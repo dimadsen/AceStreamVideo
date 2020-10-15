@@ -2,9 +2,9 @@
 
 namespace AceStream.Utils
 {
-    public static class ChampionatData
+    public  class ChampionatData
     {
-        public static string Data
+        public  string Data
         {
             get => NSUserDefaults.StandardUserDefaults.StringForKey(nameof(Data));
             set => NSUserDefaults.StandardUserDefaults.SetString(value, nameof(Data));

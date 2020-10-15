@@ -5,7 +5,6 @@ using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services;
 using AceStream.Utils;
-using AceStreamDb;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -17,7 +16,7 @@ namespace AceStream.Modules.MatchPreviewModule
         public MatchPreviewInteractor(IMatchPreviewPresenter presenter)
         {
             _presenter = presenter;
-            _service = new MatchPreviewService(new DataBase());
+            //_service = new MatchPreviewService(new DataBase());
         }
 
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)

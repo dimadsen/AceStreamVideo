@@ -12,6 +12,7 @@
     <Folder Include="Client\" />
     <Folder Include="Parser\" />
     <Folder Include="Mapping\" />
+    <Folder Include="DependencyInjection\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />

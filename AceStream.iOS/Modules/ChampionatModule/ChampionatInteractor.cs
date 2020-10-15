@@ -5,8 +5,6 @@ using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
 using AceStream.Services.Repositories;
-using AceStreamDb;
-using Parser.Client;
 
 namespace AceStream.Modules.ChampionatModule
 {
@@ -15,13 +13,11 @@ namespace AceStream.Modules.ChampionatModule
         private IChampionatPresenter _presenter;
 
         private IChampionatService service;
-        private IClient _client;
 
-        public ChampionatInteractor(IChampionatPresenter presenter)
+        public ChampionatInteractor(IChampionatPresenter presenter, IClient client)
         {
             _presenter = presenter;
 
-            _client = Fabrika.get<IClient>();
             service = new ChampionatService(client);
         }
 
