@@ -9,7 +9,17 @@ namespace AceStream.Infrastructure.DependencyInjection
 
         public void AddScoped<TInterface, TClass>() where TClass : TInterface, new()
         {
-            _values.Add(typeof(TInterface), new TClass());
+            var key = typeof(TInterface);
+            var value = new TClass();
+
+            if (_values.ContainsKey(key))
+            {
+                _values[key] = value;
+            }
+            else
+            {
+                _values.Add(key, value);
+            }
         }
 
         public static TInterface Get<TInterface>()
