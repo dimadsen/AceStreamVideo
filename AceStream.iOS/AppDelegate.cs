@@ -1,9 +1,11 @@
 ﻿using AceStream.Infrastructure.Client;
 using AceStream.Infrastructure.DependencyInjection;
 using AceStream.Modules.LoginModule;
+using AceStream.Services;
 using AceStream.Services.Repositories;
 using Foundation;
 using UIKit;
+using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream
 {
@@ -18,14 +20,9 @@ namespace AceStream
 
             services.AddScoped<IClient, Client>();
 
-            //if (!User.IsAuthorized)
-            //{
-            //    Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            //    var storyboard = UIStoryboard.FromName("Main", null);
-
-            //    Window.RootViewController = storyboard.InstantiateViewController("LoginViewController");
-            //    Window.MakeKeyAndVisible();
-            //}
+            var client = Get<IClient>();
+            services.AddScoped<IChampionatService, ChampionatService>(client);
+            services.AddScoped<IMatchService, MatchService>(client);
 
             return true;
         }

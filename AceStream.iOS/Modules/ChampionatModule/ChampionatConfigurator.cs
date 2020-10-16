@@ -1,4 +1,4 @@
-﻿using AceStream.Services.Repositories;
+﻿using AceStream.Services;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream.Modules.ChampionatModule
@@ -9,7 +9,8 @@ namespace AceStream.Modules.ChampionatModule
         {
             var presenter = new ChampionatPresenter(viewController);
             var router = new ChampionatRouter(viewController);
-            var interactor = new ChampionatInteractor(presenter, Get<IClient>());
+
+            var interactor = new ChampionatInteractor(presenter, Get<IChampionatService>());
 
             viewController.Presenter = presenter;
             presenter.Interactor = interactor;

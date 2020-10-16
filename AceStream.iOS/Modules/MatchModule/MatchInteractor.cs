@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.Extansions;
 using AceStream.Services;
 using AceStream.Utils;
 
@@ -12,11 +11,11 @@ namespace AceStream.Modules.MatchModule
         private IMatchPresenter _presenter;
         private IMatchService _service;
 
-        public MatchInteractor(IMatchPresenter presenter)
+        public MatchInteractor(IMatchPresenter presenter, IMatchService service)
         {
             _presenter = presenter;
 
-            //_service = new MatchService();
+            _service = service;
         }
 
         public async Task<MatchDto> GetMatchAsync(int matchId)

@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
-using AceStream.Services.Repositories;
 
 namespace AceStream.Modules.ChampionatModule
 {
@@ -12,22 +11,22 @@ namespace AceStream.Modules.ChampionatModule
     {
         private IChampionatPresenter _presenter;
 
-        private IChampionatService service;
+        private IChampionatService _service;
 
-        public ChampionatInteractor(IChampionatPresenter presenter, IClient client)
+        public ChampionatInteractor(IChampionatPresenter presenter, IChampionatService service)
         {
             _presenter = presenter;
 
-            service = new ChampionatService(client);
+            _service = service;
         }
 
-        public string Title => service.Title;
+        public string Title => _service.Title;
 
         public async Task<List<ChampionatDto>> GetChampionatsAsync()
         {
             try
             {
-                var championats = await service.GetChampionatsAsync();
+                var championats = await _service.GetChampionatsAsync();
                 
                 return championats;
             }

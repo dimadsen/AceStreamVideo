@@ -22,6 +22,22 @@ namespace AceStream.Infrastructure.DependencyInjection
             }
         }
 
+        public void AddScoped<TInterface, TClass>(params object[] args) where TClass : TInterface
+        {
+            var key = typeof(TInterface);
+            var value = Activator.CreateInstance(typeof(TClass), args[0]
+                ?? throw new NotImplementedException($"Параметр должен быть реализован"));
+
+            if (_values.ContainsKey(key))
+            {
+                _values[key] = value;
+            }
+            else
+            {
+                _values.Add(key, value);
+            }
+        }
+
         public static TInterface Get<TInterface>()
         {
             _values.TryGetValue(typeof(TInterface), out object value);
