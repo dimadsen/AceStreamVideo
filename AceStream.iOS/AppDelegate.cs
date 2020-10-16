@@ -1,6 +1,5 @@
 ﻿using AceStream.Infrastructure.Client;
 using AceStream.Infrastructure.DependencyInjection;
-using AceStream.Modules.LoginModule;
 using AceStream.Services;
 using AceStream.Services.Repositories;
 using Foundation;
@@ -21,6 +20,7 @@ namespace AceStream
             services.AddScoped<IClient, Client>();
 
             var client = Get<IClient>();
+
             services.AddScoped<IChampionatService, ChampionatService>(client);
             services.AddScoped<IMatchService, MatchService>(client);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AceStream.Infrastructure.DependencyInjection
 {
@@ -24,9 +25,11 @@ namespace AceStream.Infrastructure.DependencyInjection
 
         public void AddScoped<TInterface, TClass>(params object[] args) where TClass : TInterface
         {
+            if (args.Any(arg => arg == null))
+                throw new NotImplementedException($"Параметр должен быть реализован");
+
             var key = typeof(TInterface);
-            var value = Activator.CreateInstance(typeof(TClass), args[0]
-                ?? throw new NotImplementedException($"Параметр должен быть реализован"));
+            var value = Activator.CreateInstance(typeof(TClass), args);
 
             if (_values.ContainsKey(key))
             {
