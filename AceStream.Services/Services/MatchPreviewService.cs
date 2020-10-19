@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AceStream.Core.Extansions;
+using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services.Repositories;
