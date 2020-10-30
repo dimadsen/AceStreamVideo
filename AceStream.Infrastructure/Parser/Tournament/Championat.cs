@@ -4,6 +4,9 @@ namespace AceStream.Infrastructure.Parser.Tournament
 {
     public class Championat
     {
+        [JsonProperty(PropertyName = "tag_id")]
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Icon { get; set; }

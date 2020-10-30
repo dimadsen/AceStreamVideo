@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using AceStream.Core.Extansions;
+using AceStream.Infrastructure.Parser.Enums;
+using AceStream.Services.Extansions;
+using AutoMapper;
 
 namespace AceStream.Infrastructure.Mapping
 {
@@ -9,8 +12,12 @@ namespace AceStream.Infrastructure.Mapping
         static Mapper()
         {
             var config = new MapperConfiguration(cnf =>
-            {                
-                cnf.CreateMap<Parser.Tournament.Championat, Core.Domain.Tournament.Championat>();
+            {
+                cnf.CreateMap<Parser.Tournament.Championat, Core.Domain.Tournament.Championat>()
+                .ForMember(dest => dest.Tour, opt => opt.MapFrom(c => c.Name.Split(2, ". ")))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(c => ((Championship)c.Id).GetDescription()))
+                .ForMember(dest => dest.Icon, opt => opt.MapFrom(c => ((Championship)c.Id).ToString()));
+
                 cnf.CreateMap<Parser.Tournament.Date, Core.Domain.Tournament.Date>();
                 cnf.CreateMap<Parser.Tournament.MatchInfo, Core.Domain.Tournament.MatchInfo>();
                 cnf.CreateMap<Parser.Tournament.Sport, Core.Domain.Tournament.Sport>();
@@ -35,7 +42,7 @@ namespace AceStream.Infrastructure.Mapping
             _mapper = new AutoMapper.Mapper(config);
         }
 
-        public static M Map<T,M>(T model)
+        public static M Map<T, M>(T model)
         {
             return _mapper.Map<T, M>(model);
         }

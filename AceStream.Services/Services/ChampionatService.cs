@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AceStream.Services.Extansions;
 using AceStream.Dto;
@@ -25,16 +24,17 @@ namespace AceStream.Services
         {
             var championats = await _client.GetChampionatsAsync();
 
-            var cleanedChampionats = championats.Where(x => x.Sport.Id == 208);
-
-            var dto = cleanedChampionats.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
+            var dto = championats
+                //.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
-                    Name = Regex.Replace(c.Name.Split(1, "."), @"[/\d]", "").Trim(),
-                    Tour = c.Name.Split(2, ". "),
+                    Name = c.Name,
+                    Tour = c.Tour,
                     Country = c.Country,
                     Image = c.Icon,
-                }).Distinct().ToList();
+                })
+                .Distinct()
+                .ToList();
 
             return dto.Count > 0 ? dto : throw new NotFoundMatchesException("На сегодня матчей нет");
 

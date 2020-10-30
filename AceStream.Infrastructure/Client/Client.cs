@@ -2,6 +2,10 @@
 using AceStream.Core.Domain.Tournament;
 using AceStream.Services.Repositories;
 using AceStream.Infrastructure.Mapping;
+using System.Linq;
+
+using System;
+using AceStream.Infrastructure.Parser.Enums;
 
 namespace AceStream.Infrastructure.Client
 {
@@ -17,7 +21,9 @@ namespace AceStream.Infrastructure.Client
 
             var result = Mapper.Map<Parser.Tournament.Tournament, Tournament>(tournament);
 
-            return result.Teaser.Championats;
+            var championships = Enum.GetValues(typeof(Championship)).Cast<int>();
+
+            return result.Teaser.Championats.Where(c => championships.Contains(c.Id)).ToArray();
         }
 
         public async Task<Core.Domain.MatchInfo.MatchInfo> GetMatchInfoAsync(int id)

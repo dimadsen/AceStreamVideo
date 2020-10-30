@@ -124,6 +124,9 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\BorderColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\backgroundColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\BarButtonColor.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -148,6 +151,10 @@
         <Folder Include="Resources\TabBarPictures\Settings\" />
         <Folder Include="Resources\TabBarPictures\Live\" />
         <Folder Include="Resources\Championats\" />
+        <Folder Include="Assets.xcassets\ChampionatBackground.colorset\" />
+        <Folder Include="Assets.xcassets\BorderColor.colorset\" />
+        <Folder Include="Assets.xcassets\backgroundColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarButtonColor.colorset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -550,17 +557,10 @@
       <BundleResource Include="Resources\TabBarPictures\Live\Live.png" />
       <BundleResource Include="Resources\TabBarPictures\Live\Live%402x.png" />
       <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
-      <BundleResource Include="Resources\Championats\seria-a.png" />
-      <BundleResource Include="Resources\Championats\epl.png" />
-      <BundleResource Include="Resources\Championats\belarus.png" />
       <BundleResource Include="Resources\error_image.png" />
-      <BundleResource Include="Resources\Championats\k-league1.png" />
       <BundleResource Include="Resources\Ace-Stream-logo.png" />
-      <BundleResource Include="Resources\Championats\epl2.png" />
-      <BundleResource Include="Resources\Championats\bundesliga.png" />
-      <BundleResource Include="Resources\Championats\bundesliga2.png" />
-      <BundleResource Include="Resources\Championats\portugal.png" />
-      <BundleResource Include="Resources\Championats\spain.png" />
+      <BundleResource Include="Resources\Championats\APL.png" />
+      <BundleResource Include="Resources\Championats\LaLiga.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">

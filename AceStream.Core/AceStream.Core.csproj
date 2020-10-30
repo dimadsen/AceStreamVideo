@@ -9,5 +9,6 @@
     <Folder Include="Domain\Match\" />
     <Folder Include="Domain\Tournament\" />
     <Folder Include="Domain\MatchInfo\" />
+    <Folder Include="Extansions\" />
   </ItemGroup>
 </Project>

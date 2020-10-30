@@ -1,0 +1,38 @@
+{
+  "colors": [
+    {
+      "idiom": "iphone",
+      "color": {
+        "color-space": "srgb",
+        "components": {
+          "red": 0.95280385,
+          "green": 0.934294641,
+          "blue": 0.934294641,
+          "alpha": 1.0
+        }
+      }
+    },
+    {
+      "idiom": "iphone",
+      "color": {
+        "color-space": "srgb",
+        "components": {
+          "red": 0.806454539,
+          "green": 0.806454539,
+          "blue": 0.806454539,
+          "alpha": 1.0
+        }
+      },
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ]
+    }
+  ],
+  "info": {
+    "version": 1,
+    "author": "xcode"
+  }
+}
