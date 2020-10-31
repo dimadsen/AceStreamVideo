@@ -1,5 +1,6 @@
 ﻿using System;
 using AceStream.Dto;
+using AceStream.Utils;
 using Foundation;
 using UIKit;
 
@@ -31,16 +32,8 @@ namespace AceStream.Views.TableViewCell
             Name.Text = dto.Name;
             Tour.Text = dto.Tour;
             Country.Text = dto.Country;
-
-
-            Icon.Layer.BorderWidth = 1;
             Icon.Layer.MasksToBounds = false;
-            Icon.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            Icon.BackgroundColor = UIColor.White;
-            //Icon.Layer.CornerRadius = Icon.Frame.Height / 2;
             Icon.ClipsToBounds = true;
-            
         }
-
     }
 }

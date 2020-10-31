@@ -60,7 +60,6 @@ namespace AceStream.Utils
             {
                 Console.WriteLine(ex.Message);
             }
-
         }
     }
 }

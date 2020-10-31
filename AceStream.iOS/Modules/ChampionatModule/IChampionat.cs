@@ -30,7 +30,7 @@ namespace AceStream.Modules.ChampionatModule
 
     public interface IChampionatRouter
     {
-        void Prepare(UIStoryboardSegue segue, int sender);
+        void Prepare(UIStoryboardSegue segue, ChampionatDto sender);
     }
 
     public interface IChampionatView

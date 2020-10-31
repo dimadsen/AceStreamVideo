@@ -53,7 +53,7 @@ namespace AceStream
 
             var match = _matches[row];
 
-            Presenter.Router.Prepare(segue, match.ValueId, NavigationItem.Title);
+            Presenter.Router.Prepare(segue, match.Id, NavigationItem.Title);
         }
 
         public override void ViewWillDisappear(bool animated)

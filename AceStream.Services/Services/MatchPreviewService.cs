@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AceStream.Core.Extansions;
+using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services.Repositories;
@@ -11,45 +10,41 @@ namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
-        private IDataBase _db;
+        private IClient _client;
 
-        public MatchPreviewService(IDataBase db)
+        public MatchPreviewService(IClient client)
         {
-            _db = db;
+            _client = client;    
         }
+
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            var task = Task.Run(() =>
+            var championats = await _client.GetChampionatsAsync();
+
+            var championat = championats.FirstOrDefault(c => c.Id == championatId);
+
+            var dto = championat.Matches.Select(m => new MatchPreviewDto
             {
-                var matches = _db.GetMatches(championatId).Where(m => DateTime.Parse(m.Date).Date == DateTime.Now.Date).ToList();
+                Id = m.Id,
+                Home = m.Home.Name,
+                HomePicture = m.Home.Icon,
+                HomeScore = m.Score.Split(0, ":"),
+                Time = m.Date.StartDate.ToString("HH:mm"),
+                Status = m.Status.Name,
+                Visitor = m.Visitor.Name,
+                VisitorPicture = m.Visitor.Icon,
+                VisitorScore = m.Score.Split(1, ":"),
+            }).ToList();
 
-                var dto = matches.Select(m => new MatchPreviewDto
-                {
-                    ValueId = m.ValueId,
-                    Home = m.Home,
-                    HomePicture = m.HomeIcon,
-                    HomeScore = m.Score.Split(0, ":"),
-                    Time = DateTime.Parse(m.Date).ToString("HH:mm"),
-                    Status = m.Status,
-                    Visitor = m.Visitor,
-                    VisitorPicture = m.VisitorIcon,
-                    VisitorScore = m.Score.Split(1, ":"),
-                }).ToList();
-
-                return dto;
-            });
-
-            return await task;
+            return dto;
         }
 
-        public MatchPreviewSettingsDto GetSettings(int championatId)
+        public MatchPreviewSettingsDto GetSettings(ChampionatDto championat)
         {
-            var championat = _db.GetChampionat(championatId);
-
             var settings = new MatchPreviewSettingsDto()
             {
-                Image = championat.Icon,
-                Title = championat.ShortName
+                Image = championat.Image,
+                Title = championat.Name
             };
 
             return settings;
@@ -60,6 +55,6 @@ namespace AceStream.Services
     {
         Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId);
 
-        MatchPreviewSettingsDto GetSettings(int championatId);
+        MatchPreviewSettingsDto GetSettings(ChampionatDto championat);
     }
 }

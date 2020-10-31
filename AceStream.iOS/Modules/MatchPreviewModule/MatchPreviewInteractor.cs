@@ -5,7 +5,6 @@ using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services;
 using AceStream.Utils;
-using AceStreamDb;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -14,10 +13,10 @@ namespace AceStream.Modules.MatchPreviewModule
         private IMatchPreviewPresenter _presenter;
         private IMatchPreviewService _service;
 
-        public MatchPreviewInteractor(IMatchPreviewPresenter presenter)
+        public MatchPreviewInteractor(IMatchPreviewPresenter presenter, IMatchPreviewService service)
         {
             _presenter = presenter;
-            _service = new MatchPreviewService(new DataBase());
+            _service = service;
         }
 
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
@@ -29,6 +28,7 @@ namespace AceStream.Modules.MatchPreviewModule
                 matches.ForEach(match =>
                 {
                     match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
+
                     match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
                 });
 
@@ -42,9 +42,9 @@ namespace AceStream.Modules.MatchPreviewModule
             }
         }
 
-        public MatchPreviewSettingsDto GetSettings(int championatId)
+        public MatchPreviewSettingsDto GetSettings(ChampionatDto championat)
         {
-            return _service.GetSettings(championatId);
+            return _service.GetSettings(championat);
         }
     }
 }

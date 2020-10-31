@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using AceStream.Core.Parser.Match;
+using AceStream.Core.Domain.Match;
 using AceStream.Dto;
 using AceStream.Services.Repositories;
 

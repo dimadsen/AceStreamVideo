@@ -1,6 +1,10 @@
-﻿using AceStream.Modules.LoginModule;
+﻿using AceStream.Infrastructure.Client;
+using AceStream.Infrastructure.DependencyInjection;
+using AceStream.Services;
+using AceStream.Services.Repositories;
 using Foundation;
 using UIKit;
+using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream
 {
@@ -11,14 +15,14 @@ namespace AceStream
         
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            if (!User.IsAuthorized)
-            {
-                Window = new UIWindow(UIScreen.MainScreen.Bounds);
-                var storyboard = UIStoryboard.FromName("Main", null);
+            var services = new ServiceCollection();
 
-                Window.RootViewController = storyboard.InstantiateViewController("LoginViewController");
-                Window.MakeKeyAndVisible();
-            }
+            services.AddScoped<IClient, Client>();
+
+            var client = Get<IClient>();
+
+            services.AddScoped<IChampionatService, ChampionatService>(client);
+            services.AddScoped<IMatchPreviewService, MatchPreviewService>(client);
 
             return true;
         }

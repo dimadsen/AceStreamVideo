@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using AceStream.Dto;
+using UIKit;
 
 namespace AceStream.Modules.ChampionatModule
 {
@@ -11,11 +12,11 @@ namespace AceStream.Modules.ChampionatModule
             _viewController = viewController;
         }
 
-        public void Prepare(UIStoryboardSegue segue, int championatId)
+        public void Prepare(UIStoryboardSegue segue, ChampionatDto championat)
         {
             var matchPreviewViewController = segue.DestinationViewController as MatchPreviewViewController;
 
-            matchPreviewViewController.Presenter.ChampionatId = championatId;
+            matchPreviewViewController.Presenter.Championat = championat;
         }
 
     }
