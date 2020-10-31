@@ -62,7 +62,7 @@
                         </connections>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6873" reuseIdentifier="ChampionatTableViewCell" customClass="ChampionatTableViewCell" rowHeight="115">
-                                <rect key="frame" x="0.0" y="127.5" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6873" id="6874">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
@@ -89,6 +89,7 @@
                                                 <constraint id="130552" firstAttribute="height" constant="23"/>
                                                 <constraint id="130553" firstAttribute="width" constant="171" priority="250"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тур 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7072" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="110" y="75" width="38.5" height="21"/>
@@ -98,7 +99,7 @@
                                                 <constraint id="130560" firstAttribute="height" constant="21"/>
                                                 <constraint id="130561" firstAttribute="width" constant="194" priority="250"/>
                                             </constraints>
-                                            <color key="textColor" name="BorderColor"/>
+                                            <color key="textColor" name="BarButtonColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="77634" translatesAutoresizingMaskIntoConstraints="NO" text="Страна">
                                             <rect key="frame" x="110" y="46" width="58.5" height="21"/>
@@ -108,7 +109,7 @@
                                                 <constraint id="130556" firstAttribute="height" constant="21"/>
                                                 <constraint id="130557" firstAttribute="width" constant="194" priority="250"/>
                                             </constraints>
-                                            <color key="textColor" name="BorderColor"/>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -129,18 +130,21 @@
                                     <segue id="15922" destination="5485" kind="show" identifier="ToMatchPreview"/>
                                     <outlet property="Country" destination="77634" id="name-outlet-77634"/>
                                 </connections>
+                                <color key="backgroundColor" name="CellColor"/>
                             </tableViewCell>
                         </prototypes>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="72436" key="tableHeaderView" animating="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                             <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                            <color key="color" name="BarButtonColor"/>
                         </activityIndicatorView>
-                        <color key="separatorColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tableView>
-                    <navigationItem title="Title" id="5245" key="navigationItem">
+                    <navigationItem title="Title" id="5245" key="navigationItem" largeTitleDisplayMode="always">
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" image="YES"/>
                         </accessibility>
+                        <barButtonItem key="backBarButtonItem" title="          " id="133297"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Indicator" destination="72436" id="name-outlet-72436"/>
@@ -168,11 +172,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" image="lester.jpeg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9249" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO">
                                             <rect key="frame" x="54" y="18" width="30" height="30"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <constraints>
@@ -180,11 +184,11 @@
                                                 <constraint id="132202" firstAttribute="width" constant="30"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" image="aston.jpeg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9502" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO">
                                             <rect key="frame" x="54" y="66" width="30" height="30"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <constraints>
@@ -195,40 +199,40 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9755" translatesAutoresizingMaskIntoConstraints="NO" text="Хозяева" misplaced="YES">
                                             <rect key="frame" x="92" y="22" width="168" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132209" firstAttribute="height" constant="21"/>
                                                 <constraint id="132210" firstAttribute="width" constant="168" priority="250"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9840" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="92" y="70" width="45" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132213" firstAttribute="height" constant="21"/>
                                                 <constraint id="132214" firstAttribute="width" constant="167" priority="250"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="315" y="46.5" width="51" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132226" firstAttribute="height" constant="21"/>
                                                 <constraint id="132227" firstAttribute="width" constant="51"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="26828" translatesAutoresizingMaskIntoConstraints="NO" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite">
                                             <rect key="frame" x="16" y="42" width="30" height="30"/>
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <connections>
                                                 <action selector="AddToFavorites:" destination="9016" id="30822" eventType="touchUpOutside"/>
                                                 <action selector="AddToFavorites:" destination="9016" id="31464" eventType="touchUpInside"/>
                                             </connections>
+                                            <color key="tintColor" name="BarButtonColor"/>
                                             <state key="normal" image="favorites.png"/>
                                             <constraints>
                                                 <constraint id="132197" firstAttribute="height" constant="30"/>
@@ -238,22 +242,22 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="131321" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
                                             <rect key="frame" x="322" y="22.5" width="30" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17" weight="heavy"/>
-                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132215" firstAttribute="height" constant="21"/>
                                                 <constraint id="132216" firstAttribute="width" constant="30"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="131322" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
                                             <rect key="frame" x="322" y="70" width="30" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17" weight="heavy"/>
-                                            <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132221" firstAttribute="height" constant="21"/>
                                                 <constraint id="132222" firstAttribute="width" constant="30"/>
                                             </constraints>
+                                            <color key="textColor" name="TextCellColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -264,7 +268,7 @@
                                         <constraint id="132203" firstItem="9502" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="23"/>
                                         <constraint id="132204" firstItem="9502" firstAttribute="leading" secondItem="26828" secondAttribute="trailing" constant="8"/>
                                         <constraint id="132207" firstItem="9755" firstAttribute="leading" secondItem="9249" secondAttribute="trailing" constant="8"/>
-                                        <constraint id="132208" firstAttribute="centerY" secondItem="9755" secondAttribute="centerY" constant="24"/>
+                                        <constraint id="132208" firstAttribute="centerY" secondItem="9755" secondAttribute="centerY" constant="25"/>
                                         <constraint id="132211" firstItem="9840" firstAttribute="leading" secondItem="9502" secondAttribute="trailing" constant="8"/>
                                         <constraint id="132212" firstItem="9840" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="23"/>
                                         <constraint id="132217" firstAttribute="trailing" secondItem="131321" secondAttribute="trailing" constant="23"/>
@@ -286,13 +290,15 @@
                                     <outlet property="HomeScore" destination="131321" id="name-outlet-131321"/>
                                     <outlet property="VisitorScore" destination="131322" id="name-outlet-131322"/>
                                 </connections>
+                                <color key="backgroundColor" name="CellColor"/>
                             </tableViewCell>
                         </prototypes>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="73021" key="tableHeaderView" animating="YES">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" name="BarButtonColor"/>
                         </activityIndicatorView>
-                        <color key="separatorColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tableView>
                     <connections>
                         <outlet property="Indicator" destination="73021" id="name-outlet-73021"/>
@@ -614,7 +620,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53280" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="283"/>
+            <point key="canvasLocation" x="1508" y="280"/>
         </scene>
         <scene sceneID="72087">
             <objects>
@@ -834,14 +840,17 @@
         <image name="close.png" width="128" height="128"/>
         <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
         <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
-        <namedColor name="BorderColor">
-            <color colorSpace="custom" customColorSpace="sRGB" red="0.45281148" green="0.434287" blue="0.434287" alpha="1"/>
-        </namedColor>
         <namedColor name="backgroundColor">
-            <color colorSpace="custom" customColorSpace="sRGB" red="0.95280385" green="0.934294641" blue="0.934294641" alpha="1"/>
+            <color colorSpace="custom" customColorSpace="sRGB" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1"/>
         </namedColor>
         <namedColor name="BarButtonColor">
-            <color colorSpace="custom" customColorSpace="sRGB" red="0" green="0" blue="0" alpha="1"/>
+            <color colorSpace="custom" customColorSpace="sRGB" red="0.003921569" green="0.5294118" blue="0.5254902" alpha="1"/>
+        </namedColor>
+        <namedColor name="CellColor">
+            <color colorSpace="custom" customColorSpace="sRGB" red="1" green="1" blue="1" alpha="1"/>
+        </namedColor>
+        <namedColor name="TextCellColor">
+            <color colorSpace="custom" customColorSpace="sRGB" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1"/>
         </namedColor>
     </resources>
 </document>

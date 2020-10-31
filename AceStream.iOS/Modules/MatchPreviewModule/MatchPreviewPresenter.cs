@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using AceStream.Dto.SettingsDto;
+using AceStream.Dto;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
@@ -9,7 +9,7 @@ namespace AceStream.Modules.MatchPreviewModule
         public IMatchPreviewInteractor Interactor { get; set; }
         private IMatchPreviewView _view;
 
-        public int ChampionatId { get; set; }
+        public ChampionatDto Championat { get; set; }
 
         public MatchPreviewPresenter(IMatchPreviewView view)
         {
@@ -18,12 +18,12 @@ namespace AceStream.Modules.MatchPreviewModule
 
         public async Task SetMatchesAsync()
         {
-            await _view.SetMatchesAsync(Interactor.GetMatchesAsync(ChampionatId));
+            await _view.SetMatchesAsync(Interactor.GetMatchesAsync(Championat.Id));
         }
 
         public void ConfigureView()
         {
-            _view.SetSettings(Interactor.GetSettings(ChampionatId));
+            _view.SetSettings(Interactor.GetSettings(Championat));
         }
 
         public void SetError()

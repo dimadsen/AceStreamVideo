@@ -4,7 +4,7 @@ namespace AceStream.Core.Domain.Tournament
 {
     public class MatchInfo
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public Date Date { get; set; }
 

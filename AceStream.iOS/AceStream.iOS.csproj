@@ -124,9 +124,10 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
-        <ImageAsset Include="Assets.xcassets\BorderColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\backgroundColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\BarButtonColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\CellColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\TextCellColor.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -154,7 +155,11 @@
         <Folder Include="Assets.xcassets\ChampionatBackground.colorset\" />
         <Folder Include="Assets.xcassets\BorderColor.colorset\" />
         <Folder Include="Assets.xcassets\backgroundColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarButtonImageColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarColor.colorset\" />
         <Folder Include="Assets.xcassets\BarButtonColor.colorset\" />
+        <Folder Include="Assets.xcassets\CellColor.colorset\" />
+        <Folder Include="Assets.xcassets\TextCellColor.colorset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -289,9 +294,9 @@
         <Compile Include="Utils\ImageUtils.cs" />
         <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\ChampionatData.cs" />
+        <Compile Include="Utils\ColorUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-      <BundleResource Include="Resources\favorites.png" />
       <BundleResource Include="Resources\ace_stream_logo.png" />
       <BundleResource Include="Resources\close.png" />
       <BundleResource Include="Resources\About.png" />
@@ -561,6 +566,7 @@
       <BundleResource Include="Resources\Ace-Stream-logo.png" />
       <BundleResource Include="Resources\Championats\APL.png" />
       <BundleResource Include="Resources\Championats\LaLiga.png" />
+      <BundleResource Include="Resources\favorites.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">

@@ -1,4 +1,5 @@
 ﻿using System;
+using AceStream.Utils;
 using CoreGraphics;
 using UIKit;
 
@@ -28,12 +29,12 @@ namespace AceStream
         {
             ImageView = new UIImageView { Tag = Tag };
             
-            ImageView.Layer.CornerRadius = 10;
+            ImageView.Layer.CornerRadius = 20;
             ImageView.ClipsToBounds = true;
             ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
-            ImageView.Layer.BorderWidth = 1;
-            ImageView.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            ImageView.BackgroundColor = UIColor.White;
+            ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+
+            ImageView.BackgroundColor = ColorUtils.GetInterfaceImageStyle();
         }
 
         public static void ActivateConstraints(UINavigationBar navigationBar)

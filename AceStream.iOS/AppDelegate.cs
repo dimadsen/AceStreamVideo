@@ -22,7 +22,7 @@ namespace AceStream
             var client = Get<IClient>();
 
             services.AddScoped<IChampionatService, ChampionatService>(client);
-            services.AddScoped<IMatchService, MatchService>(client);
+            services.AddScoped<IMatchPreviewService, MatchPreviewService>(client);
 
             return true;
         }

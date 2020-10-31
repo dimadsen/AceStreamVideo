@@ -28,10 +28,11 @@ namespace AceStream.Services
                 //.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
+                    Id = c.Id,
                     Name = c.Name,
                     Tour = c.Tour,
                     Country = c.Country,
-                    Image = c.Icon,
+                    Image = c.Icon,                    
                 })
                 .Distinct()
                 .ToList();

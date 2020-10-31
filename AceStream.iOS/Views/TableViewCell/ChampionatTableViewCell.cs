@@ -1,5 +1,6 @@
 ﻿using System;
 using AceStream.Dto;
+using AceStream.Utils;
 using Foundation;
 using UIKit;
 
@@ -32,8 +33,7 @@ namespace AceStream.Views.TableViewCell
             Tour.Text = dto.Tour;
             Country.Text = dto.Country;
             Icon.Layer.MasksToBounds = false;
-            Icon.ClipsToBounds = true;            
+            Icon.ClipsToBounds = true;
         }
-
     }
 }

@@ -18,6 +18,6 @@
 
         public string VisitorScore { get; set; }
 
-        public int ValueId { get; set; }
+        public int Id { get; set; }
     }
 }

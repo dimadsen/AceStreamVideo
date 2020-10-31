@@ -15,7 +15,7 @@ namespace AceStream.Modules.MatchPreviewModule
     {
         IMatchPreviewRouter Router { get; set; }
         IMatchPreviewInteractor Interactor { get; set; }
-        int ChampionatId { get; set; }
+        ChampionatDto Championat { get; set; }
 
         Task SetMatchesAsync();
         void SetError();
@@ -26,7 +26,7 @@ namespace AceStream.Modules.MatchPreviewModule
     {
         Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId);
 
-        MatchPreviewSettingsDto GetSettings(int championatId);
+        MatchPreviewSettingsDto GetSettings(ChampionatDto championat);
     }
 
     public interface IMatchPreviewRouter

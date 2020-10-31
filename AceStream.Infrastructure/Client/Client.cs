@@ -37,9 +37,9 @@ namespace AceStream.Infrastructure.Client
             return result;
         }
 
-        public async Task<Core.Domain.Match.Match> GetTeamsAsync(int id)
+        public async Task<Core.Domain.Match.Match> GetTeamsAsync(int matchId)
         {
-            var url = $"stat/api/v1/match/{id}/arrange.json";
+            var url = $"stat/api/v1/match/{matchId}/arrange.json";
 
             var match = await SendGetRequest<Parser.Match.Match>(url);
 
