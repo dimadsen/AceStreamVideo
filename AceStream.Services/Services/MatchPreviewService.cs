@@ -5,6 +5,7 @@ using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services.Repositories;
+using AceStream.Core.Domain.Enums;
 
 namespace AceStream.Services
 {
@@ -30,7 +31,7 @@ namespace AceStream.Services
                 HomePicture = m.Home.Icon,
                 HomeScore = m.Score.Split(0, ":"),
                 Time = m.Date.StartDate.ToString("HH:mm"),
-                Status = m.Status.Name,
+                Status = (MatchStatus)m.Status.Id,
                 Visitor = m.Visitor.Name,
                 VisitorPicture = m.Visitor.Icon,
                 VisitorScore = m.Score.Split(1, ":"),

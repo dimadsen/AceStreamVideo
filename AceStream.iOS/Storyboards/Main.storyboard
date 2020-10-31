@@ -217,12 +217,12 @@
                                             <color key="textColor" name="TextCellColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10009" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="315" y="46.5" width="51" height="21"/>
+                                            <rect key="frame" x="315" y="47" width="44" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="132226" firstAttribute="height" constant="21"/>
-                                                <constraint id="132227" firstAttribute="width" constant="51"/>
+                                                <constraint id="132227" firstAttribute="width" constant="51" priority="250"/>
                                             </constraints>
                                             <color key="textColor" name="TextCellColor"/>
                                         </label>
@@ -276,7 +276,7 @@
                                         <constraint id="132220" firstItem="131322" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="23"/>
                                         <constraint id="132223" firstAttribute="trailing" secondItem="131322" secondAttribute="trailing" constant="23"/>
                                         <constraint id="132224" firstItem="10009" firstAttribute="centerY" secondItem="9017" secondAttribute="centerY" constant="-0.75"/>
-                                        <constraint id="132762" firstAttribute="trailing" secondItem="10009" secondAttribute="trailing" constant="9"/>
+                                        <constraint id="133807" firstAttribute="trailing" secondItem="10009" secondAttribute="trailing" constant="16"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -840,9 +840,6 @@
         <image name="close.png" width="128" height="128"/>
         <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
         <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
-        <namedColor name="backgroundColor">
-            <color colorSpace="custom" customColorSpace="sRGB" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1"/>
-        </namedColor>
         <namedColor name="BarButtonColor">
             <color colorSpace="custom" customColorSpace="sRGB" red="0.003921569" green="0.5294118" blue="0.5254902" alpha="1"/>
         </namedColor>

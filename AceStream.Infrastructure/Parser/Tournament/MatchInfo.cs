@@ -30,6 +30,8 @@ namespace AceStream.Infrastructure.Parser.Tournament
     public class Status
     {
         public string Name { get; set; }
+
+        public int Id { get; set; }
     }
 
 }

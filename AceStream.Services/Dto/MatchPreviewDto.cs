@@ -1,4 +1,6 @@
-﻿namespace AceStream.Dto
+﻿using AceStream.Core.Domain.Enums;
+
+namespace AceStream.Dto
 {
     public class MatchPreviewDto
     {
@@ -12,7 +14,7 @@
 
         public string Time { get; set; }
 
-        public string Status { get; set; }
+        public MatchStatus Status { get; set; }
 
         public string HomeScore { get; set; }
 

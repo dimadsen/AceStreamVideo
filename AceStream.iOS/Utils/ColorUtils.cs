@@ -39,7 +39,7 @@ namespace AceStream.Utils
                 switch (arg.UserInterfaceStyle)
                 {
                     case UIUserInterfaceStyle.Dark:
-                        return UIColor.FromRGB(240, 236, 236);
+                        return UIColor.FromRGB(205, 205, 205);
                     default:
                         return UIColor.FromRGB(30, 30, 30);
                 }
