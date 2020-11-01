@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AceStream.Core.Domain.Enums;
 
 namespace AceStream.Dto
 {
@@ -39,6 +40,16 @@ namespace AceStream.Dto
         /// Тайм
         /// </summary>
         public string Half { get; set; }
+
+        /// <summary>
+        /// Минута
+        /// </summary>
+        public string Minute { get; set; }
+
+        /// <summary>
+        /// Статус
+        /// </summary>
+        public MatchStatus Status { get; set; }
 
         /// <summary>
         /// Состав хозяев

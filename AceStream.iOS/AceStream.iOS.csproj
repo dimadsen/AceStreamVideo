@@ -74,7 +74,7 @@
         <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors" />
         <Reference Include="XLPagerTabStrip">
-          <HintPath>..\..\..\Desktop\XLPagerTabStrip.dll</HintPath>
+          <HintPath>..\XLPagerTabStrip\bin\Release\XLPagerTabStrip.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -124,6 +124,11 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\backgroundColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\BarButtonColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\CellColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\TextCellColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\ScoreColor.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -148,6 +153,15 @@
         <Folder Include="Resources\TabBarPictures\Settings\" />
         <Folder Include="Resources\TabBarPictures\Live\" />
         <Folder Include="Resources\Championats\" />
+        <Folder Include="Assets.xcassets\ChampionatBackground.colorset\" />
+        <Folder Include="Assets.xcassets\BorderColor.colorset\" />
+        <Folder Include="Assets.xcassets\backgroundColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarButtonImageColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarColor.colorset\" />
+        <Folder Include="Assets.xcassets\BarButtonColor.colorset\" />
+        <Folder Include="Assets.xcassets\CellColor.colorset\" />
+        <Folder Include="Assets.xcassets\TextCellColor.colorset\" />
+        <Folder Include="Assets.xcassets\ScoreColor.colorset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -278,12 +292,13 @@
         <Compile Include="SubModules\LinkSubModule\LinkInteractor.cs" />
         <Compile Include="SubModules\LinkSubModule\LinkRouter.cs" />
         <Compile Include="Utils\NavigationItemImage.cs" />
-        <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\GradientColor.cs" />
         <Compile Include="Utils\ImageUtils.cs" />
+        <Compile Include="Utils\User.cs" />
+        <Compile Include="Utils\ChampionatData.cs" />
+        <Compile Include="Utils\ColorUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-      <BundleResource Include="Resources\favorites.png" />
       <BundleResource Include="Resources\ace_stream_logo.png" />
       <BundleResource Include="Resources\close.png" />
       <BundleResource Include="Resources\About.png" />
@@ -315,7 +330,7 @@
       <BundleResource Include="Resources\Flags\Гаити.png" />
       <BundleResource Include="Resources\Flags\Мадагаскар.png" />
       <BundleResource Include="Resources\Flags\Объединённые Арабские Эмираты.png" />
-      <BundleResource Include="Resources\Flags\Белоруссия.png" />
+      <BundleResource Include="Resources\Flags\Беларусь.png" />
       <BundleResource Include="Resources\Flags\Южная Георгия и Южные Сандвичевы острова.png" />
       <BundleResource Include="Resources\Flags\Малави.png" />
       <BundleResource Include="Resources\Flags\Мексика.png" />
@@ -332,7 +347,7 @@
       <BundleResource Include="Resources\Flags\Франция.png" />
       <BundleResource Include="Resources\Flags\Андорра.png" />
       <BundleResource Include="Resources\Flags\Гана.png" />
-      <BundleResource Include="Resources\Flags\Молдавия.png" />
+      <BundleResource Include="Resources\Flags\Молдова.png" />
       <BundleResource Include="Resources\Flags\ЮАР.png" />
       <BundleResource Include="Resources\Flags\Багамские Острова.png" />
       <BundleResource Include="Resources\Flags\Сент-Винсент и Гренадины.png" />
@@ -549,30 +564,28 @@
       <BundleResource Include="Resources\TabBarPictures\Live\Live.png" />
       <BundleResource Include="Resources\TabBarPictures\Live\Live%402x.png" />
       <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
-      <BundleResource Include="Resources\Championats\seria-a.png" />
-      <BundleResource Include="Resources\Championats\epl.png" />
-      <BundleResource Include="Resources\Championats\belarus.png" />
       <BundleResource Include="Resources\error_image.png" />
-      <BundleResource Include="Resources\Championats\k-league1.png" />
       <BundleResource Include="Resources\Ace-Stream-logo.png" />
-      <BundleResource Include="Resources\Championats\epl2.png" />
-      <BundleResource Include="Resources\Championats\bundesliga.png" />
-      <BundleResource Include="Resources\Championats\bundesliga2.png" />
-      <BundleResource Include="Resources\Championats\portugal.png" />
-      <BundleResource Include="Resources\Championats\spain.png" />
+      <BundleResource Include="Resources\favorites.png" />
+      <BundleResource Include="Resources\Championats\APL.png" />
+      <BundleResource Include="Resources\Championats\Bundesliga.png" />
+      <BundleResource Include="Resources\Championats\LaLiga.png" />
+      <BundleResource Include="Resources\Championats\Liga1.png" />
+      <BundleResource Include="Resources\Championats\RPL.png" />
+      <BundleResource Include="Resources\Championats\SeriaA.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
         <Project>{B65CE6B5-6CD2-46C4-BFDA-3AA4E5DBB014}</Project>
         <Name>AceStream.Services</Name>
       </ProjectReference>
-      <ProjectReference Include="..\AceStreamDb\AceStreamDb.csproj">
-        <Project>{272F19CC-AEC2-4DF1-B60B-7598EC89E4C4}</Project>
-        <Name>AceStreamDb</Name>
+      <ProjectReference Include="..\AceStream.Infrastructure\AceStream.Infrastructure.csproj">
+        <Project>{DCC62938-8B25-44F3-9A9B-44CC5C4A5C7E}</Project>
+        <Name>AceStream.Infrastructure</Name>
       </ProjectReference>
-      <ProjectReference Include="..\Parser\Parser.csproj">
-        <Project>{D816BEBD-9B4A-4421-8522-C1312515FEBC}</Project>
-        <Name>Parser</Name>
+      <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
+        <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
+        <Name>AceStream.Core</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

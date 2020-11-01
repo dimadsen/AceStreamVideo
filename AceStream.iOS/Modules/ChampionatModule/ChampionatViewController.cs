@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Modules.ChampionatModule;
+using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
@@ -35,7 +36,7 @@ namespace AceStream
                     TableView.ReloadData();
                     Indicator.StopAnimating();
                     Indicator.HidesWhenStopped = true;
-                    
+
                     TableView.TableHeaderView = null;
                 });
             });
@@ -49,31 +50,36 @@ namespace AceStream
 
             TableView.TableFooterView = new UIView(CGRect.Empty);
 
-            RefreshControl = new UIRefreshControl { TintColor = UIColor.White };
+            RefreshControl = new UIRefreshControl { TintColor = ColorUtils.GetInterfaceStyle() };
             RefreshControl.ValueChanged += Refresh;
             #endregion
 
             #region Настройки NavigationBar
 
             NavigationItem.Title = title;
-           
+
+            var appearance = new UINavigationBarAppearance
+            {
+                LargeTitleTextAttributes = new UIStringAttributes
+                {
+                    ForegroundColor = ColorUtils.GetInterfaceTextStyle()
+                },
+                TitleTextAttributes = new UIStringAttributes
+                {
+                    ForegroundColor = ColorUtils.GetInterfaceTextStyle()
+                }
+            };
+
+            NavigationController.NavigationBar.StandardAppearance = appearance;
+            NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
+            
+
             SetBackIndicator();
+
             NavigationController.NavigationBar.AddSubview(NavigationItemImage.ImageView);
             NavigationItemImage.ActivateConstraints(NavigationController.NavigationBar);
 
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                var appearance = new UINavigationBarAppearance { BackgroundColor = UIColor.FromRGB(57,136,125) };
-
-                NavigationController.NavigationBar.StandardAppearance = appearance;
-                NavigationController.NavigationBar.ScrollEdgeAppearance = appearance;
-            }
-            #endregion
-
-            #region Цвет TabBar
-            NavigationController.TabBarController.TabBar.UnselectedItemTintColor = UIColor.FromRGB(192, 192, 192);
-
-            #endregion
+            #endregion            
 
             NavigationItemImage.HiddenImage();
         }
@@ -83,7 +89,7 @@ namespace AceStream
             var task = Task.Run(async () =>
             {
                 await Presenter.SetChampionatsAsync();
-                
+
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     TableView.ReloadData();
@@ -110,7 +116,7 @@ namespace AceStream
 
             var championat = _championats[row];
 
-            Presenter.Router.Prepare(segue, championat.Id);
+            Presenter.Router.Prepare(segue, championat);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -137,7 +143,7 @@ namespace AceStream
         {
             var imgBack = UIImage.FromFile("back.png");
             NavigationController.NavigationBar.BackIndicatorImage = imgBack;
-            NavigationController.NavigationBar.TintColor = UIColor.White;
+            NavigationController.NavigationBar.TintColor = ColorUtils.GetInterfaceStyle();
             NavigationController.NavigationBar.BackIndicatorTransitionMaskImage = imgBack;
             NavigationItem.LeftItemsSupplementBackButton = true;
             NavigationController.NavigationBar.TopItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
@@ -156,7 +162,7 @@ namespace AceStream
                 imageview.Center = TableView.ConvertPointFromView(TableView.Center, imageview);
 
                 TableView.AddSubview(imageview);
-            });           
+            });
         }
 
         public void SetNotFoundView()
@@ -173,7 +179,6 @@ namespace AceStream
 
                 TableView.AddSubview(label);
             });
-            
         }
     }
 }

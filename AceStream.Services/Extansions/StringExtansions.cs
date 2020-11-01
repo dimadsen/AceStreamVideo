@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace AceStream.Core.Extansions
+namespace AceStream.Services.Extansions
 {
     public static class StringExtansions
     {
@@ -11,7 +11,7 @@ namespace AceStream.Core.Extansions
             {
                 return value.Split(new string[] { option }, StringSplitOptions.None)[element];
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return string.Empty;
             }

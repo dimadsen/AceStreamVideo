@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Dynamic;
+using AceStream.Core.Domain.Enums;
+using AceStream.Core.Extansions;
 using AceStream.Dto;
 using Foundation;
 using UIKit;
@@ -30,11 +32,11 @@ namespace AceStream.Views.TableViewCell
             Home.Text = dto.Home;
             Visitor.Text = dto.Visitor;
 
-            if (dto.Status != "завершен")
+            if (dto.Status == MatchStatus.NotStarted)
             {
                 Time.Text = dto.Time;
             }
-            else
+            else if (dto.Status == MatchStatus.Completed)
             {
                 Time.Hidden = true;
 
@@ -44,24 +46,20 @@ namespace AceStream.Views.TableViewCell
                 VisitorScore.Hidden = false;
                 VisitorScore.Text = dto.VisitorScore;
             }
+            else
+            {
+                Time.Text = dto.Status.GetDescription();
+            }
 
             HomeIcon.Image = UIImage.FromFile(dto.HomePicture);
             VisitorIcon.Image = UIImage.FromFile(dto.VisitorPicture);
 
             Favorites.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
 
-            HomeIcon.Layer.BorderWidth = 1;
             HomeIcon.Layer.MasksToBounds = false;
-            HomeIcon.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            HomeIcon.BackgroundColor = UIColor.White;
-            //HomeIcon.Layer.CornerRadius = HomeIcon.Frame.Height / 2;
             HomeIcon.ClipsToBounds = true;
 
-            VisitorIcon.Layer.BorderWidth = 1;
-            VisitorIcon.Layer.MasksToBounds = false;
-            VisitorIcon.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            VisitorIcon.BackgroundColor = UIColor.White;
-            //VisitorIcon.Layer.CornerRadius = VisitorIcon.Frame.Height / 2;
+            VisitorIcon.Layer.MasksToBounds = false;            
             VisitorIcon.ClipsToBounds = true;
         }
 
