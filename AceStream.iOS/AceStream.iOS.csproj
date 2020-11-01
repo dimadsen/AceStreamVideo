@@ -328,7 +328,7 @@
       <BundleResource Include="Resources\Flags\Гаити.png" />
       <BundleResource Include="Resources\Flags\Мадагаскар.png" />
       <BundleResource Include="Resources\Flags\Объединённые Арабские Эмираты.png" />
-      <BundleResource Include="Resources\Flags\Белоруссия.png" />
+      <BundleResource Include="Resources\Flags\Беларусь.png" />
       <BundleResource Include="Resources\Flags\Южная Георгия и Южные Сандвичевы острова.png" />
       <BundleResource Include="Resources\Flags\Малави.png" />
       <BundleResource Include="Resources\Flags\Мексика.png" />
@@ -345,7 +345,7 @@
       <BundleResource Include="Resources\Flags\Франция.png" />
       <BundleResource Include="Resources\Flags\Андорра.png" />
       <BundleResource Include="Resources\Flags\Гана.png" />
-      <BundleResource Include="Resources\Flags\Молдавия.png" />
+      <BundleResource Include="Resources\Flags\Молдова.png" />
       <BundleResource Include="Resources\Flags\ЮАР.png" />
       <BundleResource Include="Resources\Flags\Багамские Острова.png" />
       <BundleResource Include="Resources\Flags\Сент-Винсент и Гренадины.png" />

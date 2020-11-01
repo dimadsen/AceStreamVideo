@@ -286,9 +286,9 @@
                                     <outlet property="Visitor" destination="9840" id="name-outlet-9840"/>
                                     <outlet property="Time" destination="10009" id="name-outlet-10009"/>
                                     <outlet property="Favorites" destination="26828" id="name-outlet-26828"/>
-                                    <segue id="127068" destination="77994" kind="show"/>
                                     <outlet property="HomeScore" destination="131321" id="name-outlet-131321"/>
                                     <outlet property="VisitorScore" destination="131322" id="name-outlet-131322"/>
+                                    <segue id="134392" destination="77994" kind="show"/>
                                 </connections>
                                 <color key="backgroundColor" name="CellColor"/>
                             </tableViewCell>
@@ -462,98 +462,6 @@
             </objects>
             <point key="canvasLocation" x="1725" y="1771"/>
         </scene>
-        <scene sceneID="31883">
-            <objects>
-                <viewController id="31884" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="31881"/>
-                        <viewControllerLayoutGuide type="bottom" id="31882"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="31885">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32063" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Хозяева" adjustsFontForContentSizeCategory="YES" hidden="YES">
-                                <rect key="frame" x="9.5" y="182" width="115.5" height="16"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center" adjustsFontForContentSizeCategory="YES" hidden="YES">
-                                <rect key="frame" x="242.5" y="182" width="113.5" height="16"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32065" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="08.01.2020 18:00" adjustsFontForContentSizeCategory="YES" hidden="YES">
-                                <rect key="frame" x="125" y="80.5" width="121.5" height="19"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12" weight="medium"/>
-                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="32066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontSizeToFit="NO" text="2 - 3" adjustsFontForContentSizeCategory="YES" hidden="YES">
-                                <rect key="frame" x="150" y="125" width="62" height="19.5"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23" weight="medium"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-ый тайм" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32067" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontForContentSizeCategory="YES" hidden="YES">
-                                <rect key="frame" x="140" y="154.5" width="82.5" height="13.5"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10" weight="light"/>
-                                <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0627840131353946" blue="0.0974976859652124" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="lester.jpeg" opaque="NO" hidden="YES">
-                                <rect key="frame" x="29" y="104.5" width="74" height="63.5"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="aston.jpeg" hidden="YES">
-                                <rect key="frame" x="264.5" y="100.5" width="72" height="70"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="77324" fixedFrame="YES" animating="YES">
-                                <rect key="frame" x="163" y="317" width="39.5" height="32.5"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <color key="color" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
-                            </activityIndicatorView>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="Score" destination="32066" id="name-outlet-32066"/>
-                        <outlet property="HomePicture" destination="32068" id="name-outlet-32068"/>
-                        <outlet property="Home" destination="32063" id="name-outlet-32063"/>
-                        <outlet property="VisitorPicture" destination="32069" id="name-outlet-32069"/>
-                        <outlet property="Visitor" destination="32064" id="name-outlet-32064"/>
-                        <outlet property="Half" destination="32067" id="name-outlet-32067"/>
-                        <outlet property="Date" destination="32065" id="name-outlet-32065"/>
-                        <outlet property="Indicator" destination="77324" id="name-outlet-77324"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="31886" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3851" y="-401"/>
-        </scene>
         <scene sceneID="48093">
             <objects>
                 <tableViewController id="48094" sceneMemberID="viewController" customClass="SettingsViewController">
@@ -679,7 +587,7 @@
                                                 <rect key="frame" x="49.5" y="78" width="70" height="70"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="35"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <constraints>
@@ -691,7 +599,7 @@
                                                 <rect key="frame" x="246.5" y="78" width="70" height="70"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="35"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <constraints>
@@ -702,7 +610,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 мая 18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78015" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="147.5" y="22" width="76.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="medium"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                                                <color key="textColor" name="TextCellColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121026" firstAttribute="width" constant="119" priority="250"/>
@@ -712,7 +620,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 - 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78016" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="147.5" y="90" width="74" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23" weight="medium"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0263695574684181" blue="0.0668951282351647" alpha="1"/>
+                                                <color key="textColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121405" firstAttribute="height" constant="21"/>
@@ -722,7 +630,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78017" translatesAutoresizingMaskIntoConstraints="NO" text="Онлайн">
                                                 <rect key="frame" x="147.5" y="119" width="74" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10" weight="light"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.0263695574684181" blue="0.0668951282351647" alpha="1"/>
+                                                <color key="textColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121409" firstAttribute="height" constant="21"/>
@@ -732,7 +640,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хозяева" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78018" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="2">
                                                 <rect key="frame" x="35.5" y="172" width="98" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                                                <color key="textColor" name="TextCellColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121414" firstAttribute="height" constant="18" priority="250"/>
@@ -742,7 +650,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гости" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" id="78019" translatesAutoresizingMaskIntoConstraints="NO" adjustsFontSizeToFit="NO" numberOfLines="2">
                                                 <rect key="frame" x="232.5" y="172" width="98" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                                                <color key="textColor" name="TextCellColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121418" firstAttribute="height" constant="18" priority="250"/>
@@ -752,7 +660,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="85808" translatesAutoresizingMaskIntoConstraints="NO" text="Стадион">
                                                 <rect key="frame" x="157" y="43" width="55.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13" weight="medium"/>
-                                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                                                <color key="textColor" name="TextCellColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121030" firstAttribute="height" constant="21"/>
@@ -778,15 +686,20 @@
                                             <constraint id="121417" firstItem="78019" firstAttribute="centerX" secondItem="78003" secondAttribute="centerX" constant="94"/>
                                             <constraint id="127479" firstAttribute="bottom" secondItem="78018" secondAttribute="bottom" constant="10"/>
                                             <constraint id="127892" firstAttribute="bottom" secondItem="78019" secondAttribute="bottom" constant="10"/>
+                                            <constraint id="136843" firstItem="78018" firstAttribute="centerY" secondItem="78019" secondAttribute="centerY"/>
+                                            <constraint id="136844" firstItem="78019" firstAttribute="centerY" secondItem="78018" secondAttribute="centerY"/>
+                                            <constraint id="136845" firstItem="78018" firstAttribute="centerY" secondItem="78019" secondAttribute="centerY"/>
+                                            <constraint id="136846" firstItem="78019" firstAttribute="centerY" secondItem="78018" secondAttribute="centerY"/>
                                         </constraints>
+                                        <color key="backgroundColor" name="CellColor"/>
                                     </view>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="78076" animating="YES">
                                         <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                        <color key="color" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                                        <color key="color" name="BarButtonColor"/>
                                     </activityIndicatorView>
                                     <view contentMode="scaleToFill" id="88493" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
                                         <rect key="frame" x="0.0" y="200" width="375" height="368"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="CellColor"/>
                                         <constraints>
                                             <constraint id="106634" firstAttribute="height" constant="368"/>
                                         </constraints>
@@ -805,6 +718,7 @@
                                     <constraint id="100543" firstItem="88493" firstAttribute="bottom" secondItem="77998" secondAttribute="bottom"/>
                                     <constraint id="100544" firstItem="88493" firstAttribute="centerX" secondItem="77998" secondAttribute="centerX"/>
                                 </constraints>
+                                <color key="backgroundColor" name="CellColor"/>
                             </scrollView>
                         </subviews>
                         <constraints>
@@ -840,6 +754,9 @@
         <image name="close.png" width="128" height="128"/>
         <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
         <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
+        <namedColor name="backgroundColor">
+            <color colorSpace="custom" customColorSpace="sRGB" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1"/>
+        </namedColor>
         <namedColor name="BarButtonColor">
             <color colorSpace="custom" customColorSpace="sRGB" red="0.003921569" green="0.5294118" blue="0.5254902" alpha="1"/>
         </namedColor>
