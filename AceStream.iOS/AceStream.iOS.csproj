@@ -566,9 +566,13 @@
       <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
       <BundleResource Include="Resources\error_image.png" />
       <BundleResource Include="Resources\Ace-Stream-logo.png" />
-      <BundleResource Include="Resources\Championats\APL.png" />
-      <BundleResource Include="Resources\Championats\LaLiga.png" />
       <BundleResource Include="Resources\favorites.png" />
+      <BundleResource Include="Resources\Championats\APL.png" />
+      <BundleResource Include="Resources\Championats\Bundesliga.png" />
+      <BundleResource Include="Resources\Championats\LaLiga.png" />
+      <BundleResource Include="Resources\Championats\Liga1.png" />
+      <BundleResource Include="Resources\Championats\RPL.png" />
+      <BundleResource Include="Resources\Championats\SeriaA.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
