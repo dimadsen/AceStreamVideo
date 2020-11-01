@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using AceStream.Core.Domain.Enums;
 using AceStream.Dto;
 using AceStream.SubModules.SquardSubModule;
 using AceStream.Utils;
@@ -60,7 +61,7 @@ namespace AceStream.Modules.MatchModule
         {
             HomePicture.Layer.BorderWidth = 2;
             HomePicture.Layer.MasksToBounds = false;
-            HomePicture.Layer.BorderColor = ColorUtils.GetInterfaceStyle().CGColor; 
+            HomePicture.Layer.BorderColor = ColorUtils.GetInterfaceStyle().CGColor;
             HomePicture.ClipsToBounds = true;
 
             VisitorPicture.Layer.BorderWidth = 2;
@@ -108,6 +109,12 @@ namespace AceStream.Modules.MatchModule
                 Date.Text = _match.Date.ToString("dd MMMM HH:mm");
 
                 Stadium.Text = _match.Stadium;
+
+                if (_match.Status == MatchStatus.InProgress)
+                {
+                    Minute.Text = $"{_match.Minute}'";
+                    Minute.Hidden = false;
+                }
             });
         }
 

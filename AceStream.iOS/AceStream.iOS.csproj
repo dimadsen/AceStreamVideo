@@ -128,6 +128,7 @@
         <ImageAsset Include="Assets.xcassets\BarButtonColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\CellColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\TextCellColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\ScoreColor.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -160,6 +161,7 @@
         <Folder Include="Assets.xcassets\BarButtonColor.colorset\" />
         <Folder Include="Assets.xcassets\CellColor.colorset\" />
         <Folder Include="Assets.xcassets\TextCellColor.colorset\" />
+        <Folder Include="Assets.xcassets\ScoreColor.colorset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />

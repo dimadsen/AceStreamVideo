@@ -288,7 +288,7 @@
                                     <outlet property="Favorites" destination="26828" id="name-outlet-26828"/>
                                     <outlet property="HomeScore" destination="131321" id="name-outlet-131321"/>
                                     <outlet property="VisitorScore" destination="131322" id="name-outlet-131322"/>
-                                    <segue id="134392" destination="77994" kind="show"/>
+                                    <segue id="139057" destination="77994" kind="show"/>
                                 </connections>
                                 <color key="backgroundColor" name="CellColor"/>
                             </tableViewCell>
@@ -618,9 +618,9 @@
                                                 </constraints>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 - 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78016" translatesAutoresizingMaskIntoConstraints="NO">
-                                                <rect key="frame" x="147.5" y="90" width="74" height="21"/>
+                                                <rect key="frame" x="148" y="78" width="74" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23" weight="medium"/>
-                                                <color key="textColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                                <color key="textColor" name="ScoreColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121405" firstAttribute="height" constant="21"/>
@@ -628,9 +628,9 @@
                                                 </constraints>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78017" translatesAutoresizingMaskIntoConstraints="NO" text="Онлайн">
-                                                <rect key="frame" x="147.5" y="119" width="74" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10" weight="light"/>
-                                                <color key="textColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                                <rect key="frame" x="148" y="107" width="74" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" name="ScoreColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <constraints>
                                                     <constraint id="121409" firstAttribute="height" constant="21"/>
@@ -667,6 +667,16 @@
                                                     <constraint id="121031" firstAttribute="width" constant="178" priority="250"/>
                                                 </constraints>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10'" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="137377" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES">
+                                                <rect key="frame" x="178.5" y="127" width="14" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" name="ScoreColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <constraints>
+                                                    <constraint id="137903" firstAttribute="height" constant="21"/>
+                                                    <constraint id="137905" firstAttribute="width" constant="42" priority="250"/>
+                                                </constraints>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint id="100539" firstAttribute="height" constant="200"/>
@@ -678,7 +688,6 @@
                                             <constraint id="121399" firstItem="78014" firstAttribute="centerX" secondItem="78003" secondAttribute="centerX" constant="94"/>
                                             <constraint id="121402" firstAttribute="centerX" secondItem="78013" secondAttribute="centerX" constant="103"/>
                                             <constraint id="121403" firstItem="78013" firstAttribute="top" secondItem="85808" secondAttribute="bottom" constant="14"/>
-                                            <constraint id="121404" firstItem="78016" firstAttribute="top" secondItem="85808" secondAttribute="bottom" constant="26"/>
                                             <constraint id="121407" firstAttribute="centerX" secondItem="78016" secondAttribute="centerX" constant="3"/>
                                             <constraint id="121408" firstAttribute="centerX" secondItem="78017" secondAttribute="centerX" constant="3"/>
                                             <constraint id="121411" firstItem="78017" firstAttribute="top" secondItem="78016" secondAttribute="bottom" constant="8"/>
@@ -690,6 +699,9 @@
                                             <constraint id="136844" firstItem="78019" firstAttribute="centerY" secondItem="78018" secondAttribute="centerY"/>
                                             <constraint id="136845" firstItem="78018" firstAttribute="centerY" secondItem="78019" secondAttribute="centerY"/>
                                             <constraint id="136846" firstItem="78019" firstAttribute="centerY" secondItem="78018" secondAttribute="centerY"/>
+                                            <constraint id="137376" firstItem="78016" firstAttribute="top" secondItem="85808" secondAttribute="bottom" constant="14"/>
+                                            <constraint id="137902" firstItem="78017" firstAttribute="bottom" secondItem="137377" secondAttribute="top" constant="1"/>
+                                            <constraint id="137904" firstAttribute="centerX" secondItem="137377" secondAttribute="centerX" constant="2"/>
                                         </constraints>
                                         <color key="backgroundColor" name="CellColor"/>
                                     </view>
@@ -741,6 +753,7 @@
                         <outlet property="Stadium" destination="85808" id="name-outlet-85808"/>
                         <outlet property="DetailedMatchInfoView" destination="88493" id="name-outlet-88493"/>
                         <outlet property="MatchScrollView" destination="77998" id="name-outlet-77998"/>
+                        <outlet property="Minute" destination="137377" id="name-outlet-137377"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77996" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -765,6 +778,9 @@
         </namedColor>
         <namedColor name="TextCellColor">
             <color colorSpace="custom" customColorSpace="sRGB" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1"/>
+        </namedColor>
+        <namedColor name="ScoreColor">
+            <color colorSpace="custom" customColorSpace="sRGB" red="0.6901961" green="0" blue="0.1254902" alpha="1"/>
         </namedColor>
     </resources>
 </document>
