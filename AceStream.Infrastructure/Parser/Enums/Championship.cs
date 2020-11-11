@@ -31,8 +31,8 @@ namespace AceStream.Infrastructure.Parser.Enums
         ///// <summary>
         ///// Бундеслига
         ///// </summary>
-        //[Description("Бундеслига")]
-        //Bundesliga = 1363808,
+        [Description("Бундеслига")]
+        Bundesliga = 1363808,
 
         /// <summary>
         /// Лига 1

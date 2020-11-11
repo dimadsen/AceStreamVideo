@@ -45,7 +45,7 @@ namespace AceStream.Infrastructure.DependencyInjection
         {
             _values.TryGetValue(typeof(TInterface), out object value);
 
-            return (TInterface)value;
+            return (TInterface)value ?? throw new Exception("Не найдена реализация");
         }
     }
 }

@@ -10,5 +10,6 @@
     <Folder Include="Domain\Tournament\" />
     <Folder Include="Domain\MatchInfo\" />
     <Folder Include="Extansions\" />
+    <Folder Include="Domain\Enums\" />
   </ItemGroup>
 </Project>

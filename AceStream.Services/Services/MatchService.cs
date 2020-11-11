@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using AceStream.Core.Domain.Enums;
 using AceStream.Core.Domain.Match;
 using AceStream.Dto;
+using AceStream.Services.Extansions;
 using AceStream.Services.Repositories;
 
 namespace AceStream.Services
@@ -56,6 +58,8 @@ namespace AceStream.Services
                 Date = DateTime.Parse(matchInfo.Date.StartDate, CultureInfo.GetCultureInfo("ru")),
                 Half = matchInfo.Status,
                 Score = $"{homeSquard.Goals} : {visitorSquard.Goals}",
+                Minute = teams.Time.Split(0, ":"),
+                Status = (MatchStatus)teams.Status,
                 Stadium = matchInfo.Stadium.Name,
                 Channels = matchInfo.Channels.Select(c => c.Name).ToArray(),
 
@@ -88,7 +92,7 @@ namespace AceStream.Services
             };
 
             try { dto.Country = $"{player.Flag[0].Country}"; }
-            catch (Exception ) { }
+            catch (Exception) { }
 
             return dto;
         }

@@ -1,6 +1,7 @@
 ﻿using AceStream.Dto;
 using AceStream.SubModules.LinkSubModule;
 using AceStream.SubModules.SquardSubModule;
+using AceStream.Utils;
 using UIKit;
 using XLPagerTabStrip;
 
@@ -17,7 +18,7 @@ namespace AceStream.Modules.MatchModule
 
         public override void ViewDidLoad()
         {
-            UIColor themeColor = UIColor.FromRGB(57, 136, 125).ColorWithAlpha(0.5f);
+            var themeColor = ColorUtils.GetInterfaceStyle();
 
             Settings.Style.ButtonBarBackgroundColor = themeColor;
 
@@ -25,12 +26,12 @@ namespace AceStream.Modules.MatchModule
 
             Settings.Style.ButtonBarItemBackgroundColor = themeColor;
 
-            Settings.Style.SelectedBarBackgroundColor = UIColor.LightTextColor;
+            Settings.Style.SelectedBarBackgroundColor = UIColor.SystemGray6Color;
             Settings.Style.SelectedBarHeight = 2;
             Settings.Style.SelectedBarWidth = View.Frame.Width / 2;
 
             Settings.Style.ButtonBarMinimumLineSpacing = 0;
-            Settings.Style.ButtonBarItemTitleColor = UIColor.White;
+            Settings.Style.ButtonBarItemTitleColor = UIColor.SystemGray6Color;
             Settings.Style.ButtonBarItemsShouldFillAvailiableWidth = true;
             Settings.Style.ButtonBarLeftContentInset = 0;
             Settings.Style.ButtonBarRightContentInset = 0;

@@ -128,6 +128,7 @@
         <ImageAsset Include="Assets.xcassets\BarButtonColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\CellColor.colorset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\TextCellColor.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\ScoreColor.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -160,6 +161,7 @@
         <Folder Include="Assets.xcassets\BarButtonColor.colorset\" />
         <Folder Include="Assets.xcassets\CellColor.colorset\" />
         <Folder Include="Assets.xcassets\TextCellColor.colorset\" />
+        <Folder Include="Assets.xcassets\ScoreColor.colorset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -328,7 +330,7 @@
       <BundleResource Include="Resources\Flags\Гаити.png" />
       <BundleResource Include="Resources\Flags\Мадагаскар.png" />
       <BundleResource Include="Resources\Flags\Объединённые Арабские Эмираты.png" />
-      <BundleResource Include="Resources\Flags\Белоруссия.png" />
+      <BundleResource Include="Resources\Flags\Беларусь.png" />
       <BundleResource Include="Resources\Flags\Южная Георгия и Южные Сандвичевы острова.png" />
       <BundleResource Include="Resources\Flags\Малави.png" />
       <BundleResource Include="Resources\Flags\Мексика.png" />
@@ -345,7 +347,7 @@
       <BundleResource Include="Resources\Flags\Франция.png" />
       <BundleResource Include="Resources\Flags\Андорра.png" />
       <BundleResource Include="Resources\Flags\Гана.png" />
-      <BundleResource Include="Resources\Flags\Молдавия.png" />
+      <BundleResource Include="Resources\Flags\Молдова.png" />
       <BundleResource Include="Resources\Flags\ЮАР.png" />
       <BundleResource Include="Resources\Flags\Багамские Острова.png" />
       <BundleResource Include="Resources\Flags\Сент-Винсент и Гренадины.png" />
@@ -564,9 +566,13 @@
       <BundleResource Include="Resources\TabBarPictures\Live\Live%403x.png" />
       <BundleResource Include="Resources\error_image.png" />
       <BundleResource Include="Resources\Ace-Stream-logo.png" />
-      <BundleResource Include="Resources\Championats\APL.png" />
-      <BundleResource Include="Resources\Championats\LaLiga.png" />
       <BundleResource Include="Resources\favorites.png" />
+      <BundleResource Include="Resources\Championats\APL.png" />
+      <BundleResource Include="Resources\Championats\Bundesliga.png" />
+      <BundleResource Include="Resources\Championats\LaLiga.png" />
+      <BundleResource Include="Resources\Championats\Liga1.png" />
+      <BundleResource Include="Resources\Championats\RPL.png" />
+      <BundleResource Include="Resources\Championats\SeriaA.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">
@@ -576,6 +582,10 @@
       <ProjectReference Include="..\AceStream.Infrastructure\AceStream.Infrastructure.csproj">
         <Project>{DCC62938-8B25-44F3-9A9B-44CC5C4A5C7E}</Project>
         <Name>AceStream.Infrastructure</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
+        <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
+        <Name>AceStream.Core</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

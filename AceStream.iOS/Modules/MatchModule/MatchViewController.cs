@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AceStream.Additionals;
+using AceStream.Core.Domain.Enums;
 using AceStream.Dto;
 using AceStream.SubModules.SquardSubModule;
+using AceStream.Utils;
 using CoreGraphics;
 using Foundation;
 using UIKit;
@@ -59,16 +59,14 @@ namespace AceStream.Modules.MatchModule
 
         public void SetSettings(string title)
         {
-            HomePicture.Layer.BorderWidth = 1;
+            HomePicture.Layer.BorderWidth = 2;
             HomePicture.Layer.MasksToBounds = false;
-            HomePicture.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            //HomePicture.Layer.CornerRadius = HomePicture.Frame.Height / 2;
+            HomePicture.Layer.BorderColor = ColorUtils.GetInterfaceStyle().CGColor;
             HomePicture.ClipsToBounds = true;
 
-            VisitorPicture.Layer.BorderWidth = 1;
+            VisitorPicture.Layer.BorderWidth = 2;
             VisitorPicture.Layer.MasksToBounds = false;
-            VisitorPicture.Layer.BorderColor = UIColor.DarkGray.CGColor;
-            //VisitorPicture.Layer.CornerRadius = VisitorPicture.Frame.Height / 2;
+            VisitorPicture.Layer.BorderColor = ColorUtils.GetInterfaceStyle().CGColor;
             VisitorPicture.ClipsToBounds = true;
 
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
@@ -111,6 +109,12 @@ namespace AceStream.Modules.MatchModule
                 Date.Text = _match.Date.ToString("dd MMMM HH:mm");
 
                 Stadium.Text = _match.Stadium;
+
+                if (_match.Status == MatchStatus.InProgress)
+                {
+                    Minute.Text = $"{_match.Minute}'";
+                    Minute.Hidden = false;
+                }
             });
         }
 

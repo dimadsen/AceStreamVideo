@@ -10,6 +10,8 @@ namespace AceStream.Infrastructure.Parser.MatchInfo
         [JsonProperty(PropertyName = "state_name")] 
         public string Status { get; set; }
 
+        public string Time { get; set; }
+
         public string Score { get; set; }
 
         [JsonProperty(PropertyName = "first_team")]
