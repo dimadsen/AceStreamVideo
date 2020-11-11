@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.iOS.Modules", "Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.iOS.Modules.Tests", "AceStream.iOS.Modules.Tests\AceStream.iOS.Modules.Tests.csproj", "{A44E78DB-C6A8-4262-B1C2-AAD923FE1512}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{5EA338B1-D23A-41C4-A64D-578CB0317D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -129,5 +131,8 @@ Global
 		$0.StandardHeader = $11
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{67103686-01E1-4738-A9AF-52669554E5C3} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
+		{E54B280D-DBB8-43E3-B4E2-DC929F67E1FC} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
+		{A44E78DB-C6A8-4262-B1C2-AAD923FE1512} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
 	EndGlobalSection
 EndGlobal
