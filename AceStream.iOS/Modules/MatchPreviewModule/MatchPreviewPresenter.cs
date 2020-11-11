@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AceStream.Dto;
+using AceStream.iOS.Modules.MatchPreviewModule;
 
 namespace AceStream.Modules.MatchPreviewModule
 {

@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using Foundation;
-using UIKit;
+using AceStream.iOS.Modules.MatchPreviewModule;
 
-namespace AceStream.Modules.ChampionatModule
+namespace AceStream.iOS.Modules.ChampionatModule
 {
     public interface IChampionatConfigurator
     {
-        void Configure(ChampionatViewController viewController);
+        void Configure(IChampionatView viewController);
     }
 
     public interface IChampionatPresenter
@@ -30,15 +29,17 @@ namespace AceStream.Modules.ChampionatModule
 
     public interface IChampionatRouter
     {
-        void Prepare(UIStoryboardSegue segue, ChampionatDto sender);
+        void Prepare(IMatchPreviewView destinationView, ChampionatDto championat);
     }
 
     public interface IChampionatView
     {
+        public IChampionatPresenter Presenter { get; set; }
+        public IChampionatConfigurator Configurator { get; set; }
+
         void SetSettings(string title);
         Task SetChampionatsAsync(Task<List<ChampionatDto>> championats);
         void SetErrorView();
         void SetNotFoundView();
     }
-
 }

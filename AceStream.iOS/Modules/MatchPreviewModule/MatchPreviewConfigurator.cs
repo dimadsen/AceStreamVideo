@@ -1,11 +1,12 @@
 ﻿using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 using AceStream.Services;
+using AceStream.iOS.Modules.MatchPreviewModule;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
     public class MatchPreviewConfigurator : IMatchPreviewConfigurator
     {
-        public void Configure(MatchPreviewViewController viewController)
+        public void Configure(IMatchPreviewView viewController)
         {
             var presenter = new MatchPreviewPresenter(viewController);
             var interactor = new MatchPreviewInteractor(presenter, Get<IMatchPreviewService>());

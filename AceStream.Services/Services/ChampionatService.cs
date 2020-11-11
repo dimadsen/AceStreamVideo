@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services.Repositories;
@@ -25,7 +23,6 @@ namespace AceStream.Services
             var championats = await _client.GetChampionatsAsync();
 
             var dto = championats
-                //.Where(c => c.Matches.Select(m => m.Date.StartDate.Date).Contains(DateTime.Now.Date))
                 .Select(c => new ChampionatDto
                 {
                     Id = c.Id,

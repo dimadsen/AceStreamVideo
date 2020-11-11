@@ -11,6 +11,7 @@ using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.Essentials;
+using AceStream.iOS.Modules.MatchPreviewModule;
 
 namespace AceStream
 {
@@ -23,7 +24,7 @@ namespace AceStream
 
         public MatchPreviewViewController(IntPtr handle) : base(handle)
         {
-            Configurator = new MatchPreviewConfigurator();
+            //Configurator = new MatchPreviewConfigurator();
             Configurator.Configure(this);
         }
 
@@ -53,7 +54,7 @@ namespace AceStream
 
             var match = _matches[row];
 
-            Presenter.Router.Prepare(segue, match.Id, NavigationItem.Title);
+            //Presenter.Router.Prepare(segue, match.Id, NavigationItem.Title);
         }
 
         public override void ViewWillDisappear(bool animated)

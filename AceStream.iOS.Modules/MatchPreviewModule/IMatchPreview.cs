@@ -2,19 +2,19 @@
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using UIKit;
 
-namespace AceStream.Modules.MatchPreviewModule
+namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public interface IMatchPreviewConfigurator
     {
-        void Configure(MatchPreviewViewController viewController);
+        void Configure(IMatchPreviewView viewController);
     }
 
     public interface IMatchPreviewPresenter
     {
         IMatchPreviewRouter Router { get; set; }
         IMatchPreviewInteractor Interactor { get; set; }
+
         ChampionatDto Championat { get; set; }
 
         Task SetMatchesAsync();
@@ -31,11 +31,14 @@ namespace AceStream.Modules.MatchPreviewModule
 
     public interface IMatchPreviewRouter
     {
-        void Prepare(UIStoryboardSegue segue, int matchId, string title);
+        //void Prepare(UIStoryboardSegue segue, int matchId, string title);
     }
 
     public interface IMatchPreviewView
     {
+        IMatchPreviewPresenter Presenter { get; set; }
+        IMatchPreviewConfigurator Configurator { get; set; }
+
         void SetSettings(MatchPreviewSettingsDto dto);
         Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches);
         void SetErrorView();

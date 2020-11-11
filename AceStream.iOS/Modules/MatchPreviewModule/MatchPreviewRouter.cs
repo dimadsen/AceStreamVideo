@@ -1,13 +1,14 @@
-﻿using AceStream.Modules.MatchModule;
+﻿using AceStream.iOS.Modules.MatchPreviewModule;
+using AceStream.Modules.MatchModule;
 using UIKit;
 
 namespace AceStream.Modules.MatchPreviewModule
 {
     public class MatchPreviewRouter : IMatchPreviewRouter
     {
-        private MatchPreviewViewController _viewController;
+        private IMatchPreviewView _viewController;
 
-        public MatchPreviewRouter(MatchPreviewViewController viewController)
+        public MatchPreviewRouter(IMatchPreviewView viewController)
         {
             _viewController = viewController;
         }

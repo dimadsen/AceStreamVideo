@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
+using AceStream.iOS.Modules.MatchPreviewModule;
 using AceStream.Services;
 using AceStream.Utils;
 

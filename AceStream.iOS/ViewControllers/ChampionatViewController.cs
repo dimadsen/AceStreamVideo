@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.Modules.ChampionatModule;
+using AceStream.iOS.Modules.ChampionatModule;
 using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
@@ -116,7 +116,9 @@ namespace AceStream
 
             var championat = _championats[row];
 
-            Presenter.Router.Prepare(segue, championat);
+            var matchPreviewViewController = segue.DestinationViewController as MatchPreviewViewController;
+
+            Presenter.Router.Prepare(matchPreviewViewController, championat);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

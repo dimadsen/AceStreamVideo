@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
 
-namespace AceStream.Modules.ChampionatModule
+namespace AceStream.iOS.Modules.ChampionatModule
 {
     public class ChampionatPresenter : IChampionatPresenter
     {
         public IChampionatInteractor Interactor { get; set; }
         public IChampionatRouter Router { get; set; }
+
         private IChampionatView _view;
 
         public ChampionatPresenter(IChampionatView view)

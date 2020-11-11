@@ -5,7 +5,7 @@ using AceStream.Dto;
 using AceStream.Extansions;
 using AceStream.Services;
 
-namespace AceStream.Modules.ChampionatModule
+namespace AceStream.iOS.Modules.ChampionatModule
 {
     public class ChampionatInteractor : IChampionatInteractor
     {

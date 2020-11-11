@@ -133,7 +133,6 @@
     <ItemGroup>
         <Folder Include="Resources\" />
         <Folder Include="Modules\" />
-        <Folder Include="Modules\ChampionatModule\" />
         <Folder Include="Views\" />
         <Folder Include="Views\TableViewCell\" />
         <Folder Include="Modules\MatchPreviewModule\" />
@@ -162,6 +161,7 @@
         <Folder Include="Assets.xcassets\CellColor.colorset\" />
         <Folder Include="Assets.xcassets\TextCellColor.colorset\" />
         <Folder Include="Assets.xcassets\ScoreColor.colorset\" />
+        <Folder Include="ViewControllers\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Views\TableViewCell\SquardTableViewCell.xib" />
@@ -177,18 +177,9 @@
     <ItemGroup>
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
-        <Compile Include="Modules\ChampionatModule\IChampionat.cs" />
-        <Compile Include="Modules\ChampionatModule\ChampionatConfigurator.cs" />
-        <Compile Include="Modules\ChampionatModule\ChampionatPresenter.cs" />
-        <Compile Include="Modules\ChampionatModule\ChampionatInteractor.cs" />
-        <Compile Include="Modules\ChampionatModule\ChampionatRouter.cs" />
         <Compile Include="Views\TableViewCell\ChampionatTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\ChampionatTableViewCell.designer.cs">
           <DependentUpon>ChampionatTableViewCell.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\ChampionatModule\ChampionatViewController.cs" />
-        <Compile Include="Modules\ChampionatModule\ChampionatViewController.designer.cs">
-          <DependentUpon>ChampionatViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.designer.cs">
@@ -198,7 +189,6 @@
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.designer.cs">
           <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\MatchPreviewModule\IMatchPreview.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewPresenter.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewConfigurator.cs" />
         <Compile Include="Modules\MatchPreviewModule\MatchPreviewInteractor.cs" />
@@ -297,6 +287,10 @@
         <Compile Include="Utils\User.cs" />
         <Compile Include="Utils\ChampionatData.cs" />
         <Compile Include="Utils\ColorUtils.cs" />
+        <Compile Include="ViewControllers\ChampionatViewController.cs" />
+        <Compile Include="ViewControllers\ChampionatViewController.designer.cs">
+          <DependentUpon>ChampionatViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\ace_stream_logo.png" />
@@ -586,6 +580,10 @@
       <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj">
         <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
         <Name>AceStream.Core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AceStream.iOS.Modules\AceStream.iOS.Modules.csproj">
+        <Project>{E54B280D-DBB8-43E3-B4E2-DC929F67E1FC}</Project>
+        <Name>AceStream.iOS.Modules</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
