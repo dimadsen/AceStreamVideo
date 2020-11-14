@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace AceStream.Infrastructure.Parser.MatchInfo
+namespace AceStream.Infrastructure.SportsRuParser.MatchInfo
 {
     public class MatchInfo
     {

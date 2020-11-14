@@ -1,4 +1,4 @@
-﻿namespace AceStream.Infrastructure.Parser.Enums
+﻿namespace AceStream.Infrastructure.SportsRuParser.Enums
 {
     public enum Sport
     {

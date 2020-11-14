@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AceStream.Infrastructure.Parser.Enums
+namespace AceStream.Infrastructure.SportsRuParser.Enums
 {
     public enum Championship
     {
@@ -39,5 +39,8 @@ namespace AceStream.Infrastructure.Parser.Enums
         /// </summary>
         [Description("Лига 1")]
         Liga1 = 1364762,
+
+        [Description("Лига наций")]
+        NationsLeague = 161038575
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace AceStream.Infrastructure.Parser.Match
+﻿namespace AceStream.Infrastructure.SportsRuParser.Match
 {
     public class Match
     {

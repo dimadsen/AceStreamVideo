@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace AceStream.Infrastructure.Parser.Tournament
+namespace AceStream.Infrastructure.SportsRuParser.Tournament
 {
     public class Championat
     {

@@ -1,15 +1,14 @@
 ﻿using System.Threading.Tasks;
 using AceStream.Core.Domain.Tournament;
 using AceStream.Services.Clients;
-using AceStream.Infrastructure.Mapping;
 using System.Linq;
-
 using System;
-using AceStream.Infrastructure.Parser.Enums;
+using AceStream.Infrastructure.SportsRuParser.Enums;
+using static AceStream.Infrastructure.Mapping.SportsRuMapper;
 
-namespace AceStream.Infrastructure.Client
+namespace AceStream.Infrastructure.Clients
 {
-    public class Client : BaseClient, IClient
+    public class SportsRuClient : BaseClient, IClient
     {
         protected override string _baseUrl => "https://www.sports.ru/";
 
@@ -17,9 +16,9 @@ namespace AceStream.Infrastructure.Client
         {
             var url = "core/stat/match/teaser/";
 
-            var tournament = await SendGetRequest<Parser.Tournament.Tournament>(url);
+            var tournament = await SendGetRequest<SportsRuParser.Tournament.Tournament>(url);
 
-            var result = Mapper.Map<Parser.Tournament.Tournament, Tournament>(tournament);
+            var result = Map<SportsRuParser.Tournament.Tournament, Tournament>(tournament);
 
             var championships = Enum.GetValues(typeof(Championship)).Cast<int>();
 
@@ -30,9 +29,9 @@ namespace AceStream.Infrastructure.Client
         {
             var url = "core/stat/match/online/?args={%22id%22:" + id + "}";
 
-            var matchInfo = await SendGetRequest<Parser.MatchInfo.MatchInfo>(url);
+            var matchInfo = await SendGetRequest<SportsRuParser.MatchInfo.MatchInfo>(url);
 
-            var result = Mapper.Map<Parser.MatchInfo.MatchInfo, Core.Domain.MatchInfo.MatchInfo>(matchInfo);
+            var result = Map<SportsRuParser.MatchInfo.MatchInfo, Core.Domain.MatchInfo.MatchInfo>(matchInfo);
 
             return result;
         }
@@ -41,9 +40,9 @@ namespace AceStream.Infrastructure.Client
         {
             var url = $"stat/api/v1/match/{matchId}/arrange.json";
 
-            var match = await SendGetRequest<Parser.Match.Match>(url);
+            var match = await SendGetRequest<SportsRuParser.Match.Match>(url);
 
-            var result = Mapper.Map<Parser.Match.Match, Core.Domain.Match.Match>(match);
+            var result = Map<SportsRuParser.Match.Match, Core.Domain.Match.Match>(match);
 
             return result;
         }

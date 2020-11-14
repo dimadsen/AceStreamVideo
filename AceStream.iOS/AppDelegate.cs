@@ -1,4 +1,4 @@
-﻿using AceStream.Infrastructure.Client;
+﻿using AceStream.Infrastructure.Clients;
 using AceStream.Infrastructure.DependencyInjection;
 using AceStream.Services;
 using AceStream.Services.Clients;
@@ -19,7 +19,7 @@ namespace AceStream
         {
             var services = new ServiceCollection();
 
-            services.AddScoped<IClient, Client>();
+            services.AddScoped<IClient, SportsRuClient>();
 
             var client = Get<IClient>();
 

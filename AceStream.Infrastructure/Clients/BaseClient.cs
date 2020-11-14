@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace AceStream.Infrastructure.Client
+namespace AceStream.Infrastructure.Clients
 {
     public abstract class BaseClient
     {
