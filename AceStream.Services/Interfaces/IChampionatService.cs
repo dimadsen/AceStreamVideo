@@ -6,8 +6,6 @@ namespace AceStream.Services.Interfaces
 {
     public interface IChampionatService
     {
-        string Title { get; }
-
         Task<List<ChampionatDto>> GetChampionatsAsync();
     }
 }

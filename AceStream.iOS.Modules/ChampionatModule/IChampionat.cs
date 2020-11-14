@@ -21,7 +21,6 @@ namespace AceStream.iOS.Modules.ChampionatModule
 
     public interface IChampionatInteractor
     {
-        string Title { get; }
         Task<List<ChampionatDto>> GetChampionatsAsync();
     }
 

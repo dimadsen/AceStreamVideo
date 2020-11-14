@@ -1,4 +1,6 @@
 ﻿using System;
+using AceStream.iOS.Modules.VideoModule;
+
 namespace AceStream.Modules.VideoModule
 {
     public class VideoPresenter: IVideoPresenter

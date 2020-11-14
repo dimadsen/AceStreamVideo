@@ -1,18 +1,15 @@
-﻿namespace AceStream.Modules.VideoModule
+﻿namespace AceStream.iOS.Modules.VideoModule
 {
     public interface IVideoConfigurator
     {
-        void Configure(VideoViewController controller);
+        void Configure(IVideoView view);
     }
 
     public interface IVideoPresenter
     {
-        IVideoRouter Router { get; set; }
-        IVideoInteractor Interactor { get; set; }
         string Link { get; set; }
 
         void ConfigureView();
-
     }
 
     public interface IVideoInteractor
@@ -25,6 +22,8 @@
 
     public interface IVideoView
     {
+        IVideoPresenter Presenter { get; set; }
+
         void PlayLink(string link);
     }
 }

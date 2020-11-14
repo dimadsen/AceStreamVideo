@@ -45,9 +45,9 @@ namespace AceStream.SubModules.LinkSubModule
             Presenter.ConfigureView();
         }
 
-        public async Task SetLinksAsync(Task<List<LinkDto>> links)
+        public void SetLinks(List<LinkDto> links)
         {
-            _links = await links;
+            _links = links;
         }
         
         public void SetSettings()

@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AceStream.Core.Domain.Enums;
 using AceStream.Dto;
+using AceStream.iOS.Modules.MatchModule;
 using AceStream.SubModules.SquardSubModule;
 using AceStream.Utils;
 using CoreGraphics;
@@ -17,44 +18,26 @@ namespace AceStream.Modules.MatchModule
         public IMatchPresenter Presenter { get; set; }
         public IMatchConfigurator Configurator { get; set; }
 
-        private SegmentedViewController segmentedViewController;
+        private DetailedMatchViewController detailedVC;
         private MatchDto _match;
         private TimerCallback tm;
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
-            Configurator = new MatchConfigurator();
-            Configurator.Configure(this);
+            var configurator = new MatchConfigurator();
+            configurator.Configure(this);
         }
 
         public override void ViewDidLoad()
         {
+            Presenter.ConfigureView();
+
             Task.Run(async () =>
             {
                 await Presenter.SetMatchAsync();
 
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    segmentedViewController = Presenter.Router.InitializeSegmented(_match);
-
-                    segmentedViewController.View.Frame = new CGRect(segmentedViewController.View.Frame.X, segmentedViewController.View.Frame.Y,
-                                                                    segmentedViewController.View.Frame.Width, DetailedMatchInfoView.Frame.Height);
-
-                    DetailedMatchInfoView.AddSubview(segmentedViewController.View);
-
-                    Indicator.StopAnimating();
-                    Indicator.HidesWhenStopped = true;
-                    DetailedMatchInfoView.Hidden = false;
-
-                    var height = NavigationController.NavigationBar.Frame.Height + UIApplication.SharedApplication.StatusBarFrame.Height +
-                                 NavigationController.TabBarController.TabBar.Frame.Height;
-
-                    DetailedMatchInfoView.Constraints[0].Constant = View.Frame.Height - height;
-
-                });
+                MainThread.BeginInvokeOnMainThread(() => SetDetailedVC());
             });
-
-            Presenter.ConfigureView();
         }
 
         public void SetSettings(string title)
@@ -86,9 +69,18 @@ namespace AceStream.Modules.MatchModule
             var timer = new Timer(tm, null, 0, 60000);
         }
 
-        public async Task SetMatchAsync(Task<MatchDto> match)
+        public void SetMatch(MatchDto match)
         {
-            _match = await match;
+            _match = match;
+
+            _match.ImageHome = ImageUtils.DownloadFile(_match.Home, _match.ImageHome);
+            _match.ImageVisitor = ImageUtils.DownloadFile(_match.Visitor, _match.ImageVisitor);
+
+            _match.HomeSquard.Startings.ForEach(player => player.Flag = $"{player.Country}.png");
+            _match.HomeSquard.Substitutes.ForEach(player => player.Flag = $"{player.Country}.png");
+
+            _match.VisitorSquard.Startings.ForEach(player => player.Flag = $"{player.Country}.png");
+            _match.VisitorSquard.Substitutes.ForEach(player => player.Flag = $"{player.Country}.png");
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -121,7 +113,7 @@ namespace AceStream.Modules.MatchModule
         [Export("scrollViewDidScroll:")]
         public void Scrolled(UIScrollView scrollView)
         {
-            var squardViewController = segmentedViewController?.ViewControllers[0] as SquardViewController;
+            var squardViewController = detailedVC?.ViewControllers[0] as SquardViewController;
 
             if (squardViewController != null)
             {
@@ -154,6 +146,25 @@ namespace AceStream.Modules.MatchModule
             {
                 await Presenter.SetMatchAsync();
             });
+        }
+
+        private void SetDetailedVC()
+        {
+            detailedVC = new DetailedMatchViewController(_match);
+
+            detailedVC.View.Frame = new CGRect(detailedVC.View.Frame.X, detailedVC.View.Frame.Y,
+                                                            detailedVC.View.Frame.Width, DetailedMatchInfoView.Frame.Height);
+
+            DetailedMatchInfoView.AddSubview(detailedVC.View);
+
+            Indicator.StopAnimating();
+            Indicator.HidesWhenStopped = true;
+            DetailedMatchInfoView.Hidden = false;
+
+            var height = NavigationController.NavigationBar.Frame.Height + UIApplication.SharedApplication.StatusBarFrame.Height +
+                         NavigationController.TabBarController.TabBar.Frame.Height;
+
+            DetailedMatchInfoView.Constraints[0].Constant = View.Frame.Height - height;
         }
     }
 }

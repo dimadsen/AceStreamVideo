@@ -10,13 +10,12 @@ namespace AceStream.SubModules.LinkSubModule
     public class LinkInteractor : ILinkInteractor
     {
         private ILinkPresenter _presenter;
-        private IMatchService _service;
+        private ILinkService _service;
 
-        public LinkInteractor(ILinkPresenter presenter)
+        public LinkInteractor(ILinkPresenter presenter, ILinkService service)
         {
             _presenter = presenter;
-
-            //_service = new MatchService(new Client());
+            _service = service;
         }
 
         public async Task<List<LinkDto>> GetLinksAsync(string[] parametrs)

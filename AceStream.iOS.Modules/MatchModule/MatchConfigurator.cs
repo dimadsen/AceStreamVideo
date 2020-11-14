@@ -1,5 +1,4 @@
 ﻿using AceStream.iOS.Modules.MatchModule;
-using AceStream.Services;
 using AceStream.Services.Interfaces;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
@@ -11,7 +10,7 @@ namespace AceStream.Modules.MatchModule
         {
             var presenter = new MatchPresenter(view);
             var interactor = new MatchInteractor(presenter, Get<IMatchService>());
-            var router = new MatchRouter(view);
+            var router = new MatchRouter(presenter);
 
             view.Presenter = presenter;
             presenter.Interactor = interactor;

@@ -1,3 +1,4 @@
+using AceStream.iOS.Modules.VideoModule;
 using AceStream.Modules.VideoModule;
 using AVFoundation;
 using AVKit;

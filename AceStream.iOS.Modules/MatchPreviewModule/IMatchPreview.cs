@@ -39,7 +39,7 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
         IMatchPreviewPresenter Presenter { get; set; }
 
         void SetSettings(MatchPreviewSettingsDto dto);
-        Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches);
+        void SetMatches(List<MatchPreviewDto> matches);
         void SetNotFoundMatches(string message);
         void SetErrorView();
     }

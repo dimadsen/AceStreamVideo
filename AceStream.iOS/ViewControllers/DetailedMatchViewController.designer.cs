@@ -12,7 +12,7 @@ using UIKit;
 namespace AceStream.Modules.MatchModule
 {
     [Register("SegmentedViewController")]
-    partial class SegmentedViewController
+    partial class DetailedMatchViewController
     {
         void ReleaseDesignerOutlets()
         {

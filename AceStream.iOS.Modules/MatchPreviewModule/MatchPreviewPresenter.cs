@@ -19,7 +19,9 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
 
         public async Task SetMatchesAsync()
         {
-            await _view.SetMatchesAsync(Interactor.GetMatchesAsync(Championat.Id));
+            var matches = await Interactor.GetMatchesAsync(Championat.Id);
+
+            _view.SetMatches(matches);
         }
 
         public void ConfigureView()

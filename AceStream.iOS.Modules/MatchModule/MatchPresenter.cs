@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using AceStream.Dto;
 using AceStream.iOS.Modules.MatchModule;
 
 namespace AceStream.Modules.MatchModule
@@ -25,12 +27,19 @@ namespace AceStream.Modules.MatchModule
 
         public async Task SetMatchAsync()
         {
-           await _view.SetMatchAsync(Interactor.GetMatchAsync(MatchId));
+            var match = await Interactor.GetMatchAsync(MatchId);
+
+            _view.SetMatch(match);
         }
 
         public void SetError()
         {
             _view.SetError();
+        }
+
+        public void PrepareForSegue(object destinationView, string link)
+        {
+            Router.PrepareForSegue(destinationView, link);
         }
     }
 }

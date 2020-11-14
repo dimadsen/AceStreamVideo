@@ -13,5 +13,6 @@
     <Folder Include="ChampionatModule\" />
     <Folder Include="MatchPreviewModule\" />
     <Folder Include="MatchModule\" />
+    <Folder Include="VideoModule\" />
   </ItemGroup>
 </Project>

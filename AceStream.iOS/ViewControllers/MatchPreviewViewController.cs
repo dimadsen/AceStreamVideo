@@ -65,9 +65,9 @@ namespace AceStream
             NavigationItemImage.ShowImage();
         }
 
-        public async Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches)
+        public void SetMatches(List<MatchPreviewDto> matches)
         {
-            _matches = await matches;
+            _matches = matches;
 
             _matches.ForEach(match =>
             {

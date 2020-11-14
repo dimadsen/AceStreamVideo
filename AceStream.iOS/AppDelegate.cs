@@ -2,6 +2,7 @@
 using AceStream.Infrastructure.DependencyInjection;
 using AceStream.Services;
 using AceStream.Services.Clients;
+using AceStream.Services.Impl;
 using AceStream.Services.Interfaces;
 using Foundation;
 using UIKit;
@@ -25,6 +26,7 @@ namespace AceStream
             services.AddScoped<IChampionatService, ChampionatService>(client);
             services.AddScoped<IMatchPreviewService, MatchPreviewService>(client);
             services.AddScoped<IMatchService, MatchService>(client);
+            services.AddScoped<ILinkService, LinkService>();
 
             return true;
         }

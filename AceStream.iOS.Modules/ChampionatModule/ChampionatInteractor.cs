@@ -20,8 +20,6 @@ namespace AceStream.iOS.Modules.ChampionatModule
             _service = service;
         }
 
-        public string Title => _service.Title;
-
         public async Task<List<ChampionatDto>> GetChampionatsAsync()
         {
             try

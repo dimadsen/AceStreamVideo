@@ -92,29 +92,5 @@ namespace AceStream.Services
 
             return isStarting;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="parameters">Название команд, канала и т.д/</param>
-        /// <returns></returns>
-        public async Task<List<LinkDto>> GetLinksAsync(string[] parameters)
-        {
-            var links = parameters.Select(p => new LinkDto { Name = p, Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8" }).ToList();
-
-            //foreach (var parametr in parameters)
-            //{
-            //    var results = await _engineClient.GetInfoHashAsync(parametr);
-
-            //    foreach (var result in results)
-            //    {
-            //        var url = await _engineClient.GetPlaybackUrl(result.InfoHash);
-
-            //        var link = new LinkDto { Link = url.PlayBackUrl, Name = result.Name };
-            //    }
-            //}
-
-            return links;
-        }
     }
 }

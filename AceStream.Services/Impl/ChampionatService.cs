@@ -9,8 +9,6 @@ namespace AceStream.Services
 {
     public class ChampionatService : IChampionatService
     {
-        public string Title => "Чемпионаты";
-
         private IClient _client;
 
         public ChampionatService(IClient client)

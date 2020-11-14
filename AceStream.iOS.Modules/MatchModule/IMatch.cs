@@ -10,15 +10,14 @@ namespace AceStream.iOS.Modules.MatchModule
 
     public interface IMatchPresenter
     {
-        IMatchRouter Router { get; set; }
-        IMatchInteractor Interactor { get; set; }
-
         int MatchId { get; set; }
         string Title { get; set; }
 
         Task SetMatchAsync();
         void SetError();
         void ConfigureView();
+
+        void PrepareForSegue(object destinationView, string link);
     }
 
     public interface IMatchInteractor
@@ -28,8 +27,7 @@ namespace AceStream.iOS.Modules.MatchModule
 
     public interface IMatchRouter
     {
-        //void Prepare(UIStoryboardSegue segue, string link);
-        //SegmentedViewController InitializeSegmented(MatchDto match);
+        void PrepareForSegue(object destinationView, string link);
     }
 
     public interface IMatchView
@@ -37,7 +35,7 @@ namespace AceStream.iOS.Modules.MatchModule
         IMatchPresenter Presenter { get; set; }
 
         void SetSettings(string title);
-        Task SetMatchAsync(Task<MatchDto> dto);
+        void SetMatch(MatchDto dto);
         void SetError();
     }
 }

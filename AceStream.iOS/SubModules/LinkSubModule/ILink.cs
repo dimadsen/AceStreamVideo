@@ -41,7 +41,7 @@ namespace AceStream.SubModules.LinkSubModule
     public interface ILinkView
     {
         void SetSettings();
-        Task SetLinksAsync(Task<List<LinkDto>> links);
+        void SetLinks(List<LinkDto> links);
 
         void SetError();
     }

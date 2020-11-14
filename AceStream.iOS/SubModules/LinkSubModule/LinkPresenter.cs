@@ -26,7 +26,9 @@ namespace AceStream.SubModules.LinkSubModule
 
         public async Task SetLinksAsync()
         {
-            await _view.SetLinksAsync(Interactor.GetLinksAsync(Parametrs));
+            var links = await Interactor.GetLinksAsync(Parametrs);
+
+            _view.SetLinks(links);
         } 
 
         public void SetError()

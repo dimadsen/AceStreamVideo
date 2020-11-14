@@ -29,7 +29,7 @@ namespace AceStream.iOS.Modules.ChampionatModule
 
         public void ConfigureView()
         {
-            _view.SetSettings(Interactor.Title);
+            _view.SetSettings("Чемпионаты");
         }
 
         public void SetError()

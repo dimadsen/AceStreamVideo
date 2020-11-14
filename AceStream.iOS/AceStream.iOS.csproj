@@ -137,7 +137,6 @@
         <Folder Include="Views\TableViewCell\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
-        <Folder Include="Modules\MatchModule\" />
         <Folder Include="Modules\VideoModule\" />
         <Folder Include="Extansions\" />
         <Folder Include="Modules\SettingsModule\" />
@@ -202,10 +201,6 @@
         <Compile Include="Modules\RegistrationModule\RegistrationInteractor.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationPresenter.cs" />
         <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
-        <Compile Include="Modules\MatchModule\MatchViewController.cs" />
-        <Compile Include="Modules\MatchModule\MatchViewController.designer.cs">
-          <DependentUpon>MatchViewController.cs</DependentUpon>
-        </Compile>
         <Compile Include="Views\TableViewCell\SquardTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\SquardTableViewCell.designer.cs">
           <DependentUpon>SquardTableViewCell.cs</DependentUpon>
@@ -218,7 +213,6 @@
         <Compile Include="Modules\VideoModule\VideoViewController.designer.cs">
           <DependentUpon>VideoViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\VideoModule\IVideo.cs" />
         <Compile Include="Modules\VideoModule\VideoConfigurator.cs" />
         <Compile Include="Modules\VideoModule\VideoPresenter.cs" />
         <Compile Include="Extansions\TeamExtansion.cs" />
@@ -254,10 +248,6 @@
         <Compile Include="SubModules\SquardSubModule\SquardPresenter.cs" />
         <Compile Include="SubModules\SquardSubModule\SquardInteractor.cs" />
         <Compile Include="SubModules\SquardSubModule\SquardRouter.cs" />
-        <Compile Include="Modules\MatchModule\SegmentedViewController.cs" />
-        <Compile Include="Modules\MatchModule\SegmentedViewController.designer.cs">
-          <DependentUpon>SegmentedViewController.cs</DependentUpon>
-        </Compile>
         <Compile Include="SubModules\LinkSubModule\LinkViewController.cs" />
         <Compile Include="SubModules\LinkSubModule\LinkViewController.designer.cs">
           <DependentUpon>LinkViewController.cs</DependentUpon>
@@ -281,10 +271,14 @@
         <Compile Include="ViewControllers\MatchPreviewViewController.designer.cs">
           <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
-        <Compile Include="Modules\MatchModule\MatchInteractor.cs" />
-        <Compile Include="Modules\MatchModule\MatchPresenter.cs" />
-        <Compile Include="Modules\MatchModule\MatchRouter.cs" />
+        <Compile Include="ViewControllers\DetailedMatchViewController.cs" />
+        <Compile Include="ViewControllers\DetailedMatchViewController.designer.cs">
+          <DependentUpon>DetailedMatchViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\MatchViewController.cs" />
+        <Compile Include="ViewControllers\MatchViewController.designer.cs">
+          <DependentUpon>MatchViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\ace_stream_logo.png" />

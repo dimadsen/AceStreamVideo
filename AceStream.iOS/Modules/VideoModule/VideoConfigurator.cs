@@ -1,14 +1,15 @@
-﻿using System;
+﻿using AceStream.iOS.Modules.VideoModule;
+
 namespace AceStream.Modules.VideoModule
 {
     public class VideoConfigurator : IVideoConfigurator
     {
 
-        public void Configure(VideoViewController controller)
+        public void Configure(IVideoView view)
         {
-            var presenter = new VideoPresenter(controller);
+            var presenter = new VideoPresenter(view);
 
-            controller.Presenter = presenter;
+            view.Presenter = presenter;
         }
     }
 }

@@ -7,11 +7,11 @@ using XLPagerTabStrip;
 
 namespace AceStream.Modules.MatchModule
 {
-    public partial class SegmentedViewController : ButtonBarPagerTabStripViewController
+    public partial class DetailedMatchViewController : ButtonBarPagerTabStripViewController
     {
         private MatchDto _match;
 
-        public SegmentedViewController(MatchDto match)
+        public DetailedMatchViewController(MatchDto match)
         {
             _match = match;
         }
