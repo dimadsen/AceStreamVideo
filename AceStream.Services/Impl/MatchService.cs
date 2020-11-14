@@ -7,7 +7,8 @@ using AceStream.Core.Domain.Enums;
 using AceStream.Core.Domain.Match;
 using AceStream.Dto;
 using AceStream.Services.Extansions;
-using AceStream.Services.Repositories;
+using AceStream.Services.Clients;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.Services
 {
@@ -115,13 +116,5 @@ namespace AceStream.Services
 
             return links;
         }
-    }
-
-    public interface IMatchService
-    {
-        Task<MatchDto> GetMatchAsync(int matchId);
-
-        /// <param name="parameter">Название канала, команды и т.д.</param>
-        Task<List<LinkDto>> GetLinksAsync(string[] parameter);
     }
 }

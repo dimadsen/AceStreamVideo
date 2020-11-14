@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AceStream.Core.Domain.Tournament;
-using AceStream.Services.Repositories;
+using AceStream.Services.Clients;
 using AceStream.Infrastructure.Mapping;
 using System.Linq;
 

@@ -8,10 +8,11 @@
     <Compile Remove="Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Impl\" />
     <Folder Include="Dto\" />
     <Folder Include="Extansions\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Clients\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />

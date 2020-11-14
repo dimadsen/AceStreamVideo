@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.Services.Repositories;
+using AceStream.Services.Interfaces;
+using AceStream.Services.Clients;
 
 namespace AceStream.Services
 {
@@ -35,12 +36,5 @@ namespace AceStream.Services
 
             return dto;
         }
-    }
-
-    public interface IChampionatService
-    {
-        string Title { get; }
-
-        Task<List<ChampionatDto>> GetChampionatsAsync();
     }
 }

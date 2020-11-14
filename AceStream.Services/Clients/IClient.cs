@@ -3,7 +3,7 @@ using AceStream.Core.Domain.Match;
 using AceStream.Core.Domain.MatchInfo;
 using AceStream.Core.Domain.Tournament;
 
-namespace AceStream.Services.Repositories
+namespace AceStream.Services.Clients
 {
     public interface IClient
     {

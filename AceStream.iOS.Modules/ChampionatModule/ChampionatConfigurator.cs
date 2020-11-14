@@ -1,4 +1,4 @@
-﻿using AceStream.Services;
+﻿using AceStream.Services.Interfaces;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream.iOS.Modules.ChampionatModule

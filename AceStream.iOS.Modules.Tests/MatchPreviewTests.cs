@@ -2,6 +2,7 @@
 using AceStream.Dto;
 using AceStream.iOS.Modules.MatchPreviewModule;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 using Moq;
 using NUnit.Framework;
 

@@ -1,5 +1,6 @@
 ﻿using AceStream.Dto.SettingsDto;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.Modules.SettingsModule
 {

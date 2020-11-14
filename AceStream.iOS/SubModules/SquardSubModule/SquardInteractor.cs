@@ -1,6 +1,5 @@
-﻿using System;
+﻿using AceStream.Core.Exceptions;
 using AceStream.Dto;
-using AceStream.Extansions;
 
 namespace AceStream.SubModules.SquardSubModule
 {
@@ -18,13 +17,13 @@ namespace AceStream.SubModules.SquardSubModule
             try
             {
                 if (match.HomeSquard.Startings.Count < 11 || match.VisitorSquard.Startings.Count < 11)
-                    throw new NotFoundPlayersException("Составы команд не опубликованы");
+                    throw new PlayersNotFoundException();
 
                 _presenter.SetTitleHeader();
 
                 return match;
             }
-            catch (NotFoundPlayersException)
+            catch (PlayersNotFoundException)
             {
                 _presenter.SetNotFoundPlayers();
 

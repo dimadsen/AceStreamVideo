@@ -1,6 +1,7 @@
 using AceStream.Dto;
 using AceStream.iOS.Modules.ChampionatModule;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 using Moq;
 using NUnit.Framework;
 using System;

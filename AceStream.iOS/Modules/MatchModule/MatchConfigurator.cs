@@ -1,5 +1,6 @@
 ﻿using AceStream.iOS.Modules.MatchModule;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream.Modules.MatchModule

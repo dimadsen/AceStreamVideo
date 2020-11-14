@@ -1,4 +1,5 @@
 ﻿using AceStream.Dto.SettingsDto;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.Services
 {
@@ -16,12 +17,5 @@ namespace AceStream.Services
 
             return menu;
         }
-    }
-
-    public interface ISettingsService
-    {
-        string Title { get; }
-
-        MenuSettingsDto[] GetMenus();
     }
 }

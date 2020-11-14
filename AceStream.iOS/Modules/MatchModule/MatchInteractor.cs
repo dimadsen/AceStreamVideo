@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.iOS.Modules.MatchModule;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 using AceStream.Utils;
 
 namespace AceStream.Modules.MatchModule

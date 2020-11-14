@@ -1,6 +1,7 @@
 ﻿using System;
 using AceStream.Dto;
 using AceStream.Services;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.Modules.LoginModule
 {

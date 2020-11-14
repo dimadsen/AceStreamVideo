@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using AceStream.Services.Repositories;
+using AceStream.Services.Clients;
 using AceStream.Core.Domain.Enums;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.Services
 {
@@ -50,12 +51,5 @@ namespace AceStream.Services
 
             return settings;
         }
-    }
-
-    public interface IMatchPreviewService
-    {
-        Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId);
-
-        MatchPreviewSettingsDto GetSettings(ChampionatDto championat);
     }
 }

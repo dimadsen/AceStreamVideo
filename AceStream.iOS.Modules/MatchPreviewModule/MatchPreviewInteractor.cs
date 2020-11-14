@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AceStream.Core.Exceptions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using AceStream.Services;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.iOS.Modules.MatchPreviewModule
 {

@@ -1,7 +1,8 @@
 ﻿using AceStream.Infrastructure.Client;
 using AceStream.Infrastructure.DependencyInjection;
 using AceStream.Services;
-using AceStream.Services.Repositories;
+using AceStream.Services.Clients;
+using AceStream.Services.Interfaces;
 using Foundation;
 using UIKit;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;

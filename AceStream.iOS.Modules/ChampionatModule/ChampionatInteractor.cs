@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Core.Exceptions;
 using AceStream.Dto;
-using AceStream.Services;
+using AceStream.Services.Interfaces;
 
 namespace AceStream.iOS.Modules.ChampionatModule
 {

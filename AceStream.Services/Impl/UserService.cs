@@ -1,5 +1,5 @@
 ﻿using AceStream.Dto;
-using AceStream.Services.Repositories;
+using AceStream.Services.Clients;
 
 namespace AceStream.Services
 {
@@ -51,10 +51,5 @@ namespace AceStream.Services
     //    }
     //}
 
-    public interface IUserSerivice
-    {
-        UserDto GetUser(int id);
-        UserDto GetUser(LoginDto login);
-        bool SignUp(RegistrationDto login);
-    }
+    
 }
