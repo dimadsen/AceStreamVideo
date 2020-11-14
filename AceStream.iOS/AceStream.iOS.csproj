@@ -135,7 +135,6 @@
         <Folder Include="Modules\" />
         <Folder Include="Views\" />
         <Folder Include="Views\TableViewCell\" />
-        <Folder Include="Modules\MatchPreviewModule\" />
         <Folder Include="Modules\LoginModule\" />
         <Folder Include="Modules\RegistrationModule\" />
         <Folder Include="Modules\MatchModule\" />
@@ -185,14 +184,6 @@
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.designer.cs">
           <DependentUpon>MatchPreviewTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.cs" />
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewViewController.designer.cs">
-          <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewPresenter.cs" />
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewConfigurator.cs" />
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewInteractor.cs" />
-        <Compile Include="Modules\MatchPreviewModule\MatchPreviewRouter.cs" />
         <Compile Include="Modules\LoginModule\LoginViewController.cs" />
         <Compile Include="Modules\LoginModule\LoginViewController.designer.cs">
           <DependentUpon>LoginViewController.cs</DependentUpon>
@@ -223,11 +214,6 @@
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
           <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\MatchModule\IMatch.cs" />
-        <Compile Include="Modules\MatchModule\MatchRouter.cs" />
-        <Compile Include="Modules\MatchModule\MatchInteractor.cs" />
-        <Compile Include="Modules\MatchModule\MatchPresenter.cs" />
-        <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.cs" />
         <Compile Include="Modules\VideoModule\VideoViewController.designer.cs">
           <DependentUpon>VideoViewController.cs</DependentUpon>
@@ -291,6 +277,14 @@
         <Compile Include="ViewControllers\ChampionatViewController.designer.cs">
           <DependentUpon>ChampionatViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="ViewControllers\MatchPreviewViewController.cs" />
+        <Compile Include="ViewControllers\MatchPreviewViewController.designer.cs">
+          <DependentUpon>MatchPreviewViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Modules\MatchModule\MatchConfigurator.cs" />
+        <Compile Include="Modules\MatchModule\MatchInteractor.cs" />
+        <Compile Include="Modules\MatchModule\MatchPresenter.cs" />
+        <Compile Include="Modules\MatchModule\MatchRouter.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\ace_stream_logo.png" />

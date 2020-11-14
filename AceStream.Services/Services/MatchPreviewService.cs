@@ -22,9 +22,9 @@ namespace AceStream.Services
         {
             var championats = await _client.GetChampionatsAsync();
 
-            var championat = championats.FirstOrDefault(c => c.Id == championatId);
-
-            var dto = championat.Matches.Select(m => new MatchPreviewDto
+            var championat = championats?.FirstOrDefault(c => c.Id == championatId);                       
+            
+            var dto = championat?.Matches?.Select(m => new MatchPreviewDto
             {
                 Id = m.Id,
                 Home = m.Home.Name,

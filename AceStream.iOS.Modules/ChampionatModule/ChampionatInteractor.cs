@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AceStream.Core.Exceptions;
 using AceStream.Dto;
-using AceStream.Extansions;
 using AceStream.Services;
 
 namespace AceStream.iOS.Modules.ChampionatModule
@@ -27,12 +27,13 @@ namespace AceStream.iOS.Modules.ChampionatModule
             try
             {
                 var championats = await _service.GetChampionatsAsync();
-                
-                return championats;
+
+                return championats?.Count > 0 ?
+                    championats : throw new ChampionatsNotFoundException();
             }
-            catch (NotFoundMatchesException)
+            catch (ChampionatsNotFoundException ex)
             {
-                _presenter.SetNotFoundMatches();
+                _presenter.SetNotFoundChampionats(ex.Message);
 
                 return new List<ChampionatDto>();
             }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AceStream.Dto;
+using AceStream.iOS.Modules.MatchModule;
 using AceStream.Services;
 using AceStream.Utils;
 

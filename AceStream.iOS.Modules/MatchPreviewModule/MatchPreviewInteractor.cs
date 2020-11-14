@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AceStream.Core.Exceptions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using AceStream.iOS.Modules.MatchPreviewModule;
 using AceStream.Services;
-using AceStream.Utils;
 
-namespace AceStream.Modules.MatchPreviewModule
+namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public class MatchPreviewInteractor : IMatchPreviewInteractor
     {
@@ -26,14 +25,14 @@ namespace AceStream.Modules.MatchPreviewModule
             {
                 var matches = await _service.GetMatchesAsync(championatId);
 
-                matches.ForEach(match =>
-                {
-                    match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
+                return matches?.Count > 0 ?
+                    matches : throw new MatchesNotFoundException();
+            }
+            catch(MatchesNotFoundException ex)
+            {
+                _presenter.SetNotFoundMatches(ex.Message);
 
-                    match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
-                });
-
-                return matches;
+                return new List<MatchPreviewDto>();
             }
             catch (Exception)
             {

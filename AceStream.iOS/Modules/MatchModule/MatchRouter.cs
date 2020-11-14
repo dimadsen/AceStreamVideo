@@ -1,13 +1,14 @@
 ﻿using AceStream.Dto;
+using AceStream.iOS.Modules.MatchModule;
 using UIKit;
 
 namespace AceStream.Modules.MatchModule
 {
     public class MatchRouter : IMatchRouter
     {
-        private MatchViewController _controller;
+        private IMatchView _controller;
 
-        public MatchRouter(MatchViewController controller)
+        public MatchRouter(IMatchView controller)
         {
             _controller = controller;
         }

@@ -1,17 +1,18 @@
-﻿using AceStream.Services;
+﻿using AceStream.iOS.Modules.MatchModule;
+using AceStream.Services;
 using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 
 namespace AceStream.Modules.MatchModule
 {
     public class MatchConfigurator : IMatchConfigurator
     {
-        public void Configure(MatchViewController viewController)
+        public void Configure(IMatchView view)
         {
-            var presenter = new MatchPresenter(viewController);
+            var presenter = new MatchPresenter(view);
             var interactor = new MatchInteractor(presenter, Get<IMatchService>());
-            var router = new MatchRouter(viewController);
+            var router = new MatchRouter(view);
 
-            viewController.Presenter = presenter;
+            view.Presenter = presenter;
             presenter.Interactor = interactor;
             presenter.Router = router;
         }

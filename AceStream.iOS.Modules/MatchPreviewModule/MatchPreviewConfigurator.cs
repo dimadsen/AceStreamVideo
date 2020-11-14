@@ -1,8 +1,7 @@
 ﻿using static AceStream.Infrastructure.DependencyInjection.ServiceCollection;
 using AceStream.Services;
-using AceStream.iOS.Modules.MatchPreviewModule;
 
-namespace AceStream.Modules.MatchPreviewModule
+namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public class MatchPreviewConfigurator : IMatchPreviewConfigurator
     {
@@ -10,7 +9,7 @@ namespace AceStream.Modules.MatchPreviewModule
         {
             var presenter = new MatchPreviewPresenter(viewController);
             var interactor = new MatchPreviewInteractor(presenter, Get<IMatchPreviewService>());
-            var router = new MatchPreviewRouter(viewController);
+            var router = new MatchPreviewRouter(presenter);
 
             viewController.Presenter = presenter;
             presenter.Interactor = interactor;

@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AceStream.Additionals;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
-using AceStream.Modules.MatchPreviewModule;
 using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
@@ -24,7 +22,7 @@ namespace AceStream
 
         public MatchPreviewViewController(IntPtr handle) : base(handle)
         {
-            //Configurator = new MatchPreviewConfigurator();
+            Configurator = new MatchPreviewConfigurator();
             Configurator.Configure(this);
         }
 
@@ -54,7 +52,7 @@ namespace AceStream
 
             var match = _matches[row];
 
-            //Presenter.Router.Prepare(segue, match.Id, NavigationItem.Title);
+            Presenter.PrepareForSegue(segue.DestinationViewController, match.Id, NavigationItem.Title);
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -70,6 +68,13 @@ namespace AceStream
         public async Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches)
         {
             _matches = await matches;
+
+            _matches.ForEach(match =>
+            {
+                match.HomePicture = ImageUtils.DownloadFile(match.Home, match.HomePicture);
+
+                match.VisitorPicture = ImageUtils.DownloadFile(match.Visitor, match.VisitorPicture);
+            });
         }
 
         public void SetSettings(MatchPreviewSettingsDto dto)
@@ -124,6 +129,11 @@ namespace AceStream
 
                 TableView.AddSubview(imageview);
             });
+        }
+
+        public void SetNotFoundMatches(string message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

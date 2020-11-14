@@ -12,5 +12,6 @@
   <ItemGroup>
     <Folder Include="ChampionatModule\" />
     <Folder Include="MatchPreviewModule\" />
+    <Folder Include="MatchModule\" />
   </ItemGroup>
 </Project>

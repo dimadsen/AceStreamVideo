@@ -11,5 +11,6 @@
     <Folder Include="Domain\MatchInfo\" />
     <Folder Include="Extansions\" />
     <Folder Include="Domain\Enums\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

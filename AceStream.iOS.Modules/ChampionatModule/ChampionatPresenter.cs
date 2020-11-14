@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using AceStream.Dto;
 
 namespace AceStream.iOS.Modules.ChampionatModule
 {
@@ -14,9 +15,16 @@ namespace AceStream.iOS.Modules.ChampionatModule
             _view = view;
         }
 
+        public void PrepareForSegue(object destinationView, ChampionatDto dto)
+        {
+            Router.PrepareForSegue(destinationView, dto);
+        }
+
         public async Task SetChampionatsAsync()
         {
-            await _view.SetChampionatsAsync(Interactor.GetChampionatsAsync());
+            var championats = await Interactor.GetChampionatsAsync();
+
+            _view.SetChampionats(championats);
         }
 
         public void ConfigureView()
@@ -29,9 +37,9 @@ namespace AceStream.iOS.Modules.ChampionatModule
             _view.SetErrorView();
         }
 
-        public void SetNotFoundMatches()
+        public void SetNotFoundChampionats(string message)
         {
-            _view.SetNotFoundView();
+            _view.SetNotFoundView(message);
         }
     }
 }

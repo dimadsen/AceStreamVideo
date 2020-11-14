@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.iOS.Modules.MatchPreviewModule;
 
-namespace AceStream.Modules.MatchPreviewModule
+namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public class MatchPreviewPresenter : IMatchPreviewPresenter
     {
         public IMatchPreviewRouter Router { get; set; }
         public IMatchPreviewInteractor Interactor { get; set; }
+
         private IMatchPreviewView _view;
 
         public ChampionatDto Championat { get; set; }
@@ -30,6 +30,16 @@ namespace AceStream.Modules.MatchPreviewModule
         public void SetError()
         {
             _view.SetErrorView();
+        }
+
+        public void PrepareForSegue(object destinationView, int matchId, string title)
+        {
+            Router.PrepareForSegue(destinationView, matchId, title);
+        }
+
+        public void SetNotFoundMatches(string message)
+        {
+            _view.SetNotFoundMatches(message);
         }
     }
 }

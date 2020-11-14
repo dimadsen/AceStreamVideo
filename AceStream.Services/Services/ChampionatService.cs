@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.Extansions;
 using AceStream.Services.Repositories;
 
 namespace AceStream.Services
@@ -22,7 +21,7 @@ namespace AceStream.Services
         {
             var championats = await _client.GetChampionatsAsync();
 
-            var dto = championats
+            var dto = championats?
                 .Select(c => new ChampionatDto
                 {
                     Id = c.Id,
@@ -34,8 +33,7 @@ namespace AceStream.Services
                 .Distinct()
                 .ToList();
 
-            return dto.Count > 0 ? dto : throw new NotFoundMatchesException("На сегодня матчей нет");
-
+            return dto;
         }
     }
 

@@ -5,16 +5,18 @@ namespace AceStream.iOS.Modules.ChampionatModule
 {
     public class ChampionatRouter : IChampionatRouter
     {
-        private IChampionatView _view;
+        private IChampionatPresenter _presenter;
 
-        public ChampionatRouter(IChampionatView view)
+        public ChampionatRouter(IChampionatPresenter presenter)
         {
-            _view = view;
+            _presenter = presenter;
         }
 
-        public void Prepare(IMatchPreviewView destinationView, ChampionatDto championat)
+        public void PrepareForSegue(object destinationView, ChampionatDto championat)
         {
-            destinationView.Presenter.Championat = championat;
+            var view = destinationView as IMatchPreviewView;
+
+            view.Presenter.Championat = championat;
         }
     }
 }

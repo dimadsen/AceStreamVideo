@@ -7,19 +7,19 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public interface IMatchPreviewConfigurator
     {
-        void Configure(IMatchPreviewView viewController);
+        void Configure(IMatchPreviewView view);
     }
 
     public interface IMatchPreviewPresenter
     {
-        IMatchPreviewRouter Router { get; set; }
-        IMatchPreviewInteractor Interactor { get; set; }
+        void PrepareForSegue(object destinationView, int matchId, string title);
 
         ChampionatDto Championat { get; set; }
 
         Task SetMatchesAsync();
         void SetError();
-        void ConfigureView();        
+        void ConfigureView();
+        void SetNotFoundMatches(string message);
     }
 
     public interface IMatchPreviewInteractor
@@ -31,16 +31,16 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
 
     public interface IMatchPreviewRouter
     {
-        //void Prepare(UIStoryboardSegue segue, int matchId, string title);
+        void PrepareForSegue(object destinationView, int matchId, string title);
     }
 
     public interface IMatchPreviewView
     {
         IMatchPreviewPresenter Presenter { get; set; }
-        IMatchPreviewConfigurator Configurator { get; set; }
 
         void SetSettings(MatchPreviewSettingsDto dto);
         Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches);
+        void SetNotFoundMatches(string message);
         void SetErrorView();
     }
 }

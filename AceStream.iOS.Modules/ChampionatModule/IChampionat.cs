@@ -1,23 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
-using AceStream.iOS.Modules.MatchPreviewModule;
 
 namespace AceStream.iOS.Modules.ChampionatModule
 {
     public interface IChampionatConfigurator
     {
-        void Configure(IChampionatView viewController);
+        void Configure(IChampionatView view);
     }
 
     public interface IChampionatPresenter
     {
-        IChampionatRouter Router { get; set; }
-        IChampionatInteractor Interactor { get; set; }
+        void PrepareForSegue(object view, ChampionatDto dto);
 
         Task SetChampionatsAsync();
         void SetError();
-        void SetNotFoundMatches();
+        void SetNotFoundChampionats(string message);
         void ConfigureView();
     }
 
@@ -29,17 +27,16 @@ namespace AceStream.iOS.Modules.ChampionatModule
 
     public interface IChampionatRouter
     {
-        void Prepare(IMatchPreviewView destinationView, ChampionatDto championat);
+        void PrepareForSegue(object destinationView, ChampionatDto championat);
     }
 
     public interface IChampionatView
     {
         public IChampionatPresenter Presenter { get; set; }
-        public IChampionatConfigurator Configurator { get; set; }
 
         void SetSettings(string title);
-        Task SetChampionatsAsync(Task<List<ChampionatDto>> championats);
+        void SetChampionats(List<ChampionatDto> championats);
         void SetErrorView();
-        void SetNotFoundView();
+        void SetNotFoundView(string message);
     }
 }

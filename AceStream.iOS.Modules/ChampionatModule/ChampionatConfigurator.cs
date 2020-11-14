@@ -8,7 +8,7 @@ namespace AceStream.iOS.Modules.ChampionatModule
         public void Configure(IChampionatView view)
         {
             var presenter = new ChampionatPresenter(view);
-            var router = new ChampionatRouter(view);
+            var router = new ChampionatRouter(presenter);
 
             var interactor = new ChampionatInteractor(presenter, Get<IChampionatService>());
 

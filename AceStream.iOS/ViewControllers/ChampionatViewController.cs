@@ -15,14 +15,13 @@ namespace AceStream
     public partial class ChampionatViewController : UITableViewController, IChampionatView
     {
         public IChampionatPresenter Presenter { get; set; }
-        public IChampionatConfigurator Configurator { get; set; }
 
         private List<ChampionatDto> _championats;
 
         public ChampionatViewController(IntPtr handle) : base(handle)
         {
-            Configurator = new ChampionatConfigurator();
-            Configurator.Configure(this);
+            var configurator = new ChampionatConfigurator();
+            configurator.Configure(this);
         }
 
         public override void ViewDidLoad()
@@ -105,9 +104,9 @@ namespace AceStream
             });
         }
 
-        public async Task SetChampionatsAsync(Task<List<ChampionatDto>> championats)
+        public void SetChampionats(List<ChampionatDto> championats)
         {
-            _championats = await championats;
+            _championats = championats;
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -116,9 +115,7 @@ namespace AceStream
 
             var championat = _championats[row];
 
-            var matchPreviewViewController = segue.DestinationViewController as MatchPreviewViewController;
-
-            Presenter.Router.Prepare(matchPreviewViewController, championat);
+            Presenter.PrepareForSegue(segue.DestinationViewController, championat);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -167,13 +164,13 @@ namespace AceStream
             });
         }
 
-        public void SetNotFoundView()
+        public void SetNotFoundView(string message)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 var label = new UILabel(new CGRect(TableView.Frame.X, TableView.Frame.Y, 200, 50))
                 {
-                    Text = "На сегодня матчей нет",
+                    Text = message,
                     Tag = 1
                 };
 
