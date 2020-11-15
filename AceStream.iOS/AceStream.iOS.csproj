@@ -528,9 +528,9 @@
         <Project>{D573D823-5F95-41E5-89BF-774AA0CD8AA3}</Project>
         <Name>AceStream.Core</Name>
       </ProjectReference>
-      <ProjectReference Include="..\AceStream.iOS.Modules\AceStream.iOS.Modules.csproj">
-        <Project>{E54B280D-DBB8-43E3-B4E2-DC929F67E1FC}</Project>
-        <Name>AceStream.iOS.Modules</Name>
+      <ProjectReference Include="..\AceStream.Modules\AceStream.Modules.csproj">
+        <Project>{442A014F-73B0-4727-888F-765092EB39AD}</Project>
+        <Name>AceStream.Modules</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -14,6 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AceStream.iOS.Modules\AceStream.iOS.Modules.csproj" />
+    <ProjectReference Include="..\AceStream.Modules\AceStream.Modules.csproj" />
   </ItemGroup>
 </Project>
