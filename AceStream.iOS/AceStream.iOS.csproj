@@ -132,19 +132,10 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
-        <Folder Include="Modules\" />
         <Folder Include="Views\" />
         <Folder Include="Views\TableViewCell\" />
-        <Folder Include="Modules\LoginModule\" />
-        <Folder Include="Modules\RegistrationModule\" />
-        <Folder Include="Modules\VideoModule\" />
         <Folder Include="Extansions\" />
-        <Folder Include="Modules\SettingsModule\" />
-        <Folder Include="SubModules\" />
-        <Folder Include="SubModules\UserSubModule\" />
-        <Folder Include="SubModules\SquardSubModule\" />
         <Folder Include="Storyboards\" />
-        <Folder Include="SubModules\LinkSubModule\" />
         <Folder Include="Utils\" />
         <Folder Include="Resources\TabBarPictures\" />
         <Folder Include="Resources\TabBarPictures\Settings\" />
@@ -183,24 +174,6 @@
         <Compile Include="Views\TableViewCell\MatchPreviewTableViewCell.designer.cs">
           <DependentUpon>MatchPreviewTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\LoginModule\LoginViewController.cs" />
-        <Compile Include="Modules\LoginModule\LoginViewController.designer.cs">
-          <DependentUpon>LoginViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\LoginModule\ILogin.cs" />
-        <Compile Include="Modules\LoginModule\LoginPresenter.cs" />
-        <Compile Include="Modules\LoginModule\LoginConfigurator.cs" />
-        <Compile Include="Modules\LoginModule\LoginInteractor.cs" />
-        <Compile Include="Modules\LoginModule\LoginRouter.cs" />
-        <Compile Include="Modules\RegistrationModule\IRegistration.cs" />
-        <Compile Include="Modules\RegistrationModule\RegistrationViewController.cs" />
-        <Compile Include="Modules\RegistrationModule\RegistrationViewController.designer.cs">
-          <DependentUpon>RegistrationViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\RegistrationModule\RegistrationConfigurator.cs" />
-        <Compile Include="Modules\RegistrationModule\RegistrationInteractor.cs" />
-        <Compile Include="Modules\RegistrationModule\RegistrationPresenter.cs" />
-        <Compile Include="Modules\RegistrationModule\RegistrationRouter.cs" />
         <Compile Include="Views\TableViewCell\SquardTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\SquardTableViewCell.designer.cs">
           <DependentUpon>SquardTableViewCell.cs</DependentUpon>
@@ -209,54 +182,12 @@
         <Compile Include="Views\TableViewCell\AceLinkTableViewCell.designer.cs">
           <DependentUpon>AceLinkTableViewCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Modules\VideoModule\VideoViewController.cs" />
-        <Compile Include="Modules\VideoModule\VideoViewController.designer.cs">
-          <DependentUpon>VideoViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\VideoModule\VideoConfigurator.cs" />
-        <Compile Include="Modules\VideoModule\VideoPresenter.cs" />
         <Compile Include="Extansions\TeamExtansion.cs" />
-        <Compile Include="Modules\SettingsModule\ISettings.cs" />
-        <Compile Include="Modules\SettingsModule\SettingsViewController.cs" />
-        <Compile Include="Modules\SettingsModule\SettingsViewController.designer.cs">
-          <DependentUpon>SettingsViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Modules\SettingsModule\SettingsConfigurator.cs" />
-        <Compile Include="Modules\SettingsModule\SettingsPresenter.cs" />
-        <Compile Include="Modules\SettingsModule\SettingsInteractor.cs" />
-        <Compile Include="Modules\SettingsModule\SettingsRouter.cs" />
         <Compile Include="Views\TableViewCell\SettingTableViewCell.cs" />
         <Compile Include="Views\TableViewCell\SettingTableViewCell.designer.cs">
           <DependentUpon>SettingTableViewCell.cs</DependentUpon>
         </Compile>
         <Compile Include="Extansions\SettingExtansion.cs" />
-        <Compile Include="SubModules\UserSubModule\UserViewController.cs" />
-        <Compile Include="SubModules\UserSubModule\UserViewController.designer.cs">
-          <DependentUpon>UserViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="SubModules\UserSubModule\IUser.cs" />
-        <Compile Include="SubModules\UserSubModule\UserConfigurator.cs" />
-        <Compile Include="SubModules\UserSubModule\UserPresenter.cs" />
-        <Compile Include="SubModules\UserSubModule\UserInteractor.cs" />
-        <Compile Include="SubModules\UserSubModule\UserRouter.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardViewController.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardViewController.designer.cs">
-          <DependentUpon>SquardViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="SubModules\SquardSubModule\ISquard.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardConfigurator.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardPresenter.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardInteractor.cs" />
-        <Compile Include="SubModules\SquardSubModule\SquardRouter.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkViewController.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkViewController.designer.cs">
-          <DependentUpon>LinkViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="SubModules\LinkSubModule\ILink.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkConfigurator.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkPresenter.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkInteractor.cs" />
-        <Compile Include="SubModules\LinkSubModule\LinkRouter.cs" />
         <Compile Include="Utils\NavigationItemImage.cs" />
         <Compile Include="Utils\GradientColor.cs" />
         <Compile Include="Utils\ImageUtils.cs" />
@@ -278,6 +209,34 @@
         <Compile Include="ViewControllers\MatchViewController.cs" />
         <Compile Include="ViewControllers\MatchViewController.designer.cs">
           <DependentUpon>MatchViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\VideoViewController.cs" />
+        <Compile Include="ViewControllers\VideoViewController.designer.cs">
+          <DependentUpon>VideoViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\LinkViewController.cs" />
+        <Compile Include="ViewControllers\LinkViewController.designer.cs">
+          <DependentUpon>LinkViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\SquardViewController.cs" />
+        <Compile Include="ViewControllers\SquardViewController.designer.cs">
+          <DependentUpon>SquardViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\UserViewController.cs" />
+        <Compile Include="ViewControllers\UserViewController.designer.cs">
+          <DependentUpon>UserViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\LoginViewController.cs" />
+        <Compile Include="ViewControllers\LoginViewController.designer.cs">
+          <DependentUpon>LoginViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\RegistrationViewController.cs" />
+        <Compile Include="ViewControllers\RegistrationViewController.designer.cs">
+          <DependentUpon>RegistrationViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\SettingsViewController.cs" />
+        <Compile Include="ViewControllers\SettingsViewController.designer.cs">
+          <DependentUpon>SettingsViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>
@@ -416,7 +375,7 @@
       <BundleResource Include="Resources\Flags\Синт-Мартен.png" />
       <BundleResource Include="Resources\Flags\Индия.png" />
       <BundleResource Include="Resources\Flags\Замбия.png" />
-      <BundleResource Include="Resources\Flags\Македония.png" />
+      <BundleResource Include="Resources\Flags\Северная Македония.png" />
       <BundleResource Include="Resources\Flags\Сан-Томе и Принсипи.png" />
       <BundleResource Include="Resources\Flags\Иордания.png" />
       <BundleResource Include="Resources\Flags\Эстония.png" />

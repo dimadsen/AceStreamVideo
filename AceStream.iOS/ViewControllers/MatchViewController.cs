@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using AceStream.Core.Domain.Enums;
 using AceStream.Dto;
 using AceStream.iOS.Modules.MatchModule;
-using AceStream.SubModules.SquardSubModule;
 using AceStream.Utils;
 using CoreGraphics;
 using Foundation;

@@ -27,7 +27,7 @@ namespace AceStream
             services.AddScoped<IMatchPreviewService, MatchPreviewService>(client);
             services.AddScoped<IMatchService, MatchService>(client);
             services.AddScoped<ILinkService, LinkService>();
-
+            services.AddScoped<IUserService, UserService>();
             return true;
         }
         

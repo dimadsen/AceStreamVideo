@@ -2,7 +2,7 @@
 
 namespace AceStream.Services.Interfaces
 {
-    public interface IUserSerivice
+    public interface IUserService
     {
         UserDto GetUser(int id);
         UserDto GetUser(LoginDto login);

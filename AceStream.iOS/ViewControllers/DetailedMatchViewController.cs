@@ -1,6 +1,5 @@
 ﻿using AceStream.Dto;
-using AceStream.SubModules.LinkSubModule;
-using AceStream.SubModules.SquardSubModule;
+using AceStream.Modules.LinkModule;
 using AceStream.Utils;
 using UIKit;
 using XLPagerTabStrip;
