@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.Modules", "AceStr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.Modules.Tests", "AceStream.Modules.Tests\AceStream.Modules.Tests.csproj", "{92680B1E-8531-4B24-8D37-4314E9A6015C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{B83C2FA2-D1F7-4672-A2F4-16808AE98602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.Android", "AceStream.Android\AceStream.Android.csproj", "{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -97,6 +101,18 @@ Global
 		{92680B1E-8531-4B24-8D37-4314E9A6015C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92680B1E-8531-4B24-8D37-4314E9A6015C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92680B1E-8531-4B24-8D37-4314E9A6015C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|iPhone.Build.0 = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -132,5 +148,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{67103686-01E1-4738-A9AF-52669554E5C3} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
+		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671} = {B83C2FA2-D1F7-4672-A2F4-16808AE98602}
 	EndGlobalSection
 EndGlobal
