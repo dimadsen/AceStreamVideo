@@ -27,7 +27,11 @@ namespace AceStream.Android
     {
         public IChampionatPresenter Presenter { get; set; }
 
-        private List<ChampionatDto> _championats;
+        private List<ChampionatDto> _championatsDto;
+
+        private ListView _championatsList;
+
+        private string _title;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,16 +51,20 @@ namespace AceStream.Android
             {
                 await Presenter.SetChampionatsAsync();
 
-                //MainThread.BeginInvokeOnMainThread(() =>
-                //{
-                    
-                //});
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    SetContentView(Resource.Layout.ChampionatLayout);
+                    _championatsList = FindViewById<ListView>(Resource.Id.championats);
+                    _championatsList.Adapter = new ChampionatAdapter(this, _championatsDto);
+
+                    //var text = FindViewById<TextView>(Resource.Id.title);
+                });
             });
         }
 
         public void SetChampionats(List<ChampionatDto> championats)
         {
-            _championats = championats;
+            _championatsDto = championats;
         }
 
         public void SetErrorView()
@@ -71,7 +79,7 @@ namespace AceStream.Android
 
         public void SetSettings(string title)
         {
-            
+            _title = title;
         }
 
         private void Start()
@@ -87,6 +95,51 @@ namespace AceStream.Android
             services.AddScoped<IMatchService, MatchService>(client);
             services.AddScoped<ILinkService, LinkService>();
             services.AddScoped<IUserService, UserService>();
+        }
+    }
+
+    public class ChampionatAdapter : BaseAdapter<ChampionatDto>
+    {
+        List<ChampionatDto> _championats;
+        Activity _context;
+
+        public ChampionatAdapter(Activity context, List<ChampionatDto> championats) : base()
+        {
+            _context = context;
+            _championats = championats;
+        }
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+        public override int Count
+        {
+            get { return _championats.Count; }
+        }
+
+        public override ChampionatDto this[int position]
+        {
+            get { return _championats[position]; }
+        }
+
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            var championat = _championats[position];
+
+            var view = convertView;
+
+            if (view == null)
+            {
+                view = _context.LayoutInflater.Inflate(Resource.Layout.championat_list_item, null);
+            }
+            view.FindViewById<TextView>(Resource.Id.name).Text = championat.Name;
+            view.FindViewById<TextView>(Resource.Id.country).Text = championat.Country;
+
+            var id = Resource.Drawable.nationLeague2;
+            view.FindViewById<ImageView>(Resource.Id.icon).SetImageResource(id);
+
+            return view;
         }
     }
 }
