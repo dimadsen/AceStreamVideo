@@ -8,13 +8,12 @@ namespace AceStream.Modules.ChampionatModule
 {
     public interface IChampionatConfigurator
     {
-        void Configure(ChampionatViewController viewController);
+        void Configure(IChampionatView viewController);
     }
 
     public interface IChampionatPresenter
     {
-        IChampionatRouter Router { get; set; }
-        IChampionatInteractor Interactor { get; set; }
+        void PrepareForSegue(object destinationView, ChampionatDto sender);
 
         Task SetChampionatsAsync();
         void SetError();
@@ -30,11 +29,13 @@ namespace AceStream.Modules.ChampionatModule
 
     public interface IChampionatRouter
     {
-        void Prepare(UIStoryboardSegue segue, ChampionatDto sender);
+        void PrepareForSegue(object destinationView, ChampionatDto sender);
     }
 
     public interface IChampionatView
     {
+        IChampionatPresenter Presenter { get; set; }
+
         void SetSettings(string title);
         Task SetChampionatsAsync(Task<List<ChampionatDto>> championats);
         void SetErrorView();

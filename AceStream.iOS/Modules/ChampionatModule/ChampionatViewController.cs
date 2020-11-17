@@ -116,7 +116,7 @@ namespace AceStream
 
             var championat = _championats[row];
 
-            Presenter.Router.Prepare(segue, championat);
+            Presenter.PrepareForSegue(segue.DestinationViewController, championat);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

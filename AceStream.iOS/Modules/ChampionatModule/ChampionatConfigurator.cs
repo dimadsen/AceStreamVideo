@@ -5,14 +5,14 @@ namespace AceStream.Modules.ChampionatModule
 {
     public class ChampionatConfigurator : IChampionatConfigurator
     {
-        public void Configure(ChampionatViewController viewController)
+        public void Configure(IChampionatView view)
         {
-            var presenter = new ChampionatPresenter(viewController);
-            var router = new ChampionatRouter(viewController);
+            var presenter = new ChampionatPresenter(view);
+            var router = new ChampionatRouter(presenter);
 
             var interactor = new ChampionatInteractor(presenter, Get<IChampionatService>());
 
-            viewController.Presenter = presenter;
+            view.Presenter = presenter;
             presenter.Interactor = interactor;
             presenter.Router = router;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using AceStream.Dto;
 
 namespace AceStream.Modules.ChampionatModule
 {
@@ -31,6 +32,11 @@ namespace AceStream.Modules.ChampionatModule
         public void SetNotFoundMatches()
         {
             _view.SetNotFoundView();
+        }
+
+        public void PrepareForSegue(object destinationView, ChampionatDto sender)
+        {
+            Router.PrepareForSegue(destinationView, sender);
         }
     }
 }

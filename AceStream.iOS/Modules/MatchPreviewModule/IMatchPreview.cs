@@ -36,6 +36,7 @@ namespace AceStream.Modules.MatchPreviewModule
 
     public interface IMatchPreviewView
     {
+        IMatchPreviewPresenter Presenter { get; set; }
         void SetSettings(MatchPreviewSettingsDto dto);
         Task SetMatchesAsync(Task<List<MatchPreviewDto>> matches);
         void SetErrorView();

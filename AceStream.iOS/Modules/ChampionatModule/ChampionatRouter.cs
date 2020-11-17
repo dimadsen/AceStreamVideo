@@ -1,23 +1,23 @@
 ﻿using AceStream.Dto;
+using AceStream.Modules.MatchPreviewModule;
 using UIKit;
 
 namespace AceStream.Modules.ChampionatModule
 {
     public class ChampionatRouter : IChampionatRouter
     {
-        private ChampionatViewController _viewController;
+        private IChampionatPresenter _presenter;
 
-        public ChampionatRouter(ChampionatViewController viewController)
+        public ChampionatRouter(IChampionatPresenter presenter)
         {
-            _viewController = viewController;
+            _presenter = presenter;
         }
 
-        public void Prepare(UIStoryboardSegue segue, ChampionatDto championat)
+        public void PrepareForSegue(object destinationView, ChampionatDto sender)
         {
-            var matchPreviewViewController = segue.DestinationViewController as MatchPreviewViewController;
+            var view = destinationView as IMatchPreviewView;
 
-            matchPreviewViewController.Presenter.Championat = championat;
+            view.Presenter.Championat = sender;
         }
-
     }
 }
