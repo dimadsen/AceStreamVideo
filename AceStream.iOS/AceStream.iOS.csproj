@@ -514,6 +514,7 @@
       <BundleResource Include="Resources\Championats\Liga1.png" />
       <BundleResource Include="Resources\Championats\RPL.png" />
       <BundleResource Include="Resources\Championats\SeriaA.png" />
+      <BundleResource Include="Resources\Championats\NationsLeague.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj">

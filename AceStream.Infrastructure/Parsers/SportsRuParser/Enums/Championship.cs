@@ -41,6 +41,9 @@ namespace AceStream.Infrastructure.SportsRuParser.Enums
         Liga1 = 1364762,
 
         [Description("Лига наций")]
-        NationsLeague = 161038575
+        NationsLeague = 161038575,
+
+        [Description("КХЛ")]
+        KHL = 4084863
     }
 }
