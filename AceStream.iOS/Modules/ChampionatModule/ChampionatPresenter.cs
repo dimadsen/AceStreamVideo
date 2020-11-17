@@ -16,7 +16,9 @@ namespace AceStream.Modules.ChampionatModule
 
         public async Task SetChampionatsAsync()
         {
-            await _view.SetChampionatsAsync(Interactor.GetChampionatsAsync());
+            var championats = Interactor.GetChampionatsAsync();
+
+            await _view.SetChampionatsAsync(championats);
         }
 
         public void ConfigureView()

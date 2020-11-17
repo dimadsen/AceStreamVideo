@@ -27,21 +27,10 @@ namespace AceStream
 
         public override void ViewDidLoad()
         {
-            Task.Run(async () =>
-            {
-                await Presenter.SetChampionatsAsync();
-
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    TableView.ReloadData();
-                    Indicator.StopAnimating();
-                    Indicator.HidesWhenStopped = true;
-
-                    TableView.TableHeaderView = null;
-                });
-            });
-
             Presenter.ConfigureView();
+
+            Task.Run(async () => await Presenter.SetChampionatsAsync());            
+
         }
 
         public void SetSettings(string title)
@@ -108,6 +97,15 @@ namespace AceStream
         public async Task SetChampionatsAsync(Task<List<ChampionatDto>> championats)
         {
             _championats = await championats;
+
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                TableView.ReloadData();
+                Indicator.StopAnimating();
+                Indicator.HidesWhenStopped = true;
+
+                TableView.TableHeaderView = null;
+            });
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
