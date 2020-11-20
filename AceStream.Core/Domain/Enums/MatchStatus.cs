@@ -14,6 +14,9 @@ namespace AceStream.Core.Domain.Enums
         TimeOut = 3,
 
         [Description("завершён")]
-        Completed = 4
+        Completed = 4,
+
+        [Description("перенесён")]
+        Postponed = 10
     }
 }

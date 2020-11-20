@@ -464,13 +464,13 @@
         </scene>
         <scene sceneID="48093">
             <objects>
-                <tableViewController id="48094" sceneMemberID="viewController" customClass="SettingsViewController">
+                <tableViewController id="48094" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="48095">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="48650" rowHeight="67" reuseIdentifier="ExitTableViewCell" customClass="SettingTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="48650" rowHeight="67" reuseIdentifier="ExitTableViewCell">
                                 <rect key="frame" x="0.0" y="91.5" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48650" id="48651">
@@ -522,9 +522,6 @@
                     </navigationBar>
                     <tabBarItem key="tabBarItem" id="53328" image="TabBarPictures/Settings/Settings.png" title="Настройки"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue id="53415" destination="48094" kind="relationship" relationship="rootViewController"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53280" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -532,7 +529,7 @@
         </scene>
         <scene sceneID="72087">
             <objects>
-                <viewController id="72086" sceneMemberID="viewController" customClass="UserViewController" storyboardIdentifier="UserViewController">
+                <viewController id="72086" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="72082"/>
                         <viewControllerLayoutGuide type="bottom" id="72083"/>
@@ -767,9 +764,6 @@
         <image name="close.png" width="128" height="128"/>
         <image name="TabBarPictures/Settings/Settings.png" width="25" height="25"/>
         <image name="TabBarPictures/Live/Live.png" width="25" height="25"/>
-        <namedColor name="backgroundColor">
-            <color colorSpace="custom" customColorSpace="sRGB" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1"/>
-        </namedColor>
         <namedColor name="BarButtonColor">
             <color colorSpace="custom" customColorSpace="sRGB" red="0.003921569" green="0.5294118" blue="0.5254902" alpha="1"/>
         </namedColor>

@@ -9,11 +9,11 @@
     <PackageReference Include="AutoMapper" Version="10.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\" />
-    <Folder Include="Parser\" />
+    <Folder Include="Clients\" />
     <Folder Include="Mapping\" />
     <Folder Include="DependencyInjection\" />
-    <Folder Include="Parser\Enums\" />
+    <Folder Include="Parsers\" />
+    <Folder Include="Parsers\SportsRuParser\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />

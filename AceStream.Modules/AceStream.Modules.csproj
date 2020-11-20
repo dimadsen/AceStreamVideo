@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />
+    <ProjectReference Include="..\AceStream.Infrastructure\AceStream.Infrastructure.csproj" />
+    <ProjectReference Include="..\AceStream.Services\AceStream.Services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChampionatModule\" />
+    <Folder Include="MatchPreviewModule\" />
+    <Folder Include="MatchModule\" />
+    <Folder Include="VideoModule\" />
+    <Folder Include="LinkModule\" />
+    <Folder Include="SquardModule\" />
+    <Folder Include="UserModule\" />
+    <Folder Include="LoginModule\" />
+    <Folder Include="RegistrationModule\" />
+    <Folder Include="SettingsModule\" />
+  </ItemGroup>
+</Project>
