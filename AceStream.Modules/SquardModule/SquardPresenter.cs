@@ -1,40 +1,46 @@
-﻿using AceStream.Dto;
+﻿using System.Threading.Tasks;
+using AceStream.Core.Exceptions;
+using AceStream.Dto;
 
 namespace AceStream.iOS.Modules.SquardModule
 {
-    public class SquardPresenter: ISquardPresenter
+    public class SquardPresenter : ISquardPresenter
     {
-        public ISquardInteractor Interactor { get; set; }
-        public ISquardRouter Router { get; set; }
-
-        public MatchDto Match { get; set; }
-
+        private ISquardInteractor _interactor { get; set; }
         private ISquardView _view;
 
+        public int MatchId { get; set; }
 
-        public SquardPresenter(ISquardView view)
+        public SquardPresenter(ISquardInteractor interactor)
+        {
+            _interactor = interactor;
+        }
+
+        public void ConfigureView(ISquardView view)
         {
             _view = view;
+
+            _view.SetSettings();
         }
 
-        public void ConfigureView()
-        {
-            _view.SetSettings();     
-        }
-
-        public void SetPlayers()
-        {
-            _view.SetPlayers(Interactor.GetMatch(Match));
-        }
-
-        public void SetNotFoundPlayers()
-        {
-            _view.SetNotFoundPlayers();
-        }
-
-        public void SetTitleHeader()
+        public async Task SetPlayersAsync()
         {
             _view.SetTableSquard();
+
+            try
+            {
+                var players = await _interactor.GetSquardsAsync(MatchId);
+
+                _view.SetPlayers(players);
+            }
+            catch (PlayersNotFoundException)
+            {
+                _view.SetNotFoundPlayers();
+            }
+            catch (System.Exception ex)
+            {
+
+            }
         }
     }
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.iOS.Modules.ChampionatModule;
+using AceStream.Services.Interfaces;
 using AceStream.Utils;
 using AceStream.Views.TableViewCell;
 using CoreGraphics;
 using Foundation;
+using Microsoft.Extensions.DependencyInjection;
 using UIKit;
 using Xamarin.Essentials;
 
@@ -14,22 +16,19 @@ namespace AceStream
 {
     public partial class ChampionatViewController : UITableViewController, IChampionatView
     {
-        public IChampionatPresenter Presenter { get; set; }
-
+        private IChampionatPresenter _presenter { get; set; }
         private List<ChampionatDto> _championats;
-
+                
         public ChampionatViewController(IntPtr handle) : base(handle)
         {
-            var configurator = new ChampionatConfigurator();
-            configurator.Configure(this);
         }
 
         public override void ViewDidLoad()
         {
-            Presenter.ConfigureView();
+            _presenter = ServiceProviderFactory.ServiceProvider.GetService<IChampionatPresenter>();
+            _presenter.ConfigureView(this);
 
-            Task.Run(async () => await Presenter.SetChampionatsAsync());            
-
+            Task.Run(async () => await _presenter.SetChampionatsAsync());
         }
 
         public void SetSettings(string title)
@@ -76,7 +75,7 @@ namespace AceStream
         {
             var task = Task.Run(async () =>
             {
-                await Presenter.SetChampionatsAsync();
+                await _presenter.SetChampionatsAsync();
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
@@ -114,7 +113,7 @@ namespace AceStream
 
             var championat = _championats[row];
 
-            Presenter.PrepareForSegue(segue.DestinationViewController, championat);
+            _presenter.PrepareForSegue(segue.DestinationViewController, championat);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

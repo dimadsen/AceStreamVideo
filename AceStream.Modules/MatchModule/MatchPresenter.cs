@@ -1,35 +1,44 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AceStream.Dto;
 using AceStream.iOS.Modules.MatchModule;
 
 namespace AceStream.Modules.MatchModule
 {
     public class MatchPresenter : IMatchPresenter
     {
-        public IMatchRouter Router { get; set; }
-        public IMatchInteractor Interactor { get; set; }
+        private IMatchRouter _router { get; set; }
+        private IMatchInteractor _interactor { get; set; }
+        private IMatchView _view;
 
         public int MatchId { get; set; }
         public string Title { get; set; }
 
-        private IMatchView _view;
-
-        public MatchPresenter(IMatchView view)
+        public MatchPresenter(IMatchRouter router, IMatchInteractor interactor)
         {
-            _view = view;
+            _router = router;
+            _interactor = interactor;
         }
 
-        public void ConfigureView()
+        public void ConfigureView(IMatchView view)
         {
+            _view = view;
+
             _view.SetSettings(Title);
         }
 
         public async Task SetMatchAsync()
         {
-            var match = await Interactor.GetMatchAsync(MatchId);
+            try
+            {
+                var match = await _interactor.GetMatchAsync(MatchId);
 
-            _view.SetMatch(match);
+                _view.SetMatch(match);
+
+            }
+            catch (Exception ex)
+            {
+                _view.SetError();
+            }
         }
 
         public void SetError()
@@ -39,7 +48,7 @@ namespace AceStream.Modules.MatchModule
 
         public void PrepareForSegue(object destinationView, string link)
         {
-            Router.PrepareForSegue(destinationView, link);
+            _router.PrepareForSegue(destinationView, link);
         }
     }
 }

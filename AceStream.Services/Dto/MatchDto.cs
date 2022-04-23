@@ -6,6 +6,7 @@ namespace AceStream.Dto
 {
     public class MatchDto
     {
+        public int Id { get; set; }
         /// <summary>
         /// Название команды хозяев
         /// </summary>
@@ -50,16 +51,6 @@ namespace AceStream.Dto
         /// Статус
         /// </summary>
         public MatchStatus Status { get; set; }
-
-        /// <summary>
-        /// Состав хозяев
-        /// </summary>
-        public TeamDto HomeSquard { get; set; }
-
-        /// <summary>
-        /// Состав гостей
-        /// </summary>
-        public TeamDto VisitorSquard { get; set; }
 
         /// <summary>
         /// Cтадион

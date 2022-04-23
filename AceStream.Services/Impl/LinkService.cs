@@ -13,7 +13,7 @@ namespace AceStream.Services.Impl
             return Task.Run(() => parameters.Select(p => new LinkDto
             {
                 Name = p,
-                Link = "https://rtmp.api.rt.com/hls/rtdru.m3u8"
+                Link = "http://89.43.111.242:6878/ace/m/6cdb8ae6a133b8b8a3a4f529da2943ebedcd3afa/2d59ef4e67a80bab8f2920660d4562d4.m3u8"
             }).ToList());
 
         }

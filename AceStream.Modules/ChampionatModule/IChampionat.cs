@@ -16,7 +16,7 @@ namespace AceStream.iOS.Modules.ChampionatModule
         Task SetChampionatsAsync();
         void SetError();
         void SetNotFoundChampionats(string message);
-        void ConfigureView();
+        void ConfigureView(IChampionatView view);
     }
 
     public interface IChampionatInteractor
@@ -31,8 +31,6 @@ namespace AceStream.iOS.Modules.ChampionatModule
 
     public interface IChampionatView
     {
-        IChampionatPresenter Presenter { get; set; }
-
         void SetSettings(string title);
         void SetChampionats(List<ChampionatDto> championats);
         void SetErrorView();

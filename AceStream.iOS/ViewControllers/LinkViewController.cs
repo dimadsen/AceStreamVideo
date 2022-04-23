@@ -8,24 +8,25 @@ using Foundation;
 using UIKit;
 using Xamarin.Essentials;
 using XLPagerTabStrip;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AceStream.Modules.LinkModule
 {
     public partial class LinkViewController : UITableViewController, IIndicatorInfoProvider, ILinkView
     {
-        public ILinkConfigurator Configurator { get; set; }
         public ILinkPresenter Presenter { get; set; }
 
         private List<LinkDto> _links;
 
         public LinkViewController(IntPtr handle) : base(handle)
         {
-            Configurator = new LinkConfigurator();
-            Configurator.Configure(this);
+            Presenter = ServiceProviderFactory.ServiceProvider.GetService<ILinkPresenter>();
         }
 
         public override void ViewDidLoad()
         {
+            Presenter.ConfigureView(this);
+
             Task.Run(async () =>
             {
                 await Presenter.SetLinksAsync();
@@ -40,7 +41,6 @@ namespace AceStream.Modules.LinkModule
                 });
             });
 
-            Presenter.ConfigureView();
         }
 
         public void SetLinks(List<LinkDto> links)

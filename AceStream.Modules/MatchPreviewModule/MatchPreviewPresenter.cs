@@ -1,42 +1,57 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using AceStream.Core.Exceptions;
 using AceStream.Dto;
 
 namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public class MatchPreviewPresenter : IMatchPreviewPresenter
     {
-        public IMatchPreviewRouter Router { get; set; }
-        public IMatchPreviewInteractor Interactor { get; set; }
-
+        private IMatchPreviewRouter _router { get; set; }
+        private IMatchPreviewInteractor _interactor { get; set; }
         private IMatchPreviewView _view;
 
         public ChampionatDto Championat { get; set; }
 
-        public MatchPreviewPresenter(IMatchPreviewView view)
+        public MatchPreviewPresenter(IMatchPreviewRouter router, IMatchPreviewInteractor interactor)
         {
-            _view = view;
+            _router = router;
+            _interactor = interactor;
         }
 
         public async Task SetMatchesAsync()
         {
-            var matches = await Interactor.GetMatchesAsync(Championat.Id);
+            try
+            {
+                var matches = await _interactor.GetMatchesAsync(Championat.Id);
 
-            _view.SetMatches(matches);
+                _view.SetMatches(matches);
+            }
+            catch (MatchesNotFoundException ex)
+            {
+                _view.SetNotFoundMatches(ex.Message);
+            }
+            catch (Exception)
+            {
+                _view.SetError();
+            }
         }
 
-        public void ConfigureView()
+        public void ConfigureView(IMatchPreviewView view)
         {
-            _view.SetSettings(Interactor.GetSettings(Championat));
+            _view = view;
+
+            _view.SetSettings(_interactor.GetSettings(Championat));
         }
 
         public void SetError()
         {
-            _view.SetErrorView();
+            _view.SetError();
         }
 
         public void PrepareForSegue(object destinationView, int matchId, string title)
         {
-            Router.PrepareForSegue(destinationView, matchId, title);
+            _router.PrepareForSegue(destinationView, matchId, title);
         }
 
         public void SetNotFoundMatches(string message)

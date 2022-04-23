@@ -37,6 +37,8 @@ namespace AceStream.Infrastructure.Mapping
                 cnf.CreateMap<SportsRuParser.MatchInfo.MatchInfo, Core.Domain.MatchInfo.MatchInfo>();
                 cnf.CreateMap<SportsRuParser.MatchInfo.Stadium, Core.Domain.MatchInfo.Stadium>();
                 cnf.CreateMap<SportsRuParser.MatchInfo.Team, Core.Domain.MatchInfo.Team>();
+
+                cnf.CreateMap<Parsers.SportsRuParser.Match.Progress, Core.Domain.Match.MatchProgress>();
             });
 
             _mapper = new Mapper(config);

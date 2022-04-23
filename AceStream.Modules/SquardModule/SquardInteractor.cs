@@ -1,34 +1,79 @@
-﻿using AceStream.Core.Exceptions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AceStream.Core.Domain.Match;
+using AceStream.Core.Exceptions;
 using AceStream.Dto;
+using AceStream.Services.Clients;
+using AceStream.Services.Dto;
 
 namespace AceStream.iOS.Modules.SquardModule
 {
     public class SquardInteractor : ISquardInteractor
     {
-        private ISquardPresenter _presenter;
+        private IClient _client;
 
-        public SquardInteractor(ISquardPresenter presenter)
+        public SquardInteractor(IClient client)
         {
-            _presenter = presenter;
+            _client = client;
         }
 
-        public MatchDto GetMatch(MatchDto match)
+        public async Task<SquardDto> GetSquardsAsync(int matchId)
         {
-            try
+            var teams = await _client.GetTeamsAsync(matchId);
+
+            var homeSquard = teams.Teams[0];
+            var visitorSquard = teams.Teams[1];
+
+            var squardDto = new SquardDto
             {
-                if (match.HomeSquard.Startings.Count < 11 || match.VisitorSquard.Startings.Count < 11)
-                    throw new PlayersNotFoundException();
+                HomeSquard = new TeamDto
+                {
+                    Startings = homeSquard.Startings.Where(p => IsStartings(p)).Select(p => GetPlayers(p)).ToList(),
+                    Substitutes = GetSubstitutes(homeSquard)
+                },
+                VisitorSquard = new TeamDto
+                {
+                    Startings = visitorSquard.Startings.Where(p => IsStartings(p)).Select(p => GetPlayers(p)).ToList(),
+                    Substitutes = GetSubstitutes(visitorSquard)
+                },
+            };
 
-                _presenter.SetTitleHeader();
+            return squardDto.HomeSquard.Startings.Count == 11 && squardDto.VisitorSquard.Startings.Count == 11 ?
+                squardDto : throw new PlayersNotFoundException();
+        }
 
-                return match;
-            }
-            catch (PlayersNotFoundException)
+        private PlayerDto GetPlayers(Player player)
+        {
+            var dto = new PlayerDto
             {
-                _presenter.SetNotFoundPlayers();
+                Number = player.Number,
+                Name = player.Name,
+                Country = player.Flag.FirstOrDefault()?.Country,
+                Flag = $"{player.Flag.FirstOrDefault()?.Country}.png"
+            };
 
-                return null;
-            }
+            return dto;
+        }
+
+        private List<PlayerDto> GetSubstitutes(Team team)
+        {
+            var substitutes = team.Substitutes.SelectMany(players => players.Select(player => GetPlayers(player))).ToList();
+
+            var isReplacementPlayers = team.Startings.Where(p => !IsStartings(p)).Select(p => GetPlayers(p));
+
+            substitutes.AddRange(isReplacementPlayers);
+
+            return substitutes;
+        }
+
+        private bool IsStartings(Player player)
+        {
+            var isStarting = (!player.IsReplacement && string.IsNullOrEmpty(player.Replaced)) ||
+                      (player.IsReplacement && !string.IsNullOrEmpty(player.Replacement));
+
+            return isStarting;
         }
     }
 }

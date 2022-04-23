@@ -9,6 +9,9 @@ using Foundation;
 using UIKit;
 using Xamarin.Essentials;
 using XLPagerTabStrip;
+using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
+using AceStream.Services.Dto;
 
 namespace AceStream
 {
@@ -16,21 +19,27 @@ namespace AceStream
     {
         public ISquardPresenter Presenter { get; set; }
         
-        private MatchDto _match;
+        private SquardDto _squards;
         private string[] _titles;
 
         public SquardViewController(IntPtr handle) : base(handle)
         {
-            var configurator = new SquardConfigurator();
-            configurator.Configure(this);
+            Presenter = ServiceProviderFactory.ServiceProvider.GetService<ISquardPresenter>();
         }
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+            Presenter.ConfigureView(this);
 
-            Presenter.ConfigureView();
-            Presenter.SetPlayers();
+            Task.Run(async () =>
+            {
+                await Presenter.SetPlayersAsync();
+
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    TableView.ReloadData();
+                });
+            });
         }
 
         public void SetSettings()
@@ -51,9 +60,9 @@ namespace AceStream
             //TableView.TableFooterView.Layer.InsertSublayer(GradientColor.ShowAgain(View.Frame.Width, View.Frame.Height), 0);
         }
 
-        public void SetPlayers(MatchDto match)
+        public void SetPlayers(SquardDto squards)
         {
-            _match = match;
+            _squards = squards;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -63,13 +72,13 @@ namespace AceStream
 
             if (indexPath.Section.IsStartings())
             {
-                cell.UpdateCell(_match.HomeSquard.Startings[indexPath.Row], _match.VisitorSquard.Startings[indexPath.Row]);
+                cell.UpdateCell(_squards.HomeSquard.Startings[indexPath.Row], _squards.VisitorSquard.Startings[indexPath.Row]);
             }
             else if (indexPath.Section.IsSubstitutes())
             {
-                var homePlayer = GetPlayer(_match.HomeSquard.Substitutes, indexPath.Row);
+                var homePlayer = GetPlayer(_squards.HomeSquard.Substitutes, indexPath.Row);
 
-                var visitorPlayer = GetPlayer(_match.VisitorSquard.Substitutes, indexPath.Row);
+                var visitorPlayer = GetPlayer(_squards.VisitorSquard.Substitutes, indexPath.Row);
                 cell.UpdateCell(homePlayer, visitorPlayer);
             }
 
@@ -82,13 +91,13 @@ namespace AceStream
         /// </summary>
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            if (_match == null)
+            if (_squards == null)
                 return 0;
 
             if (section.IsSubstitutes())
             {
-                var subHomeCount = _match.HomeSquard.Substitutes.Count;
-                var subVisitorCount = _match.VisitorSquard.Substitutes.Count;
+                var subHomeCount = _squards.HomeSquard.Substitutes.Count;
+                var subVisitorCount = _squards.VisitorSquard.Substitutes.Count;
 
                 return Math.Max(subHomeCount, subVisitorCount);
             }

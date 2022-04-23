@@ -15,7 +15,7 @@ namespace AceStream.iOS.Modules.MatchModule
 
         Task SetMatchAsync();
         void SetError();
-        void ConfigureView();
+        void ConfigureView(IMatchView view);
 
         void PrepareForSegue(object destinationView, string link);
     }

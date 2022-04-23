@@ -48,7 +48,7 @@ namespace AceStream.Modules.MatchModule
             var storyboard = UIStoryboard.FromName("WatchMatch", null);
 
             var squardViewController = storyboard.InstantiateViewController("SquardViewController") as SquardViewController;
-            squardViewController.Presenter.Match = _match;
+            squardViewController.Presenter.MatchId = _match.Id;
 
             var linkViewController = storyboard.InstantiateViewController("LinkViewController") as LinkViewController;
             linkViewController.Presenter.Parametrs = _match.Channels;

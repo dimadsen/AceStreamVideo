@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Core.Exceptions;
 using AceStream.Dto;
@@ -10,36 +10,18 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
 {
     public class MatchPreviewInteractor : IMatchPreviewInteractor
     {
-        private IMatchPreviewPresenter _presenter;
         private IMatchPreviewService _service;
 
-        public MatchPreviewInteractor(IMatchPreviewPresenter presenter, IMatchPreviewService service)
+        public MatchPreviewInteractor(IMatchPreviewService service)
         {
-            _presenter = presenter;
             _service = service;
         }
 
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            try
-            {
-                var matches = await _service.GetMatchesAsync(championatId);
+            var matches = await _service.GetMatchesAsync(championatId);
 
-                return matches?.Count > 0 ?
-                    matches : throw new MatchesNotFoundException();
-            }
-            catch(MatchesNotFoundException ex)
-            {
-                _presenter.SetNotFoundMatches(ex.Message);
-
-                return new List<MatchPreviewDto>();
-            }
-            catch (Exception)
-            {
-                _presenter.SetError();
-
-                return new List<MatchPreviewDto>();
-            }
+            return matches.Any() ? matches : throw new MatchesNotFoundException();
         }
 
         public MatchPreviewSettingsDto GetSettings(ChampionatDto championat)

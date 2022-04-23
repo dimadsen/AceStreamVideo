@@ -3,6 +3,7 @@ using AVFoundation;
 using AVKit;
 using Foundation;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AceStream
 {
@@ -12,15 +13,14 @@ namespace AceStream
 
         public VideoViewController (IntPtr handle) : base (handle)
         {
-            var configurator = new VideoConfigurator();
-            configurator.Configure(this);
+            Presenter = ServiceProviderFactory.ServiceProvider.GetService<IVideoPresenter>();
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            Presenter.ConfigureView();
+            Presenter.ConfigureView(this);
         }
 
         public void PlayLink(string link)

@@ -16,7 +16,7 @@ namespace AceStream.Android
     [Activity(Label = "ChampionatActivity", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class ChampionatActivity : Activity, IChampionatView
     {
-        public IChampionatPresenter Presenter { get; set; }
+        public IChampionatPresenter _presenter { get; set; }
 
         private List<ChampionatDto> _championatsDto;
 
@@ -37,11 +37,11 @@ namespace AceStream.Android
         {
             base.OnStart();
 
-            Presenter.ConfigureView();
+            _presenter.ConfigureView();
 
             Task.Run(async () =>
             {
-                await Presenter.SetChampionatsAsync();
+                await _presenter.SetChampionatsAsync();
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {

@@ -4,11 +4,6 @@ using AceStream.Dto;
 
 namespace AceStream.Modules.LinkModule
 {
-    public interface ILinkConfigurator
-    {
-        void Configure(ILinkView view);
-    }
-
     public interface ILinkPresenter
     {
         /// <summary>
@@ -16,11 +11,9 @@ namespace AceStream.Modules.LinkModule
         /// </summary>
         string[] Parametrs { get; set; }
 
-        void ConfigureView();
+        void ConfigureView(ILinkView view);
 
         Task SetLinksAsync();
-
-        void SetError();
 
         void PrepareForSegue(object destinationView, string link);
     }

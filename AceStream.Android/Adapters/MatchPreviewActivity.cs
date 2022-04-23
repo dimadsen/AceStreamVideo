@@ -48,7 +48,7 @@ namespace AceStream.Android.Adapters
                 });
             });
         }
-        public void SetErrorView()
+        public void SetError()
         {
             throw new NotImplementedException();
         }

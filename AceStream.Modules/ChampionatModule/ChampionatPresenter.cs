@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using AceStream.Core.Exceptions;
 using AceStream.Dto;
 
 namespace AceStream.iOS.Modules.ChampionatModule
@@ -8,11 +10,12 @@ namespace AceStream.iOS.Modules.ChampionatModule
         public IChampionatInteractor Interactor { get; set; }
         public IChampionatRouter Router { get; set; }
 
-        private IChampionatView _view;
+        public IChampionatView View;
 
-        public ChampionatPresenter(IChampionatView view)
+        public ChampionatPresenter(IChampionatRouter router, IChampionatInteractor interactor)
         {
-            _view = view;
+            Router = router;
+            Interactor = interactor;
         }
 
         public void PrepareForSegue(object destinationView, ChampionatDto dto)
@@ -22,24 +25,37 @@ namespace AceStream.iOS.Modules.ChampionatModule
 
         public async Task SetChampionatsAsync()
         {
-            var championats = await Interactor.GetChampionatsAsync();
+            try
+            {
+                var championats = await Interactor.GetChampionatsAsync();
 
-            _view.SetChampionats(championats);
+                View.SetChampionats(championats);
+            }
+            catch (ChampionatsNotFoundException ex)
+            {
+                View.SetNotFoundView(ex.Message);
+            }
+            catch (Exception)
+            {
+                View.SetErrorView();
+            }
         }
 
-        public void ConfigureView()
+        public void ConfigureView(IChampionatView view)
         {
-            _view.SetSettings("Чемпионаты");
+            View = view;
+
+            View.SetSettings("Чемпионаты");
         }
 
         public void SetError()
         {
-            _view.SetErrorView();
+            View.SetErrorView();
         }
 
         public void SetNotFoundChampionats(string message)
         {
-            _view.SetNotFoundView(message);
+            View.SetNotFoundView(message);
         }
     }
 }

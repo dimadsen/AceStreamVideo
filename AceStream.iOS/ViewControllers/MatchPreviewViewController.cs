@@ -10,24 +10,25 @@ using Foundation;
 using UIKit;
 using Xamarin.Essentials;
 using AceStream.iOS.Modules.MatchPreviewModule;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AceStream
 {
     public partial class MatchPreviewViewController : UITableViewController, IMatchPreviewView, IUIScrollViewDelegate
     {
         public IMatchPreviewPresenter Presenter { get; set; }
-        public IMatchPreviewConfigurator Configurator { get; set; }
 
         private List<MatchPreviewDto> _matches;
 
         public MatchPreviewViewController(IntPtr handle) : base(handle)
         {
-            Configurator = new MatchPreviewConfigurator();
-            Configurator.Configure(this);
+            Presenter = ServiceProviderFactory.ServiceProvider.GetService<IMatchPreviewPresenter>();
         }
 
         public override void ViewDidLoad()
         {
+            Presenter.ConfigureView(this);
+
             Task.Run(async () =>
             {
                 await Presenter.SetMatchesAsync();
@@ -43,7 +44,6 @@ namespace AceStream
                 });
             });
 
-            Presenter.ConfigureView();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -116,7 +116,7 @@ namespace AceStream
             return _matches?.Count ?? 0;
         }        
 
-        public void SetErrorView()
+        public void SetError()
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {

@@ -9,13 +9,13 @@ using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.Essentials;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AceStream.Modules.MatchModule
 {
     public partial class MatchViewController : UIViewController, IMatchView, IUIScrollViewDelegate, IUITableViewDelegate
     {
         public IMatchPresenter Presenter { get; set; }
-        public IMatchConfigurator Configurator { get; set; }
 
         private DetailedMatchViewController detailedVC;
         private MatchDto _match;
@@ -23,13 +23,12 @@ namespace AceStream.Modules.MatchModule
 
         public MatchViewController(IntPtr handle) : base(handle)
         {
-            var configurator = new MatchConfigurator();
-            configurator.Configure(this);
+            Presenter = ServiceProviderFactory.ServiceProvider.GetService<IMatchPresenter>();
         }
 
         public override void ViewDidLoad()
         {
-            Presenter.ConfigureView();
+            Presenter.ConfigureView(this);
 
             Task.Run(async () =>
             {
@@ -75,11 +74,6 @@ namespace AceStream.Modules.MatchModule
             _match.ImageHome = ImageUtils.DownloadFile(_match.Home, _match.ImageHome);
             _match.ImageVisitor = ImageUtils.DownloadFile(_match.Visitor, _match.ImageVisitor);
 
-            _match.HomeSquard.Startings.ForEach(player => player.Flag = $"{player.Country}.png");
-            _match.HomeSquard.Substitutes.ForEach(player => player.Flag = $"{player.Country}.png");
-
-            _match.VisitorSquard.Startings.ForEach(player => player.Flag = $"{player.Country}.png");
-            _match.VisitorSquard.Substitutes.ForEach(player => player.Flag = $"{player.Country}.png");
 
             MainThread.BeginInvokeOnMainThread(() =>
             {

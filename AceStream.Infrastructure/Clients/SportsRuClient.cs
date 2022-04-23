@@ -36,6 +36,18 @@ namespace AceStream.Infrastructure.Clients
             return result;
         }
 
+        public async Task<Core.Domain.Match.MatchProgress> GetMatchProgressAsync(int matchId)
+        {
+            var url = $"stat/api/v1/match/{matchId}/arrange.json";
+
+            var matchProgress = await SendGetRequest<Parsers.SportsRuParser.Match.Progress>(url);
+
+            var result = Map<Parsers.SportsRuParser.Match.Progress, Core.Domain.Match.MatchProgress>(matchProgress);
+
+            return result;
+
+        }
+
         public async Task<Core.Domain.Match.Match> GetTeamsAsync(int matchId)
         {
             var url = $"stat/api/v1/match/{matchId}/arrange.json";

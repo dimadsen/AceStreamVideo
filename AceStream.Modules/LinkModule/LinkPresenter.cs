@@ -1,42 +1,47 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace AceStream.Modules.LinkModule
 {
     public class LinkPresenter : ILinkPresenter
     {
-        public ILinkInteractor Interactor { get; set; }
-        public ILinkRouter Router { get; set; }
+        private ILinkInteractor _interactor { get; set; }
+        private ILinkRouter _router { get; set; }
+        private ILinkView _view;
         
         public string[] Parametrs { get ; set ; }
 
-        private ILinkView _view;
-
-
-        public LinkPresenter(ILinkView view)
+        public LinkPresenter(ILinkRouter router, ILinkInteractor interactor)
         {
-            _view = view;
+            _router = router;
+            _interactor = interactor;
         }
 
-        public void ConfigureView()
+        public void ConfigureView(ILinkView view)
         {
+            _view = view;
+
             _view.SetSettings();
         }
 
         public async Task SetLinksAsync()
         {
-            var links = await Interactor.GetLinksAsync(Parametrs);
+            try
+            {
+                var links = await _interactor.GetLinksAsync(Parametrs);
 
-            _view.SetLinks(links);
+                _view.SetLinks(links);
+            }
+            catch (Exception ex)
+            {
+                _view.SetError();
+            }
+
         } 
-
-        public void SetError()
-        {
-            _view.SetError();
-        }
 
         public void PrepareForSegue(object destinationView, string link)
         {
-            Router.PrepareForSegue(destinationView, link);
+            _router.PrepareForSegue(destinationView, link);
         }
     }
 }

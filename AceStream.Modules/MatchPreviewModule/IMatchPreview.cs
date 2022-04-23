@@ -5,11 +5,6 @@ using AceStream.Dto.SettingsDto;
 
 namespace AceStream.iOS.Modules.MatchPreviewModule
 {
-    public interface IMatchPreviewConfigurator
-    {
-        void Configure(IMatchPreviewView view);
-    }
-
     public interface IMatchPreviewPresenter
     {
         void PrepareForSegue(object destinationView, int matchId, string title);
@@ -18,7 +13,7 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
 
         Task SetMatchesAsync();
         void SetError();
-        void ConfigureView();
+        void ConfigureView(IMatchPreviewView view);
         void SetNotFoundMatches(string message);
     }
 
@@ -41,6 +36,6 @@ namespace AceStream.iOS.Modules.MatchPreviewModule
         void SetSettings(MatchPreviewSettingsDto dto);
         void SetMatches(List<MatchPreviewDto> matches);
         void SetNotFoundMatches(string message);
-        void SetErrorView();
+        void SetError();
     }
 }
