@@ -35,7 +35,7 @@ namespace AceStream.iOS.Modules.ChampionatModule
             {
                 View.SetNotFoundView(ex.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 View.SetErrorView();
             }

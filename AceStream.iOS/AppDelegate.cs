@@ -1,4 +1,6 @@
-﻿using AceStream.Infrastructure.Clients;
+﻿using System;
+using AceStream.Infrastructure.Clients;
+using AceStream.Infrastructure.Mapping;
 using AceStream.iOS.Modules.ChampionatModule;
 using AceStream.iOS.Modules.MatchModule;
 using AceStream.iOS.Modules.MatchPreviewModule;
@@ -13,6 +15,7 @@ using AceStream.Services.Interfaces;
 using Foundation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 using UIKit;
 
 namespace AceStream
@@ -31,7 +34,7 @@ namespace AceStream
 
             var config = configuration.Get<AceStreamConfiguraiton>();
 
-            services.AddScoped<IClient, SportsRuClient>();
+            services.AddScoped<ISourceClient, SourceClient>();
 
             services.AddScoped<IChampionatService, ChampionatService>();
             services.AddScoped<IChampionatRouter, ChampionatRouter>();
@@ -58,7 +61,21 @@ namespace AceStream
 
             services.AddScoped<IVideoPresenter, VideoPresenter>();
 
+            services.AddRefitClient<ISportsRuClient>(new RefitSettings(new NewtonsoftJsonContentSerializer()))
+            .ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri(config.ClientUrl);
+            });
+
+            var mappingAssemblies = new[]
+            {
+                typeof(SportsRuMapperProfile).Assembly,
+            };
+
+            services.AddAutoMapper(mappingAssemblies);
+
             ServiceProviderFactory.ServiceProvider = services.BuildServiceProvider();
+
 
             return true;
         }

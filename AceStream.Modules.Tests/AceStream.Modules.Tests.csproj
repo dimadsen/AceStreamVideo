@@ -11,9 +11,16 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="Moq" Version="4.15.1" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="6.3.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Modules\AceStream.Modules.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AutoMapper" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Refit.Newtonsoft.Json" />
   </ItemGroup>
 </Project>

@@ -12,33 +12,18 @@ namespace AceStream.Services
 {
     public class MatchPreviewService : IMatchPreviewService
     {
-        private IClient _client;
+        private ISourceClient _client;
 
-        public MatchPreviewService(IClient client)
+        public MatchPreviewService(ISourceClient client)
         {
             _client = client;    
         }
 
         public async Task<List<MatchPreviewDto>> GetMatchesAsync(int championatId)
         {
-            var championats = await _client.GetChampionatsAsync();
+            var matches = await _client.GetMatchesAsync(championatId);
 
-            var championat = championats?.FirstOrDefault(c => c.Id == championatId);                       
-            
-            var dto = championat?.Matches?.Select(m => new MatchPreviewDto
-            {
-                Id = m.Id,
-                Home = m.Home.Name,
-                HomePicture = m.Home.Icon,
-                HomeScore = m.Score.Split(0, ":"),
-                Time = m.Date.StartDate.ToString("HH:mm"),
-                Status = (MatchStatus)m.Status.Id,
-                Visitor = m.Visitor.Name,
-                VisitorPicture = m.Visitor.Icon,
-                VisitorScore = m.Score.Split(1, ":"),
-            }).ToList();
-
-            return dto;
+            return matches;
         }
 
         public MatchPreviewSettingsDto GetSettings(ChampionatDto championat)

@@ -1,9 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.SportsRuParser.Tournament
 {
-    public class Team
+    public class TeamInfo
     {
         public string Name { get; set; }
 

@@ -13,9 +13,9 @@ namespace AceStream.Android
         {
             var services = new ServiceCollection();
 
-            services.AddScoped<IClient, SportsRuClient>();
+            services.AddScoped<ISourceClient, SportsRuClient>();
 
-            var client = ServiceCollection.Get<IClient>();
+            var client = ServiceCollection.Get<ISourceClient>();
 
             services.AddScoped<IChampionatService, ChampionatService>(client);
             services.AddScoped<IMatchPreviewService, MatchPreviewService>(client);

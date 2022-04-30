@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AceStream.Dto;
 using AceStream.Services.Interfaces;
@@ -9,9 +8,9 @@ namespace AceStream.Services
 {
     public class ChampionatService : IChampionatService
     {
-        private IClient _client;
+        private ISourceClient _client;
 
-        public ChampionatService(IClient client)
+        public ChampionatService(ISourceClient client)
         {
             _client = client;
         }
@@ -20,19 +19,7 @@ namespace AceStream.Services
         {
             var championats = await _client.GetChampionatsAsync();
 
-            var dto = championats?
-                .Select(c => new ChampionatDto
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    Tour = c.Tour,
-                    Country = c.Country,
-                    Image = c.Icon,                    
-                })
-                .Distinct()
-                .ToList();
-
-            return dto;
+            return championats;
         }
     }
 }

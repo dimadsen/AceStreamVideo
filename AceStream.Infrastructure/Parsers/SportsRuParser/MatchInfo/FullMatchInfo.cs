@@ -2,7 +2,7 @@
 
 namespace AceStream.Infrastructure.SportsRuParser.MatchInfo
 {
-    public class MatchInfo
+    public class FullMatchInfo
     {
         [JsonProperty(PropertyName = "start_time")]
         public Date Date { get; set; }

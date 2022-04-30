@@ -27,8 +27,7 @@ namespace AceStream.iOS.Modules.Tests
             _serviceMock.Setup(x => x.GetChampionatsAsync())
                 .ReturnsAsync(() => new List<ChampionatDto>());
 
-            var interactor = new ChampionatInteractor(_presenterMock.Object,
-                _serviceMock.Object);
+            var interactor = new ChampionatInteractor(_serviceMock.Object);
 
             _ = interactor.GetChampionatsAsync();
 
@@ -41,8 +40,7 @@ namespace AceStream.iOS.Modules.Tests
             _serviceMock.Setup(x => x.GetChampionatsAsync())
                 .ThrowsAsync(new Exception());
 
-            var interactor = new ChampionatInteractor(_presenterMock.Object,
-                _serviceMock.Object);
+            var interactor = new ChampionatInteractor(_serviceMock.Object);
 
             _ = interactor.GetChampionatsAsync();
 

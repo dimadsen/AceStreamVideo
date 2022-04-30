@@ -3,6 +3,6 @@ namespace AceStream
 {
     public class AceStreamConfiguraiton
     {
-        public string Test { get; set; }
+        public string ClientUrl { get; set; }
     }
 }

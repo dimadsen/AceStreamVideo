@@ -15,10 +15,10 @@ namespace AceStream.Infrastructure.SportsRuParser.Tournament
         public string Score { get; set; }
 
         [JsonProperty(PropertyName = "first_team")]
-        public Team Home { get; set; }
+        public TeamInfo Home { get; set; }
 
         [JsonProperty(PropertyName = "second_team")]
-        public Team Visitor { get; set; }
+        public TeamInfo Visitor { get; set; }
     }
 
     public class Date

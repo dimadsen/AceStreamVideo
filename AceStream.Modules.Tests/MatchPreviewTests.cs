@@ -28,8 +28,7 @@ namespace AceStream.iOS.Modules.Tests
             _serviceMock.Setup(x => x.GetMatchesAsync(championatId))
                 .ReturnsAsync(() => null);
 
-            var interactor = new MatchPreviewInteractor(_presenterMock.Object,
-                _serviceMock.Object);
+            var interactor = new MatchPreviewInteractor(_serviceMock.Object);
 
             _ = interactor.GetMatchesAsync(championatId);
 
@@ -44,8 +43,7 @@ namespace AceStream.iOS.Modules.Tests
             _serviceMock.Setup(x => x.GetMatchesAsync(championatId))
                 .ReturnsAsync(() => new List<MatchPreviewDto>());
 
-            var interactor = new MatchPreviewInteractor(_presenterMock.Object,
-                _serviceMock.Object);
+            var interactor = new MatchPreviewInteractor(_serviceMock.Object);
 
             _ = interactor.GetMatchesAsync(championatId);
 
