@@ -7,9 +7,9 @@ using System.Linq;
 using AceStream.Infrastructure.SportsRuParser.Enums;
 using System.Globalization;
 using AceStream.Services.Extansions;
-using AceStream.Core.Domain.Enums;
 using System.Collections.Generic;
 using AceStream.Services.Dto;
+using AceStream.Services.Dto.Enums;
 
 namespace AceStream.Infrastructure.Clients
 {
@@ -56,21 +56,10 @@ namespace AceStream.Infrastructure.Clients
 
             var match = await _client.GetMatchAsync(matchId);
 
-            var matchDto = new MatchDto
-            {
-                Id = matchId,
-                Date = DateTime.Parse(matchInfo.Date.StartDate, CultureInfo.GetCultureInfo("ru")),
-                Half = matchInfo.Status,
-                Score = matchInfo.Score,
-                Minute = match.Time.Split(0, ":"),
-                Status = (MatchStatus)match.Status,
-                Stadium = matchInfo.Stadium.Name,
-                Channels = matchInfo.Channels.Select(c => c.Name).ToArray(),
-                Home = matchInfo.Home.Name,
-                ImageHome = matchInfo.Home.Avatar.Icon,
-                Visitor = matchInfo.Visitor.Name,
-                ImageVisitor = matchInfo.Visitor.Avatar.Icon,
-            };
+            var matchDto = _mapper.Map<MatchDto>(matchInfo);
+            matchDto.Id = matchId;
+            matchDto.Minute = match.Time.Split(0, ":");
+            matchDto.Status = (MatchStatus)match.Status;
 
             return matchDto;
         }

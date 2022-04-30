@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using AceStream.Core.Domain.Enums;
+using AceStream.Services.Dto.Enums;
 
 namespace AceStream.Dto
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using AceStream.Infrastructure.Parsers.SportsRuParser.Tournament;
 using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.SportsRuParser.Tournament
@@ -19,19 +20,5 @@ namespace AceStream.Infrastructure.SportsRuParser.Tournament
 
         [JsonProperty(PropertyName = "second_team")]
         public TeamInfo Visitor { get; set; }
-    }
-
-    public class Date
-    {
-        [JsonProperty(PropertyName = "full")]
-        public DateTime StartDate { get; set; }
-    }
-
-    public class Status
-    {
-        public string Name { get; set; }
-
-        public int Id { get; set; }
-    }
-
+    }  
 }

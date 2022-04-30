@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using AceStream.Services.Extansions;
 using AceStream.Dto;
 using AceStream.Dto.SettingsDto;
 using AceStream.Services.Clients;
-using AceStream.Core.Domain.Enums;
 using AceStream.Services.Interfaces;
 
 namespace AceStream.Services

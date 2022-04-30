@@ -13,8 +13,12 @@
     <Folder Include="Extansions\" />
     <Folder Include="Clients\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Dto\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AceStream.Core\AceStream.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dto\Enums\" />
   </ItemGroup>
 </Project>

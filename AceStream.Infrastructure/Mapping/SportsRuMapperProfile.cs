@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
-using AceStream.Core.Domain.Enums;
 using AceStream.Core.Extansions;
 using AceStream.Dto;
 using AceStream.Infrastructure.Mapping.Converters;
@@ -8,6 +8,7 @@ using AceStream.Infrastructure.SportsRuParser.Enums;
 using AceStream.Infrastructure.SportsRuParser.Match;
 using AceStream.Infrastructure.SportsRuParser.Tournament;
 using AceStream.Services.Dto;
+using AceStream.Services.Dto.Enums;
 using AceStream.Services.Extansions;
 using AutoMapper;
 
@@ -31,6 +32,18 @@ namespace AceStream.Infrastructure.Mapping
                 .ForMember(dest => dest.Visitor, opt => opt.MapFrom(x => x.Visitor.Name))
                 .ForMember(dest => dest.VisitorPicture, opt => opt.MapFrom(x => x.Visitor.Icon))
                 .ForMember(dest => dest.VisitorScore, opt => opt.MapFrom(x => x.Score.Split(1, ":")));
+
+            CreateMap<SportsRuParser.MatchInfo.FullMatchInfo, MatchDto>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(x => DateTime.Parse(x.Date.StartDate, CultureInfo.GetCultureInfo("ru"))))
+                .ForMember(dest => dest.Half, opt => opt.MapFrom(x => x.StatusName))
+                .ForMember(dest => dest.Minute, opt => opt.MapFrom(x => x.Time.Split(0, ":")))
+                .ForMember(dest => dest.Stadium, opt => opt.MapFrom(x => x.Stadium.Name))
+                .ForMember(dest => dest.Channels, opt => opt.MapFrom(x => x.Channels.Select(c => c.Name).ToArray()))
+                .ForMember(dest => dest.Home, opt => opt.MapFrom(x => x.Home.Name))
+                .ForMember(dest => dest.ImageHome, opt => opt.MapFrom(x => x.Home.Avatar.Icon))
+                .ForMember(dest => dest.Visitor, opt => opt.MapFrom(x => x.Visitor.Name))
+                .ForMember(dest => dest.ImageVisitor, opt => opt.MapFrom(x => x.Visitor.Avatar.Icon));
+
 
             CreateMap<Match, SquardDto>()
                 .ForMember(x => x.HomeSquard, opt => opt.MapFrom(x => x.Teams[0]))

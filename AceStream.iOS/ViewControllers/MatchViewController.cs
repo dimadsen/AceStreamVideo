@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AceStream.Core.Domain.Enums;
 using AceStream.Dto;
 using AceStream.iOS.Modules.MatchModule;
 using AceStream.Utils;
@@ -10,6 +9,7 @@ using Foundation;
 using UIKit;
 using Xamarin.Essentials;
 using Microsoft.Extensions.DependencyInjection;
+using AceStream.Services.Dto.Enums;
 
 namespace AceStream.Modules.MatchModule
 {

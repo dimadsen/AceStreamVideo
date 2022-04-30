@@ -6,9 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Domain\" />
-    <Folder Include="Domain\Match\" />
-    <Folder Include="Domain\Tournament\" />
-    <Folder Include="Domain\MatchInfo\" />
     <Folder Include="Extansions\" />
     <Folder Include="Domain\Enums\" />
     <Folder Include="Exceptions\" />

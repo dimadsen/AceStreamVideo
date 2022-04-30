@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AceStream.Core.Domain.Enums
+namespace AceStream.Services.Dto.Enums
 {
     public enum MatchStatus
     {

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using AceStream.Infrastructure.Parsers.SportsRuParser.MatchInfo;
+using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.SportsRuParser.MatchInfo
 {
@@ -8,7 +9,7 @@ namespace AceStream.Infrastructure.SportsRuParser.MatchInfo
         public Date Date { get; set; }
 
         [JsonProperty(PropertyName = "state_name")] 
-        public string Status { get; set; }
+        public string StatusName { get; set; }
 
         public string Time { get; set; }
 
@@ -24,34 +25,5 @@ namespace AceStream.Infrastructure.SportsRuParser.MatchInfo
 
         [JsonProperty(PropertyName = "tv")]
         public Channel[] Channels { get; set; }
-    }
-
-    public class Date
-    {
-        [JsonProperty(PropertyName = "full")]
-        public string StartDate { get; set; }
-    }
-
-    public class Team
-    {
-        public string Name { get; set; }
-
-        public Avatar Avatar { get; set; }
-    }
-
-    public class Avatar
-    {
-        [JsonProperty(PropertyName = "big_logo_mobile")]
-        public string Icon { get; set; }
-    }
-
-    public class Stadium
-    {
-        public string Name { get; set; }
-    }
-
-    public class Channel
-    {
-        public string Name { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using AceStream.Infrastructure.Parsers.SportsRuParser.Tournament;
+using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.SportsRuParser.Tournament
 {
@@ -17,12 +18,5 @@ namespace AceStream.Infrastructure.SportsRuParser.Tournament
 
         [JsonProperty(PropertyName = "matches")]
         public MatchInfo[] Matches { get; set; }
-    }
-
-    public class Sport
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using AceStream.Infrastructure.Parsers.SportsRuParser.Match;
 using Newtonsoft.Json;
 
 namespace AceStream.Infrastructure.SportsRuParser.Match
@@ -29,11 +30,5 @@ namespace AceStream.Infrastructure.SportsRuParser.Match
         /// </summary>
         [JsonProperty(PropertyName = "replaced_comment")]
         public string Replaced { get; set; }
-    }
-
-    public class Flag
-    {
-        [JsonProperty(PropertyName = "flag_country")]
-        public string Country { get; set; }
-    }
+    }    
 }
