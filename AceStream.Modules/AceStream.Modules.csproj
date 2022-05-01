@@ -16,9 +16,5 @@
     <Folder Include="VideoModule\" />
     <Folder Include="LinkModule\" />
     <Folder Include="SquardModule\" />
-    <Folder Include="UserModule\" />
-    <Folder Include="LoginModule\" />
-    <Folder Include="RegistrationModule\" />
-    <Folder Include="SettingsModule\" />
   </ItemGroup>
 </Project>

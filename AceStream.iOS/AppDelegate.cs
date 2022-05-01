@@ -1,5 +1,6 @@
 ﻿using System;
 using AceStream.Infrastructure.Clients;
+using AceStream.Infrastructure.Impl;
 using AceStream.Infrastructure.Mapping;
 using AceStream.iOS.Modules.ChampionatModule;
 using AceStream.iOS.Modules.MatchModule;

@@ -246,22 +246,6 @@
         <Compile Include="ViewControllers\SquardViewController.designer.cs">
           <DependentUpon>SquardViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="ViewControllers\UserViewController.cs" />
-        <Compile Include="ViewControllers\UserViewController.designer.cs">
-          <DependentUpon>UserViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="ViewControllers\LoginViewController.cs" />
-        <Compile Include="ViewControllers\LoginViewController.designer.cs">
-          <DependentUpon>LoginViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="ViewControllers\RegistrationViewController.cs" />
-        <Compile Include="ViewControllers\RegistrationViewController.designer.cs">
-          <DependentUpon>RegistrationViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="ViewControllers\SettingsViewController.cs" />
-        <Compile Include="ViewControllers\SettingsViewController.designer.cs">
-          <DependentUpon>SettingsViewController.cs</DependentUpon>
-        </Compile>
         <Compile Include="AceStreamConfiguraiton.cs" />
         <Compile Include="ServiceProviderFactory.cs" />
     </ItemGroup>

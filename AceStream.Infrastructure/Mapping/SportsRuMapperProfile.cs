@@ -42,7 +42,8 @@ namespace AceStream.Infrastructure.Mapping
                 .ForMember(dest => dest.Home, opt => opt.MapFrom(x => x.Home.Name))
                 .ForMember(dest => dest.ImageHome, opt => opt.MapFrom(x => x.Home.Avatar.Icon))
                 .ForMember(dest => dest.Visitor, opt => opt.MapFrom(x => x.Visitor.Name))
-                .ForMember(dest => dest.ImageVisitor, opt => opt.MapFrom(x => x.Visitor.Avatar.Icon));
+                .ForMember(dest => dest.ImageVisitor, opt => opt.MapFrom(x => x.Visitor.Avatar.Icon))
+                .ForMember(dest => dest.Score, opt => opt.MapFrom(x => x.Home.Score + " - " + x.Visitor.Score));
 
 
             CreateMap<Match, SquardDto>()

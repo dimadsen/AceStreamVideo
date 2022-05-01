@@ -5,13 +5,13 @@ using AceStream.Services.Clients;
 using AutoMapper;
 using System.Linq;
 using AceStream.Infrastructure.SportsRuParser.Enums;
-using System.Globalization;
 using AceStream.Services.Extansions;
 using System.Collections.Generic;
 using AceStream.Services.Dto;
 using AceStream.Services.Dto.Enums;
+using AceStream.Infrastructure.Clients;
 
-namespace AceStream.Infrastructure.Clients
+namespace AceStream.Infrastructure.Impl
 {
     public class SourceClient : ISourceClient
     {
