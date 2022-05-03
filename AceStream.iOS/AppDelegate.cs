@@ -31,9 +31,9 @@ namespace AceStream
             var services = new ServiceCollection();
 
             var configuration = new ConfigurationBuilder().AddJsonFile($"appsettings.json", false).Build();
-            services.Configure<AceStreamConfiguraiton>(configuration);
+            services.Configure<AceStreamConfiguration>(configuration);
 
-            var config = configuration.Get<AceStreamConfiguraiton>();
+            var config = configuration.Get<AceStreamConfiguration>();
 
             services.AddScoped<ISourceClient, SourceClient>();
 

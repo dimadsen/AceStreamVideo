@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{B83C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceStream.Android", "AceStream.Android\AceStream.Android.csproj", "{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLPagerTabStrip", "XLPagerTabStrip\XLPagerTabStrip.csproj", "{47BD137E-0BC0-402F-A3A8-8E257495EDBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -113,6 +115,18 @@ Global
 		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|iPhone.Build.0 = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -149,5 +163,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{67103686-01E1-4738-A9AF-52669554E5C3} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
 		{2F3ECAAA-2FDA-4EC8-A293-F6458F1B6671} = {B83C2FA2-D1F7-4672-A2F4-16808AE98602}
+		{47BD137E-0BC0-402F-A3A8-8E257495EDBA} = {5EA338B1-D23A-41C4-A64D-578CB0317D93}
 	EndGlobalSection
 EndGlobal

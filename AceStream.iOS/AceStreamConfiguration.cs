@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AceStream
 {
-    public class AceStreamConfiguraiton
+    public class AceStreamConfiguration
     {
         public string ClientUrl { get; set; }
     }
